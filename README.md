@@ -43,13 +43,13 @@ It serves as a structured overview of my approach to **data analysis**, **modeli
 ### 🎯 **INSERM CRCT – Postdoctoral Research (2020–2023)**
 *Systems oncology, tumor–immune modeling, transcriptomics, and drug response prediction*
 
-- [Tumor Ecosystem Modeling](03_Postdoc_CRCT/tumor_ecosystem_modeling.md)  
-- [Macrophage Polarization in CLL](03_Postdoc_CRCT/macrophage_polarization.md)  
-- [Predicting Response to Immunotherapy (GEMDECAN)](03_Postdoc_CRCT/immunotherapy_prediction.md)  
-- [Tumor Microenvironment Analysis (LungPredict)](03_Postdoc_CRCT/tumor_microenvironment_LungPredict.md)  
-- [COVID-19 Drug Repurposing via Network Medicine](03_Postdoc_CRCT/covid_network_medicine.md)  
-- [Systemic Effects of SARS-CoV-2](03_Postdoc_CRCT/sarscov2_systemic_effects.md)  
-- [Clonal Dynamics and scRNA-seq under Treatment](03_Postdoc_CRCT/clonal_dynamics_scRNAseq.md)
+- [Tumor Ecosystem Modeling](03_Postdoc_INSERM/tumor_ecosystem_modeling.md)  
+- [Macrophage Polarization in CLL](03_Postdoc_INSERM/macrophage_polarization.md)  
+- [Predicting Response to Immunotherapy (GEMDECAN)](03_Postdoc_INSERM/immunotherapy_prediction.md)  
+- [Tumor Microenvironment Analysis (LungPredict)](03_Postdoc_INSERM/tumor_microenvironment_LungPredict.md)  
+- [COVID-19 Drug Repurposing via Network Medicine](03_Postdoc_INSERM/covid_network_medicine.md)  
+- [Systemic Effects of SARS-CoV-2](03_Postdoc_INSERM/sarscov2_systemic_effects.md)  
+- [Clonal Dynamics and scRNA-seq under Treatment](03_Postdoc_INSERM/clonal_dynamics_scRNAseq.md)
 
 ---
 
@@ -65,7 +65,7 @@ It serves as a structured overview of my approach to **data analysis**, **modeli
 ### 🧫 **PhD – ENS / CNRS IBENS (Paris, 2008–2012)**
 *Regulation of transcriptional elongation and structure–function analysis*
 
-- [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_ENS/transcription_regulation_hexim_tat.md)
+- [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS/transcription_regulation_hexim_tat.md)
 
 ---
 
