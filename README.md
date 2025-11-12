@@ -43,29 +43,29 @@ It serves as a structured overview of my approach to **data analysis**, **modeli
 ### 🎯 **INSERM CRCT – Postdoctoral Research (2020–2023)**
 *Systems oncology, tumor–immune modeling, transcriptomics, and drug response prediction*
 
-- [Tumor Ecosystem Modeling](postdoc_CRCT_2020-2023/tumor_ecosystem_modeling.md)  
-- [Macrophage Polarization in CLL](postdoc_CRCT_2020-2023/macrophage_polarization.md)  
-- [Predicting Response to Immunotherapy (GEMDECAN)](postdoc_CRCT_2020-2023/immunotherapy_prediction.md)  
-- [Tumor Microenvironment Analysis (LungPredict)](postdoc_CRCT_2020-2023/tumor_microenvironment_LungPredict.md)  
-- [COVID-19 Drug Repurposing via Network Medicine](postdoc_CRCT_2020-2023/covid_network_medicine.md)  
-- [Systemic Effects of SARS-CoV-2](postdoc_CRCT_2020-2023/sarscov2_systemic_effects.md)  
-- [Clonal Dynamics and scRNA-seq under Treatment](postdoc_CRCT_2020-2023/clonal_dynamics_scRNAseq.md)
+- [Tumor Ecosystem Modeling](03_Postdoc_CRCT/tumor_ecosystem_modeling.md)  
+- [Macrophage Polarization in CLL](03_Postdoc_CRCT/macrophage_polarization.md)  
+- [Predicting Response to Immunotherapy (GEMDECAN)](03_Postdoc_CRCT/immunotherapy_prediction.md)  
+- [Tumor Microenvironment Analysis (LungPredict)](03_Postdoc_CRCT/tumor_microenvironment_LungPredict.md)  
+- [COVID-19 Drug Repurposing via Network Medicine](03_Postdoc_CRCT/covid_network_medicine.md)  
+- [Systemic Effects of SARS-CoV-2](03_Postdoc_CRCT/sarscov2_systemic_effects.md)  
+- [Clonal Dynamics and scRNA-seq under Treatment](03_Postdoc_CRCT/clonal_dynamics_scRNAseq.md)
 
 ---
 
 ### 🧩 **INQUIMAE – CONICET (Buenos Aires, 2013–2015)**
 *Structural bioinformatics, protein evolution, and interaction modularity*
 
-- [Amino Acid Usage under Evolutionary Constraints](postdoc_CONICET_2013-2015/aa_usage_evolution.md)  
-- [Structure and Dynamics of Ankyrin Repeats](postdoc_CONICET_2013-2015/ankyrin_structure_dynamics.md)  
-- [Functional Modularity of Ankyrin Proteins and Partners](postdoc_CONICET_2013-2015/ankyrin_modularity.md)
+- [Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/aa_usage_evolution.md)  
+- [Structure and Dynamics of Ankyrin Repeats](02_Postdoc_CONICET/ankyrin_structure_dynamics.md)  
+- [Functional Modularity of Ankyrin Proteins and Partners](02_Postdoc_CONICET/ankyrin_modularity.md)
 
 ---
 
 ### 🧫 **PhD – ENS / CNRS IBENS (Paris, 2008–2012)**
 *Regulation of transcriptional elongation and structure–function analysis*
 
-- [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](phd_ENS_2008-2012/transcription_regulation_hexim_tat.md)
+- [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_ENS/transcription_regulation_hexim_tat.md)
 
 ---
 
