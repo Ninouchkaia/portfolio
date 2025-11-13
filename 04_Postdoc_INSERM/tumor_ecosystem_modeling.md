@@ -46,3 +46,14 @@ Agent-based modeling · OpenMOLE automation · Simulation analysis · Data visua
 ## 🔗 Reference
 Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence Scenarios in Cancer-Immune Interactions.*  
 *iScience*, 2023. [DOI:10.1016/j.isci.2023.106897](https://www.cell.com/iscience/fulltext/S2589-0042(23)00974-4)
+
+
+## 🖼 Figure — Architecture du modèle multi-agents (iScience 2023)
+
+<p align="center">
+  <img src="../figures_visuals/abm/diagram_ABM_july2022.png" width="750px">
+</p>
+
+**Description.** Structure du modèle multi-agents simulant l’écosystème tumeur–immunité  
+(cellules tumorales, NK, macrophages NLC, cytokines).  
+[Voir la publication](https://doi.org/10.1016/j.isci.2023.106897)
