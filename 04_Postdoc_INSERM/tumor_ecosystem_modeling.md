@@ -50,10 +50,18 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 ## 🖼 Figure — Architecture du modèle multi-agents (iScience 2023)
 
-<p align="center">
-  <img src="../figures_visuals/abm/diagram_ABM_july2022.png" width="750px">
-</p>
-
 **Description.** Structure du modèle multi-agents simulant l’écosystème tumeur–immunité  
 (cellules tumorales, NK, macrophages NLC, cytokines).  
 [Voir la publication](https://doi.org/10.1016/j.isci.2023.106897)
+
+<p align="left">
+  <img src="../figures_visuals/abm/diagram_ABM_july2022.png" width="500px">
+  <img src="../figures_visuals/abm/FigS4-UML_diagrams_complete-edit2-01.png" width="800px">
+
+</p>
+
+
+
+
+
+
