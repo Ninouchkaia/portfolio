@@ -57,7 +57,8 @@ Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les 
       Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques. Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques. Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
     </td>
     <td style="vertical-align: middle; width:100%;">
-      <img src="../figures_visuals/CRCT/barcodes/clonal.png" width="900px" alt="UMAP clusters">
+      <img style="display: block; margin: auto;" src="../figures_visuals/CRCT/barcodes/clonal.png"/>
     </td>
   </tr>
 </table>
+
