@@ -62,3 +62,10 @@ Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les 
   </tr>
 </table>
 
+
+<img src="../figures_visuals/CRCT/barcodes/clonal.png" align="left" width="200px"/>
+some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
+
+<br clear="left"/>
+
+A "newline". This text doesn't float anymore, is left-aligned.
