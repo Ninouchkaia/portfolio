@@ -45,3 +45,15 @@ Functional genomics · Network propagation · Enrichment analysis · Multi-omics
 ## 🔗 Reference
 *Verstraete N.*, et al. *Systemic Cellular Perturbations Induced by SARS-CoV-2 Proteins across Host Pathways.*  
 *Communications Physics (Nature)*, 2021. [DOI:10.1038/s42005-021-00582-8](https://www.nature.com/articles/s42005-021-00582-8)
+
+
+## FIGURES
+
+
+
+<img src="../figures_visuals/CRCT/covid2/42005_2021_582_Fig5_HTML.png" align="left" width="450px"/>
+Fig. 5: Clustering analysis based on the viruses’ first range human protein targets and their related enriched Reactome pathways.
+
+Viruses are clustered based on their (a) shared human protein direct targets (first range interactors) and (b) the enriched Reactome pathways containing these proteins. Binary distance has been used to perform the hierarchical clustering in all subplots. Red boxes highlight the cluster containing SARS-CoV-2. Enrichment analyses were performed with the R package clusterProfiler50 with a cutoff of p value <0.005. Viruses for which we could not find any enriched Reactome pathway do not appear on the enrichment heatmaps. Complete results of these enrichment analyses are available as Supplementary material (Supplementary Data 1 and 2).
+
+<br clear="left"/>
