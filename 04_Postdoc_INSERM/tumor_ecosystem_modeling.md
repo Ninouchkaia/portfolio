@@ -56,13 +56,13 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 <p align="left">
 	
-  <img src="../figures_visuals/abm/Figure1-edit2-02-01.png" width="800px">
-  <img src="../figures_visuals/abm/diagram_ABM_july2022.png" width="800px">
-  <img src="../figures_visuals/abm/FigS4-UML_diagrams_complete-edit2-01.png" width="800px">
-  <img src="../figures_visuals/abm/Figure 3-edit.png" width="800px">
-  <img src="../figures_visuals/abm/Figure 4-01.png" width="800px">
-  <img src="../figures_visuals/abm/Figure5-edit4-01.png" width="800px">
-  <img src="../figures_visuals/abm/Figure6-sensitivityAnalysis-edit1-01.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/Figure1-edit2-02-01.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/diagram_ABM_july2022.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/FigS4-UML_diagrams_complete-edit2-01.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/Figure 3-edit.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/Figure 4-01.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/Figure5-edit4-01.png" width="800px">
+  <img src="../figures_visuals/CRCT/abm/Figure6-sensitivityAnalysis-edit1-01.png" width="800px">
 
 
 </p>
