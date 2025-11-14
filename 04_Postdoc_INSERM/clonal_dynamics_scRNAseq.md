@@ -45,25 +45,21 @@ Single-cell RNA-seq · Clonal tracking · Transcriptomic analysis · Data visual
 CRCT, Toulouse — Project report: *Clonal Dynamics under Therapeutic Pressure in Cancer Models* (2023).  
 [Preprint link](https://drive.google.com/file/d/1gN0ATOxtLzcDfYxJOT4nizu8S0GGpRXn/view)
 
-Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.
-<p align="right">
-  <img src="../figures_visuals/CRCT/barcodes/clonal.png" width="350px">
-</p>
-Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.
 
-<table>
-  <tr>
-    <td style="vertical-align: middle; padding-right: 16px; width:50%;">
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques. Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques. Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-    </td>
-    <td style="vertical-align: middle; width:100%;">
-      <img style="display: block; margin: auto;" src="../figures_visuals/CRCT/barcodes/clonal.png"/>
-    </td>
-  </tr>
-</table>
-
+## FIGURES
 
 <img src="../figures_visuals/CRCT/barcodes/clonal.png" align="left" width="200px"/>
+some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
+some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
+some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
+
+<br clear="left"/>
+
+A "newline". This text doesn't float anymore, is left-aligned.
+
+<img src="../figures_visuals/CRCT/barcodes/clonal.png" align="left" width="450px"/>
+some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
+some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
 some text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the imagesome text floating around the image
 
 <br clear="left"/>
