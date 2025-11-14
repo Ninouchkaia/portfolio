@@ -44,3 +44,13 @@ Single-cell RNA-seq · Clonal tracking · Transcriptomic analysis · Data visual
 ## 🔗 Reference
 CRCT, Toulouse — Project report: *Clonal Dynamics under Therapeutic Pressure in Cancer Models* (2023).  
 [Preprint link](https://drive.google.com/file/d/1gN0ATOxtLzcDfYxJOT4nizu8S0GGpRXn/view)
+
+
+
+
+<p align="right">
+  <img src="../figures_visuals/CRCT/barcodes/clonal.png" width="350px">
+</p>
+
+Le UMAP ci-contre montre la structuration des sous-populations cellulaires.
+Les clones se répartissent dans des niches transcriptionnelles spécifiques.
