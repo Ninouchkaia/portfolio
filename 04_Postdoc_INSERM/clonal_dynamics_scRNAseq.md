@@ -53,14 +53,8 @@ Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les 
 
 <table>
   <tr>
-    <td style="vertical-align: middle; padding-right: 16px; width:60%;">
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
-      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
+    <td style="vertical-align: middle; padding-right: 16px; width:30%;">
+      Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques. Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques. Le UMAP ci-contre montre la structuration des sous-populations cellulaires. Les clones se répartissent dans des niches transcriptionnelles spécifiques.<br><br>
     </td>
     <td style="vertical-align: middle; width:40%;">
       <img src="../figures_visuals/CRCT/barcodes/clonal.png" width="350px" alt="UMAP clusters">
