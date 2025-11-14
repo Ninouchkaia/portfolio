@@ -52,13 +52,15 @@ Functional genomics · Network propagation · Enrichment analysis · Multi-omics
 
 
 <img src="../figures_visuals/CRCT/covid2/42005_2021_582_Fig5_HTML.png" align="left" width="250px"/>
-Fig. 5: Clustering analysis based on the viruses’ first range human protein targets and their related enriched Reactome pathways.
+
 
 <img src="../figures_visuals/CRCT/covid2/42005_2021_582_Fig6_HTML.png" align="right" width="250px"/>
-Fig. 6: Clustering analysis based on the viruses’ first and second-range human protein targets and their related Gene Ontology biological processes.
 
+
+Fig. 5: Clustering analysis based on the viruses’ first range human protein targets and their related enriched Reactome pathways.
 Viruses are clustered based on their (a) shared human protein direct targets (first range interactors) and (b) the enriched Reactome pathways containing these proteins. Binary distance has been used to perform the hierarchical clustering in all subplots. Red boxes highlight the cluster containing SARS-CoV-2. Enrichment analyses were performed with the R package clusterProfiler50 with a cutoff of p value <0.005. Viruses for which we could not find any enriched Reactome pathway do not appear on the enrichment heatmaps. Complete results of these enrichment analyses are available as Supplementary material (Supplementary Data 1 and 2).
 
+Fig. 6: Clustering analysis based on the viruses’ first and second-range human protein targets and their related Gene Ontology biological processes.
 Viruses are clustered based on their (a) shared human protein targets including direct and secondary interactors and (b) the enriched biological processes (Gene Ontology) containing these direct and secondary targets. Binary distance has been used to perform the hierarchical clustering in all subplots. Red boxes highlight the cluster containing SARS-CoV-2. Enrichment analyses were performed with the R package clusterProfiler50 with a cutoff of p value <0.005. Viruses for which we could not find any enriched GO biological process do not appear on the enrichment heatmaps. Complete results of these enrichment analyses are available as Supplementary Data 3 and 4.
 
 <br clear="left"/>
