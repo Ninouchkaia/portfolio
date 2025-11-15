@@ -89,6 +89,4 @@ Sorties :
 
 Ces résultats correspondent aux Figures 3–5 décrites dans le manuscrit : clustering des signatures, heatmap de corrélations, et réseau de drogues.
 
-```
-
 ---
