@@ -1,0 +1,124 @@
+colname;annotation
+Capiva_050u_exp151121;AKT
+Crizot_002u_exp271221;ALK
+TAE684_001u_exp271221;ALK
+Compou_008u_exp200921;AMPK
+Ibudil_400u_exp271221;AMPK
+Phenfo_050u_exp151121;AMPK
+colname;annotation
+Bafilo_1.2n_exp200921;Antibiotics
+Nigeri_100n_exp070222;Antibiotics
+Trimet_600u_exp271221;Antibiotics
+NAcety_015m_exp271221;Antioxidant
+Navito_006u_exp300821;Apoptosis
+S63845_010u_exp271221;Apoptosis
+Aliser_050n_exp220322;Aurora A kinase
+Chloro_040u_exp200921;Autophagy
+SBI020_005u_exp181021;Autophagy
+Spauti_007u_exp181021;Autophagy
+L75550_025u_exp220322;B3-adrenergic receptor partial agonist
+STO609_030u_exp151121;CaM-KK
+Palboc_010u_exp200921;CDK
+THZ1_090n_exp220322;CDK
+5Fluor_006u_exp070222;Chemotherapy
+Carbop_007u_exp070222;Chemotherapy
+Cispla_250n_exp300821;Chemotherapy
+Cispla_500n_exp181021;Chemotherapy
+Doxoru_080n_exp181021;Chemotherapy
+Methot_040n_exp220322;Chemotherapy
+Mitomy_002x_exp151121;Chemotherapy
+Oxalip_005u_exp070222;Chemotherapy
+Paclit_005n_exp220322;Chemotherapy
+Pemetr_080n_exp181021;Chemotherapy
+Pemetr_100n_exp010821;Chemotherapy
+Pemetr_100n_exp040821;Chemotherapy
+Pralat_003n_exp220322;Chemotherapy
+Temps0_000u_exp010821;control
+Temps0_000u_exp040821;control
+Temps0_000u_exp070222;control
+Temps0_000u_exp130921;control
+Temps0_000u_exp151121;control
+Temps0_000u_exp181021;control
+Temps0_000u_exp200921;control
+Temps0_000u_exp220322;control
+Temps0_000u_exp271221;control
+Temps0_000u_;control
+OsiSor_015u_exp300821;Drug combinations
+Gefiti_002u_exp151121;EGFR
+Gefiti_002u_exp300821;EGFR
+Lazert_001u_exp070222;EGFR
+Mavele_001u_exp070222;EGFR
+Osimer_001u_exp200921;EGFR
+Osimer_005u_exp200921;EGFR
+Osimer_020n_exp200921;EGFR
+Osimer_100n_exp010821;EGFR
+Osimer_100n_exp040821;EGFR
+Osimer_100n_exp200921;EGFR
+Osimer_100n_exp300821;EGFR
+PROTAC_010u_exp151121;EGFR
+Rocile_001u_exp070222;EGFR
+WZ4002_001u_exp271221;EGFR
+Azacyt_1.5u_exp130921;Epigenetics
+NaButy_002m_exp271221;Epigenetics
+phenyl_002m_exp181021;Epigenetics
+Tazeme_040u_exp181021;Epigenetics
+Tricho_110n_exp271221;Epigenetics
+Vorino_002u_exp130921;Epigenetics
+CCT020_003u_exp220322;ER stress
+Thapsi_008n_exp070222;ER stress
+Tunica_0.5x_exp070222;ER stress
+Plurip_010u_exp271221;ERK1/RasGAP
+Defero_007u_exp070222;Ferroptosis
+Erasti_015u_exp070222;Ferroptosis
+Ferros_060u_exp070222;Ferroptosis
+BGJ398_007u_exp271221;FGFR
+Mefloq_010u_exp220322;Gap junction
+Proben_500u_exp220322;Gap junction
+ML210._030u_exp070222;GPX4
+BMS536_002u_exp220322;IGF-1R
+AZD148_005u_exp130921;JAK/STAT
+Napabu_001u_exp130921;JAK/STAT
+statti_007u_exp151121;JAK/STAT
+Sotora_035u_exp271221;KRAS
+Tramet_030n_exp010821;MEK
+Tramet_030n_exp040821;MEK
+Tramet_040n_exp151121;MEK
+U0126E_030u_exp151121;MEK
+Levofl_250u_exp220322;Mitochondrial biogenesis
+CGP573_010u_exp181021;MNK
+eFT508_025u_exp181021;MNK
+Temsir_006u_exp220322;mTOR
+Caboza_010u_exp181021;Multi-kinase inhibitors
+Lenvat_040u_exp181021;Multi-kinase inhibitors
+Regora_010u_exp181021;Multi-kinase inhibitors
+Sorafe_005u_exp151121;Multi-kinase inhibitors
+Sorafe_005u_exp300821;Multi-kinase inhibitors
+Suniti_015u_exp271221;Multi-kinase inhibitors
+X13271_005u_exp010821;New compounds from KIT
+X13271_005u_exp040821;New compounds from KIT
+X13271_008u_exp181021;New compounds from KIT
+X13271_008u_exp200921;New compounds from KIT
+X13271_009u_exp271221;New compounds from KIT
+X15681_050u_exp271221;New compounds from KIT
+X17129_008u_exp181021;New compounds from KIT
+X17129_008u_exp271221;New compounds from KIT
+JSH23_060u_exp220322;NF-kB
+IMR1._080u_exp070222;Notch
+Nutlin_025u_exp271221;p53
+Olapar_020u_exp200921;PARP
+AZD818_050u_exp220322;PI3K
+Bortez_020n_exp200921;Proteasomal inhibitors
+Bortez_020n_exp271221;Proteasomal inhibitors
+MG132z_510n_exp271221;Proteasomal inhibitors
+CCT196_001u_exp151121;RAF
+CCT196_001u_exp300821;RAF
+LY3009_003u_exp130921;RAF
+LY3009_003u_exp151121;RAF
+RAF265_005u_exp151121;RAF
+Vemura_007u_exp070222;RAF
+LIMKi3_030u_exp200921;ROCK
+Y27632_300u_exp070222;ROCK
+SHP099_050u_exp151121;SHP2
+Saraca_500n_exp220322;Src inhibitor
+LGK974_005u_exp200921;Wnt
+XAV939_080u_exp220322;Wnt

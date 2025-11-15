@@ -1,491 +1,340 @@
-# %% [markdown]
-# # Barcode signatures and drug relationships
-#
-# This notebook visualizes the clonal barcoding drug screen:
-#
-# - Loads log2 fold-change (log2FC) per barcode per condition (DESeq2 output)
-# - Explores distributions and basic QC
-# - Recreates:
-#   - Fig.3: drug clustering based on barcode signatures (log2FC heatmap)
-#   - Fig.4: drug–drug correlation clustered heatmap
-#   - Fig.5: drug network based on correlation
-#
-# ## File assumptions
-#
-# This notebook assumes the following project layout:
-#
-# ```text
-# 2022_Barcodes/
-# ├── data/
-# │   ├── merged_pval_filtered_deseq2_fillna.csv
-# │   ├── correl_matrix1_merged_pval_filtered_deseq2.csv      (optional, can be recomputed)
-# │   ├── color_mapping.tsv                                   (optional)
-# │   └── ...
-# ├── results/
-# │   └── paper_figures/
-# └── notebooks/
-#     └── 01_visualize_barcode_signatures.ipynb   (this notebook)
-# ```
-#
-# If your paths differ, update the configuration cell below.
+#!/usr/bin/env python
+# coding: utf-8
 
-# %%
-# Imports and configuration
+# # 01 – Visualize barcode drug signatures
+# 
+# Notebook for downstream visualization of the barcode-based drug screen.
+# 
+# Input:
+# - `merged_logfc_pval_filtered_deseq2_2023_fillna.csv`: matrix of log2 fold-changes (one DESeq2 result per condition) already filtered on p-value and with missing values imputed.
+# - `colnames_annotated_2023.csv`: annotation of conditions (drug, class, etc.).
+# 
+# Outputs (saved in the `figures/` folder):
+# - Heatmap of barcode signatures (barcodes × conditions).
+# - Clustered correlation heatmap of conditions.
+# - Drug similarity network (conditions as nodes, correlation-based edges).
+# 
 
-from pathlib import Path
+# In[31]:
+
+
 import os
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
-import seaborn as sns
 import matplotlib.pyplot as plt
+import seaborn as sns
 import networkx as nx
+from scipy.spatial.distance import squareform
+from scipy.cluster.hierarchy import linkage
 
-sns.set(style="white", context="notebook")
+sns.set(context="notebook", style="white")
+plt.rcParams["figure.dpi"] = 120
 
-ROOT = Path("..").resolve()
-DATA_DIR = ROOT / "data"
-RESULTS_DIR = ROOT / "results"
-FIG_DIR = RESULTS_DIR / "paper_figures"
+# Ensure output directory exists
+FIG_DIR = Path("figures")
 FIG_DIR.mkdir(parents=True, exist_ok=True)
 
-LOGFC_FILE = DATA_DIR / "merged_pval_filtered_deseq2_fillna.csv"
-CORR_FILE = DATA_DIR / "correl_matrix1_merged_pval_filtered_deseq2.csv"
-COLOR_MAP_FILE = DATA_DIR / "color_mapping.tsv"
 
-print("Project root  :", ROOT)
-print("Data dir      :", DATA_DIR)
-print("Results dir   :", RESULTS_DIR)
-print("Figures dir   :", FIG_DIR)
+# ## 1. Config – paths and parameters
+# 
+# Adjust paths below if needed. They are written assuming:
+# - this notebook lives in `scripts/2023/` (or similar),
+# - data files live in `../data/` relative to the notebook.
+# 
 
-# %% [markdown]
-# ## 1. Helper functions
-#
-# We define:
-# - a parser to simplify condition names into `<drug>_<dose>`
-# - a loader for the color mapping (drug → numeric color code)
-# - basic loaders for log2FC matrix and correlation matrix
-
-# %%
-def condition_to_drug_label(cond_name: str) -> str:
-    """
-    Reduce a condition name like:
-      'GefitinibA_006u_exp200921_run1_sample1'
-    to something like:
-      'Gefitinib_006u'
-    
-    Controls and time zeros get labels like:
-      'CtrlMs_000u', 'Temps0_000u'
-    """
-    parts = cond_name.split("_")
-    if len(parts) < 2:
-        return cond_name
-
-    head = parts[0]
-    dose = parts[1]
-
-    # Controls
-    if head.startswith("Ctrl") or "Contro" in head:
-        drug = "CtrlMs"
-    # Time zeros
-    elif head.startswith("Temps0") or "Temps0" in head:
-        drug = "Temps0"
-    else:
-        # DrugA / DrugB → drug = all but last char, replicate = last char
-        drug = head[:-1]
-
-    return f"{drug}_{dose}"
+# In[32]:
 
 
-def load_color_mapping(path: Path) -> dict:
-    """
-    color_mapping.tsv:
-       <int_color_code>\t<drug_label>
-    Example:
-       1   Gefitinib_006u
-    
-    Returns:
-        dict: drug_name (without replicate, dose included) → float in [0, 1]
-    """
-    cmap = {}
+# ---- Paths (edit if needed) ----
+DATA_DIR = Path("../data")
+SCRIPT_DIR = Path(".")
 
-    if not path.exists():
-        print(f"[info] Color mapping file not found: {path}")
-        return cmap
+LOGFC_FILE = Path("./merged_logfc_pval_filtered_deseq2_2023_fillna.csv")
+ANNOT_FILE = Path("./colnames_annotated_2023.csv")  # condition annotations
 
-    with path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if not line:
-                continue
-            parts = line.split("\t")
-            if len(parts) != 2:
-                continue
-            color_int, drug_label = parts
-            color_int = int(color_int)
-
-            # Harmonize special cases (as in networks.py)
-            if drug_label == "Fluor_006u":
-                drug_key = "5Fluor_006u"
-            elif drug_label == "Azacyt_1,5u":
-                drug_key = "Azacyt_1.5u"
-            elif drug_label == "Bafilo_1,2n":
-                drug_key = "Bafilo_1.2n"
-            else:
-                drug_key = drug_label
-
-            # Scale to [0, 1] for colormap
-            cmap[drug_key] = (color_int + 1) / 100.0
-
-    print(f"[info] Loaded {len(cmap)} entries from color mapping.")
-    return cmap
-
-
-def load_logfc_matrix(path: Path) -> pd.DataFrame:
-    """
-    Load log2FC matrix (barcodes x conditions) from DESeq2 output.
-    Assumes rows = barcodes, columns = conditions.
-    """
-    df = pd.read_csv(path, sep=";", header=0, index_col=0)
-    print("[log2FC] Loaded matrix with shape:", df.shape)
-    df = df.astype(float)
-    df = df.dropna(axis=0, how="all").dropna(axis=1, how="all")
-
-    # Safety: check for duplicate columns
-    if df.columns.duplicated().any():
-        dup = df.columns[df.columns.duplicated()].tolist()
-        raise ValueError(f"Duplicate condition columns in logFC matrix: {dup}")
-
-    print("[log2FC] After dropping all-NaN rows/cols:", df.shape)
-    return df
-
-
-def load_corr_matrix(logfc_df: pd.DataFrame, corr_file: Path) -> pd.DataFrame:
-    """
-    Load correlation matrix from file if present,
-    otherwise compute Pearson correlation on the logFC matrix.
-    """
-    if corr_file.exists():
-        corr = pd.read_csv(corr_file, sep=";", header=0, index_col=0)
-        corr = corr.astype(float)
-        print("[corr] Loaded precomputed correlation matrix:", corr.shape)
-    else:
-        print("[corr] Computing Pearson correlation from logFC matrix...")
-        corr = logfc_df.corr(method="pearson", min_periods=1)
-        print("[corr] Computed correlation matrix:", corr.shape)
-
-    # Ensure perfect diagonal
-    np.fill_diagonal(corr.values, 1.0)
-    return corr
-
-
-# %% [markdown]
-# ## 2. Load data
-#
-# Here we load:
-# - the log2 fold-change matrix (DESeq2 results merged across conditions)
-# - the correlation matrix between conditions
-# - an optional drug color mapping
-
-# %%
-logfc = load_logfc_matrix(LOGFC_FILE)
-corr = load_corr_matrix(logfc, CORR_FILE)
-color_mapping = load_color_mapping(COLOR_MAP_FILE)
-
-logfc.head()
-
-# %% [markdown]
-# Quick sanity checks: basic statistics of log2FC values and fraction of missing values.
-
-# %%
-logfc_values = logfc.values.flatten()
-nan_mask = np.isnan(logfc_values)
-print("Total values      :", logfc_values.size)
-print("NaN values        :", nan_mask.sum())
-print("Non-NaN values    :", (~nan_mask).sum())
-
-print("\nSummary statistics (non-NaN):")
-print(pd.Series(logfc_values[~nan_mask]).describe())
-
-# %% [markdown]
-# ### Distribution of log2FC values
-#
-# We look at the global distribution (all barcodes, all conditions).
-
-# %%
-plt.figure(figsize=(6, 4))
-sns.histplot(logfc_values[~nan_mask], bins=100, kde=True)
-plt.xlabel("log2 fold-change")
-plt.ylabel("Count")
-plt.title("Global distribution of log2FC (all barcodes, all conditions)")
-plt.tight_layout()
-plt.show()
-
-# %% [markdown]
-# You can optionally clip extreme values to see the main bulk more clearly.
-
-# %%
-plt.figure(figsize=(6, 4))
-clipped_vals = np.clip(logfc_values[~nan_mask], -5, 5)
-sns.histplot(clipped_vals, bins=100, kde=True)
-plt.xlabel("log2 fold-change (clipped to [-5, 5])")
-plt.ylabel("Count")
-plt.title("Distribution of log2FC (clipped)")
-plt.tight_layout()
-plt.show()
-
-# %% [markdown]
-# ## 3. Figure 3 – Drug clustering based on barcode signatures
-#
-# Each column is a condition; each row is a barcode.
-# We cluster both barcodes and conditions based on log2FC profiles.
-#
-# To keep the figure readable, we:
-# - clip log2FC values to [-4, 4]
-# - optionally restrict to the most variable barcodes
-
-# %%
-# Compute per-barcode variance across conditions
-barcode_var = logfc.var(axis=1, skipna=True)
-barcode_var.describe()
-
-# %%
-# Select a subset of most variable barcodes for plotting
-# (otherwise the heatmap can be huge)
-N_BARCODES = 3000  # adjust as needed (e.g. 1000, 5000)
-top_barcodes = barcode_var.sort_values(ascending=False).head(N_BARCODES).index
-
-logfc_subset = logfc.loc[top_barcodes]
-logfc_subset_clipped = logfc_subset.clip(lower=-4, upper=4)
-
-logfc_subset_clipped.shape
-
-# %%
-# Clustered heatmap (Figure 3 style)
-sns.set(font_scale=0.6)
-
-g = sns.clustermap(
-    logfc_subset_clipped,
-    method="complete",
-    metric="euclidean",
-    cmap="RdBu_r",
-    center=0.0,
-    xticklabels=False,
-    yticklabels=False,
-    robust=False,
-    figsize=(10, 12),
-)
-
-g.fig.suptitle(
-    f"Drug clustering based on barcode signatures (top {N_BARCODES} variable barcodes)",
-    y=1.02,
-)
-
-fig3_pdf = FIG_DIR / "Fig3_drug_signature_heatmap_topBarcodes.pdf"
-fig3_png = FIG_DIR / "Fig3_drug_signature_heatmap_topBarcodes.png"
-
-g.fig.savefig(fig3_pdf, bbox_inches="tight")
-g.fig.savefig(fig3_png, dpi=300, bbox_inches="tight")
-
-plt.show()
-
-print("Saved:", fig3_pdf)
-print("Saved:", fig3_png)
-
-# %% [markdown]
-# ### Sanity check: which drugs / conditions cluster together?
-#
-# We can inspect the ordered column labels from the clustermap.
-
-# %%
-ordered_conditions = g.dendrogram_col.reordered_ind
-ordered_cols = [logfc_subset_clipped.columns[i] for i in ordered_conditions]
-ordered_cols[:20]
-
-# %% [markdown]
-# You can search for specific drugs (e.g. EGFR inhibitors, chemotherapies) in the ordered condition list.
-
-# %%
-# Example: find positions of some manually chosen drugs (adjust names to your dataset)
-keywords = ["Gefitinib", "Lazertinib", "Osimertinib", "Carboplatin", "Cisplatin"]
-
-for kw in keywords:
-    matches = [c for c in ordered_cols if kw in c]
-    print(f"\nKeyword: {kw}")
-    for m in matches:
-        print("  ", m)
-
-# %% [markdown]
-# ## 4. Figure 4 – Drug–drug correlation clustered heatmap
-#
-# Each cell shows the Pearson correlation between two conditions
-# (based on the log2FC profiles across barcodes).
-#
-# - Blue: correlation = 1
-# - Red: correlation = -1
-# - White: correlation ~ 0
-
-# %%
-sns.set(font_scale=0.5)
-
-g_corr = sns.clustermap(
-    corr,
-    method="complete",
-    metric="euclidean",
-    cmap="RdBu_r",
-    vmin=-1.0,
-    vmax=1.0,
-    center=0.0,
-    xticklabels=False,
-    yticklabels=False,
-    figsize=(10, 10),
-)
-
-g_corr.fig.suptitle("Drug–drug correlation clustered heatmap (Pearson r)", y=1.02)
-
-fig4_pdf = FIG_DIR / "Fig4_drug_correlation_heatmap.pdf"
-fig4_png = FIG_DIR / "Fig4_drug_correlation_heatmap.png"
-
-g_corr.fig.savefig(fig4_pdf, bbox_inches="tight")
-g_corr.fig.savefig(fig4_png, dpi=300, bbox_inches="tight")
-
-plt.show()
-
-print("Saved:", fig4_pdf)
-print("Saved:", fig4_png)
-
-# %% [markdown]
-# ### Inspect correlation of a given condition
-#
-# Helper: display the conditions most correlated with a selected condition.
-
-# %%
-def top_correlated_conditions(corr_matrix: pd.DataFrame, condition: str, n: int = 10):
-    if condition not in corr_matrix.columns:
-        raise ValueError(f"Condition '{condition}' not in correlation matrix.")
-    series = corr_matrix[condition].dropna().sort_values(ascending=False)
-    return series.head(n)
-
-
-# Example: replace with a real condition name from your data
-example_condition = corr.columns[0]
-print("Example condition:", example_condition)
-top_correlated_conditions(corr, example_condition, n=10)
-
-# %% [markdown]
-# ## 5. Figure 5 – Drug network based on correlation
-#
-# We build a graph where:
-#
-# - nodes = conditions
-# - edges connect conditions with Pearson correlation ≥ threshold (default 0.8)
-# - node colors reflect drug annotation (if `color_mapping.tsv` is available)
-#
-# Positioning is done with a Fruchterman–Reingold force-directed layout
-# (`nx.spring_layout`).
-
-# %%
+# ---- Core parameters ----
+# Correlation threshold for network edges
 CORR_THRESHOLD = 0.8
 
-def build_correlation_graph(corr_matrix: pd.DataFrame, threshold: float = 0.8) -> nx.Graph:
-    """
-    Build graph from correlation matrix:
-    - Add edge between (i, j) if corr(i, j) >= threshold
-    - Ignore self-correlations
-    """
-    G = nx.Graph()
-    conditions = corr_matrix.index.tolist()
+# Number of top variable barcodes to plot in Fig.3 (None = all)
+# You can set this to e.g. 3000 if the full matrix is too heavy to display.
+N_TOP_VARIABLE_BARCODES = None  # or an int
 
-    for i, s in enumerate(conditions):
-        for j in range(i + 1, len(conditions)):
-            t = conditions[j]
-            r = corr_matrix.iloc[i, j]
-            if np.isnan(r):
-                continue
-            if r >= threshold:
-                G.add_edge(s, t, weight=float(r))
-
-    return G
+print("LOGFC_FILE:", LOGFC_FILE)
+print("ANNOT_FILE:", ANNOT_FILE)
+print("Figures will be saved to:", FIG_DIR.resolve())
 
 
-G = build_correlation_graph(corr, threshold=CORR_THRESHOLD)
-print("Number of nodes:", G.number_of_nodes())
-print("Number of edges:", G.number_of_edges())
+# ## 2. Load log2FC matrix and annotation
+# 
+# The log2FC file is expected to have:
+# - rows: barcodes (or genomic features),
+# - columns: conditions (CtrlMs_000u, Temps0_000u, drugs, doses, experiments, etc.),
+# - all values: numeric log2 fold changes (after p-value filtering and imputation).
+# 
+# The annotation file is expected to contain per-condition information (e.g. drug class).
+# 
 
-# %%
-# Build node colors using drug labels + color_mapping
-node_colors = []
-for n in G.nodes():
-    drug_label = condition_to_drug_label(n)
-    c = color_mapping.get(drug_label, 0.5)  # default mid grey if not found
-    node_colors.append(c)
+# In[39]:
 
-# Node labels: keep only the drug name without dose for readability
-labels = {n: condition_to_drug_label(n).split("_")[0] for n in G.nodes()}
 
-# Compute layout
-pos = nx.spring_layout(G, k=0.15, iterations=200, seed=42)
+# Load log2FC matrix
+logfc_df = pd.read_csv(LOGFC_FILE, sep=";", header=0, index_col=0)
+print("Original logFC shape (rows × cols):", logfc_df.shape)
 
-plt.figure(figsize=(10, 10))
-nx.draw_networkx_edges(
-    G,
-    pos,
-    edgelist=G.edges(),
-    width=0.5,
-    alpha=0.6,
-    edge_color="black",
+# Ensure numeric, coerce non-numeric to NaN then fill with 0 (should already be numeric & imputed)
+logfc_df = logfc_df.apply(pd.to_numeric, errors="coerce")
+logfc_df = logfc_df.fillna(0.0)
+
+# Sort columns case-insensitively, like in your correlation script
+logfc_df = logfc_df.reindex(sorted(logfc_df.columns, key=lambda x: x.lower()), axis=1)
+
+print("LogFC matrix after cleaning:")
+display(logfc_df.iloc[:5, :8])
+
+# Load annotation of conditions (optional but highly recommended for nice plots)
+if ANNOT_FILE.exists():
+    annot_df = pd.read_csv(ANNOT_FILE, sep=";")
+    # First column is condition name
+    annot_df = annot_df.set_index(annot_df.columns[0])
+    print("Annotation columns:", list(annot_df.columns))
+    # Reindex to match conditions in logfc_df (safe subset)
+    annot_df = annot_df.reindex(logfc_df.columns)
+else:
+    annot_df = None
+    print("Warning: annotation file not found – plots will be unannotated.")
+
+
+# ## 3. Optional: restrict to top variable barcodes
+# 
+# To avoid a gigantic heatmap, you can restrict to the most variable barcodes across conditions.
+# If `N_TOP_VARIABLE_BARCODES` is `None`, all barcodes are used.
+# 
+
+# In[40]:
+
+
+if N_TOP_VARIABLE_BARCODES is not None and N_TOP_VARIABLE_BARCODES < logfc_df.shape[0]:
+    variances = logfc_df.var(axis=1)
+    top_idx = variances.sort_values(ascending=False).head(N_TOP_VARIABLE_BARCODES).index
+    logfc_sub = logfc_df.loc[top_idx].copy()
+    print(f"Using top {N_TOP_VARIABLE_BARCODES} most variable barcodes out of {logfc_df.shape[0]}.")
+else:
+    logfc_sub = logfc_df.copy()
+    print("Using all barcodes:", logfc_sub.shape[0])
+
+
+# ## 4. Fig.3 – Heatmap of barcode signatures
+# 
+# We reproduce the idea of your Fig.3:
+# - rows: barcodes,
+# - columns: conditions,
+# - values: column-wise normalized log2FC (z-score per condition),
+# - optional column annotation (drug classes, MOA, etc.).
+# 
+
+# In[43]:
+
+
+# Column-wise z-score (normalize each condition)
+z_logfc = logfc_sub.copy()
+z_logfc = (z_logfc - z_logfc.mean(axis=0)) / (z_logfc.std(axis=0, ddof=0) + 1e-9)
+
+print("Z-scored logFC shape:", z_logfc.shape)
+
+# Build annotation for seaborn, if available
+col_colors = None
+if annot_df is not None:
+    # Choose one annotation column for coloring (modify if needed)
+    # Example: a column named 'Class' or 'Mechanism' or similar.
+    # If several exist, you can change this variable.
+    annot_col_name = None
+    for candidate in ["colname"]:
+        if candidate in annot_df.columns:
+            annot_col_name = candidate
+            break
+
+    if annot_col_name is not None:
+        cond_to_class = annot_df[annot_col_name].astype(str)
+        unique_classes = cond_to_class.unique()
+        palette = sns.color_palette("tab20", n_colors=len(unique_classes))
+        class_to_color = {c: palette[i] for i, c in enumerate(unique_classes)}
+        col_colors = cond_to_class.map(class_to_color)
+        print("Using annotation column for colors:", annot_col_name)
+    else:
+        print("No suitable annotation column found for color mapping.")
+
+# Plot heatmap (rows not clustered, columns clustered or not as you prefer)
+plt.figure(figsize=(14, 8))
+sns.heatmap(
+    z_logfc,
+    cmap="RdBu_r",
+    center=0,
+    cbar_kws={"label": "normalized log2FC (z-score)"},
+    xticklabels=False,
+    yticklabels=False
 )
-
-nodes = nx.draw_networkx_nodes(
-    G,
-    pos,
-    node_size=300,
-    node_color=node_colors,
-    cmap="viridis",
-    alpha=0.9,
-)
-
-nx.draw_networkx_labels(G, pos, labels=labels, font_size=6)
-plt.title(f"Drug network (Pearson r ≥ {CORR_THRESHOLD})")
-plt.axis("off")
-
-fig5_pdf = FIG_DIR / "Fig5_drug_network.pdf"
-fig5_png = FIG_DIR / "Fig5_drug_network.png"
-
-plt.savefig(fig5_pdf, bbox_inches="tight")
-plt.savefig(fig5_png, dpi=300, bbox_inches="tight")
+plt.title("Fig.3 – Barcode signatures (z-scored log2FC)")
+plt.tight_layout()
+plt.savefig(FIG_DIR / "fig3_barcode_signatures_heatmap.png", dpi=300, bbox_inches="tight")
+plt.savefig(FIG_DIR / "fig3_barcode_signatures_heatmap.pdf", bbox_inches="tight")
 plt.show()
 
-print("Saved:", fig5_pdf)
-print("Saved:", fig5_png)
 
-# %% [markdown]
-# ### Optional: legend for drug classes
-#
-# If your `color_mapping.tsv` encodes drug *classes* rather than individual drugs,
-# you can build a small legend by hand (e.g. manually mapping class → color).
-# This is project-specific and can be customized later.
-#
-# For now, you can inspect the mapping between node labels and numerical colors:
+# ## 5. Fig.4 – Drug–drug correlation matrix
+# 
+# We compute the Pearson correlation between conditions using the log2FC values and plot a clustered heatmap.
+# 
+# - each column = one condition (drug/dose/experiment),
+# - each cell = correlation between two conditions,
+# - clustering on rows/columns gives the 2D drug map.
+# 
 
-# %%
-drug_label_to_color = {}
-for n in G.nodes():
-    drug_label = condition_to_drug_label(n)
-    drug_label_to_color[drug_label] = color_mapping.get(drug_label, 0.5)
+# In[44]:
 
-list(drug_label_to_color.items())[:20]
 
-# %% [markdown]
-# ## 6. Summary
-#
-# In this notebook, we:
-#
-# - Loaded DESeq2-derived log2FC per barcode and per condition
-# - Visualized barcode signatures across drugs (heatmap + clustering)
-# - Computed and visualized drug–drug correlations
-# - Built a correlation-based drug network with node colors based on annotation
-#
-# This notebook is a good "showcase" complement to the more scripted pipeline,
-# and can be linked from your project README as an illustrative entry point.
+# Correlation between conditions (columns)
+corr_mat = logfc_df.corr(method="pearson", min_periods=1)
+print("Correlation matrix shape:", corr_mat.shape)
+
+# Clustered heatmap of correlations
+g = sns.clustermap(
+    corr_mat,
+    cmap="RdBu_r",
+    vmin=-1,
+    vmax=1,
+    center=0,
+    figsize=(12, 12),
+    xticklabels=False,
+    yticklabels=False,
+    cbar_kws={"label": "Pearson correlation"},
+    method="complete"
+)
+g.fig.suptitle("Fig.4 – Drug–drug correlation clustered heatmap", y=1.02)
+plt.savefig(FIG_DIR / "fig4_drug_drug_correlation_clustered.png", dpi=300, bbox_inches="tight")
+plt.savefig(FIG_DIR / "fig4_drug_drug_correlation_clustered.pdf", bbox_inches="tight")
+plt.show()
+
+
+# ## 6. Fig.5 – Drug network (correlation ≥ threshold)
+# 
+# We build an undirected graph:
+# - nodes = conditions,
+# - edge between two nodes if their correlation ≥ `CORR_THRESHOLD` (default 0.8),
+# - node color = drug class (if annotation available),
+# - layout = Fruchterman–Reingold (spring layout), like in your original description.
+# 
+
+# In[45]:
+
+
+# Build graph from correlation matrix
+G = nx.Graph()
+
+# Add nodes with optional class attribute
+for cond in corr_mat.columns:
+    node_attrs = {}
+    if annot_df is not None:
+        # copy entire annotation row as attributes
+        if cond in annot_df.index:
+            for col in annot_df.columns:
+                node_attrs[col] = annot_df.loc[cond, col]
+    G.add_node(cond, **node_attrs)
+
+# Add edges based on correlation threshold
+for i, cond_i in enumerate(corr_mat.columns):
+    for j, cond_j in enumerate(corr_mat.columns):
+        if j <= i:
+            continue
+        r = corr_mat.loc[cond_i, cond_j]
+        if r >= CORR_THRESHOLD:
+            G.add_edge(cond_i, cond_j, weight=float(r))
+
+print("Number of nodes:", G.number_of_nodes())
+print("Number of edges (|r| >=", CORR_THRESHOLD, "):", G.number_of_edges())
+
+# Choose node colors from a class attribute if available
+node_classes = None
+if annot_df is not None:
+    for candidate in ["Class", "class", "DrugClass", "drug_class", "MOA", "moa"]:
+        if candidate in annot_df.columns:
+            node_classes = candidate
+            break
+
+if node_classes is not None:
+    class_values = []
+    for n in G.nodes:
+        if n in annot_df.index:
+            class_values.append(str(annot_df.loc[n, node_classes]))
+        else:
+            class_values.append("NA")
+    unique_classes = sorted(set(class_values))
+    palette = sns.color_palette("tab20", n_colors=len(unique_classes))
+    class_to_color = {c: palette[i] for i, c in enumerate(unique_classes)}
+    node_colors = [class_to_color[c] for c in class_values]
+else:
+    node_colors = "tab:blue"
+    unique_classes = None
+    class_to_color = None
+    print("No class annotation found for node coloring.")
+
+# Spring layout (Fruchterman–Reingold)
+pos = nx.spring_layout(G, seed=42)
+
+plt.figure(figsize=(10, 10))
+nx.draw_networkx_edges(G, pos, alpha=0.3, width=0.5)
+nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=80, linewidths=0.5, edgecolors="black")
+nx.draw_networkx_labels(G, pos, font_size=4)
+
+plt.title(f"Fig.5 – Drug similarity network (r ≥ {CORR_THRESHOLD})")
+plt.axis("off")
+plt.tight_layout()
+plt.savefig(FIG_DIR / "fig5_drug_network.png", dpi=300, bbox_inches="tight")
+plt.savefig(FIG_DIR / "fig5_drug_network.pdf", bbox_inches="tight")
+plt.show()
+
+# Optional: legend for classes
+if unique_classes is not None and class_to_color is not None:
+    fig, ax = plt.subplots(figsize=(4, 4))
+    for c in unique_classes:
+        ax.scatter([], [], color=class_to_color[c], label=c, s=40)
+    ax.legend(title=node_classes, frameon=False, fontsize=6)
+    ax.set_axis_off()
+    plt.tight_layout()
+    plt.savefig(FIG_DIR / "fig5_drug_network_legend.png", dpi=300, bbox_inches="tight")
+    plt.savefig(FIG_DIR / "fig5_drug_network_legend.pdf", bbox_inches="tight")
+    plt.show()
+
+
+# ## 7. Quick summary
+# 
+# This notebook:
+# - loads `merged_logfc_pval_filtered_deseq2_2023_fillna.csv`,
+# - optionally restricts to the most variable barcodes,
+# - generates three main figures:
+#   1. **Fig.3** – barcode signatures heatmap,
+#   2. **Fig.4** – clustered correlation heatmap of conditions,
+#   3. **Fig.5** – correlation-based drug similarity network.
+# 
+# All figures are saved in the `figures/` folder as both `.png` and `.pdf`.
+# 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
 
