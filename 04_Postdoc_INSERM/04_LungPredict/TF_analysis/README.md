@@ -97,11 +97,9 @@ Optional PCA is applied to the patient expression profiles.
 ## 4. Pipeline Diagram
 
 ```mermaid
-flowchart TD;
-
+graph TD;;
 A[Expression TPM] --> C[Synchronise];
 B[Unified annotations] --> C;
-
 C --> D[Filtering (optional)];
 D --> E[Expression heatmaps];
 D --> F[TF activity\n(TCGA + GTEx)];
@@ -167,11 +165,9 @@ Optional PCA is applied to the patient expression profiles.
 ## 4. Pipeline Diagram
 
 ```mermaid
-flowchart TD;
-
+graph TD;;
 A[Expression TPM] --> C[Synchronise];
 B[Unified annotations] --> C;
-
 C --> D[Filtering (optional)];
 D --> E[Expression heatmaps];
 D --> F[TF activity\n(TCGA + GTEx)];
@@ -327,4 +323,5 @@ modular and reproducible execution via a single pipeline script.
 
 
 It enables consistent multi-layer molecular analysis across the LungPredict cohort.
+
 
