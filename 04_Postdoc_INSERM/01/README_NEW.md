@@ -25,33 +25,33 @@ python -m abm_pipeline.cli --help
 
 ## Pipeline principal (par patient)
 
-Exemple pour le patient CAS1802 :
+Exemple pour le patient1 :
 
 ### 1. Agrégation des simulations OpenMOLE
 ```
-python -m abm_pipeline.cli aggregate CAS1802/ABM_2D_CAS1802 CAS1802/outputs_ABM_2D_CAS1802.txt
+python -m abm_pipeline.cli aggregate patient1/ABM_2D_patient1 patient1/outputs_ABM_2D_patient1.txt
 ```
 
 ### 2. Calcul Pareto + figure
 ```
 python -m abm_pipeline.cli pareto \
-    CAS1802/outputs_ABM_2D_CAS1802_duplicates_removed_filtered_only_samples_kept_50.0.txt \
-    CAS1802/pareto_ABM_2D_CAS1802
+    patient1/outputs_ABM_2D_patient1_duplicates_removed_filtered_only_samples_kept_50.0.txt \
+    patient1/pareto_ABM_2D_patient1
 ```
 
 ### 3. Extraction des 3 sets (best_via, knee_point, best_conc)
 ```
 
 python -m abm_pipeline.cli bestsets \
-    CAS1802/pareto_ABM_2D_CAS1802.txt \
-    CAS1802/best_param_sets_ABM_2D_CAS1802.tsv
+    patient1/pareto_ABM_2D_patient1.txt \
+    patient1/best_param_sets_ABM_2D_patient1.tsv
 ```
 
 ### 4. Fichier de paramètres NetLogo pour le patient
 ```
 python -m abm_pipeline.cli make-behaviorspace \
-    CAS1802/best_param_sets_ABM_2D_CAS1802.tsv \
-    CAS1802/netlogo_best_param_sets_ABM_2D_CAS1802.txt \
+    patient1/best_param_sets_ABM_2D_patient1.tsv \
+    patient1/netlogo_best_param_sets_ABM_2D_patient1.txt \
     --patient-dict patient_dict.txt
 ```
 
@@ -64,7 +64,7 @@ python -m abm_pipeline.cli patient-shell .
 
 ### 7. Lancement du script sous Git Bash
 ```bash
-bash patient_command_CAS1802.sh
+bash patient_command_patient1.sh
 ```
 
 
