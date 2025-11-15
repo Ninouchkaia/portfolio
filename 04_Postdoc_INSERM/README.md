@@ -1,11 +1,8 @@
 # Postdoctoral Research – INSERM CRCT (2020–2023)
 This section summarizes my work at the Cancer Research Center of Toulouse (CRCT),
 focused on modeling tumor–immune interactions, transcriptomics, and integrative bioinformatics.
-Travaux menés au Centre de Recherches en Cancérologie de Toulouse : modélisation multi-agents, analyses RNAseq, et bioinformatique translationnelle.
 
-# **4. Postdoc Inserm — CRCT Toulouse (2020–2023)**
-
-## **4.1. Modélisation multi-agents de l’écosystème tumoral (iScience 2023)**
+## **1. Modélisation multi-agents de l’écosystème tumoral (iScience 2023)**
 
 <p align="center">
   <img src="figures/tumor_ecosystem_modeling.png" width="520px">
@@ -26,7 +23,7 @@ Simuler l’évolution spatio-temporelle de tumeurs solides en incluant dynamiqu
 
 ---
 
-## **4.2. Polarisation macrophagique dans la leucémie lymphoïde chronique**
+## **2. Polarisation macrophagique dans la leucémie lymphoïde chronique**
 
 <p align="center">
   <img src="figures/macrophage_polarization.png" width="520px">
@@ -45,7 +42,7 @@ Comprendre la transition des macrophages vers un état pro-tumoral (NLC) et iden
 
 ---
 
-## **4.3. Prédiction de la réponse à l’immunothérapie — GEMDECAN**
+## **3. Prédiction de la réponse à l’immunothérapie — GEMDECAN**
 
 <p align="center">
   <img src="figures/immunotherapy_prediction.png" width="520px">
@@ -66,7 +63,7 @@ Identifier des signatures transcriptomiques robustes associées à la réponse �
 
 ---
 
-## **4.4. Analyse du microenvironnement tumoral — LungPredict**
+## **4. Analyse du microenvironnement tumoral — LungPredict**
 
 <p align="center">
   <img src="figures/lungpredict_deconvolution.png" width="520px">
@@ -86,7 +83,7 @@ Caractériser la composition cellulaire et les programmes transcriptionnels des 
 
 ---
 
-## **4.5. Repositionnement thérapeutique COVID-19 — Network Medicine**
+## **5. Repositionnement thérapeutique COVID-19 — Network Medicine**
 
 <p align="center">
   <img src="figures/covid_network.png" width="520px">
@@ -105,7 +102,7 @@ Identifier des candidats thérapeutiques via analyse d'interactions virus–hôt
 
 ---
 
-## **4.6. Effets systémiques du SARS-CoV-2**
+## **6. Effets systémiques du SARS-CoV-2**
 
 <p align="center">
   <img src="figures/sarscov2_systemic.png" width="520px">
@@ -124,7 +121,7 @@ Décrire comment les protéines virales perturbent les fonctions cellulaires dan
 
 ---
 
-## **4.7. Dynamique clonale & single-cell RNAseq**
+## **7. Dynamique clonale & single-cell RNAseq**
 
 <p align="center">
   <img src="figures/scRNA_clonality.png" width="520px">
