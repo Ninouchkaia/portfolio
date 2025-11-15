@@ -253,26 +253,17 @@ results/validation/
 
 # Pipeline Summary
 
-```
-Experimental Data
-        ↓
-Patient-Specific Models
-        ↓
-OpenMOLE NSGA-II Optimization
-        ↓
-Pareto Fronts
-        ↓
-Best_via / Knee-Point / Best_conc Sets
-        ↓
-BehaviorSpace XML Generation
-        ↓
-NetLogo Headless Simulations
-        ↓
-Model Validation vs Experimental Data
-        ↓
-Sensitivity Analysis
-        ↓
-Advanced Parameter Analysis (PCA, Violin, Stats)
+```mermaid
+flowchart LR;
+    A[Experimental Data] --> B[Patient-Specific Models];
+    B --> C[OpenMOLE NSGA-II];
+    C --> D[Pareto Fronts];
+    D --> E[Extract Parameter Sets];
+    E --> F[BehaviorSpace XML Generation];
+    F --> G[NetLogo Headless Simulations];
+    G --> H[Model Validation vs Experimental Data];
+    H --> I[Sensitivity Analysis];
+    I --> J[Advanced Parameter Analysis];
 ```
 
 ---
