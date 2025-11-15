@@ -21,6 +21,21 @@ All main steps are automated through the **`abm_pipeline`** Python package and a
 
 ---
 
+# Pipeline Summary
+
+```mermaid
+graph TD;;
+    A[Experimental Data] --> B[Patient-Specific Models];
+    B --> C[OpenMOLE NSGA-II];
+    C --> D[Pareto Fronts];
+    D --> E[Extract Parameter Sets];
+    E --> F[BehaviorSpace XML Generation];
+    F --> G[NetLogo Headless Simulations];
+    G --> H[Model Validation vs Experimental Data];
+    H --> I[Sensitivity Analysis];
+    I --> J[Advanced Parameter Analysis];
+```
+
 ## 2. Repository Structure
 
 At the top level:
@@ -409,5 +424,6 @@ results/advanced_analysis/
 ## 13. Contact & Citation
 
 If you use this pipeline or model, please cite the associated scientific publication and/or this repository.
+
 
 
