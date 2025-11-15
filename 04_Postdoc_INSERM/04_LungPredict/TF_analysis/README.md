@@ -1,327 +1,215 @@
 # LungPredict — TF Analysis Pipeline
 
-This directory implements a structured and reproducible workflow for analysing the LungPredict cohort at the transcriptional and transcription factor (TF) activity level.
+This directory provides a structured and reproducible workflow for transcriptional and transcription factor (TF) activity analysis in the LungPredict cohort.
 
 The pipeline integrates:
-- unified clinical + molecular annotations,
-- gene expression (TPM),
-- pathway- and expression-based clustering,
-- TF activity inference using DoRothEA + viper (TCGA & GTEx regulons),
+- unified annotations,
+- expression (TPM),
+- expression-based and pathway-based clusters,
+- TF activity inference with DoRothEA + viper,
 - annotated heatmaps,
-- regulon comparison,
+- TCGA vs GTEx comparison,
 - PCA.
-
-It is organised into a single master script and several small utility modules.
-
 ---
-```text
+
 ## 1. Directory Layout
+
+```
+
 TF_analysis/
 ├── data/
-│ ├── LP_FFPE_STAR_RSEM_TPM.txt
-│ ├── clinic_data_v2_clean.csv
-│ ├── ReactomeClustersAllPatients.csv
-│ ├── DeconvCancerClusters.txt
-│ ├── expression_based_patient_clusters_resCutCorrected.txt
-│ └── full_annotations_with_clusters_corrected1.txt
+│   ├── LP_FFPE_STAR_RSEM_TPM.txt
+│   ├── clinic_data_v2_clean.csv
+│   ├── ReactomeClustersAllPatients.csv
+│   ├── DeconvCancerClusters.txt
+│   ├── expression_based_patient_clusters_resCutCorrected.txt
+│   └── full_annotations_with_clusters_corrected1.txt
 │
 ├── scripts/
-│ ├── lungpredict_tf_pipeline.R
-│ ├── utils_logging.R
-│ ├── utils_annotations.R
-│ ├── utils_heatmaps.R
-│ └── utils_tf_activity.R
+│   ├── lungpredict_tf_pipeline.R
+│   ├── utils_logging.R
+│   ├── utils_annotations.R
+│   ├── utils_heatmaps.R
+│   └── utils_tf_activity.R
 │
 ├── results/
-│ ├── heatmaps_expression/
-│ ├── heatmaps_TF/
-│ ├── comparisons_tcga_gtex/
-│ ├── pca/
-│ └── logs/
-```
+│   ├── heatmaps_expression/
+│   ├── heatmaps_TF/
+│   ├── comparisons_tcga_gtex/
+│   ├── pca/
+│   └── logs/
+│
+└── README.md
 
-All inputs go in `data/`; all derived outputs are saved under `results/`.
+````
 
 ---
 
-## 2. Required Input Data
+## 2. Input Data
 
-| File | Description |
-|------|-------------|
-| **LP_FFPE_STAR_RSEM_TPM.txt** | TPM matrix, Gene × Patient |
-| **clinic_data_v2_clean.csv** | Clinical + mutational annotations |
-| **ReactomeClustersAllPatients.csv** | Pathway-level clustering |
-| **DeconvCancerClusters.txt** | Deconvolution-based clustering |
-| **expression_based_patient_clusters_resCutCorrected.txt** | Final expression clusters |
-| **full_annotations_with_clusters_corrected1.txt** | Final merged annotation table |
-
-The unified annotation table aggregates clinical and clustering metadata for all downstream visualisations.
+| File                                                  | Description                          |
+|-------------------------------------------------------|--------------------------------------|
+| `LP_FFPE_STAR_RSEM_TPM.txt`                           | Expression matrix (TPM)              |
+| `clinic_data_v2_clean.csv`                            | Clinical + mutational annotations    |
+| `ReactomeClustersAllPatients.csv`                     | Reactome-based clusters              |
+| `DeconvCancerClusters.txt`                            | Deconvolution-based clusters         |
+| `expression_based_patient_clusters_resCutCorrected.txt` | Final expression clusters          |
+| `full_annotations_with_clusters_corrected1.txt`       | Final unified annotation table       |
 
 ---
 
 ## 3. Workflow Overview
 
-### Step 1 — Load expression + annotation  
-The expression matrix and unified annotations are loaded and synchronised.
-
-### Step 2 — Optional clinical filtering  
-Filtering criteria (diagnosis, location, KRAS/EGFR/STK11 status, metastatic state…) can be applied directly through parameters.
-
-### Step 3 — Expression analysis  
-- expression heatmap (gene × patient),  
-- correlation matrix (patient × patient).  
-
-### Step 4 — TF activity inference  
-TF activities are computed using:
-- **DoRothEA TCGA** regulons  
-- **DoRothEA GTEx** regulons  
-via `viper`.
-
-### Step 5 — TF-level visualisation  
-Heatmaps:
-- TF × patient (all TFs),
-- TF × patient (filtered by variance),
-- TF-based patient correlation.
-
-### Step 6 — TCGA vs GTEx comparison  
-The two regulon sources are compared at:
-- patient level,
-- TF level,
-- difference matrix level.
-
-### Step 7 — PCA  
-Optional PCA is applied to the patient expression profiles.
+1. Load expression and unified annotations  
+2. Synchronise samples  
+3. Optional clinical filtering  
+4. Expression heatmaps + correlation  
+5. TF activity inference (DoRothEA TCGA & GTEx)  
+6. TF heatmaps + variance filtering  
+7. TCGA vs GTEx comparison  
+8. PCA  
 
 ---
 
 ## 4. Pipeline Diagram
 
 ```mermaid
-flowchart TD
-
-A[Expression TPM] --> C[Synchronise]
-B[Unified annotations] --> C
-
-C --> D[Filtering (optional)]
-D --> E[Expression heatmaps]
-D --> F[TF activity\n(TCGA + GTEx)]
-F --> G[TF heatmaps]
-F --> H[TCGA vs GTEx\ncomparison]
-D --> I[PCA]
-
-All inputs go in `data/`; all derived outputs are saved under `results/`.
-
----
-
-## 2. Required Input Data
-
-| File | Description |
-|------|-------------|
-| **LP_FFPE_STAR_RSEM_TPM.txt** | TPM matrix, Gene × Patient |
-| **clinic_data_v2_clean.csv** | Clinical + mutational annotations |
-| **ReactomeClustersAllPatients.csv** | Pathway-level clustering |
-| **DeconvCancerClusters.txt** | Deconvolution-based clustering |
-| **expression_based_patient_clusters_resCutCorrected.txt** | Final expression clusters |
-| **full_annotations_with_clusters_corrected1.txt** | Final merged annotation table |
-
-The unified annotation table aggregates clinical and clustering metadata for all downstream visualisations.
-
----
-
-## 3. Workflow Overview
-
-### Step 1 — Load expression + annotation  
-The expression matrix and unified annotations are loaded and synchronised.
-
-### Step 2 — Optional clinical filtering  
-Filtering criteria (diagnosis, location, KRAS/EGFR/STK11 status, metastatic state…) can be applied directly through parameters.
-
-### Step 3 — Expression analysis  
-- expression heatmap (gene × patient),  
-- correlation matrix (patient × patient).  
-
-### Step 4 — TF activity inference  
-TF activities are computed using:
-- **DoRothEA TCGA** regulons  
-- **DoRothEA GTEx** regulons  
-via `viper`.
-
-### Step 5 — TF-level visualisation  
-Heatmaps:
-- TF × patient (all TFs),
-- TF × patient (filtered by variance),
-- TF-based patient correlation.
-
-### Step 6 — TCGA vs GTEx comparison  
-The two regulon sources are compared at:
-- patient level,
-- TF level,
-- difference matrix level.
-
-### Step 7 — PCA  
-Optional PCA is applied to the patient expression profiles.
-
----
-
-## 4. Pipeline Diagram
-
-```mermaid
-flowchart TD
-
-A[Expression TPM] --> C[Synchronise]
-B[Unified annotations] --> C
-
-C --> D[Filtering (optional)]
-D --> E[Expression heatmaps]
-D --> F[TF activity\n(TCGA + GTEx)]
-F --> G[TF heatmaps]
-F --> H[TCGA vs GTEx\ncomparison]
-D --> I[PCA]
+graph TD;;
+A[Expression TPM] --> C[Synchronise];
+B[Unified annotations] --> C;
+C --> D[Filtering];
+D --> E[Expression heatmaps];
+D --> F[TF activity\nTCGA + GTEx];
+F --> G[TF heatmaps];
+F --> H[TCGA vs GTEx\ncomparison];
+D --> I[PCA];
 ```
 
-
+---
 
 ## 5. Running the Pipeline (RStudio)
 
-Set the working directory to TF_analysis/:
+Set the working directory to `TF_analysis/`:
 
+```r
 source("scripts/lungpredict_tf_pipeline.R")
-
+```
 
 Everything will run end-to-end:
 
-expression heatmaps,
+* expression heatmaps
+* TF activities (TCGA + GTEx)
+* TF visualisations
+* regulon comparisons
+* PCA
+* logs
 
-TF activities (TCGA + GTEx),
+All outputs are written under `results/`.
 
-TF visualisations,
+---
 
-regulon comparisons,
+## 6. Script Overview
 
-PCA,
+### `scripts/lungpredict_tf_pipeline.R`
 
-logs.
+Main orchestrator:
 
-Outputs are written under results/.
+* defines paths
+* loads utilities
+* executes the complete workflow
 
-6. Script Overview
-lungpredict_tf_pipeline.R
+### `scripts/utils_logging.R`
 
-Main orchestrator.
-Defines paths, loads utilities, executes the complete workflow.
+Light logging system:
 
-utils_logging.R
+* `init_logger()`
+* `info_print()`
+* `debug_print()`
 
-Light logging system.
-
-init_logger()
-
-info_print()
-
-debug_print()
-
-utils_annotations.R
+### `scripts/utils_annotations.R`
 
 Handles:
 
-annotation loading,
+* annotation loading
+* sample synchronisation
+* clinical filtering
+* mutation flags
+* age categorisation
 
-sample synchronisation,
-
-clinical filtering,
-
-mutation flags,
-
-age categorisation.
-
-utils_heatmaps.R
+### `scripts/utils_heatmaps.R`
 
 Creates publication-ready heatmaps using ComplexHeatmap:
 
-gene × patient,
+* gene × patient
+* patient × patient correlation
+* TF × patient
 
-patient × patient correlations,
-
-TF × patient (with annotation bars).
-
-utils_tf_activity.R
+### `scripts/utils_tf_activity.R`
 
 Provides:
 
-TF activity estimation with viper,
+* TF activity estimation with viper
+* regulon selection (A/B confidence)
+* variance filtering
+* TCGA vs GTEx comparison
 
-regulon selection (A/B confidence),
+---
 
-variance filtering,
+## 7. Outputs (`results/`)
 
-TCGA vs GTEx comparison.
+### Expression heatmaps
 
+`results/heatmaps_expression/`
 
+* `*_gene_by_patient.png`
+* `*_patient_correlation.png`
 
+### TF heatmaps
 
-## 7. Outputs (results/)
-Expression heatmaps
+`results/heatmaps_TF/`
 
-results/heatmaps_expression/
+* TF × patient
+* TF × patient (filtered)
+* TF correlation
 
-*_gene_by_patient.png
+### TCGA–GTEx comparison
 
-*_patient_correlation.png
+`results/comparisons_tcga_gtex/`
 
-TF heatmaps
+* patient correlation
+* TF correlation
+* difference matrices
 
-results/heatmaps_TF/
+### PCA
 
-TF × patient (all TFs)
+`results/pca/`
 
-TF × patient (filtered)
+* scree plot
+* PCA plots
+* variance summary
 
-TF correlation
+### Logs
 
-TCGA–GTEx comparison
+`results/logs/pipeline.log`
 
-results/comparisons_tcga_gtex/
-
-patient correlation
-
-TF correlation
-
-difference matrices
-
-PCA
-
-results/pca/
-
-scree plot
-
-PCA plots
-
-variance summary
-
-Logs
-
-results/logs/pipeline.log
-
+---
 
 ## 8. Dependencies
 
-Install:
-
+```r
 install.packages(c("tidyverse","ComplexHeatmap","circlize","RColorBrewer","viridis"))
 BiocManager::install(c("viper","dorothea","Hmisc"))
+```
+---
 
-## 9. Summary
 
-This pipeline provides:
 
-a unified annotation and expression framework,
 
-gene- and TF-level characterisation of patients,
 
-regulon-based TF inference (TCGA + GTEx),
 
-annotated heatmaps and PCA,
 
-modular and reproducible execution via a single pipeline script.
 
-It enables consistent multi-layer molecular analysis across the LungPredict cohort.
+
+
+
+
