@@ -187,15 +187,15 @@ E2 --> F1
 %% DESEQ2
 %% =========================
 
-subgraph F[Differential abundance (R / DESeq2)]
+subgraph F[Differential abundance: R / DESeq2]
     F1[Global DESeq2:<br>design = ~ exp + condition<br>ref = control<br><code>deseq2_script.R</code>] --> F2
     F1 --> F3
 
-    F2[Compute shrunk log2FC (apeglm)<br><code>lfcShrink</code> per condition] --> F4
+    F2[Compute shrunk log2FC: apeglm<br><code>lfcShrink</code> per condition] --> F4
 
-    F3[Per-experiment DESeq2 (11 experiments):<br>design = ~ condition<br>ref = control or CtrlMs_000u<br><code>deseq2_script.R</code>] --> F4
+    F3[Per-experiment DESeq2: 11 experiments:<br>design = ~ condition<br>ref = control or CtrlMs_000u<br><code>deseq2_script.R</code>] --> F4
 
-    F4[Output: many DESeq2 result CSV files<br>(one per condition per experiment)]
+    F4[Output: many DESeq2 result CSV files<br>one per condition per experiment]
 end
 
 F4 --> G1
@@ -207,7 +207,7 @@ F4 --> G1
 subgraph G[Aggregation & filtering]
     G1[Python/R: merge all DESeq2 results<br><code>merged_unfiltered_deseq2_with_expdate_2023.csv</code>] --> G2
     G2[Filter on p-value / remove NA<br><code>merged_logfc_pval_filtered_deseq2_2023.csv</code>] --> G3
-    G3[Fill missing logFC (optional)<br><code>merged_logfc_pval_filtered_deseq2_2023_fillna.csv</code>]
+    G3[Fill missing logFC: optional<br><code>merged_logfc_pval_filtered_deseq2_2023_fillna.csv</code>]
 end
 
 G3 --> H1
@@ -227,6 +227,7 @@ subgraph H[Visualization & high-level analysis]
 end
 
 ```
+
 
 
 
