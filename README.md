@@ -29,7 +29,7 @@ Chaque projet inclut :
 
 ---
 <details>
-# **1. Thèse — CNRS / ENS Paris (2008–2012)**  
+  <summary># **1. Thèse — CNRS / ENS Paris (2008–2012)**</summary>
 ## **Régulation transcriptionnelle de P-TEFb par HEXIM1 et TAT (HIV-1)**
 
 <p align="center">
@@ -53,8 +53,9 @@ Comprendre comment P-TEFb (CDK9/Cyclin T1) module la transition vers l’élonga
 
 ---
 </details>
+
 <details>
-# **2. Postdoc CONICET — Buenos Aires (2013–2015)**
+  <summary># **2. Postdoc CONICET — Buenos Aires (2013–2015)**</summary>
 
 ## **2.1. Usage évolutif des acides aminés (MBE 2014)**
 
@@ -120,8 +121,9 @@ Identifier des modules fonctionnels combinant domaines Ankyrine et motifs linéa
 
 ---
 </details>
+
 <details>
-# **3. Ingénierie logicielle — Airbus Defence & Space (2017–2019)**  
+  <summary># **3. Ingénierie logicielle — Airbus Defence & Space (2017–2019)**</summary>
 ## **Développement et maintenance de systèmes critiques**
 
 <p align="center">
@@ -143,8 +145,9 @@ Garantir la stabilité et la traçabilité de systèmes critiques de gestion de 
 
 ---
 </details>
+
 <details>
-# **4. Postdoc Inserm — CRCT Toulouse (2020–2023)**
+  <summary># **4. Postdoc Inserm — CRCT Toulouse (2020–2023)**</summary>
 
 ## **4.1. Modélisation multi-agents de l’écosystème tumoral (iScience 2023)**
 
@@ -285,8 +288,9 @@ Décrire comment les protéines virales perturbent les fonctions cellulaires dan
 
 ---
 </details>
+
 <details>
-# **5. Ressources transversales**
+  <summary># **5. Ressources transversales**</summary>
 
 - `environments/conda_bulk.yml` – environnement RNAseq  
 - `environments/conda_singlecell.yml` – environnement single-cell  
