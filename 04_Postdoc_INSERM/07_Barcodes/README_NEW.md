@@ -145,7 +145,7 @@ A1[Python: merge all runs<br><code>combined_runs.csv</code>] --> A2
 
 subgraph B[Barcode filtering & QC]
     A2 --> B1[Python: remove junk barcodes<br>keep barcodes detected in ≥5 controls AND ≥5 time-zero samples<br><code>drop_junk_barcodes_2023.py</code>]
-    B1 --> B2[Output:<br><code>combined_runs_filtered.csv</code> (12 305 barcodes)]
+    B1 --> B2[Output:<br><code>combined_runs_filtered.csv</code>]
 end
 
 B2 --> C1
@@ -227,4 +227,5 @@ subgraph H[Visualization & high-level analysis]
 end
 
 ```
+
 
