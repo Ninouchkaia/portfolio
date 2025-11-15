@@ -133,21 +133,6 @@ OpenMOLE writes population and Pareto data, which are then parsed by the Python 
 
 ```mermaid
 graph TD;;
-    A[Experimental data] --> B[Patient-specific configuration (config.py, patient_dict.txt)];
-    B --> C[OpenMOLE NSGA-II (parameter_exploration.oms)];
-    C --> D[OpenMOLE outputs (population, Pareto data)];
-    D --> E[Python: aggregate_data.py & pareto_front.py];
-    E --> F[extract_best_sets.py → best_via / knee_point / best_conc];
-    F --> G[behavior_space_files.py & xml_behavior_space.py];
-    G --> H[shell_commands/*.py → patient_command_*.sh];
-    H --> I[NetLogo headless simulations (BehaviorSpace CSVs)];
-    I --> J[model_validation (metrics.py, plots.py, validator.py)];
-    J --> K[sensitivity (sensitivity/utils.py, sensitivity/plots.py)];
-    K --> L[advanced_analysis (PCA, violin, stats)];
-```
-
-```mermaid
-graph TD;;
     A[Experimental Data] --> B[Patient-Specific Models];
     B --> C[OpenMOLE NSGA-II];
     C --> D[Pareto Fronts];
@@ -167,7 +152,6 @@ python -m abm_pipeline.cli --help
 ```
 
 The main commands are:
-
 - aggregate — aggregate OpenMOLE outputs
 - pareto — build Pareto fronts
 - bestsets — extract best_via / knee_point / best_conc parameter sets
@@ -422,6 +406,7 @@ results/advanced_analysis/
 ## 13. Contact & Citation
 
 If you use this pipeline or model, please cite the associated scientific publication and/or this repository.
+
 
 
 
