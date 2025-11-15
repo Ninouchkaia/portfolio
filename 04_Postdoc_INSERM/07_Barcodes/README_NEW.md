@@ -155,8 +155,8 @@ B2 --> C1
 %% =========================
 
 subgraph C[Handling zero counts]
-    C1[Replace missing reads with 0] --> C2[Python: replace zeros with small offset (0.01) <code>avoid_zero_reads.py</code>]
-    C2 --> C3[Alternative: replace ALL zeros (not only problematic ones) <code>avoid_zero_reads_by_replacing_all_zeros.py</code>]
+    C1[Replace missing reads with 0] --> C2[Python: replace zeros with small offset of 0.01 <code>avoid_zero_reads.py</code>]
+    C2 --> C3[Alternative: replace ALL zeros <code>avoid_zero_reads_by_replacing_all_zeros.py</code>]
     C3 --> C4[Multiply all counts ×100 to avoid decimals <code>multiply_counts_by_100.py</code>]
     C4 --> C5[Output: <code>combined_runs_filtered_avoid_zero_reads_all_replaced_x100.csv</code>]
 end
@@ -178,7 +178,7 @@ C5 --> E1
 %% =========================
 subgraph E[Annotation]
     E1[Python: build design table<br><code>build_design_2023.py</code>] --> E2
-    E2[Output:<br><code>design_6_2023.csv</code><br>(run, exp, replicate, condition)]
+    E2[Output:<br><code>design_6_2023.csv</code><br>run, exp, replicate, condition]
 end
 
 E2 --> F1
@@ -217,16 +217,17 @@ G3 --> H1
 %% =========================
 
 subgraph H[Visualization & high-level analysis]
-    H1[Heatmap of barcode signatures<br>(barcodes × conditions)<br>Fig.3<br><code>pheatmap_2023.R</code>] --> H2
+    H1[Heatmap of barcode signatures<br>barcodes × conditions<br>Fig.3<br><code>pheatmap_2023.R</code>] --> H2
 
-    H2[Correlation matrix of conditions<br>(Pearson on log2FC)<br>Fig.4<br><code>correl_deseq2_2023.py</code>] --> H3
+    H2[Correlation matrix of conditions<br>Pearson on log2FC<br>Fig.4<br><code>correl_deseq2_2023.py</code>] --> H3
 
-    H3[Drug similarity network<br>(edges r ≥ 0.8)<br>Fig.5<br><code>networkx</code> in notebook]
+    H3[Drug similarity network<br>edges r ≥ 0.8<br>Fig.5<br><code>networkx</code> in notebook]
 
-    H1 --> H4[PCA QC (runs/experiments/conditions)<br><code>FactoMineR</code> / <code>prcomp</code>]
+    H1 --> H4[PCA QC runs/experiments/conditions<br><code>FactoMineR</code> / <code>prcomp</code>]
 end
 
 ```
+
 
 
 
