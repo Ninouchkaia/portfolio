@@ -100,7 +100,7 @@ Optional PCA is applied to the patient expression profiles.
 graph TD;;
 A[Expression TPM] --> C[Synchronise];
 B[Unified annotations] --> C;
-C --> D[Filtering (optional)];
+C --> D[Filtering];
 D --> E[Expression heatmaps];
 D --> F[TF activity\n(TCGA + GTEx)];
 F --> G[TF heatmaps];
@@ -168,7 +168,7 @@ Optional PCA is applied to the patient expression profiles.
 graph TD;;
 A[Expression TPM] --> C[Synchronise];
 B[Unified annotations] --> C;
-C --> D[Filtering (optional)];
+C --> D[Filtering];
 D --> E[Expression heatmaps];
 D --> F[TF activity\n(TCGA + GTEx)];
 F --> G[TF heatmaps];
@@ -323,5 +323,6 @@ modular and reproducible execution via a single pipeline script.
 
 
 It enables consistent multi-layer molecular analysis across the LungPredict cohort.
+
 
 
