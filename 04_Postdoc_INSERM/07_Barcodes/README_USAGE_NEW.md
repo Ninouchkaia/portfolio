@@ -184,7 +184,7 @@ G2 --> H1;
 
 subgraph H[Visualization]
 H1[[pheatmap_2023.R<br>Fig3]] --> H2[[correl_deseq2_2023.py<br>Fig4]];
-H2 --> H3[[network visualisation (Python/R)<br>Fig5]];
+H2 --> H3[[network visualisation Python/R<br>Fig5]];
 end
 ```
 
@@ -200,16 +200,6 @@ end
 * [`scripts/04_correlations_and_networks.py`](scripts/04_correlations_and_networks.py)
 * [`scripts/05_generate_figures_for_paper.py`](scripts/05_generate_figures_for_paper.py)
 
-Additional preprocessing helpers:
-
-* [`drop_junk_barcodes_2023.py`](scripts/drop_junk_barcodes_2023.py)
-* [`avoid_zero_reads.py`](scripts/avoid_zero_reads.py)
-* [`avoid_zero_reads_by_replacing_all_zeros.py`](scripts/avoid_zero_reads_by_replacing_all_zeros.py)
-* [`multiply_counts_by_100.py`](scripts/multiply_counts_by_100.py)
-* [`normalize_per_millions_2023.py`](scripts/normalize_per_millions_2023.py)
-* [`build_design_2023.py`](scripts/build_design_2023.py)
-* [`correl_deseq2_2023.py`](scripts/correl_deseq2_2023.py)
-
 ---
 
 ### **R scripts**
@@ -224,3 +214,4 @@ Additional preprocessing helpers:
 * [`notebooks/01_visualize_barcode_signatures.ipynb`](notebooks/01_visualize_barcode_signatures.ipynb)
 
 ---
+
