@@ -28,7 +28,7 @@ Chaque projet inclut :
 - **Chemins génériques vers scripts/notebooks**
 
 ---
-
+<details>
 # **1. Thèse — CNRS / ENS Paris (2008–2012)**  
 ## **Régulation transcriptionnelle de P-TEFb par HEXIM1 et TAT (HIV-1)**
 
@@ -52,7 +52,8 @@ Comprendre comment P-TEFb (CDK9/Cyclin T1) module la transition vers l’élonga
 - `scripts/thesis/frap_analysis.py`
 
 ---
-
+</details>
+<details>
 # **2. Postdoc CONICET — Buenos Aires (2013–2015)**
 
 ## **2.1. Usage évolutif des acides aminés (MBE 2014)**
@@ -118,7 +119,8 @@ Identifier des modules fonctionnels combinant domaines Ankyrine et motifs linéa
 - `scripts/ankyrin_modularity/slim_detection.py`
 
 ---
-
+</details>
+<details>
 # **3. Ingénierie logicielle — Airbus Defence & Space (2017–2019)**  
 ## **Développement et maintenance de systèmes critiques**
 
@@ -140,7 +142,8 @@ Garantir la stabilité et la traçabilité de systèmes critiques de gestion de 
 - `scripts/airbus/windchill_automation.py`
 
 ---
-
+</details>
+<details>
 # **4. Postdoc Inserm — CRCT Toulouse (2020–2023)**
 
 ## **4.1. Modélisation multi-agents de l’écosystème tumoral (iScience 2023)**
@@ -281,7 +284,8 @@ Décrire comment les protéines virales perturbent les fonctions cellulaires dan
 - `scripts/singlecell/clonal_integration.R`
 
 ---
-
+</details>
+<details>
 # **5. Ressources transversales**
 
 - `environments/conda_bulk.yml` – environnement RNAseq  
