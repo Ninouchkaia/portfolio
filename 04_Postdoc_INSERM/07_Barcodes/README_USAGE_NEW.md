@@ -8,14 +8,23 @@ The pipeline processes 520 samples across 11 sequencing runs, filters barcodes, 
 ### **Main steps**
 
 1. **Merge raw runs** into a single barcode × sample matrix.
-2. **Filter unreliable barcodes** keep barcodes detected in **≥5 controls** and **≥5 time-zero samples.
-3. **Handle zeros** (biological absences vs technical dropouts).
-4. **Normalize** each sample to **1e6 reads** (CPM-like).
-5. **Build design tables**.
-6. **DESeq2** differential abundance.
-7. **Construct log2FC signatures**.
-8. **Perform visualization**: heatmaps, correlations, networks.
-9. **Notebook** with all Figures (3–5).
+2. **Filter unreliable barcodes**
+
+   * keep barcodes detected in **≥5 controls** and **≥5 time-zero samples**.
+3. **Handle zeros** (biological absences vs. technical dropouts): replace technical zeros by a small offset (0.01).
+4. **Normalize** each sample to a total of **1e6 reads** (CPM-like).
+5. **Build design tables** (run, experiment, replicate, condition).
+6. **DESeq2 analysis**
+
+   * log2 fold changes (per condition vs control),
+   * optional p-value filtering and shrinkage.
+7. **Construct log2FC signatures** (conditions × barcodes).
+8. **Downstream analyses**
+
+   * heatmaps (drug clusters),
+   * correlation matrix (drug–drug similarity),
+   * drug similarity network (edges: Pearson ≥ 0.8).
+9. **Notebook visualization** of Figures 3–5.
 
 ---
 
@@ -33,6 +42,12 @@ python scripts/01_preprocess_barcodes.py \
 
 ➡️ Script:
 **[`scripts/01_preprocess_barcodes.py`](scripts/01_preprocess_barcodes.py)**
+
+**What this does**
+
+* merges all runs into `combined_raw_counts.csv`
+* removes barcodes absent from *≥5 control* and *≥5 time-zero* samples
+* outputs filtered matrices
 
 **Outputs**
 
@@ -52,6 +67,11 @@ python scripts/02_qc_controls_variability.py \
 
 ➡️ Script:
 **[`scripts/02_qc_controls_variability.py`](scripts/02_qc_controls_variability.py)**
+
+This computes barcode-level control stability:
+[
+\frac{\max - \min}{\text{mean}}
+]
 
 **Outputs**
 
@@ -75,7 +95,7 @@ python scripts/03_build_deseq2_inputs.py \
 
 * `counts_for_deseq2.tsv`
 * `design_for_deseq2.tsv`
-
+   (columns: run, experiment, replicate, condition)
 ---
 
 # **4. Differential Abundance (DESeq2)**
@@ -92,12 +112,12 @@ source("scripts/deseq2_script.R")
 This script:
 
 * loads counts + design
-* runs DESeq2 (global or per-experiment)
-* performs log2FC shrinkage (apeglm)
-* outputs one CSV per condition
+* runs DESeq2 with `design = ~ exp + condition` or per-experiment `~ condition`
+* shrinks log2FC using **apeglm**
+* exports one result CSV per condition
 
-DESeq2 outputs go to:
 
+**All DESeq2 outputs should be saved in:**
 `results/deseq2/`
 
 ---
@@ -214,4 +234,5 @@ end
 * [`notebooks/01_visualize_barcode_signatures.ipynb`](notebooks/01_visualize_barcode_signatures.ipynb)
 
 ---
+
 
