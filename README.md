@@ -1,35 +1,21 @@
-# **Portfolio scientifique — Nina Verstraete**
-
-Ce dépôt rassemble une sélection détaillée de mes travaux en bioinformatique, modélisation, analyse de données multi-omics, biologie moléculaire et ingénierie logicielle.  
-Il reflète un parcours au croisement de la biologie, de la computation et des systèmes complexes, couvrant près de quinze années d’expériences en recherche académique, R&D et analyse de données.
-
-L’objectif est de présenter clairement les approches méthodologiques que j’ai développées, les raisons de ces choix, et les contributions scientifiques associées — dans une perspective reproductible et structurée.
-
----
-
-# **📌 Structure générale du portfolio**
-
-- **Thèse — CNRS / ENS Paris (2008–2012)**  
-  *(Régulation transcriptionnelle, microscopie avancée, mutagenèse, biologie cellulaire)*
-
-- **Postdoc — CONICET Buenos Aires (2013–2015)**  
-  *(Bioinformatique structurale, évolution moléculaire, modularité protéique)*
-
-- **Ingénierie logicielle — Airbus Defence & Space (2017–2019)**  
-  *(Développement logiciel, systèmes critiques, automatisation, architecture)*
+# **Portfolio scientifique**
 
 - **Postdoc — CRCT Inserm Toulouse (2020–2023)**  
   *(Modélisation multi-agents, RNAseq, single-cell, barcoding, immunologie computationnelle)*
 
-Chaque projet inclut :
-- **Objectif scientifique**  
-- **Contributions principales**  
-- **Figures illustratives**  
-- **Chemins génériques vers scripts/notebooks**
 
----
+
+
+  
+- **Postdoc — CONICET Buenos Aires (2013–2015)**  
+  *(Bioinformatique structurale, évolution moléculaire, modularité protéique)*
+
+
+  
 <details>
-  <summary># **1. Thèse — CNRS / ENS Paris (2008–2012)**</summary>
+  <summary>  - **1. Thèse — CNRS / ENS Paris (2008–2012)**</summary>  
+<summary>*(Régulation transcriptionnelle, microscopie avancée, mutagenèse, biologie cellulaire)*</summary>
+
 ## **Régulation transcriptionnelle de P-TEFb par HEXIM1 et TAT (HIV-1)**
 
 <p align="center">
@@ -53,6 +39,14 @@ Comprendre comment P-TEFb (CDK9/Cyclin T1) module la transition vers l’élonga
 
 ---
 </details>
+  
+
+- **Ingénierie logicielle — Airbus Defence & Space (2017–2020)**  
+  *(Développement logiciel, systèmes critiques, automatisation, architecture)*
+
+
+---
+
 
 <details>
   <summary># **2. Postdoc CONICET — Buenos Aires (2013–2015)**</summary>
