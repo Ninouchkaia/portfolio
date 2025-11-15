@@ -36,9 +36,9 @@ cts_mat <- as.matrix(cts[, -1])
 rownames(cts_mat) <- barcode_ids
 
 # Design must have a column with sample IDs matching colnames of counts
-# Suppose the column is called 'sample_id'
-if (!"sample_id" %in% names(coldata)) {
-  stop("Design file must contain a column named 'sample_id' matching column names of counts.")
+# Suppose the column is called 'sample'
+if (!"sample" %in% names(coldata)) {
+  stop("Design file must contain a column named 'sample' matching column names of counts.")
 }
 
 if (!all(colnames(cts_mat) == coldata$sample_id)) {
