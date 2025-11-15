@@ -179,10 +179,6 @@ D --> I[PCA];
 
 
 
-
-# ✅ **VERSION CORRIGÉE DU README (copier-coller direct)**
-
-```markdown
 # LungPredict — TF Analysis Pipeline
 
 This directory provides a structured and reproducible workflow for transcriptional and transcription factor (TF) activity analysis in the LungPredict cohort.
@@ -391,7 +387,6 @@ BiocManager::install(c("viper","dorothea","Hmisc"))
 ```
 
 ```
-```
 
 ---
 
@@ -529,6 +524,7 @@ Install:
 
 install.packages(c("tidyverse","ComplexHeatmap","circlize","RColorBrewer","viridis"))
 BiocManager::install(c("viper","dorothea","Hmisc"))
+
 
 
 
