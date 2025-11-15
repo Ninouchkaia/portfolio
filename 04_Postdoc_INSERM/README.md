@@ -84,10 +84,12 @@ Caractériser la composition cellulaire et les programmes transcriptionnels des 
 ---
 # **5. Drug Repurposing for COVID-19 through Network Medicine**
 
+[Accéder au dossier du projet](./05_covid_network_medicine/)
+
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
 **Period:** 2020–2021  
 **Publication:** [Network and Systems Medicine, 2020](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
-[Accéder au dossier du projet](./05_covid_network_medicine/)
+
 
 ---
 
@@ -127,7 +129,7 @@ Network biology · Data integration · Graph theory · Drug repurposing · Pytho
 ---
 
 ## 🔗 Reference
-*Verstraete N.*, et al. *Network-Based Drug Repurposing Strategies for COVID-19: A Systems Medicine Approach.*  
+*Verstraete N.*, et al. *CovMulNet19, Integrating Proteins, Diseases, Drugs, and Symptoms: A Network Medicine Approach to COVID-19.*  
 *Network and Systems Medicine*, 2020. [DOI:10.1089/nsm.2020.0011](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
 
 ---
