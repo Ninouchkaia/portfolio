@@ -195,15 +195,51 @@ Batch mode supported.
 
 # 4. Advanced Analysis
 
-## plots_advanced.py  
-Implements:
+These analyses explore the global structure of optimized parameter space.
 
+## Statistical tests between groups
+plots_advanced.py  
+Implements:
 - Violin plots  
 - PCA scatter plot  
 - PCA scree plot  
 
-## stats_advanced.py  
+### Violin plots
+From a combined Pareto TSV file (e.g. data/pareto/pareto_ABM_2D_all.tsv):
+```
+python -m abm_pipeline.cli violin-all data/pareto/pareto_ABM_2D_all.tsv
+```
+This calls make_violinplots_all_parameters and generates a violin plot per parameter, saved under:
+`results/advanced_analysis/violin/`
+
+### 2. Principal Component Analysis (PCA)
+```
+python -m abm_pipeline.cli pca data/pareto/pareto_ABM_2D_all.tsv
+```
+This uses run_pca_analysis to standardize parameters, compute PCA and plot:
+- 2D PCA scatter of parameter sets
+- scree plot of explained variance
+
+Outputs saved under:
+`results/advanced_analysis/pca/`
+
+## Statistical tests between groups
+stats_advanced.py  
 Mann–Whitney U tests on parameter distributions.
+11.3 Statistical tests between groups
+
+Given two Pareto TSV files (e.g. class1 vs class2):
+```
+python -m abm_pipeline.cli stats_params \
+    data/pareto/pareto_class1.tsv \
+    data/pareto/pareto_class2.tsv
+```
+
+
+This calls `run_parameter_stats_tests` to run Mann–Whitney U tests per parameter and write:
+`results/advanced_analysis/stats/stats_comparison.tsv` 
+
+
 
 ---
 
