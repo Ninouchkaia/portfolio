@@ -167,6 +167,119 @@ def sensi_shell(
     )
 
 
+# abm_pipeline/cli.py (ajouts en bas)
+
+from abm_pipeline.model_validation.plots import plot_sim_vs_exp_with_scores
+from abm_pipeline.model_validation.validator import compute_metrics_all_patients
+
+
+@app.command()
+def plot_sim(
+    patient: str = typer.Argument(..., help="ID du patient, ex. CAS1802"),
+    param_set: str = typer.Argument(
+        ..., help="Nom du set, ex. stocha_best_via / stocha_knee_point / ..."
+    ),
+    base_dir: str = typer.Argument(".", help="Racine du projet"),
+    behaviorspace_dir: str = typer.Option(
+        None, help="Sous-dossier BehaviorSpace (défaut: {patient}/BehaviorSpace)"
+    ),
+    save_dir: str = typer.Option(
+        None, help="Dossier où sauver les figures (défaut: {patient}/figures)"
+    ),
+):
+    """Trace simulation vs expérimental pour un patient et un set donné."""
+    plot_sim_vs_exp_with_scores(
+        patient=patient,
+        param_set=param_set,
+        base_dir=base_dir,
+        behaviorspace_dir=behaviorspace_dir,
+        save_dir=save_dir,
+    )
+
+
+@app.command()
+def validate_all(
+    base_dir: str = typer.Argument(".", help="Racine du projet"),
+    output_prefix: str = typer.Argument("NRMSE", help="Préfixe des fichiers TSV"),
+):
+    """
+    Calcule tous les NRMSE (via/conc/sum) pour tous les patients et param_sets
+    et écrit les TSV (équivalent RMSE.py).
+    """
+    compute_metrics_all_patients(base_dir=base_dir, output_prefix=output_prefix)
+
+
+# abm_pipeline/cli.py (suite)
+
+from abm_pipeline.sensitivity.plots import (
+    plot_sensitivity_for_param,
+    plot_sensitivity_all_params,
+)
+
+
+@app.command()
+def sensitivity_plot(
+    exp_name: str = typer.Argument(..., help="Nom de l'expérience (ex: perturb-gui-apo-mov)"),
+    csv_dir: str = typer.Argument(..., help="Dossier contenant ABM_2D_sensitivity_*.csv"),
+    save_dir: str = typer.Argument(..., help="Dossier pour sauver les figures"),
+):
+    """Trace la sensibilité pour un seul paramètre."""
+    plot_sensitivity_for_param(exp_name, csv_dir, save_dir)
+
+
+@app.command()
+def sensitivity_plot_all(
+    csv_dir: str = typer.Argument(...),
+    save_dir: str = typer.Argument(...),
+):
+    """
+    Trace toutes les sensibilités (exp_list doit être définie dans sensitivity_config).
+    """
+    from abm_pipeline.sensitivity_config import EXP_LIST
+    plot_sensitivity_all_params(EXP_LIST, csv_dir, save_dir)
+
+
+# abm_pipeline/cli.py (ajouts)
+
+from abm_pipeline.advanced_analysis.plots_advanced import (
+    make_violinplots_all_parameters,
+    run_pca_analysis,
+)
+from abm_pipeline.advanced_analysis.stats_advanced import (
+    run_parameter_stats_tests,
+)
+
+
+@app.command()
+def violin_all(
+    pareto_file: str = typer.Argument(...),
+    save_dir: str = typer.Option(None, help="Dossier pour sauvegarder les violins"),
+):
+    """Produit les violin plots pour tous les paramètres."""
+    make_violinplots_all_parameters(pareto_file, save_dir=save_dir)
+
+
+@app.command()
+def pca(
+    pareto_file: str = typer.Argument(...),
+    save_dir: str = typer.Option(None),
+):
+    """Effectue la PCA sur les paramètres optimisés."""
+    run_pca_analysis(pareto_file, save_dir=save_dir)
+
+
+@app.command()
+def stats_params(
+    pareto_file_1: str = typer.Argument(...),
+    pareto_file_2: str = typer.Argument(...),
+    save_dir: str = typer.Option(None),
+):
+    """Tests statistiques (Mann-Whitney) entre deux ensembles de paramètres."""
+    run_parameter_stats_tests(pareto_file_1, pareto_file_2, save_dir=save_dir)
+
+
+
+
 def main():
     app()
 
