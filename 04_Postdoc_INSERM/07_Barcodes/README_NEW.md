@@ -155,10 +155,10 @@ B2 --> C1
 %% =========================
 
 subgraph C[Handling zero counts]
-    C1[Replace missing reads with 0] --> C2[Python: replace zeros with small offset (0.01)<br><code>avoid_zero_reads.py</code>]
-    C2 --> C3[Alternative: replace ALL zeros (not only problematic ones)<br><code>avoid_zero_reads_by_replacing_all_zeros.py</code>]
+    C1[Replace missing reads with 0] --> C2[Python: replace zeros with small offset (0.01)<code>avoid_zero_reads.py</code>]
+    C2 --> C3[Alternative: replace ALL zeros (not only problematic ones)<code>avoid_zero_reads_by_replacing_all_zeros.py</code>]
     C3 --> C4[Multiply all counts ×100 to avoid decimals<br><code>multiply_counts_by_100.py</code>]
-    C4 --> C5[Output:<br><code>combined_runs_filtered_avoid_zero_reads_all_replaced_x100.csv</code>]
+    C4 --> C5[Output:<code>combined_runs_filtered_avoid_zero_reads_all_replaced_x100.csv</code>]
 end
 
 C5 --> D1
@@ -227,5 +227,6 @@ subgraph H[Visualization & high-level analysis]
 end
 
 ```
+
 
 
