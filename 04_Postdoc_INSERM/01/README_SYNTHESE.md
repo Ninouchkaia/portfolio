@@ -21,21 +21,6 @@ All main steps are automated through the **`abm_pipeline`** Python package and a
 
 ---
 
-# Pipeline Summary
-
-```mermaid
-graph TD;;
-    A[Experimental Data] --> B[Patient-Specific Models];
-    B --> C[OpenMOLE NSGA-II];
-    C --> D[Pareto Fronts];
-    D --> E[Extract Parameter Sets];
-    E --> F[BehaviorSpace XML Generation];
-    F --> G[NetLogo Headless Simulations];
-    G --> H[Model Validation vs Experimental Data];
-    H --> I[Sensitivity Analysis];
-    I --> J[Advanced Parameter Analysis];
-```
-
 ## 2. Repository Structure
 
 At the top level:
@@ -147,7 +132,7 @@ OpenMOLE writes population and Pareto data, which are then parsed by the Python 
 ## 5. End-to-End Pipeline (Conceptual Diagram)
 
 ```mermaid
-graph TD;
+graph TD;;
     A[Experimental data] --> B[Patient-specific configuration (config.py, patient_dict.txt)];
     B --> C[OpenMOLE NSGA-II (parameter_exploration.oms)];
     C --> D[OpenMOLE outputs (population, Pareto data)];
@@ -159,6 +144,19 @@ graph TD;
     I --> J[model_validation (metrics.py, plots.py, validator.py)];
     J --> K[sensitivity (sensitivity/utils.py, sensitivity/plots.py)];
     K --> L[advanced_analysis (PCA, violin, stats)];
+```
+
+```mermaid
+graph TD;;
+    A[Experimental Data] --> B[Patient-Specific Models];
+    B --> C[OpenMOLE NSGA-II];
+    C --> D[Pareto Fronts];
+    D --> E[Extract Parameter Sets];
+    E --> F[BehaviorSpace XML Generation];
+    F --> G[NetLogo Headless Simulations];
+    G --> H[Model Validation vs Experimental Data];
+    H --> I[Sensitivity Analysis];
+    I --> J[Advanced Parameter Analysis];
 ```
 
 ## 6. Python CLI (abm_pipeline/cli.py)
@@ -424,6 +422,7 @@ results/advanced_analysis/
 ## 13. Contact & Citation
 
 If you use this pipeline or model, please cite the associated scientific publication and/or this repository.
+
 
 
 
