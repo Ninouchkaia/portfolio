@@ -130,7 +130,7 @@ Ces résultats correspondent aux Figures 3–5 décrites dans le manuscrit : clu
 ## Flowchart
   
 ```mermaid
-flowchart TD;;
+graph TD;;
 
 %% =========================
 %% RAW DATA
@@ -227,3 +227,4 @@ subgraph H[Visualization & high-level analysis]
 end
 
 ```
+
