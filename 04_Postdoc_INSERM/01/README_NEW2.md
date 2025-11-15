@@ -254,7 +254,7 @@ results/validation/
 # Pipeline Summary
 
 ```mermaid
-flowchart LR;
+graph TD;;
     A[Experimental Data] --> B[Patient-Specific Models];
     B --> C[OpenMOLE NSGA-II];
     C --> D[Pareto Fronts];
