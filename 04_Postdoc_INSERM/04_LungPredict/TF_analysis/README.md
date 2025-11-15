@@ -74,23 +74,6 @@ TF_analysis/
 ## 4. Pipeline Diagram
 
 ```mermaid
-flowchart TD
-A[Expression TPM] --> C[Synchronise]
-B[Unified annotations] --> C
-
-C --> D[Filtering (optional)]
-D --> E[Expression heatmaps]
-D --> F[TF activity\n(TCGA + GTEx)]
-F --> G[TF heatmaps]
-F --> H[TCGA vs GTEx comparison]
-D --> I[PCA]
-````
-
-
-
-## 4. Pipeline Diagram
-
-```mermaid
 graph TD;;
 A[Expression TPM] --> C[Synchronise];
 B[Unified annotations] --> C;
@@ -356,6 +339,7 @@ Install:
 
 install.packages(c("tidyverse","ComplexHeatmap","circlize","RColorBrewer","viridis"))
 BiocManager::install(c("viper","dorothea","Hmisc"))
+
 
 
 
