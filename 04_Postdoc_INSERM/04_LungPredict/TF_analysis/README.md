@@ -307,22 +307,7 @@ Install:
 install.packages(c("tidyverse","ComplexHeatmap","circlize","RColorBrewer","viridis"))
 BiocManager::install(c("viper","dorothea","Hmisc"))
 
-## 9. Summary
 
-This pipeline provides:
-
-a unified annotation and expression framework,
-
-gene- and TF-level characterisation of patients,
-
-regulon-based TF inference (TCGA + GTEx),
-
-annotated heatmaps and PCA,
-
-modular and reproducible execution via a single pipeline script.
-
-
-It enables consistent multi-layer molecular analysis across the LungPredict cohort.
 
 
 
