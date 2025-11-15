@@ -108,6 +108,7 @@ D --> F[TF activity\n(TCGA + GTEx)]
 F --> G[TF heatmaps]
 F --> H[TCGA vs GTEx\ncomparison]
 D --> I[PCA]
+```
 
 All inputs go in `data/`; all derived outputs are saved under `results/`.
 
@@ -323,5 +324,6 @@ regulon-based TF inference (TCGA + GTEx),
 annotated heatmaps and PCA,
 
 modular and reproducible execution via a single pipeline script.
+
 
 It enables consistent multi-layer molecular analysis across the LungPredict cohort.
