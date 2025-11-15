@@ -97,17 +97,17 @@ Optional PCA is applied to the patient expression profiles.
 ## 4. Pipeline Diagram
 
 ```mermaid
-flowchart TD
+flowchart TD;
 
-A[Expression TPM] --> C[Synchronise]
-B[Unified annotations] --> C
+A[Expression TPM] --> C[Synchronise];
+B[Unified annotations] --> C;
 
-C --> D[Filtering (optional)]
-D --> E[Expression heatmaps]
-D --> F[TF activity\n(TCGA + GTEx)]
-F --> G[TF heatmaps]
-F --> H[TCGA vs GTEx\ncomparison]
-D --> I[PCA]
+C --> D[Filtering (optional)];
+D --> E[Expression heatmaps];
+D --> F[TF activity\n(TCGA + GTEx)];
+F --> G[TF heatmaps];
+F --> H[TCGA vs GTEx\ncomparison];
+D --> I[PCA];
 ```
 
 All inputs go in `data/`; all derived outputs are saved under `results/`.
@@ -167,17 +167,17 @@ Optional PCA is applied to the patient expression profiles.
 ## 4. Pipeline Diagram
 
 ```mermaid
-flowchart TD
+flowchart TD;
 
-A[Expression TPM] --> C[Synchronise]
-B[Unified annotations] --> C
+A[Expression TPM] --> C[Synchronise];
+B[Unified annotations] --> C;
 
-C --> D[Filtering (optional)]
-D --> E[Expression heatmaps]
-D --> F[TF activity\n(TCGA + GTEx)]
-F --> G[TF heatmaps]
-F --> H[TCGA vs GTEx\ncomparison]
-D --> I[PCA]
+C --> D[Filtering (optional)];
+D --> E[Expression heatmaps];
+D --> F[TF activity\n(TCGA + GTEx)];
+F --> G[TF heatmaps];
+F --> H[TCGA vs GTEx\ncomparison];
+D --> I[PCA];
 ```
 
 
@@ -327,3 +327,4 @@ modular and reproducible execution via a single pipeline script.
 
 
 It enables consistent multi-layer molecular analysis across the LungPredict cohort.
+
