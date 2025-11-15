@@ -87,6 +87,86 @@ def make_behaviorspace(
     make_behavior_space_file_for_patient(best_sets_tsv, output_file, patient_dict)
 
 
+# dans abm_pipeline/cli.py (suite)
+
+from abm_pipeline.parameter_exploration.shell_commands import (
+    generate_patient_command_scripts,
+    generate_kneepoint_scripts,
+    generate_averaged_class_scripts,
+    generate_sensitivity_shell_scripts,
+)
+from abm_pipeline.parameter_exploration.instantiate_models.xml_behavior_space import (
+    make_sensitivity_experiment_xml,
+)
+
+
+@app.command()
+def patient_shell(
+    base_dir: str = typer.Argument(".", help="Dossier où écrire les scripts .sh"),
+):
+    """Génère patient_command_{PATIENT}.sh pour tous les patients."""
+    generate_patient_command_scripts(base_dir)
+
+
+@app.command()
+def kneepoint_shell(
+    setup_xml: str = typer.Argument(..., help="Fichier XML de setup (kneepoint*.xml)"),
+    label: str = typer.Argument("0", help="0, 1_class1, 1_class2, 2"),
+    out_dir: str = typer.Argument(".", help="Dossier de sortie"),
+):
+    """Génère un script .sh par patient pour les simulations kneepoint."""
+    generate_kneepoint_scripts(setup_xml, label, out_dir)
+
+
+@app.command()
+def averaged_shell(
+    xml_file: str = typer.Argument(..., help="XML class1_averaged.xml ou autre"),
+    class_label: str = typer.Argument("class1", help="class1 ou class2"),
+    out_dir: str = typer.Argument(".", help="Dossier de sortie"),
+):
+    """Génère un script .sh pour lancer les simulations averaged_* sur tous les patients."""
+    generate_averaged_class_scripts(xml_file, class_label, out_dir)
+
+
+@app.command()
+def sensi_xml(
+    best_sets_tsv: str = typer.Argument(...),
+    output_xml: str = typer.Argument(...),
+    mono_init: float = typer.Argument(..., help="gui-prop-mono-init"),
+    apo_init: float = typer.Argument(..., help="gui-prop-apo-init"),
+):
+    """
+    Génére un fichier XML BehaviorSpace pour l'analyse de sensibilité.
+    (les ranges_dict sont à coder dans un module de config séparé).
+    """
+    from abm_pipeline.sensitivity_config import RANGES_DICT_CLASS1  # à créer
+
+    make_sensitivity_experiment_xml(
+        best_sets_tsv,
+        output_xml,
+        gui_prop_mono_init=mono_init,
+        gui_prop_apo_init=apo_init,
+        ranges_dict=RANGES_DICT_CLASS1,
+    )
+
+
+@app.command()
+def sensi_shell(
+    model_path: str = typer.Argument(..., help="Chemin complet vers ABM_2D_*.nlogo"),
+    xml_file: str = typer.Argument(..., help="Fichier XML de sensibilité"),
+    out_sh: str = typer.Argument("sensitivity_experiments.sh"),
+):
+    """Génère le script .sh de lancement des expériences de sensibilité."""
+    from abm_pipeline.sensitivity_config import EXP_LIST  # ["perturb-gui-apo-mov", ...]
+
+    generate_sensitivity_shell_scripts(
+        model_path=model_path,
+        xml_file=xml_file,
+        out_sh=out_sh,
+        exp_list=EXP_LIST,
+    )
+
+
 def main():
     app()
 
