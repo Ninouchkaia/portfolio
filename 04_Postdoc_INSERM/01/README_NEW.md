@@ -17,8 +17,7 @@ validation des modèles présentés dans l'article *[Titre du papier]*.
 
 Le CLI principal est accessible via :
 
-```python
-
+```
 python -m abm_pipeline.cli --help
 ```
 
@@ -29,21 +28,19 @@ python -m abm_pipeline.cli --help
 Exemple pour le patient CAS1802 :
 
 ### 1. Agrégation des simulations OpenMOLE
-```python
-
+```
 python -m abm_pipeline.cli aggregate CAS1802/ABM_2D_CAS1802 CAS1802/outputs_ABM_2D_CAS1802.txt
 ```
 
 ### 2. Calcul Pareto + figure
-```python
-
+```
 python -m abm_pipeline.cli pareto \
     CAS1802/outputs_ABM_2D_CAS1802_duplicates_removed_filtered_only_samples_kept_50.0.txt \
     CAS1802/pareto_ABM_2D_CAS1802
 ```
 
-# ##3. Extraction des 3 sets (best_via, knee_point, best_conc)
-```python
+### 3. Extraction des 3 sets (best_via, knee_point, best_conc)
+```
 
 python -m abm_pipeline.cli bestsets \
     CAS1802/pareto_ABM_2D_CAS1802.txt \
@@ -51,8 +48,7 @@ python -m abm_pipeline.cli bestsets \
 ```
 
 ### 4. Fichier de paramètres NetLogo pour le patient
-```python
-
+```
 python -m abm_pipeline.cli make-behaviorspace \
     CAS1802/best_param_sets_ABM_2D_CAS1802.tsv \
     CAS1802/netlogo_best_param_sets_ABM_2D_CAS1802.txt \
@@ -62,8 +58,7 @@ python -m abm_pipeline.cli make-behaviorspace \
 ### 5. Génération du XML BehaviorSpace (3 expériences)
 
 ### 6. Génération du script .sh complet pour ce patient
-```python
-
+```
 python -m abm_pipeline.cli patient-shell .
 ```
 
@@ -76,8 +71,7 @@ bash patient_command_CAS1802.sh
 ## Analyses de sensibilité
 
 ### 1. Génération du XML de sensibilité à partir des paramètres du knee point
-```python
-
+```
 python -m abm_pipeline.cli sensi-xml \
     class1_processing/best_param_sets_pareto_ABM_2D_9patients_1_class1_50.tsv \
     sensitivity_analysis_experiment_file_class1.xml \
@@ -85,8 +79,7 @@ python -m abm_pipeline.cli sensi-xml \
 ```
 
 ### 2. Génération du script .sh de sensibilité
-```python
-
+```
 python -m abm_pipeline.cli sensi-shell \
     /C/Users/Nina/.openmole/nina-windows/webui/projects/ABM_2D_9patients_1_class1.nlogo \
     sensitivity_analysis_experiment_file_class1.xml \
@@ -97,3 +90,4 @@ python -m abm_pipeline.cli sensi-shell \
 ```bash
 bash sensitivity_experiments_class1.sh
 ```
+
