@@ -1,186 +1,5 @@
 # LungPredict — TF Analysis Pipeline
 
-This directory implements a structured and reproducible workflow for analysing the LungPredict cohort at the transcriptional and transcription factor (TF) activity level.
-
-The pipeline integrates:
-- unified clinical + molecular annotations,
-- gene expression (TPM),
-- pathway- and expression-based clustering,
-- TF activity inference using DoRothEA + viper (TCGA & GTEx regulons),
-- annotated heatmaps,
-- regulon comparison,
-- PCA.
-
-It is organised into a single master script and several small utility modules.
-
----
-```text
-## 1. Directory Layout
-TF_analysis/
-├── data/
-│ ├── LP_FFPE_STAR_RSEM_TPM.txt
-│ ├── clinic_data_v2_clean.csv
-│ ├── ReactomeClustersAllPatients.csv
-│ ├── DeconvCancerClusters.txt
-│ ├── expression_based_patient_clusters_resCutCorrected.txt
-│ └── full_annotations_with_clusters_corrected1.txt
-│
-├── scripts/
-│ ├── lungpredict_tf_pipeline.R
-│ ├── utils_logging.R
-│ ├── utils_annotations.R
-│ ├── utils_heatmaps.R
-│ └── utils_tf_activity.R
-│
-├── results/
-│ ├── heatmaps_expression/
-│ ├── heatmaps_TF/
-│ ├── comparisons_tcga_gtex/
-│ ├── pca/
-│ └── logs/
-```
-
-All inputs go in `data/`; all derived outputs are saved under `results/`.
-
----
-
-## 2. Required Input Data
-
-| File | Description |
-|------|-------------|
-| **LP_FFPE_STAR_RSEM_TPM.txt** | TPM matrix, Gene × Patient |
-| **clinic_data_v2_clean.csv** | Clinical + mutational annotations |
-| **ReactomeClustersAllPatients.csv** | Pathway-level clustering |
-| **DeconvCancerClusters.txt** | Deconvolution-based clustering |
-| **expression_based_patient_clusters_resCutCorrected.txt** | Final expression clusters |
-| **full_annotations_with_clusters_corrected1.txt** | Final merged annotation table |
-
-The unified annotation table aggregates clinical and clustering metadata for all downstream visualisations.
-
----
-
-## 3. Workflow Overview
-
-### Step 1 — Load expression + annotation  
-The expression matrix and unified annotations are loaded and synchronised.
-
-### Step 2 — Optional clinical filtering  
-Filtering criteria (diagnosis, location, KRAS/EGFR/STK11 status, metastatic state…) can be applied directly through parameters.
-
-### Step 3 — Expression analysis  
-- expression heatmap (gene × patient),  
-- correlation matrix (patient × patient).  
-
-### Step 4 — TF activity inference  
-TF activities are computed using:
-- **DoRothEA TCGA** regulons  
-- **DoRothEA GTEx** regulons  
-via `viper`.
-
-### Step 5 — TF-level visualisation  
-Heatmaps:
-- TF × patient (all TFs),
-- TF × patient (filtered by variance),
-- TF-based patient correlation.
-
-### Step 6 — TCGA vs GTEx comparison  
-The two regulon sources are compared at:
-- patient level,
-- TF level,
-- difference matrix level.
-
-### Step 7 — PCA  
-Optional PCA is applied to the patient expression profiles.
-
----
-
-## 4. Pipeline Diagram
-
-```mermaid
-graph TD;;
-A[Expression TPM] --> C[Synchronise];
-B[Unified annotations] --> C;
-C --> D[Filtering];
-D --> E[Expression heatmaps];
-D --> F[TF activity\nTCGA + GTEx];
-F --> G[TF heatmaps];
-F --> H[TCGA vs GTEx\ncomparison];
-D --> I[PCA];
-```
-
-All inputs go in `data/`; all derived outputs are saved under `results/`.
-
----
-
-## 2. Required Input Data
-
-| File | Description |
-|------|-------------|
-| **LP_FFPE_STAR_RSEM_TPM.txt** | TPM matrix, Gene × Patient |
-| **clinic_data_v2_clean.csv** | Clinical + mutational annotations |
-| **ReactomeClustersAllPatients.csv** | Pathway-level clustering |
-| **DeconvCancerClusters.txt** | Deconvolution-based clustering |
-| **expression_based_patient_clusters_resCutCorrected.txt** | Final expression clusters |
-| **full_annotations_with_clusters_corrected1.txt** | Final merged annotation table |
-
-The unified annotation table aggregates clinical and clustering metadata for all downstream visualisations.
-
----
-
-## 3. Workflow Overview
-
-### Step 1 — Load expression + annotation  
-The expression matrix and unified annotations are loaded and synchronised.
-
-### Step 2 — Optional clinical filtering  
-Filtering criteria (diagnosis, location, KRAS/EGFR/STK11 status, metastatic state…) can be applied directly through parameters.
-
-### Step 3 — Expression analysis  
-- expression heatmap (gene × patient),  
-- correlation matrix (patient × patient).  
-
-### Step 4 — TF activity inference  
-TF activities are computed using:
-- **DoRothEA TCGA** regulons  
-- **DoRothEA GTEx** regulons  
-via `viper`.
-
-### Step 5 — TF-level visualisation  
-Heatmaps:
-- TF × patient (all TFs),
-- TF × patient (filtered by variance),
-- TF-based patient correlation.
-
-### Step 6 — TCGA vs GTEx comparison  
-The two regulon sources are compared at:
-- patient level,
-- TF level,
-- difference matrix level.
-
-### Step 7 — PCA  
-Optional PCA is applied to the patient expression profiles.
-
----
-
-## 4. Pipeline Diagram
-
-```mermaid
-graph TD;;
-A[Expression TPM] --> C[Synchronise];
-B[Unified annotations] --> C;
-C --> D[Filtering];
-D --> E[Expression heatmaps];
-D --> F[TF activity\nTCGA + GTEx];
-F --> G[TF heatmaps];
-F --> H[TCGA vs GTEx\ncomparison];
-D --> I[PCA];
-```
-
-
-
-
-# LungPredict — TF Analysis Pipeline
-
 This directory provides a structured and reproducible workflow for transcriptional and transcription factor (TF) activity analysis in the LungPredict cohort.
 
 The pipeline integrates:
@@ -191,9 +10,6 @@ The pipeline integrates:
 - annotated heatmaps,
 - TCGA vs GTEx comparison,
 - PCA.
-
-It is executed via a clean pipeline script with modular utilities.
-
 ---
 
 ## 1. Directory Layout
@@ -269,6 +85,22 @@ F --> G[TF heatmaps]
 F --> H[TCGA vs GTEx comparison]
 D --> I[PCA]
 ````
+
+
+
+## 4. Pipeline Diagram
+
+```mermaid
+graph TD;;
+A[Expression TPM] --> C[Synchronise];
+B[Unified annotations] --> C;
+C --> D[Filtering];
+D --> E[Expression heatmaps];
+D --> F[TF activity\nTCGA + GTEx];
+F --> G[TF heatmaps];
+F --> H[TCGA vs GTEx\ncomparison];
+D --> I[PCA];
+```
 
 ---
 
@@ -524,6 +356,7 @@ Install:
 
 install.packages(c("tidyverse","ComplexHeatmap","circlize","RColorBrewer","viridis"))
 BiocManager::install(c("viper","dorothea","Hmisc"))
+
 
 
 
