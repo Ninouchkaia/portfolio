@@ -86,7 +86,8 @@ Caractériser la composition cellulaire et les programmes transcriptionnels des 
 
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
 **Period:** 2020–2021  
-**Publication:** [Network and Systems Medicine, 2020](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)  
+**Publication:** [Network and Systems Medicine, 2020](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
+[Accéder au dossier du projet](./05_covid_network_medicine/)
 
 ---
 
