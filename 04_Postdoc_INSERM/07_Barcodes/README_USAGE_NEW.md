@@ -224,8 +224,7 @@ end
 
 ### **R scripts**
 
-* [`scripts/deseq2_script.R`](scripts/deseq2_script.R)
-* [`scripts/pheatmap_2023.R`](scripts/pheatmap_2023.R)
+* [`scripts/deseq2_differential_abundance.R`](scripts/deseq2_differential_abundance.R)
 
 ---
 
