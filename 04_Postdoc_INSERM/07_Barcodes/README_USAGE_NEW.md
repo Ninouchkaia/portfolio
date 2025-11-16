@@ -33,7 +33,7 @@ The pipeline processes 520 samples across 11 sequencing runs, filters barcodes, 
 ```bash
 python scripts/01_preprocess_barcodes.py \
   --input_dir data/raw \
-  --pattern "Run*.csv" \
+  --pattern "*.csv" \
   --output_prefix data/processed/barcodes \
   --min_reads 1 \
   --min_controls 5 \
@@ -233,6 +233,7 @@ end
 * [`notebooks/01_visualize_barcode_signatures.ipynb`](notebooks/01_visualize_barcode_signatures.ipynb)
 
 ---
+
 
 
 
