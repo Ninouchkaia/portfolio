@@ -103,7 +103,7 @@ python scripts/03_build_deseq2_inputs.py \
 Run:
 
 ```r
-source("scripts/deseq2_differential_abundance.R")
+"/i/Program Files/R/R-4.3.1/bin/x64/Rscript.exe" scripts/deseq2_differential_abundance.R
 ```
 
 ➡️ Script:
@@ -234,6 +234,7 @@ end
 * [`notebooks/01_visualize_barcode_signatures.ipynb`](notebooks/01_visualize_barcode_signatures.ipynb)
 
 ---
+
 
 
 
