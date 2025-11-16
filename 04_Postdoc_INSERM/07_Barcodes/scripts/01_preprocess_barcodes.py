@@ -10,7 +10,7 @@ import pandas as pd
 def parse_args():
     p = argparse.ArgumentParser(
         description=(
-            "Fusionne les fichiers Run*.csv de comptage barcodes, "
+            "Fusionne les fichiers *.csv de comptage barcodes, "
             "filtre les barcodes peu détectés, et produit les matrices filtrées "
             "en counts bruts et normalisés à 1e6 par échantillon."
         )
@@ -18,12 +18,12 @@ def parse_args():
     p.add_argument(
         "--input_dir",
         default="data/raw",
-        help="Dossier contenant les fichiers Run*.csv",
+        help="Dossier contenant les fichiers *.csv",
     )
     p.add_argument(
         "--pattern",
-        default="Run*.csv",
-        help="Pattern des fichiers de comptage (par défaut Run*.csv)",
+        default="*.csv",
+        help="Pattern des fichiers de comptage (par défaut *.csv)",
     )
     p.add_argument(
         "--output_prefix",
