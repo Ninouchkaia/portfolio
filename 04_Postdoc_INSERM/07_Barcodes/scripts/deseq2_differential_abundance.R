@@ -42,7 +42,7 @@ if (!"sample" %in% names(coldata)) {
 }
 
 if (!all(colnames(cts_mat) == coldata$sample_id)) {
-  stop("Column names of counts do not match 'sample_id' in design file (same order expected).")
+  stop("Column names of counts do not match 'sample' in design file (same order expected).")
 }
 
 coldata$condition <- factor(coldata$condition)
@@ -112,3 +112,4 @@ write_tsv(logfc_mat, logfc_file)
 message("Written merged log2FC matrix: ", logfc_file)
 
 message("Done.")
+
