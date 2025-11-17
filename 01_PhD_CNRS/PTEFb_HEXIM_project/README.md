@@ -32,16 +32,49 @@ This research project combined:
 
 ---
 
+## Strategy
+
+```
+         ┌──────────────────────────┐
+         │  Error-prone PCR library │
+         └────────────┬─────────────┘
+                      ▼
+       ┌────────────────────────────────┐
+       │  Reverse Two-Hybrid Selection  │
+       │  (URA3 activation → FOA death) │
+       └────────────┬───────────────────┘
+                    ▼
+       ┌────────────────────────────────┐
+       │  Sequencing + Recloning        │
+       │  Forward 2-Hybrid Validation   │
+       └────────────┬───────────────────┘
+                    ▼
+       ┌────────────────────────────────┐
+       │ Mapping on P-TEFb 3D Structure │
+       └────────────┬───────────────────┘
+                    ▼
+     ┌────────────────────────────────────┐
+     │ Mammalian Cell Assays              │
+     │ - Co-IP (Hexim1, Cdk9, Tat)        │
+     │ - CTD kinase                       │
+     │ - Luciferase reporter (Gal4-CycT1) │
+     │ - RNA co-IP (TAR, 7SK)             │
+     └─────────────┬──────────────────────┘
+                   ▼
+     ┌────────────────────────────────────┐
+     │ C. elegans Transgenesis            │
+     │ - cit-1.2 WT / mutants             │
+     │ - ceHexim WT / mutants             │
+     │ - Gonadal injection, strain build  │
+     │ - Cross-species validation         │
+     └────────────────────────────────────┘
+```
+
 ## 💡 Contributions
 - Constructed mutant libraries of Cyclin T1 and HEXIM1 to identify contact regions with P-TEFb and Tat.  
 - Mapped functional domains responsible for transcriptional activation or inhibition.  
 - Combined biochemical and imaging approaches to establish a structure–function model of P-TEFb regulation.  
 - Contributed to internal publications and collaborative manuscripts within the Bensaude group.
-
----
-
-Voici une **synthèse unique**, **non redondante**, **compacte mais exhaustive**, qui fusionne *toutes* les sections que tu m’as données.
-Elle garde **toutes les informations importantes**, sans répétition, et en un bloc parfaitement clair pour un README, une thèse, un portfolio ou un dossier de candidature.
 
 ---
 
@@ -157,6 +190,7 @@ PTEFb_HEXIM_project/
     ├── 04_7SK_evolution.ipynb
     └── 05_summary_figures.ipynb
 ```
+
 
 
 
