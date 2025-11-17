@@ -88,7 +88,7 @@ My work ensured that GEM-DeCan is:
 - suitable for external users and reviewers.
 
 ```mermaid
-graph TD
+flowchart TD
 
     %% --------------------
     %% RAW DATA
@@ -123,7 +123,7 @@ graph TD
     F1 --> G1
     F2 --> G1
 
-    C --> G3[MCP-counter\n(non-proportional counts)]
+    C --> G3[MCP-counter\n non-proportional counts]
     C --> G4[quanTIseq]
 
     %% --------------------
@@ -137,10 +137,10 @@ graph TD
     %% --------------------
     %% QC / VALIDATION
     %% --------------------
-    H --> I1[Validation\nPBMC (real + simulated)]
+    H --> I1[Validation\nPBMC real + simulated]
     H --> I2[TCGA bulk\nTumor Purity vs ABSOLUTE/LUMP/IHC]
-    H --> I3[H&E image-based cell density\n(Saltz et al.)]
-    H --> I4[Single-cell reconstructed bulk\n(Melanoma - Tirosh et al.)]
+    H --> I3[H&E image-based cell density\n Saltz et al.]
+    H --> I4[Single-cell reconstructed bulk\n Melanoma - Tirosh et al.]
 
     %% --------------------
     %% IMMUNOTHERAPY MODELS
