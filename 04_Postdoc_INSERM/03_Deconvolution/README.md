@@ -63,10 +63,10 @@ flowchart TD
     C --> D3[Hybrid RNA+Meth+3D]
 
     %% SIGNATURES → DECONV
-    D1 --> E1[EpiDISH\n(deconvolution_epidish.R)]
-    D1 --> E2[DeconRNASeq\n(deconvolution_deconrnaseq.R)]
-    D1 --> E3[quanTIseq\n(deconvolution_quantiseq.R)]
-    D1 --> E4[MCP-counter\n(deconvolution_mcpcounter.R)]
+    D1 --> E1[EpiDISH\n deconvolution_epidish.R ]
+    D1 --> E2[DeconRNASeq\n deconvolution_deconrnaseq.R ]
+    D1 --> E3[quanTIseq\n deconvolution_quantiseq.R ]
+    D1 --> E4[MCP-counter\n deconvolution_mcpcounter.R ]
 
     D2 --> E1
     D2 --> E2
