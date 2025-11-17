@@ -1,0 +1,1209 @@
+.:
+total 96
+drwxr-xr-x 1 Nina 197609     0 Nov 13 22:31 methods_and_templates/
+drwxr-xr-x 1 Nina 197609     0 Nov 14 01:40 figures_visuals/
+drwxr-xr-x 1 Nina 197609     0 Nov 15 16:25 03_Industry_AIRBUS/
+-rw-r--r-- 1 Nina 197609 14521 Nov 16 21:26 README.md
+drwxr-xr-x 1 Nina 197609     0 Nov 17 06:10 02_Postdoc_CONICET/
+drwxr-xr-x 1 Nina 197609     0 Nov 17 07:10 04_Postdoc_INSERM/
+drwxr-xr-x 1 Nina 197609     0 Nov 17 08:24 01_PhD_CNRS/
+-rw-r--r-- 1 Nina 197609     0 Nov 17 22:08 tree.txt
+
+./methods_and_templates:
+total 4
+-rw-r--r-- 1 Nina 197609 271 Nov 13 22:31 data_visualization_guidelines.md
+-rw-r--r-- 1 Nina 197609 168 Nov 13 22:31 conda_environment_example.yml
+-rw-r--r-- 1 Nina 197609 231 Nov 13 22:31 analysis_workflow_template.md
+-rw-r--r-- 1 Nina 197609 210 Nov 13 22:31 FAIR_principles_checklist.md
+
+./figures_visuals:
+total 4
+-rw-r--r-- 1 Nina 197609 0 Nov 13 22:31 tumor_model_schematic.png
+-rw-r--r-- 1 Nina 197609 0 Nov 13 22:31 network_covid.png
+-rw-r--r-- 1 Nina 197609 0 Nov 13 22:31 deconvolution_example.png
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:40 CRCT/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:40 QB69/
+
+./figures_visuals/CRCT:
+total 20
+drwxr-xr-x 1 Nina 197609 0 Nov 13 22:46 abm/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 00:25 gemdecan/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 00:32 LP/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 00:55 barcodes/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:03 covid/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:26 boolean/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 07:04 covid2/
+
+./figures_visuals/CRCT/abm:
+total 8620
+-rw-r--r-- 1 Nina 197609 1171428 Sep 30  2022 Figure 4-01.png
+-rw-r--r-- 1 Nina 197609   46052 Oct  7  2022 diagram_ABM_july2022.png
+-rw-r--r-- 1 Nina 197609 4572236 Oct 31  2022 Figure1-edit2-02-01.png
+-rw-r--r-- 1 Nina 197609  771962 Nov  5  2022 Figure 3-edit.png
+-rw-r--r-- 1 Nina 197609  806026 Nov 12  2022 Figure5-edit4-01.png
+-rw-r--r-- 1 Nina 197609  701666 Nov 20  2022 Figure6-sensitivityAnalysis-edit1-01.png
+-rw-r--r-- 1 Nina 197609  742252 Nov 21  2022 FigS4-UML_diagrams_complete-edit2-01.png
+
+./figures_visuals/CRCT/gemdecan:
+total 52
+-rw-r--r-- 1 Nina 197609 52184 Mar 10  2021 diagram2.png
+
+./figures_visuals/CRCT/LP:
+total 3620
+-rw-r--r-- 1 Nina 197609 2319366 Mar 26  2020 EpiDISH_MeiSign_Decon.tiff
+-rw-r--r-- 1 Nina 197609   49461 May  6  2020 clustering_patients.png
+-rw-r--r-- 1 Nina 197609   39718 May  6  2020 clustering_markers.png
+-rw-r--r-- 1 Nina 197609  103191 Mar 18  2021 RNASeqPipelineTutorial.pdf
+-rw-r--r-- 1 Nina 197609   96677 May 18  2021 plot_zoom_png.png
+-rw-r--r-- 1 Nina 197609   43006 May 18  2021 plot_zoom_png2.png
+-rw-r--r-- 1 Nina 197609   38200 May 19  2021 Rplot.png
+-rw-r--r-- 1 Nina 197609   31759 May 19  2021 Rplot01.png
+-rw-r--r-- 1 Nina 197609   35615 May 19  2021 Rplot02.png
+-rw-r--r-- 1 Nina 197609   46699 May 20  2021 Rplot2.png
+-rw-r--r-- 1 Nina 197609   90194 May 27  2021 Rplot27.png
+-rw-r--r-- 1 Nina 197609   68788 May 27  2021 Rplot27-1.png
+-rw-r--r-- 1 Nina 197609   66107 May 27  2021 Rplot27-2.png
+-rw-r--r-- 1 Nina 197609   88172 May 27  2021 Rplot27-3.png
+-rw-r--r-- 1 Nina 197609   56635 May 27  2021 Rplot27-4.png
+-rw-r--r-- 1 Nina 197609   69804 Jun 28  2021 patientCorrelBasedOnTFactivites.png
+-rw-r--r-- 1 Nina 197609   82446 Jun 29  2021 patientCorrBasedOnGEwithFullAnnot.png
+-rw-r--r-- 1 Nina 197609   85421 Jun 29  2021 patientCorrBasedOnTFwithFullAnnot.png
+-rw-r--r-- 1 Nina 197609   58752 Jun 29  2021 TFFiltered_patients.png
+-rw-r--r-- 1 Nina 197609  107123 Jun 29  2021 TF_patients.png
+-rw-r--r-- 1 Nina 197609   78695 Jun 29  2021 patientCorrBasedOnGEwithFullAnnot2.png
+
+./figures_visuals/CRCT/barcodes:
+total 8880
+-rw-r--r-- 1 Nina 197609  144694 Apr 26  2022 deseq2_logfc_correlations.pdf
+-rw-r--r-- 1 Nina 197609  151646 Apr 26  2022 deseq2_logfc_correlations_cluster.pdf
+-rw-r--r-- 1 Nina 197609 5415725 May 20  2022 RplotPheatmapAnnotated.pdf
+-rw-r--r-- 1 Nina 197609  127645 Jul 13  2022 clonal.png
+-rw-r--r-- 1 Nina 197609 2435691 Jul 15  2022 deseq2_pvalfiltered_logfc_correlations_clustered.jpg
+-rw-r--r-- 1 Nina 197609  802667 Nov 14 00:51 network_correlation_colored.PNG
+
+./figures_visuals/CRCT/covid:
+total 364
+-rw-r--r-- 1 Nina 197609 155745 Jun 17  2020 prot_deg_correl.PNG
+-rw-r--r-- 1 Nina 197609 209546 Jun 17  2020 multilayer.png
+
+./figures_visuals/CRCT/boolean:
+total 0
+
+./figures_visuals/CRCT/covid2:
+total 8276
+-rw-r--r-- 1 Nina 197609   45650 Dec  5  2020 Rplot01.pdf
+-rw-r--r-- 1 Nina 197609 3287144 Dec 10  2020 bio-enrichment.pdf
+-rw-r--r-- 1 Nina 197609 3778469 Feb  1  2021 enrich-opti.pdf
+-rw-r--r-- 1 Nina 197609  565368 Nov 14 07:00 42005_2021_582_Fig5_HTML.png
+-rw-r--r-- 1 Nina 197609  782600 Nov 14 07:04 42005_2021_582_Fig6_HTML.png
+
+./figures_visuals/QB69:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:40 aminoacid/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:40 ankyrin/
+drwxr-xr-x 1 Nina 197609 0 Nov 14 01:40 elms/
+
+./figures_visuals/QB69/aminoacid:
+total 0
+
+./figures_visuals/QB69/ankyrin:
+total 0
+
+./figures_visuals/QB69/elms:
+total 0
+
+./03_Industry_AIRBUS:
+total 2076
+-rw-r--r-- 1 Nina 197609    2325 Nov 13 22:31 critical_systems_development.md
+-rw-r--r-- 1 Nina 197609    1822 Nov 13 22:31 README.md
+-rw-r--r-- 1 Nina 197609 2115902 Nov 15 16:25 soutenance_nina.pdf
+
+./02_Postdoc_CONICET:
+total 433
+-rw-r--r-- 1 Nina 197609   2524 Nov 13 22:31 ankyrin_structure_dynamics.md
+-rw-r--r-- 1 Nina 197609   2572 Nov 13 22:31 ankyrin_modularity.md
+-rw-r--r-- 1 Nina 197609    424 Nov 13 22:31 README.md
+-rw-r--r-- 1 Nina 197609   5616 Nov 14 01:52 01_aa_usage_evolution.md
+drwxr-xr-x 1 Nina 197609      0 Nov 17 05:13 ANKYRIN_MODULARITY/
+-rw-r--r-- 1 Nina 197609 415118 Nov 17 05:24 msu228.pdf
+drwxr-xr-x 1 Nina 197609      0 Nov 17 06:06 paxdb/
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY:
+total 60
+drwxr-xr-x 1 Nina 197609    0 Nov 17 01:25 scripts/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 01:51 data/
+-rw-r--r-- 1 Nina 197609    0 Nov 17 01:51 plots.py
+-rw-r--r-- 1 Nina 197609 3693 Nov 17 02:05 clans.py
+-rw-r--r-- 1 Nina 197609 4399 Nov 17 02:05 conservation.py
+-rw-r--r-- 1 Nina 197609 5029 Nov 17 02:06 enrichment.py
+-rw-r--r-- 1 Nina 197609 1316 Nov 17 02:23 config.py
+-rw-r--r-- 1 Nina 197609 4289 Nov 17 02:35 elm.py
+-rw-r--r-- 1 Nina 197609 8871 Nov 17 02:39 pipeline.py
+-rw-r--r-- 1 Nina 197609 7639 Nov 17 02:47 io.py
+-rw-r--r-- 1 Nina 197609 6791 Nov 17 05:13 README.md
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY/scripts:
+total 24
+drwxr-xr-x 1 Nina 197609 0 Nov 17 02:12 legacy/
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY/scripts/legacy:
+total 5412
+-rwxr-xr-x 1 Nina 197609    5946 Nov 21  2014 make_multifasta.py*
+-rwxr-xr-x 1 Nina 197609    1733 Jan  2  2015 domain_enrich_conserv_2015.py*
+-rwxr-xr-x 1 Nina 197609    2837 Jan 13  2015 make_fasta.py*
+-rwxr-xr-x 1 Nina 197609    2876 Jan 13  2015 make_fasta_BD.py*
+-rwxr-xr-x 1 Nina 197609    3305 Jan 13  2015 make_indep_fasta_BD_XXX.py*
+-rwxr-xr-x 1 Nina 197609    6458 Jan 14  2015 check_domain_conservation_BD_2015.py*
+-rwxr-xr-x 1 Nina 197609    2355 Jan 14  2015 pfam_scan_BD_XXX.py*
+-rwxr-xr-x 1 Nina 197609    2417 Jan 14  2015 pfam_scan_BD_tannat_XXX.py*
+-rwxr-xr-x 1 Nina 197609    1834 Jan 15  2015 concaten_pfam_outputs_BD_2015.py*
+-rwxr-xr-x 1 Nina 197609    3948 Jan 16  2015 count_pfam_domains_BD.py*
+-rwxr-xr-x 1 Nina 197609    1739 Jan 16  2015 domain_enrich_conserv_BD_2015.py*
+-rwxr-xr-x 1 Nina 197609     950 Feb  4  2015 analyze_elm_clans_mapping.py*
+-rwxr-xr-x 1 Nina 197609    3292 Feb  4  2015 make_binding_pairs_unp.py*
+-rwxr-xr-x 1 Nina 197609    1012 Feb  4  2015 interacting_pairs_elms_concaten.py*
+-rwxr-xr-x 1 Nina 197609    1057 Feb  4  2015 interacting_pairs_domains_concaten.py*
+-rwxr-xr-x 1 Nina 197609    1176 Feb  5  2015 reorder_interacting_pairs_list.py*
+-rwxr-xr-x 1 Nina 197609   11021 Feb  9  2015 get_intra_coocurrences_counters.py*
+-rwxr-xr-x 1 Nina 197609    2192 Feb  9  2015 map_elm_to_clans.py*
+-rwxr-xr-x 1 Nina 197609   10729 Feb 10  2015 get_intra_coocurrences_counters_clans.py*
+-rwxr-xr-x 1 Nina 197609    7501 Feb 10  2015 get_coocurrences_counters_clans.py*
+-rwxr-xr-x 1 Nina 197609   11111 Feb 11  2015 get_coocurrences_counters_clans_and_family.py*
+-rwxr-xr-x 1 Nina 197609   16946 Feb 14  2015 get_intra_coocurrences_counters_clans_and_family.py*
+-rwxr-xr-x 1 Nina 197609    7510 Feb 14  2015 get_coocurrences_counters.py*
+-rwxr-xr-x 1 Nina 197609   12855 Feb 14  2015 get_intra_coocurrences_counters_TOP.py*
+-rwxr-xr-x 1 Nina 197609   10174 Feb 14  2015 get_coocurrences_counters_TOP.py*
+-rwxr-xr-x 1 Nina 197609    2257 Feb 15  2015 sort_elms.py*
+-rwxr-xr-x 1 Nina 197609    1260 Feb 19  2015 adapt_frequencies_pfam_to_clans.py*
+-rwxr-xr-x 1 Nina 197609    3578 Feb 19  2015 parse_and_count_pfam_families_and_clans.py*
+-rwxr-xr-x 1 Nina 197609    6077 Feb 19  2015 check_match_for_Zscore_positive.py*
+-rwxr-xr-x 1 Nina 197609     977 Feb 19  2015 get_elms_list_with_unnatotated_interacting_domains.py*
+-rwxr-xr-x 1 Nina 197609    1270 Feb 23  2015 rename_domains_to_clans.py*
+-rwxr-xr-x 1 Nina 197609    4198 Feb 24  2015 rebuild_domains_enrichment.py*
+-rwxr-xr-x 1 Nina 197609   13899 Feb 25  2015 get_all_matched_elms_to_domains.py*
+-rw-r--r-- 1 Nina 197609    9788 Feb 27  2015 plot_conservation_enrichment_BD_2015.R
+-rw-r--r-- 1 Nina 197609    1299 Mar  1  2015 plot_enrichment_ankyrin_by_clan_2015.R
+-rw-r--r-- 1 Nina 197609    1384 Mar  1  2015 plot_enrichment_BD_by_clan_2015.R
+-rwxr-xr-x 1 Nina 197609     996 Mar  1  2015 general_naming.py*
+-rwxr-xr-x 1 Nina 197609   13860 Mar  1  2015 get_elms_enriched_both_in_ank_and_BD.py*
+-rwxr-xr-x 1 Nina 197609   16343 Mar  2  2015 get_domains_and_clans_enriched_both_in_ank_and_BD.py*
+-rwxr-xr-x 1 Nina 197609    6236 Mar  3  2015 get_numbers.py*
+-rwxr-xr-x 1 Nina 197609    1029 Mar  3  2015 check_unp_id.py*
+-rwxr-xr-x 1 Nina 197609    3352 Mar  3  2015 parse_and_count_pfam_BD_bis.py*
+-rwxr-xr-x 1 Nina 197609    1399 Mar 10  2015 check_fasta.py*
+-rw-r--r-- 1 Nina 197609  939395 Nov 17 01:07 ls.txt
+-rw-r--r-- 1 Nina 197609  211747 Nov 17 01:15 all_python_scripts.txt
+-rw-r--r-- 1 Nina 197609   12591 Nov 17 01:17 all_R_scripts.txt
+-rw-r--r-- 1 Nina 197609 4023647 Nov 17 01:38 poster_ismb2014#FINAL_VERSION_nina.pdf
+-rw-r--r-- 1 Nina 197609    1494 Nov 17 02:10 legacy_mapping.py
+-rw-r--r-- 1 Nina 197609   27256 Nov 17 02:15 legacy_factorisation.md
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY/data:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 01:51 raw/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 01:51 results/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 01:51 intermediate/
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY/data/raw:
+total 0
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY/data/results:
+total 0
+
+./02_Postdoc_CONICET/ANKYRIN_MODULARITY/data/intermediate:
+total 0
+
+./02_Postdoc_CONICET/paxdb:
+total 16
+drwxr-xr-x 1 Nina 197609    0 Nov 17 05:53 data/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 05:53 legacy/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 05:53 scripts/
+-rw-r--r-- 1 Nina 197609 1742 Nov 17 06:06 README.md
+drwxr-xr-x 1 Nina 197609    0 Nov 17 06:15 src/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 20:24 notebooks/
+
+./02_Postdoc_CONICET/paxdb/data:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 05:53 fasta/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 05:53 intermediate/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 06:08 abundances/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 06:11 metadata/
+
+./02_Postdoc_CONICET/paxdb/data/fasta:
+total 0
+
+./02_Postdoc_CONICET/paxdb/data/intermediate:
+total 0
+
+./02_Postdoc_CONICET/paxdb/data/abundances:
+total 1
+-rw-r--r-- 1 Nina 197609 61 Nov 17 06:08 yeast_paxdb.tsv
+
+./02_Postdoc_CONICET/paxdb/data/metadata:
+total 3
+-rw-r--r-- 1 Nina 197609 247 Nov 17 06:07 species.tsv
+-rw-r--r-- 1 Nina 197609  69 Nov 17 06:09 yeast_string_to_uniprot.tsv
+-rw-r--r-- 1 Nina 197609  48 Nov 17 06:12 amino_acid_costs.tsv
+
+./02_Postdoc_CONICET/paxdb/legacy:
+total 0
+
+./02_Postdoc_CONICET/paxdb/scripts:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 05:53 analyze_amino_acids.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 05:53 extract_ds1_unweighted.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 05:53 extract_ds2_paxdb_weighted.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 05:53 build_mapping_tables.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 05:53 coverage_analysis.py
+
+./02_Postdoc_CONICET/paxdb/src:
+total 36
+-rw-r--r-- 1 Nina 197609    0 Nov 17 05:53 __init__.py
+-rw-r--r-- 1 Nina 197609 2107 Nov 17 06:13 utils.py
+-rw-r--r-- 1 Nina 197609 1768 Nov 17 06:14 fasta_parser.py
+-rw-r--r-- 1 Nina 197609 4980 Nov 17 06:14 abundance_loader.py
+-rw-r--r-- 1 Nina 197609 1959 Nov 17 06:14 protein.py
+-rw-r--r-- 1 Nina 197609 3196 Nov 17 06:14 aa_metrics.py
+-rw-r--r-- 1 Nina 197609 2870 Nov 17 06:14 relationships.py
+-rw-r--r-- 1 Nina 197609 8050 Nov 17 06:15 analyze_amino_acids.py
+
+./02_Postdoc_CONICET/paxdb/notebooks:
+total 17
+-rw-r--r-- 1 Nina 197609   376 Nov 17 06:13 01_visualize_amino_acid_bias.ipynb
+-rw-r--r-- 1 Nina 197609 13861 Nov 17 20:24 01_visualize_amino_acid_biass.ipynb
+
+./04_Postdoc_INSERM:
+total 60
+-rw-r--r-- 1 Nina 197609 3066 Nov 15 07:39 1. tumor_ecosystem_modeling.md
+-rw-r--r-- 1 Nina 197609 2428 Nov 15 07:39 2. macrophage_polarization.md
+-rw-r--r-- 1 Nina 197609 2220 Nov 15 07:39 4. tumor_microenvironment_LungPredict.md
+-rw-r--r-- 1 Nina 197609 2335 Nov 15 07:39 3. immunotherapy_prediction.md
+-rw-r--r-- 1 Nina 197609 4164 Nov 15 07:39 6. sarscov2_systemic_effects.md
+-rw-r--r-- 1 Nina 197609 4697 Nov 15 07:39 7. clonal_dynamics_scRNAseq.md
+-rw-r--r-- 1 Nina 197609 6453 Nov 15 09:50 README.md
+drwxr-xr-x 1 Nina 197609    0 Nov 15 13:46 04_LungPredict/
+drwxr-xr-x 1 Nina 197609    0 Nov 16 20:54 07_Barcodes/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 06:57 05_covid_network_medicine/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:06 03_Deconvolution/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:18 01/
+
+./04_Postdoc_INSERM/04_LungPredict:
+total 140
+-rw-r--r-- 1 Nina 197609 111287 Nov 15 12:42 lungpredict_Rscripts.R
+-rw-r--r-- 1 Nina 197609  16961 Nov 15 12:52 lungpredict_tf_pipeline.R
+-rw-r--r-- 1 Nina 197609   1731 Nov 15 12:55 README.md
+drwxr-xr-x 1 Nina 197609      0 Nov 15 16:37 TF_analysis/
+
+./04_Postdoc_INSERM/04_LungPredict/TF_analysis:
+total 144
+-rw-r--r-- 1 Nina 197609  16961 Nov 15 15:54 lungpredict_tf_pipeline.R
+-rw-r--r-- 1 Nina 197609 111287 Nov 15 15:58 lungpredict_Rscripts_natifs.R
+drwxr-xr-x 1 Nina 197609      0 Nov 15 16:17 scripts/
+-rw-r--r-- 1 Nina 197609   4520 Nov 15 16:37 README.md
+
+./04_Postdoc_INSERM/04_LungPredict/TF_analysis/scripts:
+total 24
+-rw-r--r-- 1 Nina 197609 3761 Nov 15 16:18 utils_annotations.R
+-rw-r--r-- 1 Nina 197609 1464 Nov 15 16:19 utils_tf_activity.R
+-rw-r--r-- 1 Nina 197609 3367 Nov 15 16:19 utils_heatmaps.R
+-rw-r--r-- 1 Nina 197609  671 Nov 15 16:19 utils_logging.R
+-rw-r--r-- 1 Nina 197609 6330 Nov 15 16:29 lungpredict_tf_pipeline.R
+
+./04_Postdoc_INSERM/07_Barcodes:
+total 64
+drwxr-xr-x 1 Nina 197609    0 Nov 15 18:00 data/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 18:37 legacy/
+-rw-r--r-- 1 Nina 197609 8813 Nov 15 19:44 README_NEW.md
+drwxr-xr-x 1 Nina 197609    0 Nov 15 21:18 notebooks/
+-rw-r--r-- 1 Nina 197609 5408 Nov 15 21:31 README_USAGE.md
+-rw-r--r-- 1 Nina 197609 1769 Nov 15 21:31 README_OLD.md
+drwxr-xr-x 1 Nina 197609    0 Nov 16 00:31 results/
+-rw-r--r-- 1 Nina 197609 6371 Nov 16 20:54 README_USAGE_NEW.md
+drwxr-xr-x 1 Nina 197609    0 Nov 16 21:26 scripts/
+
+./04_Postdoc_INSERM/07_Barcodes/data:
+total 4
+drwxr-xr-x 1 Nina 197609 0 Nov 15 22:18 raw/
+drwxr-xr-x 1 Nina 197609 0 Nov 16 03:42 processed/
+
+./04_Postdoc_INSERM/07_Barcodes/data/raw:
+total 22076
+-rw-r--r-- 1 Nina 197609 22603295 Oct 13  2023 combined_runs_filtered_avoid_zero_reads_all_replaced_x100.csv
+
+./04_Postdoc_INSERM/07_Barcodes/data/processed:
+total 164460
+-rw-r--r-- 1 Nina 197609  22603295 Nov 16 21:42 barcodes_combined_raw_counts.csv
+-rw-r--r-- 1 Nina 197609  22603295 Nov 16 21:42 barcodes_filtered_counts.csv
+-rw-r--r-- 1 Nina 197609 123191963 Nov 16 21:42 barcodes_filtered_cpm.csv
+
+./04_Postdoc_INSERM/07_Barcodes/legacy:
+total 2706
+-rwxr-xr-x 1 Nina 197609     721 Feb 21  2022 analyze_runs.py*
+-rwxr-xr-x 1 Nina 197609    3491 Feb 24  2022 data_analysis_controls1.py*
+-rwxr-xr-x 1 Nina 197609     655 Feb 28  2022 corr_mat.py*
+-rwxr-xr-x 1 Nina 197609     850 Mar  2  2022 compare_dataframes.py*
+-rwxr-xr-x 1 Nina 197609    3688 Mar  2  2022 data_analysis.py*
+-rw-r--r-- 1 Nina 197609    1160 Mar  7  2022 corr_graph.py
+-rwxr-xr-x 1 Nina 197609     713 Mar  8  2022 join_data.py*
+-rwxr-xr-x 1 Nina 197609     738 Mar  9  2022 normalize_data_within_samples.py*
+-rwxr-xr-x 1 Nina 197609     742 Mar  9  2022 normalize_data_within_samples_millions.py*
+-rwxr-xr-x 1 Nina 197609     663 Mar  9  2022 replace_NaN.py*
+-rwxr-xr-x 1 Nina 197609    1223 Mar 20  2022 unique_barcodes.py*
+-rwxr-xr-x 1 Nina 197609    2954 Mar 21  2022 test_controls_variability.py*
+-rwxr-xr-x 1 Nina 197609    2051 Mar 21  2022 fold_change.py*
+-rwxr-xr-x 1 Nina 197609    2984 Mar 21  2022 test_controls_variability_from_fold_change_values.py*
+-rwxr-xr-x 1 Nina 197609    1807 Mar 21  2022 barcodes_in_controls_heatmap.py*
+-rwxr-xr-x 1 Nina 197609     742 Mar 28  2022 swarmplot_reads_variability_within_controls.py*
+-rwxr-xr-x 1 Nina 197609    1683 Mar 28  2022 avg_variability_across_xp_density_plots.py*
+-rwxr-xr-x 1 Nina 197609     748 Mar 29  2022 histograms_plots.py*
+-rwxr-xr-x 1 Nina 197609    2090 Mar 29  2022 density_plots.py*
+-rwxr-xr-x 1 Nina 197609    1445 Mar 29  2022 analyze_barcode_var_avged_over_xps.py*
+-rwxr-xr-x 1 Nina 197609    4566 Mar 29  2022 fold_change_averaged_over_replicates.py*
+-rwxr-xr-x 1 Nina 197609     766 Mar 29  2022 fold_changes_join_data.py*
+-rwxr-xr-x 1 Nina 197609    3824 Mar 29  2022 fold_change_experiments_separately.py*
+-rwxr-xr-x 1 Nina 197609    1138 Mar 29  2022 convert_fold_changes_to_classes.py*
+-rwxr-xr-x 1 Nina 197609     659 Mar 29  2022 heatmap_from_fold_changes.py*
+-rwxr-xr-x 1 Nina 197609    1549 Mar 29  2022 fold_changes_dendro.py*
+-rwxr-xr-x 1 Nina 197609    3195 Mar 31  2022 replicates_handling.py*
+-rwxr-xr-x 1 Nina 197609    2225 Apr  6  2022 check_unique_barcodes.py*
+-rwxr-xr-x 1 Nina 197609    1641 Apr  6  2022 heatmap_all_barcodes.py*
+-rwxr-xr-x 1 Nina 197609    8503 Apr 15  2022 avg_replicates.py*
+-rwxr-xr-x 1 Nina 197609    4395 Apr 19  2022 corr_dendrogram.py*
+-rwxr-xr-x 1 Nina 197609    1393 Apr 20  2022 igraph_networks.py*
+-rwxr-xr-x 1 Nina 197609     995 Jul 13  2022 merge_csv_files.py*
+-rwxr-xr-x 1 Nina 197609     705 Jul 14  2022 clean_combined_file.py*
+-rwxr-xr-x 1 Nina 197609    1043 Jul 14  2022 build_design.py*
+-rwxr-xr-x 1 Nina 197609    1895 Jul 14  2022 drop_junk_barcodes.py*
+-rwxr-xr-x 1 Nina 197609    1002 Jul 14  2022 filter_desq2_results.py*
+-rwxr-xr-x 1 Nina 197609     727 Jul 14  2022 check_df.py*
+-rwxr-xr-x 1 Nina 197609    3308 Jul 15  2022 correl_deseq2.py*
+-rwxr-xr-x 1 Nina 197609    4130 Jul 15  2022 networks.py*
+-rwxr-xr-x 1 Nina 197609     573 Sep 28  2023 check_df_2023.py*
+-rwxr-xr-x 1 Nina 197609    1961 Oct  3  2023 drop_junk_barcodes_2023.py*
+-rw-r--r-- 1 Nina 197609    4857 Oct  3  2023 avoid_zero_reads.py
+-rwxr-xr-x 1 Nina 197609     776 Oct  3  2023 replace_with_commas_2023.py*
+-rwxr-xr-x 1 Nina 197609     789 Oct  3  2023 normalize_per_millions_2023.py*
+-rwxr-xr-x 1 Nina 197609     849 Oct  3  2023 extract_true_barcode_list_2023.py*
+-rw-r--r-- 1 Nina 197609    1023 Oct 13  2023 avoid_zero_reads_by_replacing_all_zeros.py
+-rwxr-xr-x 1 Nina 197609     792 Oct 13  2023 multiply_counts_by_100.py*
+-rwxr-xr-x 1 Nina 197609    1247 Oct 19  2023 build_design_2023.py*
+-rwxr-xr-x 1 Nina 197609    3298 Oct 31  2023 correl_deseq2_2023.py*
+-rwxr-xr-x 1 Nina 197609    1334 Oct 31  2023 filter_deseq2_results_2023.py*
+-rwxr-xr-x 1 Nina 197609    1369 Oct 31  2023 merge_deseq2_results_2023.py*
+-rwxr-xr-x 1 Nina 197609    1790 Nov  9  2023 merge_deseq2_results_with_expdate_2023.py*
+-rwxr-xr-x 1 Nina 197609     632 Nov  9  2023 count_unique.py*
+-rw-r--r-- 1 Nina 197609  101328 Nov 15 17:06 all_scripts_with_names_barcodes.py
+-rw-r--r-- 1 Nina 197609 2425015 Nov 15 18:37 Barcodes 2022.docx
+
+./04_Postdoc_INSERM/07_Barcodes/notebooks:
+total 3628
+-rw-r--r-- 1 Nina 197609 3019450 Oct 31  2023 merged_logfc_pval_filtered_deseq2_2023_fillna.csv
+drwxr-xr-x 1 Nina 197609       0 Nov 15 20:59 figures/
+-rw-r--r-- 1 Nina 197609    4128 Nov 15 21:04 colnames_annotated_2023.csv
+-rw-r--r-- 1 Nina 197609  666408 Nov 15 21:16 01_visualize_barcode_signatures.ipynb
+-rwxr-xr-x 1 Nina 197609   10829 Nov 15 21:17 01_visualize_barcode_signatures.py*
+
+./04_Postdoc_INSERM/07_Barcodes/notebooks/figures:
+total 7484
+-rw-r--r-- 1 Nina 197609  822593 Nov 15 21:14 fig3_barcode_signatures_heatmap.png
+-rw-r--r-- 1 Nina 197609 5900601 Nov 15 21:14 fig3_barcode_signatures_heatmap.pdf
+-rw-r--r-- 1 Nina 197609  173495 Nov 15 21:14 fig4_drug_drug_correlation_clustered.png
+-rw-r--r-- 1 Nina 197609  250388 Nov 15 21:15 fig4_drug_drug_correlation_clustered.pdf
+-rw-r--r-- 1 Nina 197609  474469 Nov 15 21:15 fig5_drug_network.png
+-rw-r--r-- 1 Nina 197609   30940 Nov 15 21:15 fig5_drug_network.pdf
+
+./04_Postdoc_INSERM/07_Barcodes/results:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 15 18:01 networks/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 22:20 qc_controls/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 22:21 deseq2_inputs/
+drwxr-xr-x 1 Nina 197609 0 Nov 16 00:31 deseq2/
+
+./04_Postdoc_INSERM/07_Barcodes/results/networks:
+total 0
+
+./04_Postdoc_INSERM/07_Barcodes/results/qc_controls:
+total 11232
+-rw-r--r-- 1 Nina 197609 11352776 Nov 16 21:44 controls_variability_per_barcode.tsv
+-rw-r--r-- 1 Nina 197609   147452 Nov 16 21:44 controls_variability_violin.png
+
+./04_Postdoc_INSERM/07_Barcodes/results/deseq2_inputs:
+total 22128
+-rw-r--r-- 1 Nina 197609 22603295 Nov 16 21:44 counts_for_deseq2.tsv
+-rw-r--r-- 1 Nina 197609    53248 Nov 16 21:44 design_for_deseq2.tsv
+
+./04_Postdoc_INSERM/07_Barcodes/results/deseq2:
+total 0
+
+./04_Postdoc_INSERM/07_Barcodes/scripts:
+total 44
+-rwxr-xr-x 1 Nina 197609 3626 Nov 15 18:03 02_qc_controls_variability.py*
+-rwxr-xr-x 1 Nina 197609 5178 Nov 15 18:06 04_correlations_and_networks.py*
+-rwxr-xr-x 1 Nina 197609 8565 Nov 15 18:42 05_generate_figures_for_paper.py*
+-rwxr-xr-x 1 Nina 197609 4437 Nov 16 03:32 01_preprocess_barcodes.py*
+-rw-r--r-- 1 Nina 197609 2068 Nov 16 04:41 README.md
+-rwxr-xr-x 1 Nina 197609 2918 Nov 16 20:52 03_build_deseq2_inputs.py*
+-rwxr-xr-x 1 Nina 197609 3386 Nov 16 21:26 deseq2_differential_abundance.R*
+
+./04_Postdoc_INSERM/05_covid_network_medicine:
+total 24
+drwxr-xr-x 1 Nina 197609    0 Nov 15 07:43 02_bootstrap_pipeline/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 07:43 01_multilayer_pipeline/
+-rw-r--r-- 1 Nina 197609 3862 Nov 15 09:50 README.md
+drwxr-xr-x 1 Nina 197609    0 Nov 17 06:57 03_legacy/
+
+./04_Postdoc_INSERM/05_covid_network_medicine/02_bootstrap_pipeline:
+total 52
+-rwxr-xr-x 1 Nina 197609 12074 Nov 15 07:01 compute_mock_distributions_clean.py*
+-rwxr-xr-x 1 Nina 197609  9243 Nov 15 07:05 compute_zscores_clean.py*
+-rwxr-xr-x 1 Nina 197609 12693 Nov 15 07:11 compute_pvalues_clean.py*
+-rwxr-xr-x 1 Nina 197609 10000 Nov 15 07:14 ranking_and_plots_clean.py*
+
+./04_Postdoc_INSERM/05_covid_network_medicine/01_multilayer_pipeline:
+total 16
+-rwxr-xr-x 1 Nina 197609 5224 Nov 15 06:50 io_networks_clean.py*
+-rwxr-xr-x 1 Nina 197609 8158 Nov 15 06:54 compute_observed_degrees_clean.py*
+
+./04_Postdoc_INSERM/05_covid_network_medicine/03_legacy:
+total 750
+-rwxr-xr-x 1 Nina 197609  17450 May  5  2020 random-network-analysis-drugs-ranking.py*
+-rwxr-xr-x 1 Nina 197609  19019 May  9  2020 random-network-analysis-drugs-ranking-filtering.py*
+-rwxr-xr-x 1 Nina 197609  19854 May 10  2020 random-network-analysis-disease-ranking-filtering.py*
+-rwxr-xr-x 1 Nina 197609  20021 May 12  2020 protein-protein-degrees-rankings.py*
+-rwxr-xr-x 1 Nina 197609  18323 May 12  2020 protein-drug-degrees-directed-rankings.py*
+-rwxr-xr-x 1 Nina 197609  20479 May 12  2020 protein-drug-degrees-undirected-rankings.py*
+-rwxr-xr-x 1 Nina 197609  20151 May 13  2020 protein-disease-degrees-directed-rankings-corrected.py*
+-rwxr-xr-x 1 Nina 197609  20012 May 13  2020 protein-symptom-degrees-directed-rankings-corrected.py*
+-rwxr-xr-x 1 Nina 197609  19614 May 13  2020 protein-GO-degrees-directed-rankings-corrected.py*
+-rwxr-xr-x 1 Nina 197609  21003 May 13  2020 protein-target-degrees-directed-rankings-corrected-generic-script.py*
+-rwxr-xr-x 1 Nina 197609   7158 May 13  2020 pulling_results.py*
+-rwxr-xr-x 1 Nina 197609  21385 May 13  2020 protein-target-degrees-UNdirected-rankings-corrected-generic-script.py*
+-rwxr-xr-x 1 Nina 197609   7791 May 14  2020 pulling_results_undirected.py*
+-rwxr-xr-x 1 Nina 197609  22456 May 14  2020 source-protein-degrees-undirected-corrected-generic-script.py*
+-rwxr-xr-x 1 Nina 197609  12414 May 15  2020 plots.py*
+-rwxr-xr-x 1 Nina 197609   6560 Jun  4  2020 validation.py*
+-rwxr-xr-x 1 Nina 197609   1381 Jun 17  2020 transform_Zscore_in_pvalue.py*
+-rwxr-xr-x 1 Nina 197609  36913 Jun 21  2020 get_structural_degrees_distributions_across_mock_networks.py*
+-rwxr-xr-x 1 Nina 197609  15439 Jun 21  2020 test_normal_distributions.py*
+-rwxr-xr-x 1 Nina 197609   9399 Jun 23  2020 convert_pval_manlio.py*
+-rw-r--r-- 1 Nina 197609  15325 Jun 23  2020 check_random_nets_stats.py
+-rwxr-xr-x 1 Nina 197609   3762 Jun 24  2020 convert_pval_manlio_adjust.py*
+-rw-r--r-- 1 Nina 197609   8366 Nov 15 04:29 clean_pipeline_pro.ipynb
+-rw-r--r-- 1 Nina 197609     65 Nov 15 04:31 pipeline_exec.ipynb
+-rw-r--r-- 1 Nina 197609     65 Nov 15 04:31 pipeline_utils.ipynb
+-rw-r--r-- 1 Nina 197609 356928 Nov 15 05:46 all_scripts_with_names.py
+
+./04_Postdoc_INSERM/03_Deconvolution:
+total 24
+drwxr-xr-x 1 Nina 197609    0 Nov 17 06:40 legacy/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:06 signatures/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:06 revision/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:06 results/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:06 pipeline/
+-rw-r--r-- 1 Nina 197609 8857 Nov 17 07:12 README.md
+
+./04_Postdoc_INSERM/03_Deconvolution/legacy:
+total 693
+-rwxr-xr-x 1 Nina 197609    778 Jun 19  2020 sample_parser.py*
+-rw-r--r-- 1 Nina 197609    665 Jun 19  2020 quant_for_salmon.R
+-rw-r--r-- 1 Nina 197609    680 Jun 19  2020 quant_for_kallisto.R
+-rw-r--r-- 1 Nina 197609    290 Jun 19  2020 merge_quantif.R
+-rw-r--r-- 1 Nina 197609    345 Jun 19  2020 merge_deconv.R
+-rw-r--r-- 1 Nina 197609    279 Jun 19  2020 deconvolution_quantiseq.R
+-rw-r--r-- 1 Nina 197609    650 Jun 19  2020 deconvolution_mcpcounter.R
+-rw-r--r-- 1 Nina 197609    429 Jun 19  2020 deconvolution_epidish.R
+-rw-r--r-- 1 Nina 197609    498 Jun 19  2020 deconvolution_deconrnaseq.R
+-rw-r--r-- 1 Nina 197609   1980 Jun 19  2020 count_to_tpm.R
+-rw-r--r-- 1 Nina 197609    617 Jun 19  2020 compute_geneLength.R
+-rw-r--r-- 1 Nina 197609   4298 Apr 13  2021 RNAsign_functions.R
+-rw-r--r-- 1 Nina 197609   4358 Jun 23  2021 deconvolution_algorithms.R
+-rw-r--r-- 1 Nina 197609   1426 Jun 23  2021 deconvolution.Rmd
+-rw-r--r-- 1 Nina 197609  59674 Mar 14  2022 predict_from_deconv_revision.py
+-rwxr-xr-x 1 Nina 197609    816 Mar 17  2022 heatmap_ROC.py*
+-rw-r--r-- 1 Nina 197609  60392 Apr 26  2022 predict_from_deconv_revision_LP_False.py
+-rw-r--r-- 1 Nina 197609  60445 Apr 26  2022 predict_from_deconv_revision_LP_False_output_dfcorr.py
+-rw-r--r-- 1 Nina 197609  54818 Apr 26  2022 predict_from_deconv_revision_master_dfcorr.py
+-rw-r--r-- 1 Nina 197609  54800 Apr 26  2022 predict_from_deconv_revision_last_miguel.py
+-rw-r--r-- 1 Nina 197609  20771 Apr 26  2022 predict_from_deconv_revision_miguel_january.py
+-rw-r--r-- 1 Nina 197609 312765 Nov 17 06:37 all_python_scripts_gemdecan.txt
+-rw-r--r-- 1 Nina 197609  15352 Nov 17 06:40 all_R_scripts_gemdecan.txt
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 BPRNACan/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 BPRNA/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 BPmet/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 BPRNACanProMet/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 BPRNACan3DProMet/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 BPmetCan/
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures/BPRNACan:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures/BPRNA:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures/BPmet:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures/BPRNACanProMet:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures/BPRNACan3DProMet:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/signatures/BPmetCan:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/revision:
+total 4
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 results/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 python/
+
+./04_Postdoc_INSERM/03_Deconvolution/revision/results:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 ROC/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 predictions/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 shap/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 coefficients/
+
+./04_Postdoc_INSERM/03_Deconvolution/revision/results/ROC:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/revision/results/predictions:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/revision/results/shap:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/revision/results/coefficients:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/revision/python:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 predict_from_deconv_revision.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 predict_from_deconv_revision_last_miguel.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 predict_from_deconv_revision_miguel_january.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 predict_from_deconv_revision_master_dfcorr.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 predict_from_deconv_revision_LP_False.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 predict_from_deconv_revision_LP_False_output_dfcorr.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 heatmap_ROC.py
+
+./04_Postdoc_INSERM/03_Deconvolution/results:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 deconvolution/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 qc/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 figures/
+
+./04_Postdoc_INSERM/03_Deconvolution/results/deconvolution:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/results/qc:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/results/figures:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/pipeline:
+total 4
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 config/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 R/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:06 python/
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 Snakefile
+
+./04_Postdoc_INSERM/03_Deconvolution/pipeline/config:
+total 0
+
+./04_Postdoc_INSERM/03_Deconvolution/pipeline/R:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 RNAsign_functions.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 compute_geneLength.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 count_to_tpm.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 deconvolution_algorithms.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 deconvolution_epidish.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 deconvolution_deconrnaseq.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 deconvolution_mcpcounter.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 deconvolution_quantiseq.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 merge_deconv.R
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 merge_quantif.R
+
+./04_Postdoc_INSERM/03_Deconvolution/pipeline/python:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:06 sample_parser.py
+
+./04_Postdoc_INSERM/01:
+total 56
+drwxr-xr-x 1 Nina 197609     0 Nov 15 08:39 history/
+-rw-r--r-- 1 Nina 197609  1980 Nov 15 10:44 README_ideas.md
+-rw-r--r-- 1 Nina 197609  5400 Nov 15 11:16 README_OLD.md
+drwxr-xr-x 1 Nina 197609     0 Nov 15 11:19 data/
+drwxr-xr-x 1 Nina 197609     0 Nov 15 11:19 results/
+drwxr-xr-x 1 Nina 197609     0 Nov 15 11:31 netlogo_model/
+drwxr-xr-x 1 Nina 197609     0 Nov 15 11:32 openmole/
+drwxr-xr-x 1 Nina 197609     0 Nov 15 11:36 figures/
+-rw-r--r-- 1 Nina 197609  2969 Nov 15 11:56 README_NEW.md
+-rw-r--r-- 1 Nina 197609 13396 Nov 15 14:12 README.md
+drwxr-xr-x 1 Nina 197609     0 Nov 15 16:37 abm_pipeline/
+
+./04_Postdoc_INSERM/01/history:
+total 536
+-rwxr-xr-x 1 Nina 197609   1067 Dec 10  2021 remove_duplicates_generic_with_filtering_keeping_only_samples.py*
+-rwxr-xr-x 1 Nina 197609   1226 Jul 23  2022 extract_param_sets_from_pareto_adapted.py*
+-rwxr-xr-x 1 Nina 197609    979 Jul 23  2022 aggregateData.py*
+-rwxr-xr-x 1 Nina 197609   1470 Jul 24  2022 make_best_sets_all_patients.py*
+-rwxr-xr-x 1 Nina 197609   2509 Jul 24  2022 pca_analysis.py*
+-rwxr-xr-x 1 Nina 197609   7085 Jul 25  2022 RMSE.py*
+-rwxr-xr-x 1 Nina 197609    649 Jul 25  2022 aggregate_patients_param.py*
+-rwxr-xr-x 1 Nina 197609   1231 Jul 29  2022 extract_param_sets_from_pareto.py*
+-rwxr-xr-x 1 Nina 197609   2631 Jul 30  2022 parse_best_param_for_behavior_space.py*
+-rwxr-xr-x 1 Nina 197609   3963 Jul 30  2022 make_folders.py*
+-rwxr-xr-x 1 Nina 197609   3098 Jul 31  2022 parse_best_param_for_behavior_space_adapted.py*
+-rw-r--r-- 1 Nina 197609   3536 Jul 31  2022 copy_for_git_paretoFrontGenericStochastic.py
+-rwxr-xr-x 1 Nina 197609   6010 Aug  1  2022 plot_sim_vs_exp_class1.py*
+-rwxr-xr-x 1 Nina 197609   6011 Aug  1  2022 plot_sim_vs_exp_class2.py*
+-rwxr-xr-x 1 Nina 197609   1093 Aug  1  2022 make_knee_points_summary.py*
+-rwxr-xr-x 1 Nina 197609   5284 Aug  1  2022 make_averaged_simu_by_patients.py*
+-rwxr-xr-x 1 Nina 197609   1045 Aug  1  2022 averaged_simu_shell.py*
+-rwxr-xr-x 1 Nina 197609   5155 Aug  1  2022 plot_sim_vs_exp.py*
+-rwxr-xr-x 1 Nina 197609   3838 Aug  1  2022 list_of_commands.py*
+-rwxr-xr-x 1 Nina 197609   1217 Aug  1  2022 commands_plot_sim_vs_exp_with_scores.py*
+-rwxr-xr-x 1 Nina 197609   5423 Aug  1  2022 plot_sim_vs_exp_with_scores.py*
+-rwxr-xr-x 1 Nina 197609    897 Aug  1  2022 averaged_simu_plot_shell.py*
+-rwxr-xr-x 1 Nina 197609   7632 Aug 12  2022 plot_sim_vs_exp_class1_with_scores.py*
+-rwxr-xr-x 1 Nina 197609   7632 Aug 12  2022 plot_sim_vs_exp_class2_with_scores.py*
+-rwxr-xr-x 1 Nina 197609   1257 Aug 12  2022 make_shell_commands.py*
+-rwxr-xr-x 1 Nina 197609   1285 Aug 12  2022 make_shell_commands_class1.py*
+-rwxr-xr-x 1 Nina 197609   1285 Aug 12  2022 make_shell_commands_class2.py*
+-rwxr-xr-x 1 Nina 197609   1060 Aug 12  2022 shell_plots.py*
+-rwxr-xr-x 1 Nina 197609   3208 Aug 12  2022 plot_sensitivity_analysis.py*
+-rwxr-xr-x 1 Nina 197609   4448 Aug 12  2022 make_behavior_space_experiment_file.py*
+-rwxr-xr-x 1 Nina 197609   4487 Aug 12  2022 make_behavior_space_experiment_file_class2.py*
+-rwxr-xr-x 1 Nina 197609   4488 Aug 12  2022 make_behavior_space_experiment_file_class1.py*
+-rwxr-xr-x 1 Nina 197609   5415 Aug 12  2022 plot_kneepoint0_sim_vs_exp_with_scores.py*
+-rwxr-xr-x 1 Nina 197609   5397 Aug 12  2022 make_kneepoint0_simu_by_patients.py*
+-rwxr-xr-x 1 Nina 197609   1042 Aug 12  2022 kneepoint0_by_patient_simu_shell.py*
+-rwxr-xr-x 1 Nina 197609   5424 Aug 12  2022 make_kneepoint1_class1_simu_by_patients.py*
+-rwxr-xr-x 1 Nina 197609   1071 Aug 12  2022 kneepoint1_class1_by_patient_simu_shell.py*
+-rwxr-xr-x 1 Nina 197609   1071 Aug 12  2022 kneepoint1_class2_by_patient_simu_shell.py*
+-rwxr-xr-x 1 Nina 197609   5424 Aug 12  2022 make_kneepoint1_class2_simu_by_patients.py*
+-rwxr-xr-x 1 Nina 197609    898 Aug 12  2022 kneepoint0_simu_plot_shell.py*
+-rwxr-xr-x 1 Nina 197609   5338 Aug 12  2022 plot_kneepoint1_sim_vs_exp_with_scores.py*
+-rwxr-xr-x 1 Nina 197609   5338 Aug 12  2022 plot_kneepoint2_sim_vs_exp_with_scores.py*
+-rwxr-xr-x 1 Nina 197609    905 Aug 12  2022 kneepoint2_simu_plot_shell.py*
+-rwxr-xr-x 1 Nina 197609    905 Aug 12  2022 kneepoint1_simu_plot_shell.py*
+-rwxr-xr-x 1 Nina 197609   5471 Aug 12  2022 plot_sim_vs_exp_with_scores_only_kneepoint_patient_specific.py*
+-rwxr-xr-x 1 Nina 197609    908 Aug 12  2022 kneepoint_patient_specific_simu_plot_shell.py*
+-rwxr-xr-x 1 Nina 197609   1075 Aug 14  2022 shell_plots_class1.py*
+-rwxr-xr-x 1 Nina 197609   3263 Aug 14  2022 plot_sensitivity_analysis_class2.py*
+-rwxr-xr-x 1 Nina 197609   3263 Aug 14  2022 plot_sensitivity_analysis_class1.py*
+-rwxr-xr-x 1 Nina 197609   1075 Aug 14  2022 shell_plots_class2.py*
+-rwxr-xr-x 1 Nina 197609   5862 Sep  2  2022 plot_sim_vs_exp_with_scores_class1_averaged.py*
+-rwxr-xr-x 1 Nina 197609   5845 Sep  2  2022 plot_sim_vs_exp_with_scores_model_1.py*
+-rwxr-xr-x 1 Nina 197609   5844 Sep  2  2022 plot_sim_vs_exp_with_scores_Model2.py*
+-rwxr-xr-x 1 Nina 197609   5862 Sep  2  2022 plot_sim_vs_exp_with_scores_class2_averaged.py*
+-rwxr-xr-x 1 Nina 197609   2144 Sep  9  2022 parametersets_violinplots.py*
+-rwxr-xr-x 1 Nina 197609   2025 Sep 28  2022 heterologous.py*
+-rwxr-xr-x 1 Nina 197609   8107 Sep 30  2022 plot_predictions_model0.py*
+-rwxr-xr-x 1 Nina 197609   7590 Sep 30  2022 scikitlearn_plot_predictions_model0.py*
+-rwxr-xr-x 1 Nina 197609   2268 Oct  3  2022 parametersets_violinplots_9patients.py*
+-rwxr-xr-x 1 Nina 197609   1170 Oct  4  2022 t_test.py*
+-rwxr-xr-x 1 Nina 197609   2379 Nov 29  2022 make_files_for_git.py*
+-rw-r--r-- 1 Nina 197609 200439 Nov 15 08:39 all_scripts_with_names_abm.py
+
+./04_Postdoc_INSERM/01/data:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 15 11:19 patient_dict.txt
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:19 experimental/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:19 pareto/
+
+./04_Postdoc_INSERM/01/data/experimental:
+total 0
+
+./04_Postdoc_INSERM/01/data/pareto:
+total 0
+
+./04_Postdoc_INSERM/01/results:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:19 validation/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:19 advanced_analysis/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 behaviorspace/
+
+./04_Postdoc_INSERM/01/results/validation:
+total 0
+
+./04_Postdoc_INSERM/01/results/advanced_analysis:
+total 0
+
+./04_Postdoc_INSERM/01/results/behaviorspace:
+total 4
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_specific_models/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 general_model/
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_1/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_2/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_3/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_4/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_5/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_6/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_7/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_8/
+drwxr-xr-x 1 Nina 197609 0 Nov 15 11:33 patient_9/
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_1:
+total 24
+-rw-r--r-- 1 Nina 197609  1127 Feb  8  2023 pareto_front_patient_1.txt
+-rw-r--r-- 1 Nina 197609 16607 Feb  8  2023 NSGAII_exploration_output_patient_1.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_2:
+total 96
+-rw-r--r-- 1 Nina 197609  6118 Feb  8  2023 pareto_front_patient_2.txt
+-rw-r--r-- 1 Nina 197609 88856 Feb  8  2023 NSGAII_exploration_output_patient_2.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_3:
+total 144
+-rw-r--r-- 1 Nina 197609 133153 Feb  8  2023 NSGAII_exploration_output_patient_3.txt
+-rw-r--r-- 1 Nina 197609  10214 Feb  8  2023 pareto_front_patient_3.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_4:
+total 16
+-rw-r--r-- 1 Nina 197609 8288 Feb  8  2023 NSGAII_exploration_output_patient_4.txt
+-rw-r--r-- 1 Nina 197609 1408 Feb  8  2023 pareto_front_patient_4.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_5:
+total 16
+-rw-r--r-- 1 Nina 197609 8931 Feb  8  2023 NSGAII_exploration_output_patient_5.txt
+-rw-r--r-- 1 Nina 197609 2489 Feb  8  2023 pareto_front_patient_5.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_6:
+total 36
+-rw-r--r-- 1 Nina 197609 29822 Feb  8  2023 NSGAII_exploration_output_patient_6.txt
+-rw-r--r-- 1 Nina 197609  1097 Feb  8  2023 pareto_front_patient_6.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_7:
+total 28
+-rw-r--r-- 1 Nina 197609   755 Feb  8  2023 pareto_front_patient_7.txt
+-rw-r--r-- 1 Nina 197609 22627 Feb  8  2023 NSGAII_exploration_output_patient_7.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_8:
+total 64
+-rw-r--r-- 1 Nina 197609  4670 Feb  8  2023 pareto_front_patient_8.txt
+-rw-r--r-- 1 Nina 197609 56971 Feb  8  2023 NSGAII_exploration_output_patient_8.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/patient_specific_models/patient_9:
+total 32
+-rw-r--r-- 1 Nina 197609  2752 Feb  8  2023 pareto_front_patient_9.txt
+-rw-r--r-- 1 Nina 197609 24737 Feb  8  2023 NSGAII_exploration_output_patient_9.txt
+
+./04_Postdoc_INSERM/01/results/behaviorspace/general_model:
+total 588
+-rw-r--r-- 1 Nina 197609 588846 Feb  8  2023 NSGAII_exploration_output.txt
+-rw-r--r-- 1 Nina 197609  12221 Feb  8  2023 pareto_front.txt
+
+./04_Postdoc_INSERM/01/netlogo_model:
+total 49
+-rw-r--r-- 1 Nina 197609   429 Feb  8  2023 README.md
+-rw-r--r-- 1 Nina 197609 47257 Feb  8  2023 ABM_NLC_CLL.nlogo
+
+./04_Postdoc_INSERM/01/openmole:
+total 56
+-rw-r--r-- 1 Nina 197609  7105 Feb  8  2023 parameter_exploration.oms
+-rw-r--r-- 1 Nina 197609 47257 Feb  8  2023 ABM_NLC_CLL.nlogo
+
+./04_Postdoc_INSERM/01/figures:
+total 3512
+-rw-r--r-- 1 Nina 197609  485786 Dec 10  2021 Figure2.png
+-rw-r--r-- 1 Nina 197609 1004883 Dec 13  2021 Figure1.jpg
+-rw-r--r-- 1 Nina 197609  747388 Dec 13  2021 Fig3.png
+-rw-r--r-- 1 Nina 197609 1349626 Dec 13  2021 fig4.png
+
+./04_Postdoc_INSERM/01/abm_pipeline:
+total 30
+-rw-r--r-- 1 Nina 197609   89 Nov 15 09:24 __init__.py
+-rw-r--r-- 1 Nina 197609  551 Nov 15 09:24 config.py
+drwxr-xr-x 1 Nina 197609    0 Nov 15 10:04 parameter_exploration/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 10:36 model_validation/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 10:42 sensitivity/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 10:49 advanced_analysis/
+-rw-r--r-- 1 Nina 197609 9210 Nov 15 10:51 cli.py
+-rw-r--r-- 1 Nina 197609 5734 Nov 15 16:37 README.md
+
+./04_Postdoc_INSERM/01/abm_pipeline/parameter_exploration:
+total 17
+-rw-r--r-- 1 Nina 197609  221 Nov 15 09:25 __init__.py
+-rw-r--r-- 1 Nina 197609 1185 Nov 15 09:25 utils.py
+drwxr-xr-x 1 Nina 197609    0 Nov 15 09:26 initial_ranges/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 09:29 nsga2_analysis/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 10:03 instantiate_models/
+drwxr-xr-x 1 Nina 197609    0 Nov 15 10:06 shell_commands/
+
+./04_Postdoc_INSERM/01/abm_pipeline/parameter_exploration/initial_ranges:
+total 5
+-rw-r--r-- 1 Nina 197609  123 Nov 15 09:26 __init__.py
+-rw-r--r-- 1 Nina 197609 1300 Nov 15 09:26 aggregate_data.py
+
+./04_Postdoc_INSERM/01/abm_pipeline/parameter_exploration/nsga2_analysis:
+total 17
+-rw-r--r-- 1 Nina 197609  309 Nov 15 09:27 __init__.py
+-rw-r--r-- 1 Nina 197609 4654 Nov 15 09:27 pareto_front.py
+-rw-r--r-- 1 Nina 197609 2259 Nov 15 09:28 extract_best_sets.py
+-rw-r--r-- 1 Nina 197609 1847 Nov 15 09:29 export_for_git.py
+
+./04_Postdoc_INSERM/01/abm_pipeline/parameter_exploration/instantiate_models:
+total 17
+-rw-r--r-- 1 Nina 197609  193 Nov 15 09:29 __init__.py
+-rw-r--r-- 1 Nina 197609 7373 Nov 15 09:30 behavior_space_files.py
+-rw-r--r-- 1 Nina 197609 4144 Nov 15 10:03 xml_behavior_space.py
+
+./04_Postdoc_INSERM/01/abm_pipeline/parameter_exploration/shell_commands:
+total 17
+-rw-r--r-- 1 Nina 197609  266 Nov 15 10:04 __init__.py
+-rw-r--r-- 1 Nina 197609 3372 Nov 15 10:04 patients.py
+-rw-r--r-- 1 Nina 197609 1463 Nov 15 10:05 kneepoint.py
+-rw-r--r-- 1 Nina 197609 1159 Nov 15 10:05 averaged.py
+-rw-r--r-- 1 Nina 197609 1167 Nov 15 10:06 sensitivity.py
+
+./04_Postdoc_INSERM/01/abm_pipeline/model_validation:
+total 21
+-rw-r--r-- 1 Nina 197609  318 Nov 15 10:37 __init__.py
+-rw-r--r-- 1 Nina 197609 2769 Nov 15 10:37 metrics.py
+-rw-r--r-- 1 Nina 197609 6848 Nov 15 10:37 plots.py
+-rw-r--r-- 1 Nina 197609 5263 Nov 15 10:38 validator.py
+
+./04_Postdoc_INSERM/01/abm_pipeline/sensitivity:
+total 9
+-rw-r--r-- 1 Nina 197609 1287 Nov 15 10:42 utils.py
+-rw-r--r-- 1 Nina 197609 1916 Nov 15 10:43 plots.py
+-rw-r--r-- 1 Nina 197609  118 Nov 15 10:43 __init__.py
+
+./04_Postdoc_INSERM/01/abm_pipeline/advanced_analysis:
+total 10
+-rw-r--r-- 1 Nina 197609  183 Nov 15 10:49 __init__.py
+-rw-r--r-- 1 Nina 197609  476 Nov 15 10:49 utils.py
+-rw-r--r-- 1 Nina 197609 3497 Nov 15 10:50 plots_advanced.py
+-rw-r--r-- 1 Nina 197609 1571 Nov 15 10:51 stats_advanced.py
+
+./01_PhD_CNRS:
+total 17
+-rw-r--r-- 1 Nina 197609 2567 Nov 13 22:31 transcription_regulation_hexim_tat.md
+-rw-r--r-- 1 Nina 197609  436 Nov 13 22:31 READMEOLD.md
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:18 PTEFb_HEXIM_project/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 PTEFb_Regulation/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 PTEFb_PhD/
+
+./01_PhD_CNRS/PTEFb_HEXIM_project:
+total 24
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:34 data/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:34 scripts/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:34 docs/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 07:34 notebooks/
+-rw-r--r-- 1 Nina 197609 8730 Nov 17 08:18 README.md
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/data:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 yeast_screens/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 mutants_cyclinT1/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 sequences_7SK_HEXIM/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 microscopy/
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/data/yeast_screens:
+total 0
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/data/mutants_cyclinT1:
+total 0
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/data/sequences_7SK_HEXIM:
+total 0
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/data/microscopy:
+total 0
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/scripts:
+total 4
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 plotting/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 analysis/
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/scripts/plotting:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 visualize_mutations.ipynb
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/scripts/analysis:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 rnabob_automaton.py
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 sequence_alignment.sh
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 secondary_structure_viennaRNA.R
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/docs:
+total 4
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 thesis_summary.pdf
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 retrovirology_2014_summary.pdf
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 mbe_2009_summary.pdf
+drwxr-xr-x 1 Nina 197609 0 Nov 17 07:34 figures/
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/docs/figures:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 pipeline_mermaid.svg
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 interaction_map.svg
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 7SK_secondary_structure.png
+
+./01_PhD_CNRS/PTEFb_HEXIM_project/notebooks:
+total 0
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 01_mutagenesis_screen.ipynb
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 02_coIP_and_kinase.ipynb
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 03_microscopy_analysis.ipynb
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 04_7SK_evolution.ipynb
+-rw-r--r-- 1 Nina 197609 0 Nov 17 07:34 05_summary_figures.ipynb
+
+./01_PhD_CNRS/PTEFb_Regulation:
+total 9
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 figures/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 presentations/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 thesis/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 retrovirology_2014/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 methods/
+-rw-r--r-- 1 Nina 197609 569 Nov 17 08:19 README.md
+
+./01_PhD_CNRS/PTEFb_Regulation/figures:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/presentations:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 slides/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 posters/
+
+./01_PhD_CNRS/PTEFb_Regulation/presentations/slides:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/presentations/posters:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/thesis:
+total 1
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 figures/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 supplementary/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 notes/
+-rw-r--r-- 1 Nina 197609 414 Nov 17 08:19 README.md
+
+./01_PhD_CNRS/PTEFb_Regulation/thesis/figures:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/thesis/supplementary:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/thesis/notes:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014:
+total 12
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 yeast_genetics/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 mammalian_cell_assays/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 imaging/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:19 data/
+-rw-r--r-- 1 Nina 197609 861 Nov 17 08:20 README.md
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/yeast_genetics:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 reverse_two_hybrid/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 forward_two_hybrid/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 plasmid_maps/
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/yeast_genetics/reverse_two_hybrid:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/yeast_genetics/forward_two_hybrid:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/yeast_genetics/plasmid_maps:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/mammalian_cell_assays:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 luciferase/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 Tat_rescue/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 CTD_kinase/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 coIP_western/
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/mammalian_cell_assays/luciferase:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/mammalian_cell_assays/Tat_rescue:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/mammalian_cell_assays/CTD_kinase:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/mammalian_cell_assays/coIP_western:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/imaging:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 Dendra_localization/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 SMT/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:19 FLIP/
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/imaging/Dendra_localization:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/imaging/SMT:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/imaging/FLIP:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/retrovirology_2014/data:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods:
+total 4
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 yeast/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 molecular_cloning/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 mammalian_culture/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 reporter_assays/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 kinase/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 coIP/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:19 imaging/
+-rw-r--r-- 1 Nina 197609 1069 Nov 17 08:20 README.md
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/yeast:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/molecular_cloning:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/mammalian_culture:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/reporter_assays:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/kinase:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/coIP:
+total 0
+
+./01_PhD_CNRS/PTEFb_Regulation/methods/imaging:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD:
+total 16
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 manuscript/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 experiments/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 results/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 methods/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 figures/
+drwxr-xr-x 1 Nina 197609    0 Nov 17 08:24 presentations/
+-rw-r--r-- 1 Nina 197609 2108 Nov 17 08:25 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/manuscript:
+total 1
+drwxr-xr-x 1 Nina 197609  0 Nov 17 08:24 figures/
+drwxr-xr-x 1 Nina 197609  0 Nov 17 08:24 supplementary/
+drwxr-xr-x 1 Nina 197609  0 Nov 17 08:24 notes/
+-rw-r--r-- 1 Nina 197609 93 Nov 17 08:27 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/manuscript/figures:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/manuscript/supplementary:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/manuscript/notes:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments:
+total 4
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 yeast_genetics/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 molecular_cloning/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 reporter_assays/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 mammalian_assays/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 coIP_western/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 imaging/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 CTD_kinase/
+-rw-r--r-- 1 Nina 197609 737 Nov 17 08:26 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/yeast_genetics:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/molecular_cloning:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/reporter_assays:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/mammalian_assays:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/coIP_western:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/imaging:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/experiments/CTD_kinase:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/results:
+total 1
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 cyclinT1_mutants/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 tat_binding/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 hexim1_interactions/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 localization/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 kinase_activity/
+-rw-r--r-- 1 Nina 197609 442 Nov 17 08:26 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/results/cyclinT1_mutants:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/results/tat_binding:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/results/hexim1_interactions:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/results/localization:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/results/kinase_activity:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/methods:
+total 1
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 yeast/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 cloning/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 mammalian/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 imaging/
+drwxr-xr-x 1 Nina 197609   0 Nov 17 08:24 biochemical/
+-rw-r--r-- 1 Nina 197609 336 Nov 17 08:26 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/methods/yeast:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/methods/cloning:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/methods/mammalian:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/methods/imaging:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/methods/biochemical:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/figures:
+total 1
+-rw-r--r-- 1 Nina 197609 239 Nov 17 08:26 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/presentations:
+total 0
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:24 posters/
+drwxr-xr-x 1 Nina 197609 0 Nov 17 08:24 slides/
+-rw-r--r-- 1 Nina 197609 0 Nov 17 08:24 README.md
+
+./01_PhD_CNRS/PTEFb_PhD/presentations/posters:
+total 0
+
+./01_PhD_CNRS/PTEFb_PhD/presentations/slides:
+total 0
