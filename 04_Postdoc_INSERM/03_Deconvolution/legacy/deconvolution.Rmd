@@ -1,0 +1,40 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r}
+source("./deconvolution_algorithms.R")
+```
+
+```{r}
+rnaseq_tpm <- read.delim("./rnaseq_tpm_ed.txt", header = T, row.names = 1)
+```
+
+
+```{r}
+rnaseq_tpm_deconvolutions <- deconvolutions(rnaseq_tpm)
+```
+
+```{r}
+extract_dcv_pancaldi <- function(rnaseq_tpm_deconvolutions, method_signature_name){
+  subset_df = rnaseq_tpm_deconvolutions[,grep(method_signature_name, colnames(rnaseq_tpm_deconvolutions))]
+  new_colnames = sapply(strsplit(colnames(subset_df), "_"), "[[", 3)
+  colnames(subset_df) = new_colnames
+  subset_df <- cbind(Sample = rownames(subset_df), subset_df)
+  write.table(subset_df, file.path('.','output', paste0(method_signature_name, 'dcv.txt')), 
+            sep = "\t", quote = F, row.names = F, col.names = T)
+}
+```
+
+```{r}
+extract_dcv_pancaldi(rnaseq_tpm_deconvolutions, method_signature_name = 'Epidish_BPRNACan_')
+extract_dcv_pancaldi(rnaseq_tpm_deconvolutions, method_signature_name = 'DeconRNASeq_BPRNACan_')
+extract_dcv_pancaldi(rnaseq_tpm_deconvolutions, method_signature_name = 'Epidish_BPRNACan3DProMet_')
+extract_dcv_pancaldi(rnaseq_tpm_deconvolutions, method_signature_name = 'DeconRNASeq_BPRNACan3DProMet_')
+extract_dcv_pancaldi(rnaseq_tpm_deconvolutions, method_signature_name = 'Epidish_BPRNACanProMet_')
+extract_dcv_pancaldi(rnaseq_tpm_deconvolutions, method_signature_name = 'DeconRNASeq_BPRNACanProMet_')
+```
+
+
