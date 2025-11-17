@@ -1,8 +1,3 @@
-Absolutely — here is the **full English version** of your README, clean, professional, GitHub-ready, with diagrams included.
-You can paste it directly into your repository as `README.md`.
-
----
-
 # 📌 Ankyrin Modularity Pipeline
 
 **Domain enrichment • Conservation • ELM/SLiM analysis • Interacting partners**
@@ -10,8 +5,6 @@ You can paste it directly into your repository as `README.md`.
 This repository contains a fully refactored, modular and reproducible Python implementation of the analysis pipeline used to study:
 
 > **Functional modules built by association of domains and linear motifs in Ankyrin proteins and their binding partners**
-
-The project provides a clean, modern structure for all stages of the workflow:
 
 * PFAM parsing (query / homologs)
 * Pfam → clan mapping
@@ -21,7 +14,7 @@ The project provides a clean, modern structure for all stages of the workflow:
 * Full ELM/SLiM processing (counts, enrichment, domain–SLiM co-occurrence)
 * Interaction-level domain/ELM association analysis
 
-Everything is organized into **well-separated modules**, and each analysis stage is activated through **explicit flags in `pipeline.py`**.
+Each analysis stage is activated through **explicit flags in `pipeline.py`**.
 
 ---
 
@@ -196,15 +189,6 @@ SLiM/ELM reading, counting, enrichment, domain–ELM co-occurrence (interacting 
 
 ---
 
-# 🧾 Reproducibility & Logging
-
-All modules use Python's `logging` module with:
-
-* timestamp
-* module name
-* log level
-* message
-
 The pipeline avoids overwriting results unless explicitly intended and organizes them under:
 
 ```
@@ -214,4 +198,5 @@ data/results/sequences/
 ```
 
 ---
+
 
