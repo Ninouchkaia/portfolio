@@ -1,0 +1,3 @@
+species_id	fasta_path	abundance_path	mapping_path
+yeast	../fasta/yeast.fasta	../abundances/yeast_paxdb.tsv	../metadata/yeast_string_to_uniprot.tsv
+ecoli	../fasta/ecoli.fasta	../abundances/ecoli_paxdb.tsv	../metadata/ecoli_string_to_uniprot.tsv
