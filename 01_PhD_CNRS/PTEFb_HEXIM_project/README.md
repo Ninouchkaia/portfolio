@@ -1,3 +1,78 @@
+# Structure–Function Analysis of P-TEFb Transcription Regulation by HEXIM1 and HIV-1 Tat
+
+**Affiliation:** CNRS / École Normale Supérieure – Institut de Biologie de l’ENS (IBENS), Département de Génomique Fonctionnelle  
+**Period:** 2008–2012  
+**Supervision:** Philippe Bensaude, CNRS UMR 8197  
+**Thesis Title:** *Régulation du facteur d’élongation transcriptionnelle P-TEFb par les protéines HEXIM1 et TAT du VIH-1*  
+
+---
+
+## 🧭 Context
+The P-TEFb complex (Cyclin T1/CDK9) is a central regulator of RNA polymerase II transcriptional elongation.  
+Its activity is controlled by the **7SK RNP complex**, where **HEXIM1** acts as an inhibitory subunit, and hijacked by the **HIV-1 Tat** protein to promote viral gene expression.  
+
+This thesis investigated the structural and functional interfaces involved in these interactions to elucidate the molecular mechanisms of transcriptional control.
+
+---
+
+## 🎯 Objectives
+- Map the protein–protein interaction surfaces within the P-TEFb complex.  
+- Characterize how HEXIM1 and HIV-1 Tat compete for Cyclin T1 binding.  
+- Explore the impact of these interactions on transcriptional regulation in mammalian and model systems.  
+
+---
+
+## Project Overview
+
+This research project focused on the **structural and functional dissection of P-TEFb regulation**, combining:
+
+* **High-throughput yeast genetics (reverse two-hybrid)**
+* **Mutagenesis of Cyclin T1 and HEXIM1**
+* **Cell-based assays in human and mouse cells**
+* **Fluorescence microscopy (localization, FLIP, single-molecule tracking)**
+* **Biochemical assays (co-IP, CTD kinase assays)**
+* **RNA level analyses (7SK detection, phylogeny, structural modeling)**
+* **Comparative genomics and evolutionary reconstruction of 7SK RNA and its protein partners**
+
+The core objective was to **map the interaction surfaces between Cyclin T1 (CycT1), CDK9, HEXIM1, LARP7**, and the **7SK snRNA**, and to understand how this regulatory module evolved across Metazoa.
+
+## 🧪 Methods
+- **Molecular biology:** Cloning, plasmid construction, and mutagenesis (site-directed PCR).  
+- **Cell biology:** Establishment of stable transgenic cell lines and *C. elegans* models expressing labeled constructs.  
+- **Protein analysis:** Co-immunoprecipitation, Western blotting, and two-hybrid screening (yeast).  
+- **Microscopy:** Confocal imaging, FRET / FRAP / FLIP assays to measure protein dynamics.  
+- **Biochemical assays:** RNA/DNA/protein extraction, immunodetection, quantitative analysis of transcriptional complexes.  
+
+---
+
+## 💡 Contributions
+- Constructed mutant libraries of Cyclin T1 and HEXIM1 to identify contact regions with P-TEFb and Tat.  
+- Mapped functional domains responsible for transcriptional activation or inhibition.  
+- Combined biochemical and imaging approaches to establish a structure–function model of P-TEFb regulation.  
+- Contributed to internal publications and collaborative manuscripts within the Bensaude group.  
+
+---
+
+## 📘 Key Skills
+Molecular cloning · Protein interaction mapping · Transcriptional regulation · Confocal microscopy · Functional genomics  
+
+---
+
+## 🔗 Reference
+Doctoral work conducted at the **Institut de Biologie de l’ENS**, CNRS UMR 8197 (Paris).  
+Thesis defended in 2012: *Structure–function relationships in P-TEFb regulation by HEXIM1 and HIV-1 Tat*.
+
+
+
+
+
+
+
+
+
+
+
+
 # **P-TEFb / HEXIM / 7SK — Interaction Mapping & Evolutionary Analysis**
 
 ### **Doctoral Project – UPMC / ENS Paris**
@@ -144,6 +219,42 @@ HIV-1 Tat binds the same groove of Cyclin T1 and recruits P-TEFb onto TAR RNA, s
 ---
 
 ## **6. Project Pipeline**
+```mermaid
+flowchart TD
+
+    A[Random mutagenesis of Cyclin T1] --> A1[Error-prone PCR on CycT1 subdomains]
+    A1 --> A2[Yeast recombination to rebuild full-length BD-CycT1]
+    A2 --> A3[Reverse two-hybrid selection on 5-FOA]
+    A3 --> A4[Identification of single amino-acid mutations disrupting HEXIM1 binding]
+
+    B[Targeted mutagenesis of HEXIM1] --> B1[Alanine scanning of conserved motifs]
+    B1 --> B2[Identification of key aromatic residues F262, F267, H275]
+
+    C[Two-hybrid validation] --> C1[HEXIM1 interaction assay]
+    C --> C2[CDK9 binding assay]
+    C --> C3[Selection of mutants with HEXIM negative and Cdk9 positive profiles]
+
+    D[Cell-based validation] --> D1[Co-immunoprecipitation with endogenous HEXIM1 or CDK9]
+    D --> D2[CTD kinase assays with or without RNAse]
+    D --> D3[Reporter activation using Gal4-CycT1]
+    D --> D4[HIV Tat rescue assays in mouse cells]
+
+    E[Microscopy] --> E1[Subcellular localization of Cyclin T1 mutants]
+    E --> E2[FLIP mobility measurements]
+    E --> E3[Stable Dendra-CycT1 cell lines for single-molecule tracking]
+
+    F[Comparative genomics] --> F1[Search for 7SK RNA, HEXIM, LARP7, MePCE]
+    F --> F2[Discovery of functional 7SK RNA in nematodes]
+    F --> F3[Reconstruction of M1–M8 secondary structure variants]
+    F --> F4[Evidence for ancient metazoan origin of the 7SK–HEXIM system]
+
+    A4 --> G[Integrated model of P-TEFb regulation]
+    B2 --> G
+    C3 --> G
+    D4 --> G
+    E3 --> G
+    F4 --> G
+```
 
 ```mermaid
 flowchart TD
@@ -225,4 +336,5 @@ PTEFb_HEXIM_project/
 For questions or collaboration inquiries, please contact: **xxxxxxxxx**
 
 ---
+
 
