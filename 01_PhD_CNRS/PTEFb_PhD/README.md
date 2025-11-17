@@ -15,15 +15,15 @@ of the transcription elongation factor P-TEFb by HEXIM1 and HIV-1 Tat.
 
 PTEFb_PhD/
 │
-├── README.md                   # Présentation générale de la thèse
+├── README.md                   
 │
-├── manuscript/                 # Le contenu de la thèse (texte & figures)
+├── manuscript/                 
 │   ├── thesis.pdf
 │   ├── figures/
 │   ├── supplementary/
 │   └── notes/
 │
-├── experiments/                # Toutes tes manips expérimentales (classées par technique)
+├── experiments/                
 │   ├── yeast_genetics/
 │   ├── molecular_cloning/
 │   ├── mammalian_assays/
@@ -32,21 +32,21 @@ PTEFb_PhD/
 │   ├── CTD_kinase/
 │   └── imaging/
 │
-├── results/                    # Résultats organisés (données brutes, tableaux, scans)
+├── results/                    
 │   ├── cyclinT1_mutants/
 │   ├── hexim1_interactions/
 │   ├── tat_binding/
 │   ├── localization/
 │   └── kinase_activity/
 │
-├── methods/                    # Protocoles expérimentaux
+├── methods/                    
 │   ├── yeast/
 │   ├── cloning/
 │   ├── mammalian/
 │   ├── imaging/
 │   └── biochemical/
 │
-├── figures/                    # Figures schématiques (pipeline, modèles, mutants)
+├── figures/                    
 │   ├── pipeline.svg
 │   ├── cyclinT1_structure.svg
 │   ├── hexim1_interface.svg
@@ -55,3 +55,4 @@ PTEFb_PhD/
 └── presentations/
     ├── posters/
     └── slides/
+
