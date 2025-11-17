@@ -12,7 +12,7 @@ of the transcription elongation factor P-TEFb by HEXIM1 and HIV-1 Tat.
 - figures/ — Schematic representations and pathway diagrams
 - presentations/ — Posters and slides
 
-
+```
 PTEFb_PhD/
 │
 ├── README.md                   
@@ -55,4 +55,5 @@ PTEFb_PhD/
 └── presentations/
     ├── posters/
     └── slides/
+```
 
