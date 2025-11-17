@@ -88,7 +88,7 @@ My work ensured that GEM-DeCan is:
 - suitable for external users and reviewers.
 
 ```mermaid
-flowchart TD
+graph TD
 
     %% --------------------
     %% RAW DATA
