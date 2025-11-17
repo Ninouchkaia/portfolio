@@ -196,3 +196,45 @@ def find_pfam_files(uniprot_id: str, num_homologs: int) -> Tuple[Path, Path]:
         logger.warning("PFAM homolog file not found: %s", homolog_file)
 
     return query_file, homolog_file
+
+
+def concatenate_pfam_outputs_by_threshold(
+    input_dir: Path,
+    output_file: Path,
+    min_occurrences: int = 1,
+) -> Path:
+    """
+    Concatène tous les fichiers PFAM dans un dossier (ex: pfam_queries/)
+    et applique un seuil minimal d'occurrences par domaine.
+
+    Reproduit la logique de concaten_pfam_outputs_BD_2015.py.
+
+    Format attendu des fichiers PFAM :
+        uniprot_id \t start \t end \t domain_id
+
+    Sortie : fichier tabulé domaine \t total_occurrences
+    """
+    ensure_dir(output_file.parent)
+
+    domain_counts: Dict[str, int] = {}
+
+    for pfam_file in sorted(input_dir.glob("*.txt")):
+        with pfam_file.open("r") as fh:
+            for raw in fh:
+                cols = raw.rstrip("\n").split("\t")
+                if len(cols) < 4:
+                    continue
+                domain_id = cols[3]
+                domain_counts[domain_id] = domain_counts.get(domain_id, 0) + 1
+
+    with output_file.open("w") as out:
+        out.write("domain_name\toccurrences\n")
+        for domain, count in sorted(domain_counts.items()):
+            if count >= min_occurrences:
+                out.write(f"{domain}\t{count}\n")
+
+    logger.info(
+        "Concatenated %d PFAM domain entries → %s (threshold=%d)",
+        sum(domain_counts.values()), output_file, min_occurrences
+    )
+    return output_file
