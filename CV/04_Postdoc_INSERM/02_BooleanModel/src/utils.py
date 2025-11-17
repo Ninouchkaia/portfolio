@@ -1,1 +1,11 @@
-import time\n\nclass Timer:\n    def __enter__(self):\n        self.start = time.time(); return self\n    def __exit__(self, *args):\n        self.end = time.time(); self.duration = self.end - self.start
+import time
+
+
+class Timer:
+    def __enter__(self):
+        self.start = time.time()
+        return self
+
+    def __exit__(self, *args):
+        self.end = time.time()
+        self.duration = self.end - self.start
