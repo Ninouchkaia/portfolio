@@ -15,7 +15,7 @@ flowchart TD
     C --> E[Return signature sets<br>for M1 / M2 / NLC]
     D --> F[Print summary]
     E --> F
-````
+```
 
 ---
 
