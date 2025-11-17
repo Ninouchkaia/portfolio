@@ -10,7 +10,7 @@ Modular Python pipeline for extracting transcription factor signatures (M1, M2, 
 flowchart TD
 
     A[Load Dorothea TF activity TSV] --> B[Parse rows and extract TF values]
-    B --> C[Identify dominant signature per TF<br>(M1 / M2 / NLC)]
+    B --> C[Identify dominant signature per TF<br> M1 / M2 / NLC]
     C --> D[Write NLC-dominant TFs<br>to output file]
     C --> E[Return signature sets<br>for M1 / M2 / NLC]
     D --> F[Print summary]
