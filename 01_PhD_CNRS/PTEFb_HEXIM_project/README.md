@@ -75,11 +75,10 @@ Thesis defended in 2012: *Structure–function relationships in P-TEFb regulatio
 
 # **P-TEFb / HEXIM / 7SK — Interaction Mapping & Evolutionary Analysis**
 
-### **Doctoral Project – UPMC / ENS Paris**
 
 ---
 
-## **1. Project Overview**
+## **Project Overview**
 
 This repository summarizes a multi-year research project focused on the **structural and functional dissection of P-TEFb regulation**, combining:
 
@@ -95,65 +94,41 @@ The core objective was to **map the interaction surfaces between Cyclin T1 (CycT
 
 ---
 
-## **2. Biological Background**
 
-### **2.1 P-TEFb (CDK9/Cyclin T)**
+## **Experimental Strategy**
 
-P-TEFb is the central transcription elongation factor that phosphorylates:
-
-* **NELF, DSIF** (pausing release)
-* **RNAPII CTD** (productive elongation)
-* **RNA processing factors**
-
-### **2.2 Inhibition by HEXIM1/7SK snRNA**
-
-In cells, most P-TEFb is kept inactive by:
-
-* **HEXIM1** bound to
-* **7SK snRNA** assembled with **LARP7** and **MePCE**.
-
-HEXIM1 and HIV-1 Tat compete for a **partially overlapping binding surface on Cyclin T1**.
-
-### **2.3 Viral hijacking**
-
-HIV-1 Tat binds the same groove of Cyclin T1 and recruits P-TEFb onto TAR RNA, strongly activating transcription.
-
----
-
-## **3. Experimental Strategy**
-
-### **3.1 Large-scale random mutagenesis of Cyclin T1**
+### **1 Large-scale random mutagenesis of Cyclin T1**
 
 * **Error-prone PCR** of defined CycT1 subdomains
 * **Recombination in yeast** to rebuild full-length BD-CycT1
 * **Reverse two-hybrid selection** on 5-FOA
 * Identification of **single amino-acid substitutions disrupting HEXIM1 interaction**
 
-### **3.2 Targeted mutagenesis of HEXIM1**
+### **2 Targeted mutagenesis of HEXIM1**
 
 * Alanine scanning of conserved motifs (basic region, PYNT motif, dimerization helix)
 * Identification of **key aromatic residues** essential for Cyclin-binding (F262, F267, H275)
 
-### **3.3 Two-hybrid validation pipeline**
+### **3 Two-hybrid validation pipeline**
 
 * HEXIM1 interaction
 * CDK9 binding control
 * Mutant selection based on **Hexim(–) / Cdk9(++)** profiles
 
-### **3.4 Cell-based validation**
+### **4 Cell-based validation**
 
 * **Co-immunoprecipitation** (CycT1 mutants + endogenous HEXIM1 or CDK9)
 * **CTD kinase assays** with/without RNAse
 * **Reporter assays** (Gal4-CycT1 to recruit P-TEFb)
 * **HIV Tat rescue assays in mouse 3T3 cells**
 
-### **3.5 Microscopy**
+### **5 Microscopy**
 
 * Subcellular localization of Cyclin T1 mutants
 * FLIP experiments to quantify mobility
 * Generation of **stable Dendra-CycT1 cell lines** for single-molecule tracking
 
-### **3.6 Comparative genomics**
+### **6 Comparative genomics**
 
 * Exhaustive search of **7SK RNA**, **HEXIM**, **LARP7**, **MePCE**
 * Discovery of **functional 7SK RNA in nematodes** (C. elegans)
@@ -162,27 +137,27 @@ HIV-1 Tat binds the same groove of Cyclin T1 and recruits P-TEFb onto TAR RNA, s
 
 ---
 
-## **4. Key Results**
+## **Key Results**
 
-### **4.1 Mapping the P-TEFb–HEXIM1 binding interface**
+### **1 Mapping the P-TEFb–HEXIM1 binding interface**
 
 * Mutations disrupting HEXIM1 binding cluster along a **groove between the two cyclin folds**.
 * The **central hotspot is residue Y175** of Cyclin T1.
 * Y175 establishes a **π-hydrogen bond network** bridging helices H1–H2/H1’–H2’.
 
-### **4.2 Overlap with HIV Tat binding**
+### **2 Overlap with HIV Tat binding**
 
 * Y175 mutants **cannot bind Tat**
 * → cannot support Tat-mediated HIV LTR activation
 * → cannot bind TAR RNA
 * → do not recruit P-TEFb to HIV promoter
 
-### **4.3 HEXIM1 structural determinants**
+### **3 HEXIM1 structural determinants**
 
 * Three conserved aromatic residues (F262, F267, H275) are **essential for Cyclin T1 docking**.
 * They occur in an **intrinsically disordered region**, similar to regions in other CDK regulators (p21, p27).
 
-### **4.4 Cellular phenotypes**
+### **4 Cellular phenotypes**
 
 * CycT1-Y175 mutants show:
 
@@ -191,14 +166,14 @@ HIV-1 Tat binds the same groove of Cyclin T1 and recruits P-TEFb onto TAR RNA, s
   * Increased CTD-kinase activity (insensitive to 7SK/HEXIM repression)
   * Enhanced transcription activation when tethered to DNA
 
-### **4.5 Single-molecule mobility**
+### **5 Single-molecule mobility**
 
 * C-terminal truncations of CycT affect:
 
   * RNAPII association
   * Nuclear mobility (measured by FLIP and photoactivation)
 
-### **4.6 Evolutionary findings (MBE 2009)**
+### **6 Evolutionary findings (MBE 2009)**
 
 * 7SK/HEXIM system present across most Metazoa.
 * **Two alternative structural conformations** of 7SK M2 region → potential RNA switch.
@@ -207,7 +182,7 @@ HIV-1 Tat binds the same groove of Cyclin T1 and recruits P-TEFb onto TAR RNA, s
 
 ---
 
-## **5. ExperimentalMethods Summary**
+## **ExperimentalMethods Summary**
 
 * **Yeast genetics**: standard 2-hybrid / reverse 2-hybrid
 * **Molecular cloning**: mutagenesis, recombination
@@ -222,38 +197,50 @@ HIV-1 Tat binds the same groove of Cyclin T1 and recruits P-TEFb onto TAR RNA, s
 ```mermaid
 flowchart TD
 
-    A[Random mutagenesis of Cyclin T1] --> A1[Error-prone PCR on CycT1 subdomains]
+    %% Top of pipeline
+    START[Experimental Strategy]
+
+    %% Random mutagenesis
+    START --> A[Random mutagenesis of Cyclin T1]
+    A --> A1[Error-prone PCR on CycT1 subdomains]
     A1 --> A2[Yeast recombination to rebuild full-length BD-CycT1]
     A2 --> A3[Reverse two-hybrid selection on 5-FOA]
-    A3 --> A4[Identification of single amino-acid mutations disrupting HEXIM1 binding]
+    A3 --> A4[Identification of single aa mutations disrupting HEXIM1 binding]
 
-    B[Targeted mutagenesis of HEXIM1] --> B1[Alanine scanning of conserved motifs]
-    B1 --> B2[Identification of key aromatic residues F262, F267, H275]
+    %% Targeted mutagenesis
+    A4 --> B[Targeted mutagenesis of HEXIM1]
+    B --> B1[Alanine scanning of conserved regions]
+    B1 --> B2[Identification of critical residues F262, F267, H275]
 
-    C[Two-hybrid validation] --> C1[HEXIM1 interaction assay]
-    C --> C2[CDK9 binding assay]
-    C --> C3[Selection of mutants with HEXIM negative and Cdk9 positive profiles]
+    %% Two-hybrid validation
+    B2 --> C[Two-hybrid validation]
+    C --> C1[HEXIM1 interaction assay]
+    C1 --> C2[CDK9 binding assay]
+    C2 --> C3[Selection of HEXIM negative / Cdk9 positive mutants]
 
-    D[Cell-based validation] --> D1[Co-immunoprecipitation with endogenous HEXIM1 or CDK9]
-    D --> D2[CTD kinase assays with or without RNAse]
-    D --> D3[Reporter activation using Gal4-CycT1]
-    D --> D4[HIV Tat rescue assays in mouse cells]
+    %% Cell-based validation
+    C3 --> D[Cell-based validation]
+    D --> D1[Co-immunoprecipitation with HEXIM1 or CDK9]
+    D1 --> D2[CTD kinase assays with or without RNAse]
+    D2 --> D3[Reporter activation using Gal4-CycT1]
+    D3 --> D4[HIV Tat rescue assays in mouse cells]
 
-    E[Microscopy] --> E1[Subcellular localization of Cyclin T1 mutants]
-    E --> E2[FLIP mobility measurements]
-    E --> E3[Stable Dendra-CycT1 cell lines for single-molecule tracking]
+    %% Microscopy
+    D4 --> E[Microscopy]
+    E --> E1[Subcellular localization]
+    E1 --> E2[FLIP mobility quantification]
+    E2 --> E3[Stable Dendra-CycT1 lines for single-molecule tracking]
 
-    F[Comparative genomics] --> F1[Search for 7SK RNA, HEXIM, LARP7, MePCE]
-    F --> F2[Discovery of functional 7SK RNA in nematodes]
-    F --> F3[Reconstruction of M1–M8 secondary structure variants]
-    F --> F4[Evidence for ancient metazoan origin of the 7SK–HEXIM system]
+    %% Comparative genomics
+    E3 --> F[Comparative genomics]
+    F --> F1[Search for 7SK RNA, HEXIM, LARP7, MePCE]
+    F1 --> F2[Discovery of functional nematode 7SK RNA]
+    F2 --> F3[Reconstruction of M1–M8 secondary structures]
+    F3 --> F4[Inference of metazoan-wide evolutionary origin]
 
-    A4 --> G[Integrated model of P-TEFb regulation]
-    B2 --> G
-    C3 --> G
-    D4 --> G
-    E3 --> G
-    F4 --> G
+    %% Final integration
+    F4 --> END[Integrated model of P-TEFb regulation]
+
 ```
 
 ```mermaid
@@ -261,7 +248,7 @@ flowchart TD
 
 A[Random mutagenesis of Cyclin T1] --> B[Reverse two-hybrid selection]
 B --> C[Sequencing & identification of point mutations]
-C --> D[Two-hybrid validation: HEXIM(-), Cdk9(+)]
+C --> D[Two-hybrid validation: HEXIM-, Cdk9+]
 D --> E[Cell-based validation]
 E --> E1[Co-IP: Cdk9 / HEXIM binding]
 E --> E2[CTD kinase assays]
@@ -279,8 +266,6 @@ M --> N[Nematode 7SK validation]
 
 E & H & J & N --> O[Integrated model of P-TEFb regulation]
 ```
-
----
 
 ## **7. Repository Structure**
 
@@ -321,7 +306,7 @@ PTEFb_HEXIM_project/
 
 ---
 
-## **8. Publications**
+## **Publications**
 
 * **N. Verstraete et al. (2014)**
   *A Cyclin T1 point mutation that abolishes P-TEFb binding to HEXIM1 and HIV Tat.* Retrovirology.
@@ -331,10 +316,6 @@ PTEFb_HEXIM_project/
 
 ---
 
-## **9. Contact**
 
-For questions or collaboration inquiries, please contact: **xxxxxxxxx**
-
----
 
 
