@@ -211,6 +211,45 @@ The goal is to identify **parameter sets** that simultaneously reproduce:
 
 ## **Pipeline Diagram**
 
+## Flowchart diagram
+
+```mermaid
+flowchart TD
+    A[NetLogo ABM<br>ABM_NLC_CLL.nlogo] --> B[OpenMOLE NSGA-II<br>parameter_exploration.oms]
+
+    B --> C1[parameter_exploration/<br>BehaviorSpace generation]
+    B --> C2[parameter_exploration/<br>Instantiate models]
+    B --> C3[parameter_exploration/<br>Shell commands]
+
+    C1 --> D1[NSGA-II exploration<br> general model ]
+    C3 --> D2[NSGA-II exploration<br> 9 patient-specific models ]
+
+    D1 --> E1[pareto_front.txt]
+    D2 --> E2[pareto_front_patient_X.txt]
+
+    E1 --> F1[nsga2_analysis/<br>pareto_front.py]
+    E1 --> F2[nsga2_analysis/<br>extract_best_sets.py]
+    E2 --> F3[nsga2_analysis/<br>extract_best_sets.py]
+
+    F1 --> G1[data/pareto/]
+    F2 --> G1
+    F3 --> G1
+
+    G1 --> H1[model_validation/<br>validator.py]
+    G1 --> H2[model_validation/<br>metrics.py]
+    G1 --> H3[model_validation/<br>plots.py]
+
+    H1 --> I1[Validation metrics]
+    H3 --> I2[Predictions plots]
+
+    F1 --> J1[advanced_analysis/<br>stats_advanced.py]
+    F1 --> J2[advanced_analysis/<br>plots_advanced.py]
+
+    J1 --> K1[Statistical tests]
+    J2 --> K2[Violinplots / PCA / Heatmaps]
+```
+---
+
 ```mermaid
 flowchart TD
 
@@ -484,6 +523,7 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
 
