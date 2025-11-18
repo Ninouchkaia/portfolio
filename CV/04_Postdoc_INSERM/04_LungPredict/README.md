@@ -38,8 +38,3 @@ The goal was to uncover molecular features reflecting immune infiltration, strom
 
 ---
 
-## Key Skills
-Transcriptomic deconvolution · RNA-seq analysis · Pathway inference · Data integration · Oncology bioinformatics  
-
----
-
