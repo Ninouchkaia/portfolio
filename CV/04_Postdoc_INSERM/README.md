@@ -57,7 +57,7 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 
 ### **Project Folder**
 
-[Access the project folder 02_macrophage_polarization](02_macrophage_polarization/)
+[Access the project folder 02_BooleanModel](02_BooleanModel)
 
 ---
 
@@ -78,7 +78,7 @@ Identify microenvironmental features predictive of immunotherapy response.
 
 ### **Project folder**
 
-[Access the folder 03_Deconvolution](03_Deconvolution)
+[Access the folder 03_RNASeqDeconvolution](03_RNASeqDeconvolution)
 
 ---
 
@@ -127,7 +127,7 @@ Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to ident
 
 ### **Project folder**
 
-[Access the folder 05_covid_network_medicine](05_covid_network_medicine)
+[Access the folder 05_NetworkMedicine](05_NetworkMedicine)
 
 ---
 
