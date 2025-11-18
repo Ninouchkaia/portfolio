@@ -114,7 +114,7 @@ The goal is to identify **parameter sets** that simultaneously reproduce:
 
 ## **Summary of the full pipeline**
 
-```mermaid
+```
 NetLogo ABM
     ↓  (multiple runs)
 OpenMOLE NSGA-II optimization
@@ -405,6 +405,7 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
 
