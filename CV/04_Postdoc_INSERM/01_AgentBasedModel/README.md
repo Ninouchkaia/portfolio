@@ -3,8 +3,7 @@
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
 **Period:** 2020–2023  
 **Supervisor:** Vera Pancaldi  
-**Publication:** Verstraete N., et al. *An agent-based model of monocyte differentiation into tumour-associated macrophages in chronic lymphocytic leukemia.*  
-*iScience*, 2023. [DOI:10.1016/j.isci.2023.106897](https://www.cell.com/iscience/fulltext/S2589-0042(23)00974-4)
+**Publication:** Verstraete N., et al. *An agent-based model of monocyte differentiation into tumour-associated macrophages in chronic lymphocytic leukemia. iScience*, 2023. [DOI:10.1016/j.isci.2023.106897](https://www.cell.com/iscience/fulltext/S2589-0042(23)00974-4)
  
 For a more detailed description of the pipeline here, see here : [README_DETAILS.md](README_DETAILS.md)
 
@@ -12,7 +11,6 @@ For a more detailed description of the pipeline here, see here : [README_DETAILS
 
 ## Context
 This project aimed to simulate tumor evolution as a small-scale ecosystem, to understand how tumor cells, immune cells, and their microenvironment interact dynamically over time.  
-
 The goal was to capture emergent behaviors (coexistence, suppression, escape) resulting from local cellular interactions and environmental constraints.
 
 ---
@@ -32,6 +30,7 @@ The goal was to capture emergent behaviors (coexistence, suppression, escape) re
 - **Analysis:** Aggregation of simulation outputs using R/Python (time-series clustering, population ratios, stability mapping).
 
 ---
+
 ## Flowchart diagram
 
 ```mermaid
@@ -69,6 +68,7 @@ flowchart TD
     J1 --> K1[Statistical tests]
     J2 --> K2[Violinplots / PCA / Heatmaps]
 ```
+---
 
 ## Contributions
 - Designed and implemented the NetLogo model of the tumor ecosystem.  
@@ -85,7 +85,8 @@ If you use this pipeline or model, please cite the associated scientific publica
 *iScience*, 2023. [DOI:10.1016/j.isci.2023.106897](https://www.cell.com/iscience/fulltext/S2589-0042(23)00974-4)
 ---
 
-For a more detailed description of the pipeline here, see here :   [CV/04_Postdoc_INSERM/01_AgentBasedModel/README.md](README_DETAILS.md)
+For a more detailed description of the pipeline here, see here :   [README_DETAILS.md](README_DETAILS.md)
+
 
 
 
