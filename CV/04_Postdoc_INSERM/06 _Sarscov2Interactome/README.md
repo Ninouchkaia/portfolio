@@ -1,11 +1,8 @@
 # SARS-CoV-2 Host Interactome – Reproducible Analysis Pipeline
 
-This repository provides a strict and fully reproducible pipeline for computing  
-**viral–host interactors**, **multi-order network propagation**, and  
-**functional enrichment (Reactome / GO)** for SARS-CoV-2 and a panel of human viruses.
+This repository provides a strict and fully reproducible pipeline for computing **viral–host interactors**, **multi-order network propagation**, and **functional enrichment (Reactome / GO)** for SARS-CoV-2 and a panel of human viruses.
 
-The workflow combines **Python** (NetworkX, Pandas) and **R** (clusterProfiler, ReactomePA),  
-and is designed for publication-grade systems biology analysis.
+The workflow combines **Python** (NetworkX, Pandas) and **R** (clusterProfiler, ReactomePA), and is designed for publication-grade systems biology analysis.
 
 ---
 
@@ -44,7 +41,7 @@ covid_networks/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 Place each virus’ interactome under:
 
@@ -68,7 +65,7 @@ Where:
 
 ---
 
-## 🧩 Pipeline Usage
+## Pipeline Usage
 
 All steps rely on the unified CLI:
 
@@ -78,7 +75,7 @@ python analysis.py <command> [options]
 
 ````
 
-### 1️⃣ Compute multi-order interactors (NetworkX)
+### Compute multi-order interactors (NetworkX)
 
 ```bash
 python analysis.py compute_interactors --max-order 4
@@ -97,7 +94,7 @@ data/intermediate/interactors/<virus_name>/
 
 ---
 
-### 2️⃣ Build gene lists for enrichment (R-compatible)
+### Build gene lists for enrichment (R-compatible)
 
 ```bash
 python analysis.py gene_lists --range-mode direct_and_second
@@ -119,7 +116,7 @@ data/intermediate/gene_lists/genes_list_<range-mode>.txt
 
 ---
 
-### 3️⃣ Functional enrichment (Reactome via Rscript)
+### Functional enrichment (Reactome via Rscript)
 
 ```bash
 python analysis.py enrich_reactome --range-mode direct_and_second
@@ -139,7 +136,7 @@ data/intermediate/enrichment/enrichPathway.tsv
 
 ---
 
-### 4️⃣ Build gene × virus binary matrices
+### Build gene × virus binary matrices
 
 ```bash
 python analysis.py gene_virus_table --range-mode direct_and_second
@@ -153,7 +150,7 @@ data/results/tables/gene_virus_table_direct_and_second.tsv
 
 ---
 
-## 📦 Example Full Reproducible Workflow
+## Example Full Reproducible Workflow
 
 ```bash
 python analysis.py compute_interactors --max-order 4
@@ -164,7 +161,7 @@ python analysis.py gene_virus_table --range-mode direct_and_second
 
 ---
 
-## 🧬 Dependencies
+## Dependencies
 
 **Python**
 
@@ -180,8 +177,9 @@ python analysis.py gene_virus_table --range-mode direct_and_second
 
 ---
 
-## 📄 Notes
+## Notes
 
 * All results are automatically organized under `data/intermediate/` and `data/results/`.
 * The pipeline is deterministic, modular, and suitable for publication workflows.
+
 * Additional enrichment scripts (GO BP/CC/MF) can be added under `r/`.
