@@ -1,4 +1,4 @@
-# LungPredict — TF Analysis Pipeline
+# LungPredict - TF Analysis Pipeline
 
 This directory provides a structured and reproducible workflow for transcriptional and transcription factor (TF) activity analysis in the LungPredict cohort.
 
@@ -201,6 +201,7 @@ install.packages(c("tidyverse","ComplexHeatmap","circlize","RColorBrewer","virid
 BiocManager::install(c("viper","dorothea","Hmisc"))
 ```
 ---
+
 
 
 
