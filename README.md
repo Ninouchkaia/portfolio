@@ -65,7 +65,7 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 
 ## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response **
 
-<p align="center"><img src="CV/figures_visuals/gemdecan.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/gemdecan.png" width="320px"></p>
 
 ### **Scientific Objective**
 
