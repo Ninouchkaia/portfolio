@@ -6,7 +6,7 @@ Below are the main projects, each linking to its full code and documentation ins
 
 ## 1. Bulk RNA-seq Deconvolution
 Snakemake pipeline + R scripts + QC + tumour microenvironment predictions.  
-[`CV/04_Postdoc_INSERM/03_Deconvolution`](../CV/04_Postdoc_INSERM/03_Deconvolution)
+[`../CV/04_Postdoc_INSERM/03_Deconvolution`](../CV/04_Postdoc_INSERM/03_Deconvolution)
 
 ## 2. Barcode Clonal Dynamics
 High-throughput barcode counts → QC → DESeq2 → drug network correlation.  
@@ -27,6 +27,7 @@ Python toolkit for FASTA parsing, abundance loading, AA metrics and correlations
 ## 6. Ankyrin Modularity (PFAM/ELM)
 Compositional modularity analysis with enrichment and conservation pipelines.  
 [`CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY`](../CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY)
+
 
 
 
