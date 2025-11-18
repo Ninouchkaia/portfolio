@@ -13,7 +13,7 @@ For experience in molecular and cell biology, see here: [CV/01_PhD_CNRS](CV/01_P
 
 ## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
 
-<p align="center"><img src="CV/figures_visuals/tumor_ecosystem_modeling.png" width="520px"></p>
+<p align="center"><img src="../CV/figures_visuals/tumor_ecosystem_modeling.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -34,7 +34,7 @@ Simulate the spatio-temporal evolution of CLL cells and monocyte-derived myeloid
 
 ### **Project folder**
 
-[Access the folder 01_AgentBasedModel](CV/04_Postdoc_INSERM/01_AgentBasedModel)
+[Access the folder 01_AgentBasedModel](../CV/04_Postdoc_INSERM/01_AgentBasedModel)
 
 ---
 
