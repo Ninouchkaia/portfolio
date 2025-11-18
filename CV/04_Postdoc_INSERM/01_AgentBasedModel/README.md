@@ -34,7 +34,7 @@ The goal was to capture emergent behaviors (coexistence, suppression, escape) re
 ---
 ## Flowchart diagram
 
-```
+```mermaid
 flowchart TD
     A[NetLogo ABM<br>ABM_NLC_CLL.nlogo] --> B[OpenMOLE NSGA-II<br>parameter_exploration.oms]
 

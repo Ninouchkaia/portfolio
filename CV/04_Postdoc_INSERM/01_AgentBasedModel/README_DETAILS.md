@@ -155,7 +155,7 @@ abm sensitivity --params data/pareto/best_model.json
 
 # 5. **Parameter Exploration Workflow**
 
-```
+```mermaid
 flowchart TD
     subgraph Ranges[initial_ranges]
         R1[aggregate_data.py]
