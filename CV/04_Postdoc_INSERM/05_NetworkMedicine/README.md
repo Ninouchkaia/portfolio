@@ -33,5 +33,5 @@ At the onset of the COVID-19 pandemic, identifying potential therapeutic candida
 *Network and Systems Medicine*, 2020. [DOI:10.1089/nsm.2020.0011](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
 
 ## Multilayer and Bootstrap Analysis Workflow
-See [here](CV/04_Postdoc_INSERM/05_NetworkMedicine/README_DETAILS.md) for the analysis workflow procedure.
+See [here](README_DETAILS.md) for the analysis workflow procedure.
 
