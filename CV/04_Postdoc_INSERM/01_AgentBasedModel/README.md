@@ -42,8 +42,8 @@ flowchart TD
     B --> C2[parameter_exploration/<br>Instantiate models]
     B --> C3[parameter_exploration/<br>Shell commands]
 
-    C1 --> D1[NSGA-II exploration<br>(general model)]
-    C3 --> D2[NSGA-II exploration<br>(9 patient-specific models)]
+    C1 --> D1[NSGA-II exploration<br> general model ]
+    C3 --> D2[NSGA-II exploration<br> 9 patient-specific models ]
 
     D1 --> E1[pareto_front.txt]
     D2 --> E2[pareto_front_patient_X.txt]
