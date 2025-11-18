@@ -1,57 +1,154 @@
-# 1. **Tumor Ecosystem Agent-Based Model (CLL–NLC)**
+# **Computational Pipeline Overview**
 
-### *Computational pipeline: NetLogo → OpenMOLE (NSGA-II) → Python validation & advanced analysis*
+### *NetLogo Agent-Based Model → OpenMOLE NSGA-II Optimization → Python Validation & Analysis*
 
-This project reproduces the workflow used in the study
-“An agent-based model of monocyte differentiation into tumour-associated macrophages in chronic lymphocytic leukemia” (Verstraete et al., iScience 2023) .
+This repository implements the full computational workflow described in
+**Verstraete et al., *iScience* (2023)**, which reconstructs and calibrates a mechanistic **agent-based model (ABM)** of the *in-vitro* ecosystem formed by chronic lymphocytic leukemia (CLL) cells and monocyte-derived myeloid cells.
+The overarching goal is to mechanistically reproduce:
 
-It implements and calibrates a two-dimensional agent-based model (ABM) of the in-vitro co-culture of CLL cancer cells and monocyte-derived myeloid cells, capturing their state transitions, interactions, and spatial dynamics.
+* the **differentiation trajectory** monocyte → macrophage → Nurse-Like Cell (NLC),
+* the **pro-survival interactions** between NLCs and CLL cells,
+* the **population-level dynamics** observed in autologous PBMC cultures and heterologous co-culture experiments.
 
-The ABM captures:
+The pipeline integrates three major components:
 
-### **Cell types**
-
-* **CLL cells**
-
-  * proliferating or quiescent
-  * depend on NLC proximity for survival
-  * can migrate, aggregate, and form micro-clusters
-
-* **Nurse-Like Cells (NLC)**
-
-  * immobile or slowly migrating
-  * secrete survival factors
-  * form protective niches around CLL cells
-
-### **Microenvironmental rules**
-
-* Short-range attraction of CLL toward NLC
-* Distance-dependent survival probability
-* Stochastic proliferation & death
-* Lifespan and recycling of NLC
-* Diffusion fields of anti-apoptotic factors
-
-### **Model outputs**
-
-Each simulation produces:
-
-* **CLL population dynamics**
-* **NLC dynamics**
-* **Spatial clustering metrics**
-* **Distributions of distances CLL↔NLC**
-* **Tumor growth curves**
-* **Aggregate shapes and compactness**
-
-These outputs are compared to:
-
-* **experimental time-course data (per patient)**
-* **single-cell imaging statistics**
-  
-This ABM is used in a full **parameter exploration and calibration pipeline**, described below.
+1. **A NetLogo ABM** representing the spatial and temporal evolution of CLL and myeloid cells.
+2. **A large-scale parameter exploration and multi-objective optimization** performed via **OpenMOLE** using the NSGA-II genetic algorithm.
+3. **A suite of Python analysis modules**, providing quantitative validation, patient-specific refinements, and advanced statistical analyses.
 
 ---
 
-# 2. **Overview of the Computational Pipeline**
+## **Biological System Modeled**
+
+The ABM recapitulates the two experimental platforms used in the study:
+
+* **Autologous PBMC cultures** (13-day time course) in which monocytes naturally differentiate into macrophages and subsequently NLCs, while supporting CLL survival.
+* **Heterologous co-cultures** combining patient-derived CLL B cells with healthy-donor monocytes, isolating cell–cell mechanisms without patient-specific myeloid differentiation differences.
+
+These systems exhibit characteristic behaviors:
+
+* emergence of NLCs over time,
+* progressive reduction in apoptotic cell load (efferocytosis),
+* chemotactic organization of CLL cells around NLCs,
+* viability and concentration dynamics reproducible across patients.
+
+---
+
+## **Agent-Based Model (NetLogo)**
+
+The model follows the mechanistic rules presented in the article (Figure 2), including:
+
+### **Cell types and internal states**
+
+**CLL cells (3 states):**
+
+* *NeedSignal* (alive and dependent on proximity to NLCs),
+* *Apoptotic*,
+* *Dead*.
+
+**Myeloid cells (3 states):**
+
+* *Monocyte*,
+* *Macrophage*,
+* *NLC*.
+
+### **Spatial and temporal structure**
+
+* 2D lattice approximating the scale of CLL cells (~5 µm per patch).
+* At most one cell per patch.
+* Movement restricted to neighboring empty patches.
+* Time step = **1 hour**, total duration = **13 days**.
+
+### **Processes captured**
+
+* short-range attraction of CLL cells toward NLCs,
+* state transitions driven by contact, thresholds and time scales,
+* macrophage and NLC phagocytic activity toward apoptotic/dead cells,
+* stochasticity in movement, transitions, and death events.
+
+These processes allow the ABM to generate **viability**, **concentration**, **spatial organization**, and **efferocytosis** dynamics that can be compared to experimental data.
+
+---
+
+## **Parameter Exploration and Model Calibration (OpenMOLE, NSGA-II)**
+
+The NetLogo model contains **19 free parameters** associated with:
+
+* differentiation time scales,
+* sensing/interaction distances,
+* probabilities of apoptosis,
+* efferocytosis efficiencies,
+* NLC induction thresholds,
+* survival effects mediated by NLCs.
+
+As in the paper, parameter exploration is performed using **OpenMOLE**:
+
+* **≈20,000 simulations** are run across the 19-dimensional parameter space.
+* Optimization follows **NSGA-II**, simultaneously fitting:
+
+  * **CLL viability**, and
+  * **CLL concentration**
+    measured in patient-derived time-course datasets.
+
+### **Pareto front and parameter selection**
+
+Following the article’s methodology:
+
+1. Only parameter sets simulated **≥50 times** are retained.
+2. These sets form a multi-objective **Pareto front**.
+3. Three representative solutions are extracted:
+
+   * best for viability,
+   * best for concentration,
+   * the **knee-point**, representing the most balanced fit.
+
+The **knee-point model** is selected as the main calibrated model due to its balanced accuracy across both experimental readouts.
+
+---
+
+## 📊 **Python Post-Processing and Validation**
+
+After optimization, downstream quantitative analysis is performed using Python:
+
+### **1. Experimental validation**
+
+For each of the **9 autologous CLL patients**, the calibrated model is compared against measured:
+
+* viability curves,
+* concentration dynamics,
+* apoptotic/dead cell fractions.
+
+The following metrics are computed:
+
+* **NRMSE**,
+* **R²**,
+* residual diagnostics,
+* model vs. experimental trajectory overlays.
+
+### **2. Patient-specific models**
+
+Heterologous co-culture experiments allow per-patient refinement:
+
+* NSGA-II is re-run per patient,
+* patient-specific Pareto fronts are extracted,
+* knee-points are determined automatically,
+* selected parameter sets are compared across patients.
+
+### **3. Global and local sensitivity analysis**
+
+Python modules compute:
+
+* one-parameter perturbation effects,
+* multi-parameter PCA,
+* distributions of optimal parameter sets (violin plots),
+* parameter influence rankings.
+
+Together, these analyses quantify which biological processes exert the strongest control over CLL survival and myeloid differentiation outcomes.
+
+---
+
+
+# **Overview of the Computational Pipeline**
 
 ```
 NetLogo model  →  BehaviorSpace (XML)  
@@ -67,12 +164,11 @@ The goal is to identify **parameter sets** that simultaneously reproduce:
 
 1. **CLL growth curves**,
 2. **NLC temporal dynamics**,
-3. **CLL–NLC spatial organization**,
    for both **general** and **patient-specific models**.
 
 ---
 
-# 3. **Repository Architecture**
+## **Repository Architecture**
 
 ```
 .
@@ -113,22 +209,32 @@ The goal is to identify **parameter sets** that simultaneously reproduce:
 
 ---
 
-# 4. **Command-Line Interface (CLI)**
+## **Pipeline Diagram**
 
-## **Summary of the full pipeline**
+```mermaid
+flowchart TD
 
-```
-NetLogo ABM
-    ↓  (multiple runs)
-OpenMOLE NSGA-II optimization
-    ↓
-Pareto front + knee point extraction
-    ↓
-Validation (NRMSE, R²) vs 9-patient experimental data
-    ↓
-Patient-specific calibration
-    ↓
-Advanced statistical analysis (sensitivity, PCA, clustering)
+A[NetLogo Model<br>ABM_NLC_CLL.nlogo] --> B[Generate BehaviorSpace XML<br>instantiate_models/]
+
+B --> C[OpenMOLE NSGA-II Exploration<br>parameter_exploration.oms]
+
+C --> D[Pareto Front Extraction<br>nsga2_analysis/]
+
+D --> E[Knee Point Selection<br>kneepoint.py]
+
+E --> F[Patient-Specific Best Params]
+
+F --> G[Model Validation<br>validator.py]
+
+F --> H[Sensitivity Analysis<br>sensitivity/] 
+
+F --> I[Advanced Analysis<br>PCA, violin, stats]
+
+G --> J[Validation Plots]
+H --> J
+I --> J
+
+J[Final Results<br>results/]
 ```
 
 *(from `abm_pipeline/cli.py`)*
@@ -171,7 +277,7 @@ abm sensitivity --params data/pareto/best_model.json
 
 ---
 
-# 5. **Parameter Exploration Workflow**
+### **Parameter Exploration Workflow**
 
 ```mermaid
 flowchart TD
@@ -206,7 +312,7 @@ flowchart TD
     SC4 --> NSGA
 ```
 
-## 5.1. BehaviorSpace instantiation
+#### BehaviorSpace instantiation
 
 The model parameters (around ~20 key parameters: proliferation, NLC attraction, death rates, spatial mobility…) have initial ranges defined under:
 
@@ -214,7 +320,7 @@ The model parameters (around ~20 key parameters: proliferation, NLC attraction, 
 
 These ranges are used to generate **XML files** that specify full grid/latin-hypercube explorations.
 
-## 5.2. OpenMOLE NSGA-II optimization
+#### OpenMOLE NSGA-II optimization
 
 Workflow:
 
@@ -235,18 +341,18 @@ results/behaviorspace/patient_specific_models/patient_X/
 
 ---
 
-# 6. **Pareto Analysis**
+### **Pareto Analysis**
 
 From `abm_pipeline/parameter_exploration/nsga2_analysis/`:
 
-### **Extract fronts**
+#### **Extract fronts**
 
 ```
 extract_best_sets.py
 pareto_front.py
 ```
 
-### **Knee point**
+#### **Knee point**
 
 Definition: parameter set with maximal curvature on the Pareto surface.
 
@@ -262,17 +368,17 @@ Outputs:
 
 ---
 
-# 7. **Model Validation**
+### **Model Validation**
 
 Validation scripts (in `abm_pipeline/model_validation/`):
 
-### **Metrics implemented**
+#### **Metrics implemented**
 
 * RMSE
 * Pearson correlation
 * Combined objective score
 
-### **Validation command**
+#### **Validation command**
 
 ```
 abm validate --patient 4 --params data/pareto/best_model_patient4.json
@@ -290,7 +396,7 @@ Plots go to:
 
 ---
 
-# 8. **Sensitivity Analysis**
+### **Sensitivity Analysis**
 
 From `abm_pipeline/sensitivity/`:
 
@@ -307,21 +413,21 @@ Outputs:
 
 ---
 
-# 9. **Advanced Analysis**
+### **Advanced Analysis**
 
 From `abm_pipeline/advanced_analysis/`:
 
-### **PCA on parameter sets**
+#### **PCA on parameter sets**
 
 * explore dimensionality of solution space
 * identify dominant axes of variation
 
-### **Violin plots**
+#### **Violin plots**
 
 * parameter distributions across patients
 * class 1/2 clustering based on error patterns
 
-### **Statistical tests**
+#### **Statistical tests**
 
 * t-tests
 * Mann–Whitney U
@@ -333,37 +439,7 @@ Outputs saved under:
 
 ---
 
-# 10. **Pipeline Diagram**
-
-```mermaid
-flowchart TD
-
-A[NetLogo Model<br>ABM_NLC_CLL.nlogo] --> B[Generate BehaviorSpace XML<br>instantiate_models/]
-
-B --> C[OpenMOLE NSGA-II Exploration<br>parameter_exploration.oms]
-
-C --> D[Pareto Front Extraction<br>nsga2_analysis/]
-
-D --> E[Knee Point Selection<br>kneepoint.py]
-
-E --> F[Patient-Specific Best Params]
-
-F --> G[Model Validation<br>validator.py]
-
-F --> H[Sensitivity Analysis<br>sensitivity/] 
-
-F --> I[Advanced Analysis<br>PCA, violin, stats]
-
-G --> J[Validation Plots]
-H --> J
-I --> J
-
-J[Final Results<br>results/]
-```
-
----
-
-# 11. **Reproducibility**
+# **Reproducibility**
 
 To reproduce the entire workflow:
 
@@ -382,7 +458,7 @@ To reproduce the entire workflow:
 
 ---
 
-# 12. **Scientific & Technical Contributions**
+## **Scientific & Technical Contributions**
 
 * Built and calibrated a **full agent-based model** for CLL/NLC dynamics.
 * Designed the **OpenMOLE NSGA-II multi-objective pipeline**.
@@ -399,7 +475,7 @@ To reproduce the entire workflow:
   
 ---
 
-## 13. Contact & Citation
+## Contact & Citation
 
 If you use this pipeline or model, please cite the associated scientific publication and/or this repository.
 
@@ -408,6 +484,7 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
 
