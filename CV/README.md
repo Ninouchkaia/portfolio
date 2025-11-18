@@ -83,6 +83,7 @@ Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat inter
 ---
 
 # **Industry – Software Engineering for Critical Systems (Airbus)**
+(in construction)
 
 `03_Industry_AIRBUS/`
 Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).
@@ -117,6 +118,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
