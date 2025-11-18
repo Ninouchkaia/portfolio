@@ -1,118 +1,182 @@
 # Postdoctoral Research – INSERM CRCT (2020–2023)
+
 This section summarizes my work at the Cancer Research Center of Toulouse (CRCT - Team NetBio²), focused on modeling tumor–immune interactions, transcriptomics, and integrative bioinformatics.
 
+- End-to-end pipelines (Snakemake, Python, R)
+- Bulk RNA-seq deconvolution and immune profiling
+- High-throughput barcode data, QC and differential abundance
+- Network medicine and multilayer graphs
+- Agent-based modelling integrated with reproducible workflows
 
 ---
+
 ## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
-<p align="center">
-  <img src="figures/tumor_ecosystem_modeling.png" width="520px">
-</p>
+
+<p align="center"><img src="CV/figures_visuals/tumor_ecosystem_modeling.png" width="520px"></p>
 
 ### **Scientific Objective**
-Simulate the spatio-temporal evolution of solid tumors by integrating immune dynamics, diffusive gradients, and intercellular interactions.
+
+Simulate the spatio-temporal evolution of CLL cells and monocyte-derived myeloid cells, including NLC differentiation and microenvironmental support.
 
 ### **Contributions**
-* Design of the agent-based model (NetLogo).
-* Automation of hundreds of simulations using OpenMOLE.
-* Sensitivity analysis, parameter exploration, metric extraction.
-* Generation of figures used in the iScience publication.
 
-  
+* NetLogo ABM design
+* OpenMOLE NSGA-II exploration
+* Sensitivity analysis, patient-specific calibration
+* Python validation and figure-generation pipeline
+
+### **Reference**
+
+*Verstraete N.*, Marku M., Domagala M., Arduin H., Bordenave J., Fournié J.-J., Ysebaert L., Poupot M., Pancaldi V.
+*An agent-based model of monocyte differentiation into tumour-associated macrophages in chronic lymphocytic leukemia.*
+*iScience*, 2023. [https://doi.org/10.1016/j.isci.2023.106897](https://doi.org/10.1016/j.isci.2023.106897)
+
+### **Project folder**
+
+[Access the folder 01_AgentBasedModel](CV/04_Postdoc_INSERM/01_AgentBasedModel)
+
 ---
-## **2. Macrophage Polarization in Chronic Lymphocytic Leukemia**
-<p align="center">
-  <img src="figures/macrophage_polarization.png" width="520px">
-</p>
+
+## **2. Macrophage Polarization in CLL (Cancers 2020)**
+
+<p align="center"><img src="CV/figures_visuals/macrophage_polarization.png" width="520px"></p>
 
 ### **Scientific Objective**
-Understand the transition of macrophages toward a pro-tumoral state (NLC) and identify the underlying regulatory programs.
+
+Study monocyte → macrophage → NLC polarization through transcriptomics and Boolean network modeling.
 
 ### **Contributions**
-* Estimation of transcription factor activity.
-* Contribution to the dynamic model of macrophage polarization.
-* Multi-dataset analysis and cross-validation.
 
+* TF activity inference with DoRothEA / VIPER
+* Boolean model analysis and perturbations
+* Integration of multiple datasets
+
+### **Reference**
+
+Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fournié, J.-J., Ysebaert, L., Poupot, M., & Pancaldi, V. 
+*Insights on TAM formation from a Boolean model of macrophage polarization based on in vitro studies.* 
+*Cancers*, 2020. [https://doi.org/10.3390/cancers12123664](https://doi.org/10.3390/cancers12123664)
+
+### **Project Folder**
+
+[Access the project folder 02_macrophage_polarization](CV/04_Postdoc_INSERM/02_macrophage_polarization/)
 
 ---
-## **3. Prediction of Immunotherapy Response — GEMDECAN**
-<p align="center">
-  <img src="figures/immunotherapy_prediction.png" width="520px">
-</p>
+
+
+## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response **
+
+<p align="center"><img src="CV/figures_visuals/immunotherapy_prediction.png" width="520px"></p>
 
 ### **Scientific Objective**
-Identify robust transcriptomic signatures associated with immunotherapy response (NK cells).
+
+Identify microenvironmental features predictive of immunotherapy response.
 
 ### **Contributions**
-* Construction of parts of the bulk RNA-seq pipeline.
-* Quantification, normalization, differential expression (DESeq2).
-* Inference of TF activity (DoRothEA, VIPER).
-* Modeling of expression–response associations.
 
+* Bulk RNA-seq preprocessing (QC → trimming → alignment → quantification)
+* Deconvolution (DNA methylation + expression)
+* Predictive modeling
+
+### **Project folder**
+
+[Access the folder 03_Deconvolution](CV/04_Postdoc_INSERM/03_Deconvolution)
 
 ---
+
+
 ## **4. Tumor Microenvironment Analysis — LungPredict**
-<p align="center">
-  <img src="figures/lungpredict_deconvolution.png" width="520px">
-</p>
+
+<p align="center"><img src="CV/figures_visuals/lungpredict_deconvolution.png" width="520px"></p>
 
 ### **Scientific Objective**
-Characterize cell-type composition and transcriptional programs in lung tumors to identify signals associated with clinical outcomes.
+
+Analyze bulk RNA-seq from lung tumors to characterize immune composition and regulatory programs.
 
 ### **Contributions**
-* Full RNA-seq preprocessing: QC → trimming → alignment → quantification.
-* Immune deconvolution (EPIC, CIBERSORTx).
-* Regulatory profiling.
-* Contribution to the integrated microenvironment analysis.
+
+* QC, trimming, alignment, quantification
+* Immune deconvolution
+* TF activity inference and regulatory analysis
 
 
----
-## **5. Drug Repurposing for COVID-19 through Network Medicine**
-[Access the project folder](./05_covid_network_medicine/)
+### **Project folder**
 
-### **Scientific Objective**
-* Integrate multi-omics and molecular interaction data to construct a virus–host–drug network.
-* Identify biologically plausible drug candidates based on topological proximity and pathway enrichment.
-* Assess robustness of network-based predictions using simulated perturbations.
-
-### **Scientific Objective**
-* Implemented random network simulations to evaluate robustness of predicted drug–disease associations.
-* Automated analysis of node connectivity and topological metrics for drug ranking.
-* Contributed to visualization and reporting of systemic network perturbations.
-* Participated in manuscript review and interpretation of results.
-
-## **Reference**
-
-*Verstraete N.*, et al. *CovMulNet19, Integrating Proteins, Diseases, Drugs, and Symptoms: A Network Medicine Approach to COVID-19.*
-*Network and Systems Medicine*, 2020. DOI:10.1089/nsm.2020.0011
-
+[Access the folder 04_LungPredict](CV/04_Postdoc_INSERM/04_LungPredict)
 
 ---
-## **6. Systemic Effects of SARS-CoV-2**
-<p align="center">
-  <img src="figures/sarscov2_systemic.png" width="520px">
-</p>
+
+## **5. Drug Repurposing for COVID-19 — Network Medicine (Network & Systems Medicine 2020)**
 
 ### **Scientific Objective**
-Describe how viral proteins perturb cellular functions across multiple tissues and characterize systemic effects.
 
-### **Scientific Objective**
-* GO/Reactome/WikiPathways analyses.
-* Identification of perturbed processes.
-* Contribution to mechanistic figures.
-
-
----
-## **7. Clonal Dynamics and Single-Cell RNA-seq**
-<p align="center">
-  <img src="figures/scRNA_clonality.png" width="520px">
-</p>
-
-### **Scientific Objective**
-Evaluate how tumor clones diversify under treatment and connect transcriptomic trajectories to emerging resistance.
+Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to identify repurposing candidates.
 
 ### **Contributions**
-* scRNA-seq pipeline: filtering, normalization, clustering, UMAP.
-* Integration of barcodes → clones → transcriptional programs.
-* Analysis of clonal diversity and state trajectories.
+
+* Random network simulations
+* Drug ranking via proximity metrics
+* Robustness analysis (bootstrap)
+* Visualisation of multilayer interactions
+
+### **Reference**
+
+*Verstraete N.*, Jurman G., Bertagnolli G., Ghavasieh A., Pancaldi V., De Domenico M.
+*CovMulNet19: Integrating proteins, diseases, drugs, and symptoms: A network medicine approach to COVID-19.*
+*Network and Systems Medicine*, 2020.
+[https://doi.org/10.1089/nsm.2020.0011](https://doi.org/10.1089/nsm.2020.0011)
+
+### **Project folder**
+
+[Access the folder 05_covid_network_medicine](CV/04_Postdoc_INSERM/05_covid_network_medicine)
 
 ---
+
+## **6. Systemic Effects of SARS-CoV-2 (Communications Physics 2021)**
+
+<p align="center"><img src="CV/figures_visuals/sarscov2_systemic.png" width="520px"></p>
+
+### **Scientific Objective**
+
+Describe how viral proteins perturb host cell systems at multiple scales.
+
+### **Contributions**
+
+* GO/Reactome/WikiPathways enrichment
+* Viral module clustering
+* Interpretation of systemic perturbations
+
+### **Reference**
+
+Ghavasieh A., Bontorin S., Artime O., *Verstraete N.*, De Domenico M.
+*Multiscale statistical physics of the pan-viral interactome unravels the systemic nature of SARS-CoV-2 infections.*
+*Communications Physics*, 2021.
+[https://doi.org/10.1038/s42005-021-00582-8](https://doi.org/10.1038/s42005-021-00582-8)
+
+### **Project folder**
+
+[Access the folder 06_SystemicEffects](CV/04_Postdoc_INSERM/06_SystemicEffects)
+
+---
+
+## **7. Clonal Dynamics & scRNA-seq under Treatment**
+
+<p align="center"><img src="CV/figures_visuals/scRNA_clonality.png" width="520px"></p>
+
+### **Scientific Objective**
+
+Link barcode-based clonal expansion to transcriptomic reprogramming under drug treatment.
+
+### **Contributions**
+
+* Processing of barcode count matrices
+* Differential clonal abundance
+* scRNA-seq pipeline (QC, clustering, UMAP)
+* Integration clonal identity ↔ gene expression
+
+### **Project folder**
+
+[Access the folder 07_Barcodes](CV/04_Postdoc_INSERM/07_Barcodes)
+
+---
+
