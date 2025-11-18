@@ -205,8 +205,6 @@ Objectives include:
 
 * **RMSE between simulated CLL curve and experimental data**
 * **RMSE for NLC dynamics**
-* **error on spatial clustering metrics**
-* **diversity of solutions** (front spread)
 
 Output per patient (9 patients):
 
@@ -391,3 +389,4 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
