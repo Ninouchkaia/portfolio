@@ -135,12 +135,13 @@ flowchart TD
 
 ---
 
-## 🔧 Dependencies
+## Dependencies
 
 **R**: limma, EpiDISH, DeconRNASeq, MCPcounter, immunedeconv, xCell, tximport, tidyverse
 **Python**: numpy, pandas, scikit-learn, matplotlib, seaborn, shap
 
 ---
+
 
 
 
