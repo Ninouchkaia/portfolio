@@ -10,9 +10,9 @@ This section summarizes my work at the Cancer Research Center of Toulouse (CRCT 
 
 ---
 
-## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
+## **1. Agent-Based Modeling of the Tumor Ecosystem**
 
-<p align="center"><img src="../../figures_visuals/tumor_ecosystem_modeling.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/abm.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -33,13 +33,11 @@ Simulate the spatio-temporal evolution of CLL cells and monocyte-derived myeloid
 
 ### **Project folder**
 
-[Access the folder 01_AgentBasedModel](01_AgentBasedModel)
+[Access the folder 01_AgentBasedModel](../CV/04_Postdoc_INSERM/01_AgentBasedModel)
 
 ---
 
-## **2. Macrophage Polarization in CLL (Cancers 2020)**
-
-<p align="center"><img src="CV/figures_visuals/macrophage_polarization.png" width="520px"></p>
+## **2. Macrophage Polarization in CLL**
 
 ### **Scientific Objective**
 
@@ -59,14 +57,14 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 
 ### **Project Folder**
 
-[Access the project folder 02_macrophage_polarization](02_macrophage_polarization/)
+[Access the project folder 02_macrophage_polarization](CV/04_Postdoc_INSERM/02_macrophage_polarization/)
 
 ---
 
 
-## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response **
+## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response**
 
-<p align="center"><img src="CV/figures_visuals/immunotherapy_prediction.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/gemdecan.png" width="320px"></p>
 
 ### **Scientific Objective**
 
@@ -80,14 +78,14 @@ Identify microenvironmental features predictive of immunotherapy response.
 
 ### **Project folder**
 
-[Access the folder 03_Deconvolution](03_Deconvolution)
+[Access the folder 03_Deconvolution](CV/04_Postdoc_INSERM/03_Deconvolution)
 
 ---
 
 
 ## **4. Tumor Microenvironment Analysis — LungPredict**
 
-<p align="center"><img src="CV/figures_visuals/lungpredict_deconvolution.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/LP.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -102,11 +100,12 @@ Analyze bulk RNA-seq from lung tumors to characterize immune composition and reg
 
 ### **Project folder**
 
-[Access the folder 04_LungPredict](04_LungPredict)
+[Access the folder 04_LungPredict](CV/04_Postdoc_INSERM/04_LungPredict)
 
 ---
 
-## **5. Drug Repurposing for COVID-19 — Network Medicine (Network & Systems Medicine 2020)**
+## **5. Drug Repurposing for COVID-19 with Network Medicine**
+<p align="center"><img src="CV/figures_visuals/multilayer.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -128,13 +127,13 @@ Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to ident
 
 ### **Project folder**
 
-[Access the folder 05_covid_network_medicine](05_covid_network_medicine)
+[Access the folder 05_covid_network_medicine](CV/04_Postdoc_INSERM/05_covid_network_medicine)
 
 ---
 
-## **6. Systemic Effects of SARS-CoV-2 (Communications Physics 2021)**
+## **6. Systemic Effects of SARS-CoV-2)**
 
-<p align="center"><img src="CV/figures_visuals/sarscov2_systemic.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/systemic.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -155,13 +154,13 @@ Ghavasieh A., Bontorin S., Artime O., *Verstraete N.*, De Domenico M.
 
 ### **Project folder**
 
-[Access the folder 06_SystemicEffects](06_SystemicEffects)
+[Access the folder 06_SystemicEffects](CV/04_Postdoc_INSERM/06_SystemicEffects)
 
 ---
 
 ## **7. Clonal Dynamics & scRNA-seq under Treatment**
 
-<p align="center"><img src="CV/figures_visuals/scRNA_clonality.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/barcodes.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -177,6 +176,4 @@ Link barcode-based clonal expansion to transcriptomic reprogramming under drug t
 ### **Project folder**
 
 [Access the folder 07_Barcodes](CV/04_Postdoc_INSERM/07_Barcodes)
-
----
 
