@@ -4,6 +4,8 @@
 **Period:** 2020–2023  
 **Project:** LungPredict 
 
+See detailed Transcription Factors activity analysis here : [TF_analysis/README.md](TF_analysis)
+
 ---
 
 ## Context
@@ -40,3 +42,4 @@ The goal was to uncover molecular features reflecting immune infiltration, strom
 Transcriptomic deconvolution · RNA-seq analysis · Pathway inference · Data integration · Oncology bioinformatics  
 
 ---
+
