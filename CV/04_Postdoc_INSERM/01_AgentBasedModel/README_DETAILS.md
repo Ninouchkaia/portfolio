@@ -2,7 +2,10 @@
 
 ### *Computational pipeline: NetLogo → OpenMOLE (NSGA-II) → Python validation & advanced analysis*
 
-This project models the **tumor ecosystem of chronic lymphocytic leukemia (CLL)**, focusing on interactions between **CLL tumor cells**, **Nurse-Like Cells (NLCs)**, and **microenvironmental signaling**. NLCs are activated monocyte-derived macrophages that emerge in the CLL microenvironment and promote tumor survival through cell–cell contact and soluble signals.
+This project reproduces the workflow used in the study
+“An agent-based model of monocyte differentiation into tumour-associated macrophages in chronic lymphocytic leukemia” (Verstraete et al., iScience 2023) .
+
+It implements and calibrates a two-dimensional agent-based model (ABM) of the in-vitro co-culture of CLL cancer cells and monocyte-derived myeloid cells, capturing their state transitions, interactions, and spatial dynamics.
 
 The ABM captures:
 
