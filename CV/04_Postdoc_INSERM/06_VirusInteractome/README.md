@@ -198,11 +198,6 @@ This produces interactors, gene lists, enrichment tables, and gene–virus matri
 
 
 
-
-
-
-```python
-readme_md = r'''
 # SARS-CoV-2 – Host Interactome Pipeline (Strict Reproducible Version)
 
 This repository contains a fully structured, reproducible pipeline for computing
@@ -225,7 +220,6 @@ viral–host interactors and pathway enrichments using Python + R.
 All results are written to:
 - data/intermediate/*
 - data/results/*
-'''
 
 
 ```
