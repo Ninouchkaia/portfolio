@@ -256,3 +256,17 @@ covid_networks/
 ├── analysis.py
 └── README.md
 ```
+
+```bash
+# 1. À partir de nodes.csv + edges.csv
+python analysis.py compute_interactors --max-order 4
+
+# 2. Préparer les listes de gènes (direct + second ordre)
+python analysis.py gene_lists --range-mode direct_and_second
+
+# 3. Lancer l’enrichissement Reactome dans R
+python analysis.py enrich_reactome --range-mode direct_and_second
+
+# 4. Construire la matrice gènes × virus pour cette portée
+python analysis.py gene_virus_table --range-mode direct_and_second
+```
