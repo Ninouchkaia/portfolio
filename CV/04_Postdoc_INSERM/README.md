@@ -33,7 +33,7 @@ Simulate the spatio-temporal evolution of CLL cells and monocyte-derived myeloid
 
 ### **Project folder**
 
-[Access the folder 01_AgentBasedModel](../CV/04_Postdoc_INSERM/01_AgentBasedModel)
+[Access the folder 01_AgentBasedModel](01_AgentBasedModel)
 
 ---
 
