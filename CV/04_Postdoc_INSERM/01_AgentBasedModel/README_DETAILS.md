@@ -26,7 +26,7 @@ The ABM captures:
 * Distance-dependent survival probability
 * Stochastic proliferation & death
 * Lifespan and recycling of NLC
-* Optional diffusion fields (CXCL12 / BAFF) depending on configuration
+* Diffusion fields of anti-apoptotic factors
 
 ### **Model outputs**
 
@@ -43,8 +43,7 @@ These outputs are compared to:
 
 * **experimental time-course data (per patient)**
 * **single-cell imaging statistics**
-* **bulk population measurements**
-
+  
 This ABM is used in a full **parameter exploration and calibration pipeline**, described below.
 
 ---
@@ -190,7 +189,7 @@ flowchart TD
 
 ## 5.1. BehaviorSpace instantiation
 
-The model parameters (around ~15 key parameters: proliferation, NLC attraction, death rates, spatial mobility…) have initial ranges defined under:
+The model parameters (around ~20 key parameters: proliferation, NLC attraction, death rates, spatial mobility…) have initial ranges defined under:
 
 `abm_pipeline/parameter_exploration/initial_ranges/`
 
@@ -254,8 +253,6 @@ Validation scripts (in `abm_pipeline/model_validation/`):
 
 * RMSE
 * Pearson correlation
-* Dynamic Time Warping (optional)
-* Scaling-normalized errors
 * Combined objective score
 
 ### **Validation command**
@@ -285,7 +282,6 @@ From `abm_pipeline/sensitivity/`:
 
   * CLL growth
   * NLC dynamics
-  * spatial measures
 
 Outputs:
 
@@ -320,7 +316,7 @@ Outputs saved under:
 
 ---
 
-# 10. **Mermaid Pipeline Diagram**
+# 10. **Pipeline Diagram**
 
 ```mermaid
 flowchart TD
@@ -382,9 +378,8 @@ To reproduce the entire workflow:
   * validation metrics
   * plotting & advanced stats
 * Performed **in-depth sensitivity analysis**.
-* Designed the **entire figure pipeline** for publication-level outputs.
-* Wrote **analysis notebooks**, **shell automation**, and **data management** tools.
-
+* Designed the **entire figure pipeline** for publication outputs.
+  
 ---
 
 ## 13. Contact & Citation
@@ -393,5 +388,6 @@ If you use this pipeline or model, please cite the associated scientific publica
 
 Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence Scenarios in Cancer-Immune Interactions.*  
 *iScience*, 2023. [DOI:10.1016/j.isci.2023.106897](https://www.cell.com/iscience/fulltext/S2589-0042(23)00974-4)
+
 
 ---
