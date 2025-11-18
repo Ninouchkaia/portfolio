@@ -1,6 +1,4 @@
-# Bioinformatics Projects – Quick Links
-
-This folder centralises all platform-oriented bioinformatics work.
+# Bioinformatics Projects (selection) - Quick Links
 
 Below are the main projects, each linking to its full code and documentation inside the `CV/` tree.
 
@@ -29,3 +27,6 @@ Python toolkit for FASTA parsing, abundance loading, AA metrics and correlations
 ## 6. Ankyrin Modularity (PFAM/ELM)
 Compositional modularity analysis with enrichment and conservation pipelines.  
 [`CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY`](../CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY)
+
+
+
