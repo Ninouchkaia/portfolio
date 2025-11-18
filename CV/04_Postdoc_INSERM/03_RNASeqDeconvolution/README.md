@@ -44,6 +44,10 @@ The goal was to define reproducible biomarkers guiding patient stratification fo
 *bioRxiv*, 2021. [DOI:10.1101/2021.04.09.439207v1](https://www.biorxiv.org/content/10.1101/2021.04.09.439207v1)
 
 ---
+ 
+## Deconvolution pipeline
+
+See further details on the deconvolution scripts (R and Python) and the pipeline workflow [here](CV/04_Postdoc_INSERM/03_RNASeqDeconvolution/README_DETAILS.md).
 
 
 
