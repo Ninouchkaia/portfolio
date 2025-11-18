@@ -137,7 +137,7 @@ Comparing these signatures helps identify transcriptional routes by which CLL ce
 ---
 
 ## 🔗 Reference
-*Verstraete N.*, et al. *Macrophage Polarization and Tumor-Associated Phenotypes in Chronic Lymphocytic Leukemia.*  
+Marku M., *Verstraete N.*, et al. *Insights on TAM Formation from a Boolean Model of Macrophage Polarization Based on In Vitro Studies.*  
 *Cancers*, 2020. [DOI:10.3390/cancers12123664](https://www.mdpi.com/2072-6694/12/12/3664)
 
 
