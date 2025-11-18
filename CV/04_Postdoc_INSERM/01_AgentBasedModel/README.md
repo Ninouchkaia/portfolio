@@ -79,12 +79,13 @@ flowchart TD
 ---
 
 ## Contact & Citation
-
 If you use this pipeline or model, please cite the associated scientific publication and/or this repository.
 [DOI:10.1016/j.isci.2023.106897](https://www.cell.com/iscience/fulltext/S2589-0042(23)00974-4)
+
 ---
 
 For a more detailed description of the pipeline here, see here :   [README_DETAILS.md](README_DETAILS.md)
+
 
 
 
