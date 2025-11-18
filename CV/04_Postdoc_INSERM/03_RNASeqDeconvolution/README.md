@@ -6,7 +6,7 @@
 
 ---
 
-## 🧭 Context
+## Context
 Despite major clinical advances, only a fraction of cancer patients respond to immunotherapy.  
 The GEMDECAN project aimed to identify gene expression signatures predictive of therapeutic response by integrating bulk RNA-seq data with clinical outcomes and molecular features across cancer types.
 
@@ -14,14 +14,14 @@ The goal was to define reproducible biomarkers guiding patient stratification fo
 
 ---
 
-## 🎯 Objectives
+## Objectives
 - Build a standardized analysis pipeline for RNA-seq data from tumor samples.  
 - Identify and validate gene signatures correlated with immunotherapy response.  
 - Explore functional categories and immune-related pathways underlying predictive features.  
 
 ---
 
-## 🧪 Methods
+## Methods
 - **Data:** Bulk RNA-seq datasets from public repositories (TCGA, ICGC, clinical cohorts).  
 - **Pipeline design:** Quality control (FastQC, MultiQC), alignment (STAR), quantification (featureCounts), normalization and batch correction.  
 - **Analysis:** Differential expression (DESeq2), gene set enrichment, correlation with clinical response scores.  
@@ -30,7 +30,7 @@ The goal was to define reproducible biomarkers guiding patient stratification fo
 
 ---
 
-## 💡 Contributions
+## Contributions
 - Co-designed the RNA-seq analysis pipeline and automated preprocessing workflow.  
 - Performed expression modeling and differential analysis linking gene expression to therapy response.  
 - Contributed to functional interpretation and visual representation of predictive gene sets.  
@@ -38,12 +38,13 @@ The goal was to define reproducible biomarkers guiding patient stratification fo
 
 ---
 
-## 📘 Key Skills
+## Key Skills
 RNA-seq data processing · Predictive modeling · Immuno-oncology · Bioinformatics pipeline development · Statistical validation  
 
 ---
 
-## 🔗 Reference
+## Reference
+
 *Xie T.*, et al. *GEM-DeCan: Improving tumor immune microenvironment profiling by the integration of novel gene expression and DNA methylation deconvolution signatures.*  
 *bioRxiv*, 2021. [DOI:10.1101/2021.04.09.439207v1](https://www.biorxiv.org/content/10.1101/2021.04.09.439207v1)
 ---
@@ -139,4 +140,5 @@ flowchart TD
 **Python**: numpy, pandas, scikit-learn, matplotlib, seaborn, shap
 
 ---
+
 
