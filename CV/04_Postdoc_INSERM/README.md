@@ -12,7 +12,7 @@ This section summarizes my work at the Cancer Research Center of Toulouse (CRCT 
 
 ## **1. Agent-Based Modeling of the Tumor Ecosystem**
 
-<p align="center"><img src="CV/figures_visuals/abm.png" width="520px"></p>
+<p align="center"><img src="../../CV/figures_visuals/abm.png" width="520px"></p>
 
 ### **Scientific Objective**
 
