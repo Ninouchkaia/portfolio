@@ -1,5 +1,11 @@
 # 🧬 Macrophage Polarization in CLL — TF Activity Signature Pipeline
 
+
+**Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
+**Period:** 2020–2023  
+**Publication:** [Cancers, 2020](https://www.mdpi.com/2072-6694/12/12/3664)  
+
+---
 This repository contains the code and documentation developed during the INSERM/CRCT project on **macrophage polarization** in the context of **Chronic Lymphocytic Leukemia (CLL)**.
 Macrophages in CLL’s tumor microenvironment can differentiate into **Nurse-Like Cells (NLCs)**, a tumor-supportive phenotype that promotes leukemic cell survival and immune escape.
 
@@ -128,44 +134,30 @@ The pipeline yields:
 
 Comparing these signatures helps identify transcriptional routes by which CLL cells reprogram macrophages.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Macrophage Polarization — Signature Extraction Pipeline
-
-
 ---
 
-## 🧬 Pipeline Overview
+## 🔗 Reference
+*Verstraete N.*, et al. *Macrophage Polarization and Tumor-Associated Phenotypes in Chronic Lymphocytic Leukemia.*  
+*Cancers*, 2020. [DOI:10.3390/cancers12123664](https://www.mdpi.com/2072-6694/12/12/3664)
 
 
 
----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
