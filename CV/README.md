@@ -18,18 +18,15 @@ This repository gathers a selection of scientific, technical and software-engine
 ```
 
 ---
+# **Tumor heterogeneity in immuno-oncology (INSERM)**
 
-# **Highlighted Bioinformatics Projects**
-
-These projects are the **core technical demonstrations** of my computational skills.
+- [Postdoc, CRCT, Toulouse](04_Postdoc_INSERM)
 
 ### **1. Agent-Based Modeling of Tumor Ecosystems (INSERM)**
 
 `04_Postdoc_INSERM/01_AgentBasedModel/`
 **NetLogo → OpenMOLE (NSGA-II) → Python validation**
 A complete multi-objective calibration pipeline for a cancer–immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.
-
-- [Postdoc, CRCT, Toulouse](04_Postdoc_INSERM)
 
 ### **2. Boolean Modeling of Immunotherapy Responses**
 
@@ -122,5 +119,6 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
