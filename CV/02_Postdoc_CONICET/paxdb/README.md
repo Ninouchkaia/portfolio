@@ -17,10 +17,6 @@ original scripts:
 - computing correlations between amino acid usage and metabolic cost
 - providing a clean entry–point script (`scripts/analyze_amino_acids.py`)
 
-The structure is intentionally simple and pipeline-oriented, but close in spirit
-to the original files (`amino_acid_count*.py`, `newdef_protein*.py`,
-`aa_relationship.py`, etc.).
-
 ---
 
 ## Directory layout
@@ -43,3 +39,4 @@ paxdb/
 │   └── analyze_amino_acids.py
 └── notebooks/
     └── 01_visualize_amino_acid_bias.ipynb   # optional, not required by pipeline
+
