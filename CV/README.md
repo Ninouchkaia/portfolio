@@ -19,8 +19,7 @@ This repository gathers a selection of scientific, technical and software-engine
 
 ---
 # **Tumor heterogeneity in immuno-oncology (INSERM)**
-
-- [Postdoc, CRCT, Toulouse](04_Postdoc_INSERM)
+[Postdoc, CRCT, Toulouse](04_Postdoc_INSERM)
 
 ### **1. Agent-Based Modeling of Tumor Ecosystems (INSERM)**
 
@@ -61,7 +60,6 @@ Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation 
 ---
 
 # **Evolution & Structural Bioinformatics (CONICET)**
-
 [Postdoc, UBA, Buenos Aires](02_Postdoc_CONICET)
 
 ### **Ankyrin Repeat Modularity Pipeline**
@@ -77,11 +75,11 @@ Weighted frequencies, proteome cost metrics, correlations, PCA and domain-specif
 ---
 
 # **PhD – Regulation of Transcription Elongation (CNRS)**
+[PhD, ENS, Paris](01_PhD_CNRS)
 
 `01_PhD_CNRS/`
 Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat interference.
 
-[PhD, ENS, Paris](01_PhD_CNRS)
 ---
 
 # **Industry – Software Engineering for Critical Systems (Airbus)**
@@ -119,6 +117,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
