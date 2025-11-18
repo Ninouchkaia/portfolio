@@ -185,5 +185,3 @@ python analysis.py gene_virus_table --range-mode direct_and_second
 * All results are automatically organized under `data/intermediate/` and `data/results/`.
 * The pipeline is deterministic, modular, and suitable for publication workflows.
 * Additional enrichment scripts (GO BP/CC/MF) can be added under `r/`.
-
-```
