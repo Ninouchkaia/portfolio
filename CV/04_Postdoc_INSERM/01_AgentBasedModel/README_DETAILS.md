@@ -106,7 +106,7 @@ The **knee-point model** is selected as the main calibrated model due to its bal
 
 ---
 
-## 📊 **Python Post-Processing and Validation**
+## **Python Post-Processing and Validation**
 
 After optimization, downstream quantitative analysis is performed using Python:
 
@@ -209,9 +209,7 @@ The goal is to identify **parameter sets** that simultaneously reproduce:
 
 ---
 
-## **Pipeline Diagram**
-
-## Flowchart diagram
+## **Flowchart diagram**
 
 ```mermaid
 flowchart TD
@@ -248,33 +246,8 @@ flowchart TD
     J1 --> K1[Statistical tests]
     J2 --> K2[Violinplots / PCA / Heatmaps]
 ```
+
 ---
-
-```mermaid
-flowchart TD
-
-A[NetLogo Model<br>ABM_NLC_CLL.nlogo] --> B[Generate BehaviorSpace XML<br>instantiate_models/]
-
-B --> C[OpenMOLE NSGA-II Exploration<br>parameter_exploration.oms]
-
-C --> D[Pareto Front Extraction<br>nsga2_analysis/]
-
-D --> E[Knee Point Selection<br>kneepoint.py]
-
-E --> F[Patient-Specific Best Params]
-
-F --> G[Model Validation<br>validator.py]
-
-F --> H[Sensitivity Analysis<br>sensitivity/] 
-
-F --> I[Advanced Analysis<br>PCA, violin, stats]
-
-G --> J[Validation Plots]
-H --> J
-I --> J
-
-J[Final Results<br>results/]
-```
 
 *(from `abm_pipeline/cli.py`)*
 
@@ -523,6 +496,7 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
 
