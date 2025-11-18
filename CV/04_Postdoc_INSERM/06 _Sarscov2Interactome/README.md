@@ -7,10 +7,7 @@
 ---
 
 ## Context
-SARS-CoV-2 infection perturbs multiple cellular processes beyond its primary respiratory targets.  
-This collaborative project investigated the **system-wide impact** of viral proteins on host molecular networks to understand how infection reshapes fundamental biological functions.
-
-The study combined **virus–host interactomics**, **transcriptomics**, and **functional enrichment** analyses to delineate the molecular footprint of COVID-19 at the cellular level.
+SARS-CoV-2 infection perturbs multiple cellular processes beyond its primary respiratory targets. This collaborative project investigated the **system-wide impact** of viral proteins on host molecular networks to understand how infection reshapes fundamental biological functions. The study combined **virus–host interactomics**, **transcriptomics**, and **functional enrichment** analyses to delineate the molecular footprint of COVID-19 at the cellular level.
 
 ---
 
@@ -43,16 +40,14 @@ Functional genomics · Network propagation · Enrichment analysis · Multi-omics
 ---
 
 ## Reference
-*Verstraete N.*, et al. *Systemic Cellular Perturbations Induced by SARS-CoV-2 Proteins across Host Pathways.*  
+*Ghavasieh A.*, et al. *Multiscale statistical physics of the pan-viral interactome unravels the systemic nature of SARS-CoV-2 infections.*  
 *Communications Physics (Nature)*, 2021. [DOI:10.1038/s42005-021-00582-8](https://www.nature.com/articles/s42005-021-00582-8)
 
-
+---
 
 # SARS-CoV-2 Host Interactome – Reproducible Analysis Pipeline
 
-This repository provides a strict and fully reproducible pipeline for computing **viral–host interactors**, **multi-order network propagation**, and **functional enrichment (Reactome / GO)** for SARS-CoV-2 and a panel of human viruses.
-
-The workflow combines **Python** (NetworkX, Pandas) and **R** (clusterProfiler, ReactomePA), and is designed for publication-grade systems biology analysis.
+This repository provides a strict and fully reproducible pipeline for computing **viral–host interactors**, **multi-order network propagation**, and **functional enrichment (Reactome / GO)** for SARS-CoV-2 and a panel of human viruses. The workflow combines **Python** (NetworkX, Pandas) and **R** (clusterProfiler, ReactomePA), and is designed for publication-grade systems biology analysis.
 
 ---
 
@@ -232,6 +227,6 @@ python analysis.py gene_virus_table --range-mode direct_and_second
 
 * All results are automatically organized under `data/intermediate/` and `data/results/`.
 * The pipeline is deterministic, modular, and suitable for publication workflows.
-
 * Additional enrichment scripts (GO BP/CC/MF) can be added under `r/`.
 
+---
