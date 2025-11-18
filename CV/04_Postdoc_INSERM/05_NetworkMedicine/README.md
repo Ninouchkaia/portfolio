@@ -1,28 +1,28 @@
-# **Drug Repurposing for COVID-19 through Network Medicine*
+# **Drug Repurposing for COVID-19 through Network Medicine**
 
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
 **Period:** 2020–2021  
 **Publication:** [Network and Systems Medicine, 2020](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
 
 
-## 🧭 Context
+## Context
 At the onset of the COVID-19 pandemic, identifying potential therapeutic candidates required integrative strategies beyond single-target screening. This project used **network medicine** approaches to explore interactions between SARS-CoV-2 proteins, host cellular pathways, and drug targets, with the goal of repositioning existing compounds.  
 
 
-## 🎯 Objectives
+## Objectives
 - Integrate multi-omics and molecular interaction data to construct a **virus–host–drug network**.  
 - Identify biologically plausible drug candidates through **topological proximity** and **pathway enrichment**.  
 - Test robustness of network-based predictions using simulated perturbations.  
 
 
-## 🧪 Methods
+## Methods
 - **Data integration:** Host–virus interactome from public datasets (BioGRID, IntAct), drug–target relationships from DrugBank and ChEMBL.  
 - **Network modeling:** Weighted graph representation of molecular associations.  
 - **Simulation:** Random rewiring and node removal to assess prediction stability.  
 - **Analysis:** Centrality and community detection to highlight key druggable modules.  
 - **Validation:** Cross-checking candidate lists with published clinical data and ongoing trials.  
 
-## 💡 Contributions
+## Contributions
 - Implemented random network simulations to evaluate robustness of predicted drug–disease associations.  
 - Automated analysis of node connectivity and topological metrics for ranking candidate drugs.  
 - Contributed to visualization and reporting of systemic network perturbations.  
@@ -33,44 +33,49 @@ At the onset of the COVID-19 pandemic, identifying potential therapeutic candida
 *Network and Systems Medicine*, 2020. [DOI:10.1089/nsm.2020.0011](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
 
 
-# CovMulNet19 – Workflow d’analyse multilayer et bootstrap
+# CovMulNet19 – Multilayer and Bootstrap Analysis Workflow
 
-Ce dépôt contient un pipeline structuré pour analyser le réseau multilayer CovMulNet19 et comparer ses propriétés structurales à un ensemble de réseaux aléatoires (mock networks). Le réseau observé et les mocks ont été fournis par le CoMuNe Lab (M. De Domenico).
+This repository provides a structured pipeline to analyze the multilayer CovMulNet19 network and compare its structural properties to a collection of random networks (mock networks). The observed network and the mock networks were provided by the CoMuNe Lab (M. De Domenico).
 
-L’objectif du pipeline est d’estimer, pour différents types d’entités (GO, drugs, diseases, symptoms), leur degré structuré dans le réseau réel et leur position par rapport à un modèle nul obtenu via bootstrap multilayer.
-
----
-
-## Structure du pipeline
-
-Le workflow est organisé en six étapes :
-
-1. **Import des réseaux**  
-2. **Calcul des mesures observées**  
-3. **Calcul des distributions mock (µ, σ, valeurs)**  
-4. **Calcul des Z-scores**  
-5. **Calcul des p-values (erf / Chebyshev, avec tests de normalité)**  
-6. **Classement des entités et génération des figures**
+The goal of the pipeline is to estimate, for different types of entities (GO, drugs, diseases, symptoms), their structured degree in the real network and their position relative to a null model obtained through multilayer bootstrap.
 
 ---
 
-## Étape 1 — Import des réseaux
-Détection des fichiers nodes_XXXX.csv / edges_XXXX.csv et sélection des mock networks valides.
+## Pipeline structure
 
-**Scripts :**
-- [`5. covid_network_medicine/01_multilayer_pipeline/io_networks_clean.py`](5. covid_network_medicine/01_multilayer_pipeline/io_networks_clean.py)
+The workflow is organized into six steps:
+
+1. **Network import**
+2. **Computation of observed measures**
+3. **Computation of mock distributions (µ, σ, values)**
+4. **Computation of Z-scores**
+5. **Computation of p-values (erf / Chebyshev, with normality tests)**
+6. **Entity ranking and figure generation**
+
+---
+
+## Step 1 — Network import
+
+Detection of nodes_XXXX.csv / edges_XXXX.csv files and selection of valid mock networks.
+
+**Scripts:**
+
+* [`5. covid_network_medicine/01_multilayer_pipeline/io_networks_clean.py`](5. covid_network_medicine/01_multilayer_pipeline/io_networks_clean.py)
 
 ```bash
 python 01_multilayer_pipeline/io_networks_clean.py \
   --mock_basepath Mock_networks/
 ```
+
 ---
 
-## Étape 2 — Mesures observées (réseau réel)
-Calcul des degrés observés entre un type d’entités source et un type cible (directed ou undirected).
+## Step 2 — Observed measures (real network)
 
-**Scripts :**
-- [`01_multilayer_pipeline/compute_observed_degrees_clean.py`](01_multilayer_pipeline/compute_observed_degrees_clean.py)
+Computation of observed degrees between a source entity type and a target entity type (directed or undirected).
+
+**Scripts:**
+
+* [`01_multilayer_pipeline/compute_observed_degrees_clean.py`](01_multilayer_pipeline/compute_observed_degrees_clean.py)
 
 ```bash
 python 01_multilayer_pipeline/compute_observed_degrees_clean.py \
@@ -81,13 +86,16 @@ python 01_multilayer_pipeline/compute_observed_degrees_clean.py \
   --directed True \
   --output results/observed/
 ```
+
 ---
 
-## Étape 3 — Distributions mock (µ, σ, valeurs)
-Agrégation des degrés à travers l’ensemble des mock networks pour obtenir les distributions structurales.
+## Step 3 — Mock distributions (µ, σ, values)
 
-**Scripts :**
-- [`02_bootstrap_pipeline/compute_mock_distributions_clean.py`](02_bootstrap_pipeline/compute_mock_distributions_clean.py)
+Aggregation of degrees across all mock networks to obtain structural distributions.
+
+**Scripts:**
+
+* [`02_bootstrap_pipeline/compute_mock_distributions_clean.py`](02_bootstrap_pipeline/compute_mock_distributions_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/compute_mock_distributions_clean.py \
@@ -97,14 +105,17 @@ python 02_bootstrap_pipeline/compute_mock_distributions_clean.py \
   --neighbor_type protein \
   --outfile results/distributions/GO.tsv
 ```
+
 ---
 
-## Étape 4 — Z-scores
-Comparaison du réseau observé aux réseaux mock :  
+## Step 4 — Z-scores
+
+Comparison of the observed network to mock networks:
 Z = (observed − mean) / sd.
 
-**Scripts :**
-- [`02_bootstrap_pipeline/compute_zscores_clean.py`](02_bootstrap_pipeline/compute_zscores_clean.py)
+**Scripts:**
+
+* [`02_bootstrap_pipeline/compute_zscores_clean.py`](02_bootstrap_pipeline/compute_zscores_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/compute_zscores_clean.py \
@@ -113,13 +124,16 @@ python 02_bootstrap_pipeline/compute_zscores_clean.py \
   --distribution_files results/distributions/GO.tsv \
   --outdir results/zscores/
 ```
+
 ---
 
-## Étape 5 — p-values
-Tests de normalité (Shapiro, D’Agostino) → choix entre erf ou Chebyshev.
+## Step 5 — p-values
 
-**Scripts :**
-- [`02_bootstrap_pipeline/compute_pvalues_clean.py`](02_bootstrap_pipeline/compute_pvalues_clean.py)
+Normality tests (Shapiro, D’Agostino) → selection between erf or Chebyshev.
+
+**Scripts:**
+
+* [`02_bootstrap_pipeline/compute_pvalues_clean.py`](02_bootstrap_pipeline/compute_pvalues_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/compute_pvalues_clean.py \
@@ -128,13 +142,16 @@ python 02_bootstrap_pipeline/compute_pvalues_clean.py \
   --distribution_files results/distributions/GO.tsv \
   --outdir results/pvalues/
 ```
+
 ---
 
-## Étape 6 — Classement & figures
-Classement des entités selon p-values ou Z-score et génération des figures associées.
+## Step 6 — Ranking & figures
 
-**Scripts :**
-- [`02_bootstrap_pipeline/ranking_and_plots_clean.py`](02_bootstrap_pipeline/ranking_and_plots_clean.py)
+Ranking of entities based on p-values or Z-scores and generation of associated figures.
+
+**Scripts:**
+
+* [`02_bootstrap_pipeline/ranking_and_plots_clean.py`](02_bootstrap_pipeline/ranking_and_plots_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/ranking_and_plots_clean.py \
@@ -145,5 +162,6 @@ python 02_bootstrap_pipeline/ranking_and_plots_clean.py \
   --ranking_metric p_shapiro \
   --plot_metric zscore
 ```
+
 ---
 
