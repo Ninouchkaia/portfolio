@@ -1,4 +1,4 @@
-# Clonal Dynamics and Single-Cell Transcriptomics under Anticancer Treatment
+# Clonal Dynamics and Transcriptomics under Anticancer Treatment
 
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
 **Period:** 2021–2023
@@ -37,4 +37,4 @@ This project aimed to trace the **evolutionary trajectories of tumor cell clones
 ---
 
 ## Pipeline
-For more details on the computational pipeline and its procedure, see [here](
+For more details on the computational pipeline and its procedure, see [here](README_DETAILS.md).
