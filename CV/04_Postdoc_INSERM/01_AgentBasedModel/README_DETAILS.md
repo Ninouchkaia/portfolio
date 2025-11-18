@@ -112,6 +112,22 @@ The goal is to identify **parameter sets** that simultaneously reproduce:
 
 # 4. **Command-Line Interface (CLI)**
 
+## **Summary of the full pipeline**
+
+```mermaid
+NetLogo ABM
+    ↓  (multiple runs)
+OpenMOLE NSGA-II optimization
+    ↓
+Pareto front + knee point extraction
+    ↓
+Validation (NRMSE, R²) vs 9-patient experimental data
+    ↓
+Patient-specific calibration
+    ↓
+Advanced statistical analysis (sensitivity, PCA, clustering)
+```
+
 *(from `abm_pipeline/cli.py`)*
 
 ### **Generate BehaviorSpace XML files**
@@ -389,5 +405,6 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
