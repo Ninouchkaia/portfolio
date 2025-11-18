@@ -1,4 +1,4 @@
-# **Portfolio – Research, Bioinformatics & Computational Biology**
+# **Portfolio - Research, Bioinformatics & Computational Biology**
 
 This repository gathers a selection of scientific, technical and software-engineering projects developed during my PhD, postdocs (CNRS, CONICET, INSERM), and industry experience (Airbus/Capgemini). It showcases **biological modeling**, **multi-omics analysis**, **network science**, **data collection and analysis pipelines** and **reproducible workflows** in Python, R, Snakemake, NetLogo and OpenMOLE.
 
@@ -122,4 +122,5 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
