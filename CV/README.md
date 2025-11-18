@@ -22,44 +22,37 @@ This repository gathers a selection of scientific, technical and software-engine
 [Postdoc, CRCT, Toulouse](04_Postdoc_INSERM)
 
 ### **1. Agent-Based Modeling of Tumor Ecosystems (INSERM)**
-
-[01_AgentBasedModel](04_Postdoc_INSERM/01_AgentBasedModel/)
+[1. AgentBasedModel](04_Postdoc_INSERM/01_AgentBasedModel/)
 
 A complete multi-objective calibration pipeline for a cancer–immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.
 
 ### **2. Boolean Modeling of Immunotherapy Responses**
-
-[02_BooleanModel](04_Postdoc_INSERM/02_BooleanModel)
+[2. BooleanModel](04_Postdoc_INSERM/02_BooleanModel)
 
 Pipeline for computing transcription factor signatures (DoRothEA-like), scaling, normalisation and prediction modules.
 
 ### **3. RNA-Seq Deconvolution & Immunotherapy Prediction**
-
-[03_RNASeqDeconvolution](04_Postdoc_INSERM/03_RNASeqDeconvolution/)
+[3. RNASeqDeconvolution](04_Postdoc_INSERM/03_RNASeqDeconvolution/)
 
 Full Snakemake-style workflow in R/Python for TPM conversion, signature scoring, deconvolution (EPIC, MCPCounter, quanTIseq), and predictive modelling.
 
 ### **4. LungPredict – Transcription Factor Network Analysis**
-
-[04_LungPredict](04_Postdoc_INSERM/04_LungPredict)
+[4. LungPredict](04_Postdoc_INSERM/04_LungPredict)
 
 Large R pipeline for TF activity inference, heatmaps, multi-omics integrative annotation and patient stratification.
 
 ### **5. Network Medicine – Multilayer Graph Analysis**
-
-[05_NetworkMedicine](04_Postdoc_INSERM/05_NetworkMedicine/)
+[5. NetworkMedicine](04_Postdoc_INSERM/05_NetworkMedicine/)
 
 Python pipeline for multilayer protein–GO networks, bootstrap null models, z-scores and ranking analyses.
 
 ### **6. SARS-CoV-2 Interactome & Systemic Effects**
-
-[06_Sarscov2Interactome](04_Postdoc_INSERM/06_Sarscov2Interactome/)
+[6. Sarscov2Interactome](04_Postdoc_INSERM/06_Sarscov2Interactome/)
 
 Data integration pipeline for viral–host interactions, enrichment (Reactome), network propagation, and ranking.
 
 ### **7. Drug Screening with DNA Barcodes**
-
-[04_Postdoc_INSERM/07_BarcodesDrugScreening](04_Postdoc_INSERM/07_BarcodesDrugScreening/)
+[7. BarcodesDrugScreening](04_Postdoc_INSERM/07_BarcodesDrugScreening/)
 
 Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation matrices, and figure generator for publication.
 
@@ -76,15 +69,13 @@ Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS 
 # **2013-2015 Evolution & Structural Bioinformatics (CONICET)**
 [Postdoc, UBA, Buenos Aires](02_Postdoc_CONICET)
 
-### **Ankyrin Repeat Modularity Pipeline**
-
-[AnkyrinModularity](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
+### **1. Ankyrin Repeat Modularity Pipeline**
+[1. AnkyrinModularity](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
 
 Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clustering and structural analysis.
 
-### **Amino Acid Usage & Metabolic Cost (PaxDB)**
-
-[paxdb](02_Postdoc_CONICET/paxdb/)
+### **2. Amino Acid Usage & Metabolic Cost (PaxDB)**
+[2. AminoAcidsAbundance](02_Postdoc_CONICET/paxdb/)
 
 Weighted frequencies, proteome cost metrics, correlations, PCA and domain-specific notebooks.
 
@@ -98,7 +89,6 @@ Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat inter
 ---
 
 # **Visual Summaries**
-
 [Visuals](figures_visuals/)
 
 Contains PNG visual overviews of the main projects (ABM, Barcodes, Network Medicine, GEMDECAN, LungPredict, Systemic COVID).
@@ -125,6 +115,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
