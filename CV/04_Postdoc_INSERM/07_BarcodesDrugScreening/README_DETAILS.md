@@ -1,4 +1,4 @@
-# **Barcoding Drug Screen — Computational Pipeline**
+# **Barcoding Drug Screen - Computational Pipeline**
 
 ## **Overview**
 
