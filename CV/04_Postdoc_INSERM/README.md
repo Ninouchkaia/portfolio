@@ -12,7 +12,7 @@ This section summarizes my work at the Cancer Research Center of Toulouse (CRCT 
 
 ## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
 
-<p align="center"><img src="CV/figures_visuals/tumor_ecosystem_modeling.png" width="520px"></p>
+<p align="center"><img src="../../figures_visuals/tumor_ecosystem_modeling.png" width="520px"></p>
 
 ### **Scientific Objective**
 
