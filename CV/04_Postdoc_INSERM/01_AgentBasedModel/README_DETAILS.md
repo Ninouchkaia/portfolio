@@ -247,44 +247,170 @@ flowchart TD
     J2 --> K2[Violinplots / PCA / Heatmaps]
 ```
 
----
+# **Command-Line Interface (CLI)**
 
 *(from `abm_pipeline/cli.py`)*
 
-### **Generate BehaviorSpace XML files**
+The computational pipeline can be executed fully or step-by-step through the command-line interface provided by the `abm_pipeline` Python package.
+Each command corresponds to one stage of the full workflow:
+
+---
+
+## **1. Generate BehaviorSpace experiment files (XML)**
+
+Creates the XML definitions used by OpenMOLE to run large-scale parameter exploration.
+
+```bash
+abm generate-behaviorspace \
+    --output openmole/
+```
+
+This step reads default parameter ranges from:
 
 ```
-abm generate-behaviorspace --output openmole/
+abm_pipeline/parameter_exploration/initial_ranges/
 ```
 
-### **Produce shell commands for OpenMOLE**
+and produces:
 
 ```
+openmole/behaviorspace_general.xml
+openmole/behaviorspace_patient_X.xml
+```
+
+---
+
+## **2. Generate shell commands for OpenMOLE**
+
+Produces ready-to-run shell commands for each patient (general model or patient-specific):
+
+```bash
 abm make-commands --patient 1
 ```
 
-### **Extract Pareto optimal sets**
+Outputs go to:
 
 ```
-abm extract-pareto --input results/behaviorspace/general_model/
+abm_pipeline/parameter_exploration/shell_commands/
 ```
 
-### **Compute knee point**
+These commands reference the BehaviorSpace XML files and specify randomized seeds / number of replicates.
+
+---
+
+## **3. Launch parameter exploration in OpenMOLE**
+
+*(Executed outside Python, inside OpenMOLE)*
+Load and run:
+
+```bash
+openmole --script openmole/parameter_exploration.oms
+```
+
+This runs NSGA-II, performs thousands of NetLogo simulations, and generates raw outputs:
 
 ```
-abm kneepoint --pareto pareto_front.txt
+results/behaviorspace/general_model/NSGAII_exploration_output.txt
+results/behaviorspace/patient_specific_models/patient_X/NSGAII_exploration_output_patient_X.txt
 ```
 
-### **Validate parameter sets**
+---
+
+## **4. Extract Pareto fronts**
+
+Once OpenMOLE finishes:
+
+```bash
+abm extract-pareto \
+    --input results/behaviorspace/general_model/
+```
+
+Produces:
 
 ```
-abm validate --params data/pareto/best_model.json
+results/behaviorspace/general_model/pareto_front.txt
+results/behaviorspace/general_model/pareto_front_summary.csv
 ```
 
-### **Run sensitivity analysis**
+Same command applies per patient.
+
+---
+
+## **5. Compute knee-point (balanced solution)**
+
+Identifies the parameter set maximizing curvature on the Pareto surface:
+
+```bash
+abm kneepoint \
+    --pareto results/behaviorspace/general_model/pareto_front.txt
+```
+
+Outputs include:
 
 ```
-abm sensitivity --params data/pareto/best_model.json
+data/pareto/kneepoint_general.json
+results/validation/kneepoint_diagnostics.pdf
+```
+
+---
+
+## **6. Validate parameter sets against experimental data**
+
+To evaluate simulated vs. experimental trajectories:
+
+```bash
+abm validate \
+    --patient 4 \
+    --params data/pareto/kneepoint_patient4.json
+```
+
+Outputs:
+
+```
+results/validation/patient_4/
+    simulated_vs_experimental.png
+    rmse_scores.csv
+    correlation_plots.pdf
+```
+
+---
+
+## **7. Run sensitivity analysis**
+
+Local sensitivity around a chosen parameter set:
+
+```bash
+abm sensitivity \
+    --params data/pareto/kneepoint_general.json
+```
+
+Outputs:
+
+```
+results/sensitivity/
+    tornado_plots.png
+    parameter_influence.csv
+```
+
+---
+
+## **8. Run advanced statistical analyses**
+
+This is automatically handled via:
+
+```bash
+abm advanced-analysis
+```
+
+(Or import individual modules for PCA, violin plots, statistical tests.)
+
+Outputs:
+
+```
+results/advanced_analysis/
+    pca_param_sets.png
+    violin_parameters_across_patients.png
+    statistical_tests.csv
 ```
 
 ---
@@ -496,6 +622,7 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
 
