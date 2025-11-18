@@ -57,14 +57,14 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 
 ### **Project Folder**
 
-[Access the project folder 02_macrophage_polarization](CV/04_Postdoc_INSERM/02_macrophage_polarization/)
+[Access the project folder 02_macrophage_polarization](02_macrophage_polarization/)
 
 ---
 
 
 ## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response**
 
-<p align="center"><img src="CV/figures_visuals/gemdecan.png" width="320px"></p>
+<p align="center"><img src="../../CV/figures_visuals/gemdecan.png" width="320px"></p>
 
 ### **Scientific Objective**
 
@@ -78,14 +78,14 @@ Identify microenvironmental features predictive of immunotherapy response.
 
 ### **Project folder**
 
-[Access the folder 03_Deconvolution](CV/04_Postdoc_INSERM/03_Deconvolution)
+[Access the folder 03_Deconvolution](03_Deconvolution)
 
 ---
 
 
 ## **4. Tumor Microenvironment Analysis — LungPredict**
 
-<p align="center"><img src="CV/figures_visuals/LP.png" width="520px"></p>
+<p align="center"><img src="../../CV/figures_visuals/LP.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -100,12 +100,12 @@ Analyze bulk RNA-seq from lung tumors to characterize immune composition and reg
 
 ### **Project folder**
 
-[Access the folder 04_LungPredict](CV/04_Postdoc_INSERM/04_LungPredict)
+[Access the folder 04_LungPredict](04_LungPredict)
 
 ---
 
 ## **5. Drug Repurposing for COVID-19 with Network Medicine**
-<p align="center"><img src="CV/figures_visuals/multilayer.png" width="520px"></p>
+<p align="center"><img src="../../CV/figures_visuals/multilayer.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -127,13 +127,13 @@ Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to ident
 
 ### **Project folder**
 
-[Access the folder 05_covid_network_medicine](CV/04_Postdoc_INSERM/05_covid_network_medicine)
+[Access the folder 05_covid_network_medicine](05_covid_network_medicine)
 
 ---
 
 ## **6. Systemic Effects of SARS-CoV-2)**
 
-<p align="center"><img src="CV/figures_visuals/systemic.png" width="520px"></p>
+<p align="center"><img src="../../CV/figures_visuals/systemic.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -154,13 +154,13 @@ Ghavasieh A., Bontorin S., Artime O., *Verstraete N.*, De Domenico M.
 
 ### **Project folder**
 
-[Access the folder 06_SystemicEffects](CV/04_Postdoc_INSERM/06_SystemicEffects)
+[Access the folder 06_SystemicEffects](06_SystemicEffects)
 
 ---
 
 ## **7. Clonal Dynamics & scRNA-seq under Treatment**
 
-<p align="center"><img src="CV/figures_visuals/barcodes.png" width="520px"></p>
+<p align="center"><img src="../../CV/figures_visuals/barcodes.png" width="520px"></p>
 
 ### **Scientific Objective**
 
@@ -175,5 +175,5 @@ Link barcode-based clonal expansion to transcriptomic reprogramming under drug t
 
 ### **Project folder**
 
-[Access the folder 07_Barcodes](CV/04_Postdoc_INSERM/07_Barcodes)
+[Access the folder 07_Barcodes](07_Barcodes)
 
