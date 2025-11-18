@@ -1,4 +1,4 @@
-# 🧬 Macrophage Polarization in CLL — TF Activity Signature Pipeline
+# Macrophage Polarization in CLL — TF Activity Signature Pipeline
 
 
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
@@ -13,7 +13,7 @@ This project implements a **modular Python pipeline** to extract and analyze tra
 
 ---
 
-## 🧭 Biological Background
+## Biological Background
 
 Macrophage phenotypes are shaped by cytokines, transcription factors, and environmental cues:
 
@@ -31,7 +31,7 @@ Understanding the **regulatory programs** driving these phenotypes requires both
 
 ---
 
-## 🎯 Project Objectives
+## Project Objectives
 
 * Infer TF activities for macrophages exposed to CLL/TME cues.
 * Classify TFs into dominant polarization programs (**M1**, **M2**, **NLC**).
@@ -39,7 +39,7 @@ Understanding the **regulatory programs** driving these phenotypes requires both
 
 ---
 
-## 🧪 Methods Overview
+## Methods Overview
 
 ### **1. Input Data**
 
@@ -81,7 +81,7 @@ For each TF, compute contributions to M1, M2, and NLC phenotypes, then assign th
 
 ---
 
-## 🔬 Pipeline Diagram
+## Pipeline Diagram
 
 ```mermaid
 flowchart TD
@@ -97,7 +97,7 @@ flowchart TD
 
 ---
 
-## ▶️ Usage
+## Usage
 
 ### Full pipeline
 
@@ -119,7 +119,7 @@ data/output/
 
 ---
 
-## 🧠 Interpretation of Outputs
+## Interpretation of Outputs
 
 The pipeline yields:
 
@@ -136,7 +136,7 @@ Comparing these signatures helps identify transcriptional routes by which CLL ce
 
 ---
 
-## 🔗 Reference
+## Reference
 Marku M., *Verstraete N.*, et al. *Insights on TAM Formation from a Boolean Model of Macrophage Polarization Based on In Vitro Studies.*  
 *Cancers*, 2020. [DOI:10.3390/cancers12123664](https://www.mdpi.com/2072-6694/12/12/3664)
 
