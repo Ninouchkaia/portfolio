@@ -47,7 +47,8 @@ The goal was to define reproducible biomarkers guiding patient stratification fo
  
 ## Deconvolution pipeline
 
-See further details on the deconvolution scripts (R and Python) and the pipeline workflow [here](CV/04_Postdoc_INSERM/03_RNASeqDeconvolution/README_DETAILS.md).
+See further details on the deconvolution scripts (R and Python) and the pipeline workflow [here](README_DETAILS.md).
+
 
 
 
