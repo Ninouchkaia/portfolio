@@ -1,0 +1,2743 @@
+
+fetch_ONLY_fourth_range_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+import pandas as pd
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+full_gene_list_dict = {}
+full_interactors_list = []
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	my_gene_list = []
+	myfile = "%s\only_Fourth_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_interactors_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+full_interactors_list = list(set(full_interactors_list))
+
+
+
+df = pd.DataFrame(columns = full_gene_list_dict.keys(), index = full_interactors_list)
+
+for virus in full_gene_list_dict :
+	for gene in full_gene_list_dict[virus] :
+		df.loc[gene,virus] = 1
+# print(df.loc['TP53'])
+
+
+with open("gene_virus_table_OnlyFourthRange.txt", 'a+') as file_write :
+	for virus in full_gene_list_dict :
+		for gene in full_gene_list_dict[virus] :
+			file_write.write("%s	%s
+" % (virus, gene))
+
+# with open("gene_virus_table_without_covid.txt", 'a+') as file_write :
+# 	for virus in full_gene_list_dict :
+# 		if (virus != "covid19") :
+# 			for gene in full_gene_list_dict[virus] :
+# 				file_write.write("%s	%s
+" % (virus, gene))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_ONLY_second_range_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+import pandas as pd
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+full_gene_list_dict = {}
+full_interactors_list = []
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	my_gene_list = []
+	myfile = "%s\only_second_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_interactors_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+full_interactors_list = list(set(full_interactors_list))
+
+
+
+df = pd.DataFrame(columns = full_gene_list_dict.keys(), index = full_interactors_list)
+
+for virus in full_gene_list_dict :
+	for gene in full_gene_list_dict[virus] :
+		df.loc[gene,virus] = 1
+# print(df.loc['TP53'])
+
+
+with open("gene_virus_table_OnlySecondRange.txt", 'a+') as file_write :
+	for virus in full_gene_list_dict :
+		for gene in full_gene_list_dict[virus] :
+			file_write.write("%s	%s
+" % (virus, gene))
+
+# with open("gene_virus_table_without_covid.txt", 'a+') as file_write :
+# 	for virus in full_gene_list_dict :
+# 		if (virus != "covid19") :
+# 			for gene in full_gene_list_dict[virus] :
+# 				file_write.write("%s	%s
+" % (virus, gene))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_ONLY_third_range_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+import pandas as pd
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+full_gene_list_dict = {}
+full_interactors_list = []
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	my_gene_list = []
+	myfile = "%s\only_third_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_interactors_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+full_interactors_list = list(set(full_interactors_list))
+
+
+
+df = pd.DataFrame(columns = full_gene_list_dict.keys(), index = full_interactors_list)
+
+for virus in full_gene_list_dict :
+	for gene in full_gene_list_dict[virus] :
+		df.loc[gene,virus] = 1
+# print(df.loc['TP53'])
+
+
+with open("gene_virus_table_OnlyThirdRange.txt", 'a+') as file_write :
+	for virus in full_gene_list_dict :
+		for gene in full_gene_list_dict[virus] :
+			file_write.write("%s	%s
+" % (virus, gene))
+
+# with open("gene_virus_table_without_covid.txt", 'a+') as file_write :
+# 	for virus in full_gene_list_dict :
+# 		if (virus != "covid19") :
+# 			for gene in full_gene_list_dict[virus] :
+# 				file_write.write("%s	%s
+" % (virus, gene))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_all_direct_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+import pandas as pd
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+full_gene_list_dict = {}
+full_interactors_list = []
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	my_gene_list = []
+	myfile = "%s\direct_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_interactors_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+full_interactors_list = list(set(full_interactors_list))
+
+# with open("genes_list.txt", "a+") as file_write :
+# 	for virus in full_gene_list_dict :
+# 		file_write.write("%s	" % virus)
+# 		for gene in full_gene_list_dict[virus][0:-1] :
+# 			file_write.write("%s	" % gene)
+# 		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+# with open("viral_interactors_raw.txt", "a+") as file_write :
+# 	viral_interactors_raw = []
+# 	for virus in full_gene_list_dict :
+# 		for gene in full_gene_list_dict[virus][0:-1] :
+# 			viral_interactors_raw.append(gene)
+# 	viral_interactors_raw = list(set(viral_interactors_raw))
+# 	for gene in viral_interactors_raw :
+# 		file_write.write("%s
+" % gene)
+
+# with open("viral_interactors_table.txt", "a+") as file_write :
+# 	viral_interactors_table = []
+# 	for virus in full_gene_list_dict :
+# 		for gene in full_gene_list_dict[virus][0:-1] :
+# 			viral_interactors_table.append(gene)
+# 	viral_interactors_table = list(set(viral_interactors_table))
+# 	for gene in viral_interactors_table :
+# 		file_write.write("%s
+" % gene)
+
+
+df = pd.DataFrame(columns = full_gene_list_dict.keys(), index = full_interactors_list)
+
+for virus in full_gene_list_dict :
+	for gene in full_gene_list_dict[virus] :
+		df.loc[gene,virus] = 1
+# print(df.loc['TP53'])
+
+
+# with open("gene_virus_table.txt", 'a+') as file_write :
+# 	for virus in full_gene_list_dict :
+# 		for gene in full_gene_list_dict[virus] :
+# 			file_write.write("%s	%s
+" % (virus, gene))
+
+with open("gene_virus_table_without_covid.txt", 'a+') as file_write :
+	for virus in full_gene_list_dict :
+		if (virus != "covid19") :
+			for gene in full_gene_list_dict[virus] :
+				file_write.write("%s	%s
+" % (virus, gene))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+
+# viruses <- gcSample[,1]
+# Freq <- count.fields("genes_list.txt", sep = '	')
+# myhist <-list(breaks=viruses, counts=Freq, density=Freq/diff(viruses),xname="viruses")
+# class(myhist) <- "histogram"
+# plot(myhist)
+
+# # barchart with added parameters
+# viruses <- c(gcSample[,1])
+# viral_interactors <- c(count.fields("genes_list.txt", sep = '	'))
+# barplot(viral_interactors)
+
+# barplot(viral_interactors,
+# main = "Number of direct human protein interactors per virus",
+# xlab = "Virus name",
+# ylab = "Number of proteins",
+# names.arg = viruses,
+# col = "darkred",
+# horiz = FALSE)
+
+
+# count.fields(dat, sep = ',')
+# # [1] 2 3 2 2 2 2 3 3 7
+# max(count.fields(dat, sep = ','))
+# # [1] 7
+
+
+# column_number <- max(count.fields("genes_list.txt", sep = '	'))
+
+# read.table(dat, header = FALSE, sep = ",", col.names = paste0("V",seq_len(7)), fill = TRUE)
+
+# gcSampleNina <- read.table("genes_list.txt", header = FALSE, sep = "	", col.names = paste0("V",seq_len(max(count.fields("genes_list.txt", sep = '	')))),, dec = ".", fill = TRUE)
+
+# dfNina <- data.frame(t(gcSampleNina[-1]))
+# colnames(dfNina) <- gcSampleNina[, 1]
+
+fetch_direct_and_secondRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\direct_and_second_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("first_and_second_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+
+# viruses <- gcSample[,1]
+# Freq <- count.fields("genes_list.txt", sep = '	')
+# myhist <-list(breaks=viruses, counts=Freq, density=Freq/diff(viruses),xname="viruses")
+# class(myhist) <- "histogram"
+# plot(myhist)
+
+# # barchart with added parameters
+# viruses <- c(gcSample[,1])
+# viral_interactors <- c(count.fields("genes_list.txt", sep = '	'))
+# barplot(viral_interactors)
+
+# barplot(viral_interactors,
+# main = "Number of direct human protein interactors per virus",
+# xlab = "Virus name",
+# ylab = "Number of proteins",
+# names.arg = viruses,
+# col = "darkred",
+# horiz = FALSE)
+
+
+# count.fields(dat, sep = ',')
+# # [1] 2 3 2 2 2 2 3 3 7
+# max(count.fields(dat, sep = ','))
+# # [1] 7
+
+
+# column_number <- max(count.fields("genes_list.txt", sep = '	'))
+
+# read.table(dat, header = FALSE, sep = ",", col.names = paste0("V",seq_len(7)), fill = TRUE)
+
+# gcSampleNina <- read.table("genes_list.txt", header = FALSE, sep = "	", col.names = paste0("V",seq_len(max(count.fields("genes_list.txt", sep = '	')))),, dec = ".", fill = TRUE)
+
+# dfNina <- data.frame(t(gcSampleNina[-1]))
+# colnames(dfNina) <- gcSampleNina[, 1]
+
+fetch_direct_and_secondThirdFourthRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\direct_and_secondThirdFourth_range_interactors.txt" % path
+	print(myfile)
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("first_and_secondThirdFourth_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+
+# viruses <- gcSample[,1]
+# Freq <- count.fields("genes_list.txt", sep = '	')
+# myhist <-list(breaks=viruses, counts=Freq, density=Freq/diff(viruses),xname="viruses")
+# class(myhist) <- "histogram"
+# plot(myhist)
+
+# # barchart with added parameters
+# viruses <- c(gcSample[,1])
+# viral_interactors <- c(count.fields("genes_list.txt", sep = '	'))
+# barplot(viral_interactors)
+
+# barplot(viral_interactors,
+# main = "Number of direct human protein interactors per virus",
+# xlab = "Virus name",
+# ylab = "Number of proteins",
+# names.arg = viruses,
+# col = "darkred",
+# horiz = FALSE)
+
+
+# count.fields(dat, sep = ',')
+# # [1] 2 3 2 2 2 2 3 3 7
+# max(count.fields(dat, sep = ','))
+# # [1] 7
+
+
+# column_number <- max(count.fields("genes_list.txt", sep = '	'))
+
+# read.table(dat, header = FALSE, sep = ",", col.names = paste0("V",seq_len(7)), fill = TRUE)
+
+# gcSampleNina <- read.table("genes_list.txt", header = FALSE, sep = "	", col.names = paste0("V",seq_len(max(count.fields("genes_list.txt", sep = '	')))),, dec = ".", fill = TRUE)
+
+# dfNina <- data.frame(t(gcSampleNina[-1]))
+# colnames(dfNina) <- gcSampleNina[, 1]
+
+fetch_direct_and_secondThirdRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\direct_and_secondThird_range_interactors.txt" % path
+	print(myfile)
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("first_and_secondThird_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+
+# viruses <- gcSample[,1]
+# Freq <- count.fields("genes_list.txt", sep = '	')
+# myhist <-list(breaks=viruses, counts=Freq, density=Freq/diff(viruses),xname="viruses")
+# class(myhist) <- "histogram"
+# plot(myhist)
+
+# # barchart with added parameters
+# viruses <- c(gcSample[,1])
+# viral_interactors <- c(count.fields("genes_list.txt", sep = '	'))
+# barplot(viral_interactors)
+
+# barplot(viral_interactors,
+# main = "Number of direct human protein interactors per virus",
+# xlab = "Virus name",
+# ylab = "Number of proteins",
+# names.arg = viruses,
+# col = "darkred",
+# horiz = FALSE)
+
+
+# count.fields(dat, sep = ',')
+# # [1] 2 3 2 2 2 2 3 3 7
+# max(count.fields(dat, sep = ','))
+# # [1] 7
+
+
+# column_number <- max(count.fields("genes_list.txt", sep = '	'))
+
+# read.table(dat, header = FALSE, sep = ",", col.names = paste0("V",seq_len(7)), fill = TRUE)
+
+# gcSampleNina <- read.table("genes_list.txt", header = FALSE, sep = "	", col.names = paste0("V",seq_len(max(count.fields("genes_list.txt", sep = '	')))),, dec = ".", fill = TRUE)
+
+# dfNina <- data.frame(t(gcSampleNina[-1]))
+# colnames(dfNina) <- gcSampleNina[, 1]
+
+fetch_first_and_second_range_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+import pandas as pd
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+full_gene_list_dict = {}
+full_interactors_list = []
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	my_gene_list = []
+	myfile = "%s\direct_and_second_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_interactors_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+full_interactors_list = list(set(full_interactors_list))
+
+
+
+df = pd.DataFrame(columns = full_gene_list_dict.keys(), index = full_interactors_list)
+
+for virus in full_gene_list_dict :
+	for gene in full_gene_list_dict[virus] :
+		df.loc[gene,virus] = 1
+# print(df.loc['TP53'])
+
+
+with open("gene_virus_table_firstSecondRange.txt", 'a+') as file_write :
+	for virus in full_gene_list_dict :
+		for gene in full_gene_list_dict[virus] :
+			file_write.write("%s	%s
+" % (virus, gene))
+
+# with open("gene_virus_table_without_covid.txt", 'a+') as file_write :
+# 	for virus in full_gene_list_dict :
+# 		if (virus != "covid19") :
+# 			for gene in full_gene_list_dict[virus] :
+# 				file_write.write("%s	%s
+" % (virus, gene))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_only_fifthRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\only_Fifth_range_interactors.txt" % path
+	print(myfile)
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("only_Fifth_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_only_fourthRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\only_Fourth_range_interactors.txt" % path
+	print(myfile)
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("only_Fourth_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_only_secondRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import os
+import sys
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\only_second_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("only_second_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+fetch_only_thirdRange_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import os
+import sys
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\only_Third_range_interactors.txt" % path
+	print(myfile)
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("only_Third_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+gsea_analysis.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+
+import gseapy
+import os
+import sys
+
+# assign a list object to enrichr
+# my_gene_list = ['SCARA3', 'LOC100044683', 'CMBL', 'CLIC6', 'IL13RA1', 'TACSTD2', 'DKKL1', 'CSF1',
+#      'SYNPO2L', 'TINAGL1', 'PTX3', 'BGN', 'HERC1', 'EFNA1', 'CIB2', 'PMP22', 'TMEM173']
+
+# gseapy.enrichr(gene_list=l, description='pathway', gene_sets='KEGG_2016', outfile='test')
+
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	my_gene_list = []
+	if (path.split("\")[-1] == 'covid19') :
+		myfile = "%s\direct_interactors.txt" % path
+		with open(myfile, 'r') as file_read :
+			data = file_read.readlines()
+			for line in data[6:] :
+				line = line.split('	')
+				gene = line[1].replace('
+','')
+				my_gene_list.append(gene)
+				
+				enr = gseapy.enrichr(gene_list=my_gene_list,
+	                 gene_sets=['GO_Biological_Process_2013','GO_Cellular_Component_2013','GO_Molecular_Function_2013',],
+	                 # gene_sets=['Reactome_2016',],
+	                 organism='Human', # don't forget to set organism to the one you desired! e.g. Yeast
+	                 description='test_name',
+	                 outdir='%s/enrichr_Reactome_2016' % path,
+	                 # no_plot=True,
+	                 cutoff=1 # test dataset, use lower value from range(0,1)
+	                )
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\direct_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+		# # full_analysis_log_write.write(nx.info(G_interactome))
+		# Number of nodes: 19972
+		# Number of edges: 737999
+		# Average degree:  73.9034
+
+		#### fetch viral direct interactors (1st order)
+		# direct_interactors1 = []
+		# direct_interactors2 = []
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+
+		# print(direct_interactors1)
+		# print(direct_interactors2)
+
+		for protein in list(set(list(direct_interactors))) :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))
+
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_ONLY_fifth_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\only_Fifth_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+		direct_interactors=set(direct_interactors)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		secondary_interactors = set(secondary_interactors)		
+		# print(secondary_interactors)
+
+		#### fetch viral tertiary interactors (3rd order)
+		tertiary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in secondary_interactors) :
+				tertiary_interactors.append(v)
+			elif (v in secondary_interactors) :
+				tertiary_interactors.append(u)
+		tertiary_interactors = set(tertiary_interactors)		
+		# print(tertiary_interactors)	
+
+		#### fetch viral quaternary interactors (4rd order)
+		quaternary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in tertiary_interactors) :
+				quaternary_interactors.append(v)
+			elif (v in tertiary_interactors) :
+				quaternary_interactors.append(u)
+		quaternary_interactors = set(quaternary_interactors)		
+		# print(quaternary_interactors)		
+
+		#### fetch viral 5th interactors (5th order)
+		fifth_order_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in quaternary_interactors) :
+				fifth_order_interactors.append(v)
+			elif (v in quaternary_interactors) :
+				fifth_order_interactors.append(u)
+		fifth_order_interactors = set(fifth_order_interactors)		
+		# print(fifth_order_interactors)		
+
+		## for only 5th range :
+		for protein in list(fifth_order_interactors) :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_ONLY_fourth_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\only_Fourth_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+		direct_interactors=set(direct_interactors)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		secondary_interactors = set(secondary_interactors)		
+		# print(secondary_interactors)
+
+		#### fetch viral tertiary interactors (3rd order)
+		tertiary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in secondary_interactors) :
+				tertiary_interactors.append(v)
+			elif (v in secondary_interactors) :
+				tertiary_interactors.append(u)
+		tertiary_interactors = set(tertiary_interactors)		
+		# print(tertiary_interactors)	
+
+		#### fetch viral quaternary interactors (4rd order)
+		quaternary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in tertiary_interactors) :
+				quaternary_interactors.append(v)
+			elif (v in tertiary_interactors) :
+				quaternary_interactors.append(u)
+		quaternary_interactors = set(quaternary_interactors)		
+		# print(quaternary_interactors)		
+
+		
+
+		## for only 4th range :
+		for protein in list(quaternary_interactors) :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_ONLY_second_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\only_second_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		print(secondary_interactors)
+
+		# merge first and second order interactors
+		#first_and_second_order_interactors = direct_interactors + secondary_interactors
+
+		## only first range :
+		# for protein in list(set(list(direct_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))
+
+		## for only 2nd range :
+		for protein in list(set(list(secondary_interactors))) :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))		
+
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_ONLY_third_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\only_Third_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+		direct_interactors=set(direct_interactors)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		secondary_interactors = set(secondary_interactors)		
+		# print(secondary_interactors)
+
+		#### fetch viral tertiary interactors (3rd order)
+		tertiary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in secondary_interactors) :
+				tertiary_interactors.append(v)
+			elif (v in secondary_interactors) :
+				tertiary_interactors.append(u)
+		tertiary_interactors = set(tertiary_interactors)		
+		# print(tertiary_interactors)		
+
+		## only 3rd range :
+		for protein in list(tertiary_interactors) :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_fourth_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\direct_and_secondThirdFourth_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+		direct_interactors=set(direct_interactors)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		secondary_interactors = set(secondary_interactors)		
+		# print(secondary_interactors)
+
+		#### fetch viral tertiary interactors (3rd order)
+		tertiary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in secondary_interactors) :
+				tertiary_interactors.append(v)
+			elif (v in secondary_interactors) :
+				tertiary_interactors.append(u)
+		tertiary_interactors = set(tertiary_interactors)		
+		# print(tertiary_interactors)	
+
+		#### fetch viral quaternary interactors (4rd order)
+		quaternary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in tertiary_interactors) :
+				quaternary_interactors.append(v)
+			elif (v in tertiary_interactors) :
+				quaternary_interactors.append(u)
+		quaternary_interactors = set(quaternary_interactors)		
+		# print(quaternary_interactors)		
+
+		# merge first and second and third and fourth order interactors 
+		first_and_second_and_third_and_fourth_order_interactors = list(direct_interactors) + list(secondary_interactors) + list(tertiary_interactors) + list(quaternary_interactors)
+
+		## only first range :
+		# for protein in list(set(list(direct_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))
+
+		# ## for 1st and 2nd range :
+		# for protein in list(set(list(first_and_second_order_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))		
+
+		# ## for 1st and 2nd and 3rd range :
+		# for protein in first_and_second_and_third_order_interactors :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+		## for 1st and 2nd and 3rd and 4th range :
+		for protein in first_and_second_and_third_and_fourth_order_interactors :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_second_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\direct_and_second_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		print(secondary_interactors)
+
+		# merge first and second order interactors
+		first_and_second_order_interactors = direct_interactors + secondary_interactors
+
+		## only first range :
+		# for protein in list(set(list(direct_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))
+
+		## for 1st and 2nd range :
+		for protein in list(set(list(first_and_second_order_interactors))) :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))		
+
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+network_analysis_third_range.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	with open("%s\direct_and_secondThird_range_interactors.txt" % path, 'a+') as file_write :
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes.csv' % path
+		edges_path = '%s\edges.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file                       
+			nodereader = csv.reader(nodecsv) # Read the csv  
+			for line in nodereader :
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1.0') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0.0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv) # Read the csv     
+			edges = [tuple(e) for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+		direct_interactors=set(direct_interactors)
+
+		#### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		secondary_interactors = set(secondary_interactors)		
+		# print(secondary_interactors)
+
+		#### fetch viral tertiary interactors (3rd order)
+		tertiary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in secondary_interactors) :
+				tertiary_interactors.append(v)
+			elif (v in secondary_interactors) :
+				tertiary_interactors.append(u)
+		tertiary_interactors = set(tertiary_interactors)		
+		# print(tertiary_interactors)		
+
+		# merge first and second and third order interactors
+		first_and_second_and_third_order_interactors = list(direct_interactors) + list(secondary_interactors) + list(tertiary_interactors)
+
+		## only first range :
+		# for protein in list(set(list(direct_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))
+
+		# ## for 1st and 2nd range :
+		# for protein in list(set(list(first_and_second_order_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))		
+
+		## for 1st and 2nd and 3rd range :
+		for protein in first_and_second_and_third_order_interactors :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+parse_patwhay_results.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from fractions import Fraction
+from collections import OrderedDict
+
+pathway_dict, pathway_dict_simple = {}, {}
+with open("enrichPathway-2ndorder-pvalueCutoff0.005.tsv", 'r') as file_read :
+	data = file_read.readlines()
+	for line in data[1:] :
+		line = line.split("	")
+		virus = line[0]
+		pathway_id = line[1]
+		pathway_description = line[2]
+		# GeneRatio = float(Fraction((line[3])))	
+		GeneRatio = line[3]	
+		BgRatio	= float(Fraction((line[4])))	
+		if line[5] != "NA" :
+			pvalue = float(line[5])
+		else : 
+			pvalue = line[5]
+		if line[6] != "NA" :
+			padjust = float(line[6])
+		else :
+			padjust = line[6]	
+		if line[7] != "NA" :	
+			qvalue = float(line[7])
+		else :
+			qvalue = line[7]
+		geneID = line[8]
+		count = int(line[9].replace("
+",""))
+		if virus not in pathway_dict :
+			pathway_dict[virus] = [(pathway_description, GeneRatio, padjust)]
+			pathway_dict_simple[virus] = [pathway_description]
+		else :
+			pathway_dict[virus].append((pathway_description, GeneRatio, padjust))
+			pathway_dict_simple[virus].append(pathway_description)
+
+# print(pathway_dict)
+
+# get overlapping pathways between lacrosse and covid
+overlap = list(set(pathway_dict_simple["Human_immunodeficiency_virus_type_1_group_M_subtype_B"]) & set(pathway_dict_simple["Human_SARS_coronavirus_2"]))
+for i in overlap :
+	print(i)
+
+shared_pathways = {}
+for virus in pathway_dict_simple :
+	n_overlap = len(list(set(pathway_dict_simple[virus]) & set(pathway_dict_simple["Human_SARS_coronavirus_2"])))
+	shared_pathways[virus] = n_overlap
+
+for i in shared_pathways :
+	print(i, shared_pathways[i])
+
+# print(pathway_dict["Human_SARS_coronavirus_2"])
+# my_list = []
+# for i in pathway_dict :
+# 	my_list.append(len(pathway_dict[i]))
+# my_list=set(my_list)
+# print(pathway_dict["Human_SARS_coronavirus_2"])
+
+# res = sorted(pathway_dict["Human_SARS_coronavirus_2"], key=lambda x: x[2] )
+
+# with open("sarscov2_second_order_enriched_pathway0.005.output.tsv" , 'a+') as file_write :
+# 	for i in res :
+# 		file_write.write("%s	%s	%s
+" % (i[0], i[2], i[1]))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+retrieve_further_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\SecondVersion\networks2'
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+
+for path in viruses_folders_list :
+	print(path.split("\")[-1])
+	### first get the list of 
+	# with open("%s\direct_interactors.txt" % path, 'a+') as file_write :
+	# with open("%s\direct_and_second_range_interactors.txt" % path, 'a+') as file_write :
+	with open("%s\direct_and_second_and_third_range_interactors.txt" % path, 'a+') as file_write :
+
+		file_write.write("%s
+" % path.split("\")[-1])
+		nodes_path = '%s\nodes_full.csv' % path
+		edges_path = '%s\edges_full.csv' % path
+		# make viral_proteins dict
+		descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+		with open(nodes_path, 'r') as nodecsv: # Open the file    
+			nodereader = csv.reader(nodecsv, delimiter=" ") # Read the csv  
+			next(nodereader)                   			
+			for line in nodereader :
+				# print(line)
+				node_id = line[0]
+				node_name = line[1]
+				node_type = line[2].replace('
+', '')
+				descr_dict_nodes[node_id] = node_name
+				if (node_type == '1') :
+					sapiens_dict[node_id] = node_name
+				elif (node_type == '0') :
+					virus_dict[node_id] = node_name
+				else :
+					print(line, "Warning : unidentified nodes !
+")
+					file_write.write("%s	Warning : unidentified nodes !
+" % line)
+		# print(virus_dict)
+		# print(descr_dict_nodes.keys())
+
+
+		with open(edges_path, 'r') as edgecsv: # Open the file
+			edgereader = csv.reader(edgecsv, delimiter=" ") # Read the csv  
+			next(edgereader)   
+			edges = [tuple(e)[0:2] for e in edgereader] # Retrieve the data
+			# print(edges)
+
+		G_interactome = nx.Graph()
+		G_interactome.add_nodes_from(descr_dict_nodes.keys())
+		G_interactome.add_edges_from(edges)
+
+		print(nx.info(G_interactome))
+		file_write.write("%s
+" % nx.info(G_interactome))
+
+		#### fetch viral direct interactors (1st order)
+		direct_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in virus_dict) :
+				direct_interactors.append(v)
+			elif (v in virus_dict) :
+				direct_interactors.append(u)
+
+		### fetch viral secondary interactors (2nd order)
+		secondary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in direct_interactors) :
+				secondary_interactors.append(v)
+			elif (v in direct_interactors) :
+				secondary_interactors.append(u)
+		# print(secondary_interactors)
+
+		#### fetch viral tertiary interactors (3rd order)
+		tertiary_interactors = []
+		for u,v,c in G_interactome.edges(data=True) :
+			if (u in secondary_interactors) :
+				tertiary_interactors.append(v)
+			elif (v in secondary_interactors) :
+				tertiary_interactors.append(u)
+		tertiary_interactors = set(tertiary_interactors)
+
+		# merge first and second order interactors
+		# first_and_second_order_interactors = direct_interactors + secondary_interactors
+
+		# merge first and second and third order interactors
+		first_and_second_and_third_order_interactors = list(direct_interactors) + list(secondary_interactors) + list(tertiary_interactors)
+
+
+		## only first range :
+		# for protein in list(set(list(direct_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))
+
+		## for 1st and 2nd range :
+		# for protein in list(set(list(first_and_second_order_interactors))) :
+		# 	print(protein, descr_dict_nodes[protein])
+		# 	file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))		
+
+		## for 1st and 2nd and 3rd range :
+		for protein in first_and_second_and_third_order_interactors :
+			print(protein, descr_dict_nodes[protein])
+			file_write.write("%s	%s
+" % (protein, descr_dict_nodes[protein]))	
+
+	
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+retrieve_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\SecondVersion\networks2'
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+print(viruses_folders_list)
+
+
+# interactors_dict = {}
+# full_interactors_list = []
+# for path in viruses_folders_list :
+# 	virus_name = path.split("\")[-1]
+# 	print(virus_name)
+
+# 	my_protein_list = []
+# 	myfile = "%s\nodes.csv" % path
+# 	with open(myfile, 'r') as file_read :
+# 		data = file_read.readlines()
+# 		for line in data[1:] :
+# 			line = line.split(',')
+# 			protein = line[1]
+# 			organism = line[2].replace('
+','')
+# 			if organism == 'Homo sapiens' :
+# 				my_protein_list.append(protein)
+# 				full_interactors_list.append(protein)
+# 				interactors_dict[virus_name] = my_protein_list
+# full_interactors_list = list(set(full_interactors_list))
+# print(len(full_interactors_list))
+# for virus in interactors_dict :
+# 	print(virus, interactors_dict[virus])
+
+
+# with open("genes_list.txt", "a+") as file_write :
+# 	for virus in interactors_dict :
+# 		file_write.write("%s	" % virus)
+# 		for gene in interactors_dict[virus][0:-1] :
+# 			file_write.write("%s	" % gene)
+# 		file_write.write("%s
+" % interactors_dict[virus][-1])
+
+# with open("virus_gene_table.txt", "a+") as file_write :
+# 	for virus in interactors_dict :
+# 		for gene in interactors_dict[virus]:
+# 			file_write.write("%s	%s
+" % (virus,gene))
+
+
+
+# full_gene_list_dict = {}
+# for path in viruses_folders_list :
+# 	virus_name = path.split("\")[-1]
+# 	print(virus_name)
+# 	my_gene_list = []
+# 	myfile = "%s\direct_and_second_range_interactors.txt" % path
+# 	with open(myfile, 'r') as file_read :
+# 		data = file_read.readlines()
+# 		for line in data[6:] :
+# 			line = line.split('	')
+# 			gene = line[1].replace('
+','')
+# 			my_gene_list.append(gene)
+# 			full_gene_list_dict[virus_name] = my_gene_list
+
+# with open("first_and_second_order_genes_list.txt", "a+") as file_write :
+# 	for virus in full_gene_list_dict :
+# 		file_write.write("%s	" % virus)
+# 		for gene in full_gene_list_dict[virus][0:-1] :
+# 			file_write.write("%s	" % gene)
+# 		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+# with open("virus_gene_table_second_order.txt", "a+") as file_write :
+# 	for virus in full_gene_list_dict :
+# 		for gene in full_gene_list_dict[virus]:
+# 			file_write.write("%s	%s
+" % (virus,gene))
+
+
+
+full_gene_list_dict = {}
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+	my_gene_list = []
+	myfile = "%s\direct_and_second_and_third_range_interactors.txt" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[6:] :
+			line = line.split('	')
+			gene = line[1].replace('
+','')
+			my_gene_list.append(gene)
+			full_gene_list_dict[virus_name] = my_gene_list
+
+with open("first_and_second_and_third_order_genes_list.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		file_write.write("%s	" % virus)
+		for gene in full_gene_list_dict[virus][0:-1] :
+			file_write.write("%s	" % gene)
+		file_write.write("%s
+" % full_gene_list_dict[virus][-1])
+
+with open("virus_gene_table_third_order.txt", "a+") as file_write :
+	for virus in full_gene_list_dict :
+		for gene in full_gene_list_dict[virus]:
+			file_write.write("%s	%s
+" % (virus,gene))
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+retrieve_shared_interactors.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\SecondVersion\networks2'
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+
+interactors_dict = {}
+full_interactors_list = []
+for path in viruses_folders_list :
+	virus_name = path.split("\")[-1]
+	print(virus_name)
+
+	my_protein_list = []
+	myfile = "%s\nodes.csv" % path
+	with open(myfile, 'r') as file_read :
+		data = file_read.readlines()
+		for line in data[1:] :
+			line = line.split(',')
+			protein = line[1]
+			organism = line[2].replace('
+','')
+			if organism == 'Homo sapiens' :
+				my_protein_list.append(protein)
+				full_interactors_list.append(protein)
+				interactors_dict[virus_name] = my_protein_list
+full_interactors_list = list(set(full_interactors_list))
+print(len(full_interactors_list))
+
+covid_prots_direct = interactors_dict["Human_SARS_coronavirus_2"]
+
+# covid_prots = interactors_dict["Human_SARS_coronavirus_2"]
+# shared_prot = {}
+# virus_sharing_prots = {}
+
+# for virus in interactors_dict :
+# 	# print(virus, interactors_dict[virus])
+# 	if virus != "Human_SARS_coronavirus_2" :
+# 		for prot in interactors_dict[virus] :
+# 			if prot in covid_prots :
+# 				if virus not in virus_sharing_prots :
+# 					virus_sharing_prots[virus] = [prot]
+# 				else : 
+# 					virus_sharing_prots[virus].append(prot)
+# 				# print(virus, prot)
+# 				if prot not in shared_prot:
+# 					shared_prot[prot] = [virus]
+# 				else :
+# 					shared_prot[prot].append(virus)
+
+
+# # for prot in shared_prot :
+# # 	print(prot, shared_prot[prot])
+
+# for virus in virus_sharing_prots :
+# 	print(virus)
+
+# # with open("virus_gene_table.txt", "a+") as file_write :
+# # 	for virus in interactors_dict :
+# # 		for gene in interactors_dict[virus]:
+# # 			file_write.write("%s	%s
+" % (virus,gene))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+interactors_dict2 = {}
+
+with open("virus_gene_table_second_order.txt", 'r') as file_read :
+	data = file_read.readlines()
+	for line in data :
+		line = line.split('	')
+		virus = line[0]
+		prot = line[1].replace('
+','')
+		if virus not in interactors_dict2 :
+			interactors_dict2[virus] = [prot]
+		else : 
+			interactors_dict2[virus].append(prot)
+
+
+covid_prots = interactors_dict2["Human_SARS_coronavirus_2"]
+shared_prot = {}
+virus_sharing_prots = {}
+for virus in interactors_dict2 :
+	# print(virus, interactors_dict2[virus])
+	if virus != "Human_SARS_coronavirus_2" :
+		for prot in interactors_dict2[virus] :
+			if prot in covid_prots_direct :
+				if virus not in virus_sharing_prots :
+					virus_sharing_prots[virus] = [prot]
+				else : 
+					virus_sharing_prots[virus].append(prot)
+				# print(virus, prot)
+				if prot not in shared_prot:
+					shared_prot[prot] = [virus]
+				else :
+					shared_prot[prot].append(virus)
+
+for virus in virus_sharing_prots :
+	print(virus, len(virus_sharing_prots[virus]))
+
+
+# for prot in shared_prot :
+# 	print(prot, shared_prot[prot])
+
+
+stop = timeit.default_timer()
+print(stop - start)  
+
+viruses_sharing_SARSCoV2_interacting_proteins.py 
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+# jupyter notebook --browser='C:/Program Files (x86)/Google/Chrome/Application/chrome.exe %s'
+
+
+import timeit
+start = timeit.default_timer()
+
+import sys
+import os
+import csv
+from operator import itemgetter
+import networkx as nx
+from networkx.algorithms import community
+from collections import Counter
+from collections import defaultdict
+from collections import OrderedDict
+
+
+
+
+
+
+
+#####################################################################################################
+#########################  Compute network source to protein degree distribution ####################
+##########################################  based on edges to protein ###############################
+#####################################################################################################
+
+
+# nodes_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# nodes_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\nodes.csv'
+# edges_path = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25\covid19\edges.csv'
+
+# rootdir = 'C:\Downloads\Projects\covid_networks\Virus_host_interactomes_thresh25\thresh=0.25'
+rootdir = 'A:\Downloads\Projects\workFromHome\Projects\Covid-2\Virus_host_interactomes_thresh25\thresh=0.25'
+
+# for subdir, dirs, files in os.walk(rootdir):
+#     for file in files:
+#         print(os.path.join(subdir, file))
+
+viruses_folders_list = []
+for subdir, dirs, files in os.walk(rootdir):
+	for name in dirs:
+	    viruses_folders_list.append(os.path.join(rootdir, name))
+# print(viruses_folders_list)
+
+covid_interactors = ["WFS1","QSOX2","FAM162A","EXOSC3","SRP54","SLC1A3","GIGYF2","PUSL1","TK2","TAPT1","MFGE8","TOMM70A","NOL10","NUP98","TARS2","PPIL3","USP54","PPT1","POR","HDAC2","CEP135","RAB5C","SAAL1","POLA2","VPS11","SRP19","ACSL3","HSBP1","DCAF7","SDHB","TCTN3","MRPS2","GCC2","NUP62","CENPF","RTN4","ZYG11B","MPHOSPH10","PRIM1","NGLY1","ARF6","RRP9","RAB7A","RDX","ATP5I","BCS1L","GOLGA2","SLC25A21","HECTD1","TCF12","RAE1","ECSIT","PRIM2","MDN1","LOX","FKBP15","ERP44","FAM134C","CWC27","ATP5L","REEP6","RAB2A","UGGT2","MTCH1","YIF1A","INHBE","SLC30A9","NINL","GCC1","SLC30A6","ETFA","NUP88","PDE4DIP","TUBGCP3","SEPSECS","PCM1","DCTPP1","NDUFB9","SCARB1","NUP210","RHOT2","RAB8A","ZNF318","ITGB1","CUL2","RAB18","GORASP1","AATF","SIL1","MAT2B","EXOSC5","UPF1","KDELC2","TRMT1","SIGMAR1","CHPF2","NUTF2","GFER","INTS4","GRPEL1","NUP54","ABCC1","G3BP1","STOM","CISD3","ERLEC1","SMOC1","DDX10","AKAP8L","STOML2","ERGIC1","RHOA","SLU7","HS6ST2","CEP350","TBK1","NGDN","NUPL1","FBN1","PIGO","GOLGB1","ALG11","PKP2","NLRX1","AASS","TIMM10B","TRIM59","AAR2","TOR1AIP1","DNMT1","HEATR3","AGPS","PLEKHF2","ANO6","COLGALT1","PMPCA","HMOX1","SLC30A7","ACADM","TUBGCP2","ARL6IP6","TM2D3","MIB1","SLC9A3R1","FBXL12","VIMP","CSDE1","SLC44A2","DNAJC11","CYB5B","ACAD9","CIT","EXOSC8","SPG20","CHCHD1","USP13","CEP68","CLIP4","TIMM8B","GLA","TMEM39B","PTGES2","EDEM3","CCDC86","FAM98A","NARS2","DPH5","MYCBP2","ALG8","GGCX","CEP112","OS9","NAT14","G3BP2","ATP6V1A","BAG5","RAB1A","GGH","RAB14","JAKMIP1","PSMD8","PRKACA","ADAMTS1","NIN","LMAN2","ALG5","BRD4","F2RL1","SCCPDH","COL6A1","PRKAR2B","RIPK1","ATP1B1","FKBP7","GOLGA3","CHMP2A","HS2ST1","SRP72","DNAJC19","ATP6AP1","MIPOL1","SIRT5","NPTX1","REEP5","ZC3H7A","AP2M1","TIMM9","AKAP8","UBXN8","MARC1","VPS39","TMED5","FASTKD5","FBN2","NEK9","PITRM1","FBLN5","THTPA","GNG5","LARP4B","AP3B1","PRKAR2A","PCNT","LARP7","LARP1","TBCA","MARK3","AKAP9","MARK2","DPY19L1","DCAKD","UBAP2","CSNK2A2","ADCK4","GNB1","SBNO1","CHPF","EMC1","MEPCE","MAP7D1","STC2","GPX1","CRTC3","GHITM","ZDHHC5","PABPC1","SLC6A15","TLE1","GOLGA7","WHSC1","NPC2","OCIAD1","CEP250","HOOK1","AES","SLC27A2","CDK5RAP2","FAR2","IMPDH2","RAP1GDS1","AP2A2","ERC1","FGFR1","ZC3H18","CYB5R3","MRPS25","GRIPAP1","ZNF503","TIMM10","ERO1LB","RAB10","PTBP2","BCKDK","ATP13A3","SUN2","IDE","ATE1","TLE3","NDFIP2","RBM41","PLAT","NDUFAF2","POFUT1","NDUFAF1","CLCC1","GPAA1","PMPCB","SNIP1","FOXRED2","GTF2F2","NUP214","SCAP","FAM8A1","MOV10","EIF4E2","UBAP2L","RNF41","NEU1","ERMP1","PABPC4","BRD2","POLA1","CNTRL","MOGS","KIAA1033","TBKBP1","KIAA0368","COMT","CSNK2B","IL17RA","TMEM97","PCSK6","SDF2","MARK1","BZW2","TYSND1","RALA","PVR","KDELC1","TOR1A","GDF15","PLOD2","PLD3","PRRC2B","PLEKHA5","LETMD1","FYCO1","PDZD11","HYOU1","EIF4H"]
+viruses_with_shared_interactors = []
+for path in viruses_folders_list :
+	virus = path.split("\")[-1]
+	print(virus)
+	nodes_path = '%s\nodes.csv' % path
+	edges_path = '%s\edges.csv' % path
+	# make viral_proteins dict
+	descr_dict_nodes, sapiens_dict, virus_dict = {},{},{}
+	with open(nodes_path, 'r') as nodecsv: # Open the file                       
+		nodereader = csv.reader(nodecsv) # Read the csv  
+		for line in nodereader :
+			node_id = line[0]
+			node_name = line[1]
+			node_type = line[2].replace('
+', '')
+			descr_dict_nodes[node_id] = node_name
+			if (node_type == '1.0') :
+				sapiens_dict[node_id] = node_name
+			elif (node_type == '0.0') :
+				virus_dict[node_id] = node_name
+			else :
+				print(line, "Warning : unidentified nodes !
+")
+
+	with open(edges_path, 'r') as edgecsv: # Open the file
+		edgereader = csv.reader(edgecsv) # Read the csv     
+		edges = [tuple(e) for e in edgereader] # Retrieve the data
+		# print(edges)
+
+	G_interactome = nx.Graph()
+	G_interactome.add_nodes_from(descr_dict_nodes.keys())
+	G_interactome.add_edges_from(edges)
+
+	print(nx.info(G_interactome))
+	# Number of nodes: 19972
+	# Number of edges: 737999
+	# Average degree:  73.9034
+
+	#### fetch viral direct interactors (1st order)
+	# direct_interactors1 = []
+	# direct_interactors2 = []
+	
+	for u,v,c in G_interactome.edges(data=True) :
+		if (u in covid_interactors and v in virus_dict) :
+			print(virus, u, v)
+			viruses_with_shared_interactors.append(virus)
+		elif (v in covid_interactors and u in virus_dict) :
+			print(virus, u, v)
+			direct_interactors.append(virus)
+
+viruses_with_shared_interactors = list(set(viruses_with_shared_interactors))
+print(viruses_with_shared_interactors)
+
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)  
