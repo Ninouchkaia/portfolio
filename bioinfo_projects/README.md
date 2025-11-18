@@ -14,7 +14,7 @@ High-throughput barcode counts → QC → DESeq2 → drug network correlation.
 
 ## 3. COVID-19 Network Medicine Pipeline
 Multilayer graphs, mock networks, Z-scores, ranking of proteins, GO terms, drugs.  
-[`../CV/04_Postdoc_INSERM/05_covid_network_medicine`](../CV/04_Postdoc_INSERM/05_covid_network_medicine)
+[`../CV/04_Postdoc_INSERM/05_covid_network_medicine`](../CV/04_Postdoc_INSERM/05_NetworkMedicine)
 
 ## 4. Agent-Based Tumour Model Analysis Suite
 Python package orchestrating NetLogo/OpenMOLE simulations, validation, sensitivity.  
@@ -27,6 +27,7 @@ Python toolkit for FASTA parsing, abundance loading, AA metrics and correlations
 ## 6. Ankyrin Modularity (PFAM/ELM)
 Compositional modularity analysis with enrichment and conservation pipelines.  
 [`CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY`](../CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY)
+
 
 
 
