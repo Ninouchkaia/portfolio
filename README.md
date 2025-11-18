@@ -13,7 +13,7 @@ For experience in molecular and cell biology, see here: [CV/01_PhD_CNRS](CV/01_P
 
 ## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
 
-<p align="center"><img src="CV/CRCT/figures_visuals/abm.png" width="520px"></p>
+<p align="center"><img src="CV/figures_visuals/abm.png" width="520px"></p>
 
 ### **Scientific Objective**
 
