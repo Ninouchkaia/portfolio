@@ -154,7 +154,7 @@ Ghavasieh A., Bontorin S., Artime O., *Verstraete N.*, De Domenico M.
 
 ### **Project folder**
 
-[Access the folder 06_SystemicEffects](06_SystemicEffects)
+[Access the folder 06 _Sarscov2Interactome](06 _Sarscov2Interactome)
 
 ---
 
@@ -175,5 +175,5 @@ Link barcode-based clonal expansion to transcriptomic reprogramming under drug t
 
 ### **Project folder**
 
-[Access the folder 07_Barcodes](07_Barcodes)
+[Access the folder 07_BarcodesDrugScreening](07_BarcodesDrugScreening)
 
