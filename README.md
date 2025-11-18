@@ -1,4 +1,5 @@
-# Nina Verstraete – Bioinformatics & Computational Biology
+# Nina Verstraete
+# Bioinformatics & Computational Biology
 
 Computational biologist with experience in:
 - End-to-end pipelines (Snakemake, Python, R)
