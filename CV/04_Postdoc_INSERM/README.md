@@ -59,7 +59,7 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 
 ### **Project Folder**
 
-[Access the project folder 02_macrophage_polarization](CV/04_Postdoc_INSERM/02_macrophage_polarization/)
+[Access the project folder 02_macrophage_polarization](02_macrophage_polarization/)
 
 ---
 
@@ -80,7 +80,7 @@ Identify microenvironmental features predictive of immunotherapy response.
 
 ### **Project folder**
 
-[Access the folder 03_Deconvolution](CV/04_Postdoc_INSERM/03_Deconvolution)
+[Access the folder 03_Deconvolution](03_Deconvolution)
 
 ---
 
@@ -102,7 +102,7 @@ Analyze bulk RNA-seq from lung tumors to characterize immune composition and reg
 
 ### **Project folder**
 
-[Access the folder 04_LungPredict](CV/04_Postdoc_INSERM/04_LungPredict)
+[Access the folder 04_LungPredict](04_LungPredict)
 
 ---
 
@@ -128,7 +128,7 @@ Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to ident
 
 ### **Project folder**
 
-[Access the folder 05_covid_network_medicine](CV/04_Postdoc_INSERM/05_covid_network_medicine)
+[Access the folder 05_covid_network_medicine](05_covid_network_medicine)
 
 ---
 
@@ -155,7 +155,7 @@ Ghavasieh A., Bontorin S., Artime O., *Verstraete N.*, De Domenico M.
 
 ### **Project folder**
 
-[Access the folder 06_SystemicEffects](CV/04_Postdoc_INSERM/06_SystemicEffects)
+[Access the folder 06_SystemicEffects](06_SystemicEffects)
 
 ---
 
