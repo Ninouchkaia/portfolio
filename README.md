@@ -11,7 +11,7 @@ For experience in molecular and cell biology, see here: [CV/01_PhD_CNRS](CV/01_P
 
 ---
 
-## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
+## **1. Agent-Based Modeling of the Tumor Ecosystem**
 
 <p align="center"><img src="CV/figures_visuals/abm.png" width="520px"></p>
 
@@ -38,7 +38,7 @@ Simulate the spatio-temporal evolution of CLL cells and monocyte-derived myeloid
 
 ---
 
-## **2. Macrophage Polarization in CLL (Cancers 2020)**
+## **2. Macrophage Polarization in CLL**
 
 ### **Scientific Objective**
 
@@ -63,7 +63,7 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 ---
 
 
-## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response **
+## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response**
 
 <p align="center"><img src="CV/figures_visuals/gemdecan.png" width="320px"></p>
 
@@ -105,7 +105,7 @@ Analyze bulk RNA-seq from lung tumors to characterize immune composition and reg
 
 ---
 
-## **5. Drug Repurposing for COVID-19 — Network Medicine (Network & Systems Medicine 2020)**
+## **5. Drug Repurposing for COVID-19 with Network Medicine**
 <p align="center"><img src="CV/figures_visuals/multilayer.png" width="520px"></p>
 
 ### **Scientific Objective**
@@ -132,7 +132,7 @@ Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to ident
 
 ---
 
-## **6. Systemic Effects of SARS-CoV-2 (Communications Physics 2021)**
+## **6. Systemic Effects of SARS-CoV-2)**
 
 <p align="center"><img src="CV/figures_visuals/systemic.png" width="520px"></p>
 
