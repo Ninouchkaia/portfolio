@@ -2,6 +2,8 @@
 This section summarizes my work at the Cancer Research Center of Toulouse (CRCT - Team NetBio²), focused on modeling tumor–immune interactions, transcriptomics, and integrative bioinformatics.
 
 ---
+
+
 ## **1. Agent-Based Modeling of the Tumor Ecosystem (iScience 2023)**
 <p align="center">
   <img src="figures/tumor_ecosystem_modeling.png" width="520px">
@@ -17,6 +19,7 @@ Simulate the spatio-temporal evolution of solid tumors by integrating immune dyn
 * Generation of figures used in the iScience publication.
 ---
 
+
 ## **2. Macrophage Polarization in Chronic Lymphocytic Leukemia**
 <p align="center">
   <img src="figures/macrophage_polarization.png" width="520px">
@@ -30,6 +33,7 @@ Understand the transition of macrophages toward a pro-tumoral state (NLC) and id
 * Contribution to the dynamic model of macrophage polarization.
 * Multi-dataset analysis and cross-validation.
 ---
+
 
 ## **3. Prediction of Immunotherapy Response — GEMDECAN**
 <p align="center">
@@ -46,6 +50,7 @@ Identify robust transcriptomic signatures associated with immunotherapy response
 * Modeling of expression–response associations.
 ---
 
+
 ## **4. Tumor Microenvironment Analysis — LungPredict**
 <p align="center">
   <img src="figures/lungpredict_deconvolution.png" width="520px">
@@ -60,6 +65,7 @@ Characterize cell-type composition and transcriptional programs in lung tumors t
 * Regulatory profiling.
 * Contribution to the integrated microenvironment analysis.
 ---
+
 
 ## **5. Drug Repurposing for COVID-19 through Network Medicine**
 [Access the project folder](./05_covid_network_medicine/)
@@ -79,8 +85,9 @@ Characterize cell-type composition and transcriptional programs in lung tumors t
 
 *Verstraete N.*, et al. *CovMulNet19, Integrating Proteins, Diseases, Drugs, and Symptoms: A Network Medicine Approach to COVID-19.*
 *Network and Systems Medicine*, 2020. DOI:10.1089/nsm.2020.0011
-
 ---
+
+
 ## **6. Systemic Effects of SARS-CoV-2**
 <p align="center">
   <img src="figures/sarscov2_systemic.png" width="520px">
@@ -93,8 +100,9 @@ Describe how viral proteins perturb cellular functions across multiple tissues a
 * GO/Reactome/WikiPathways analyses.
 * Identification of perturbed processes.
 * Contribution to mechanistic figures.
-
 ---
+
+
 ## **7. Clonal Dynamics and Single-Cell RNA-seq**
 <p align="center">
   <img src="figures/scRNA_clonality.png" width="520px">
