@@ -66,13 +66,13 @@ Preprocessing, QC, DESeq2 inputs, fold-change networks, drug-drug correlation ma
 ### **3. CONICET INQUIMAE - Postdoctoral Research (Buenos Aires, 2013-2015)**
 *Structural bioinformatics, protein evolution, and interaction modularity*
 
-#### [Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)
+#### [1. Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)
 Weighted frequencies, proteome cost metrics, correlations, PCA and domain-specific notebooks.
 
-#### [Structure and Dynamics of Ankyrin Repeats](02_Postdoc_CONICET/AnkyrinStructure/)
+#### [2. Structure and Dynamics of Ankyrin Repeats](02_Postdoc_CONICET/AnkyrinStructure/)
 Dataset construction, repeat detection, structural analysis, visualization.
 
-#### [Functional Modularity of Ankyrin Proteins and Partners](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
+#### [3. Functional Modularity of Ankyrin Proteins and Partners](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
 Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clustering and structural analysis.
 
 ---
@@ -80,8 +80,14 @@ Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clus
 ### **4. CNRS IBENS - PhD (Paris, 2008-2012)**
 *Regulation of transcriptional elongation and structure-function analysis*
 
-#### [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)
+#### [1. P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)
 Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat interference.
+
+#### [2. P-TEFb mobility](01_PhD_CNRS)
+Work on nuclear mobility of Cyclin T1 and P-TEFb complexes, using FRAP/FLIP to assess how truncation mutants and transcriptional inhibition modulate diffusion and partner association.
+
+#### [3. P-TEFb conservation across Metazoa](01_PhD_CNRS)
+Work on evolutionary conservation of the HEXIM-Cyclin T complex, identifying C. elegans homologs and showing that key interaction residues are functionally preserved.
 
 ---
 
@@ -107,6 +113,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
