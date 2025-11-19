@@ -92,7 +92,9 @@ Work on evolutionary conservation of the HEXIM-Cyclin T complex, identifying C. 
 ---
 
 ## **Visual Summaries**
+
 [Visuals](figures_visuals/)
+
 Contains PNG visual overviews of the main projects (ABM, Barcodes, Network Medicine, GEMDECAN, LungPredict, Systemic COVID).
 
 ---
@@ -113,6 +115,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
