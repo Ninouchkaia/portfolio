@@ -25,7 +25,7 @@ Each folder corresponds to a specific research project and contains Markdown fil
   - Regulatory mechanisms in transcription and post-transcriptional control  
 
 - **Scientific Communication & Pedagogy**
-  - Teaching, mentoring, and outreach in coding.
+  - Teaching, mentoring, and outreach in coding
   - Integration of artistic coding practices for public engagement  
 
 ---
@@ -33,7 +33,7 @@ Each folder corresponds to a specific research project and contains Markdown fil
 ## Research Projects
 
 ### **1. INSERM CRCT - Postdoctoral Research (2020-2023)**
-*Systems oncology, tumor-immune modeling, transcriptomics, and drug response prediction*
+*Areas of interest: Systems oncology, tumor-immune modeling, transcriptomics, and drug response prediction*
 
 #### [1. Tumor Ecosystem Modeling](04_Postdoc_INSERM/01_AgentBasedModel/)
 A complete multi-objective calibration pipeline for a cancer-immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.
@@ -59,7 +59,7 @@ Preprocessing, QC, DESeq2 inputs, fold-change networks, drug-drug correlation ma
 ---
 
 ### **2. Software Engineering for Airbus Critical Systems (Toulouse, 2017-2020)**
-*Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).*
+*Areas of interest: Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).*
 
 ---
 
@@ -78,7 +78,7 @@ Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clus
 ---
 
 ### **4. CNRS IBENS - PhD (Paris, 2008-2012)**
-*Regulation of transcriptional elongation and structure-function analysis*
+*Areas of interest: Regulation of transcriptional elongation and structure-function analysis*
 
 #### [1. P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)
 Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat interference.
@@ -107,6 +107,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
