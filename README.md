@@ -42,11 +42,7 @@ This directory highlights **five major projects**, presented as an independent m
 * **CLL–NLC Agent-Based Model** — OpenMOLE-NetLogo–Python multiobjective calibration
 * **Virus Interactome** — network analysis and multilayer reconstruction
 
-Each project is structured for **reproducible research**:
-
 ---
-
-
 
 ## **Contact**
 
