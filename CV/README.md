@@ -32,7 +32,7 @@ Each folder corresponds to a specific research project and contains Markdown fil
 
 ## Research Projects
 
-### **INSERM CRCT - Postdoctoral Research (2020-2023)**
+### **1. INSERM CRCT - Postdoctoral Research (2020-2023)**
 *Systems oncology, tumor-immune modeling, transcriptomics, and drug response prediction*
 
 #### [1. Tumor Ecosystem Modeling](04_Postdoc_INSERM/01_AgentBasedModel/)
@@ -58,12 +58,12 @@ Preprocessing, QC, DESeq2 inputs, fold-change networks, drug-drug correlation ma
 
 ---
 
-### **Software Engineering for Airbus Critical Systems (Toulouse, 2017-2020)**
+### **2. Software Engineering for Airbus Critical Systems (Toulouse, 2017-2020)**
 *Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).*
 
 ---
 
-### **CONICET INQUIMAE - Postdoctoral Research (Buenos Aires, 2013-2015)**
+### **3. CONICET INQUIMAE - Postdoctoral Research (Buenos Aires, 2013-2015)**
 *Structural bioinformatics, protein evolution, and interaction modularity*
 
 #### [Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)
@@ -77,7 +77,7 @@ Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clus
 
 ---
 
-### **CNRS IBENS - PhD (Paris, 2008-2012)**
+### **4. CNRS IBENS - PhD (Paris, 2008-2012)**
 *Regulation of transcriptional elongation and structure-function analysis*
 
 #### [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)
@@ -107,6 +107,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
