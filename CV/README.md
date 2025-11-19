@@ -17,7 +17,7 @@ Each folder corresponds to a specific research project and contains Markdown fil
 
 - **Modeling & Systems Biology**
   - Agent-based modeling of tumor-immune ecosystems  
-  - Multi-scale simulations of cellular dynamics (NetLogo, OpenMOLE)  
+  - Multi-scale simulations of cellular dynamics 
   - Network perturbation and system-level functional analysis  
 
 - **Molecular & Structural Biology**
@@ -107,6 +107,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
