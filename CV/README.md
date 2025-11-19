@@ -2,7 +2,8 @@
 
 ## Overview
 
-This GitHub repository documents the **methods**, **projects**, and **conceptual frameworks** I developed or contributed to across academia and research institutions.  It serves as a structured overview of my approach to **data analysis**, **modeling**, and **scientific reproducibility**. Each folder corresponds to a specific research project and contains Markdown files summarizing the objectives, methods, and results of individual projects.
+This GitHub repository documents the **methods**, **projects**, and **conceptual frameworks** I developed or contributed to across academia and research institutions.  It serves as a structured overview of my approach to **data analysis**, **modeling**, and **scientific reproducibility**. 
+Each folder corresponds to a specific research project and contains Markdown files summarizing the objectives, methods, and results of individual projects.
 
 ---
 
@@ -105,6 +106,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
