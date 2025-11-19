@@ -6,18 +6,40 @@ This repository gathers a selection of scientific, technical and software-engine
 
 ---
 
-### **Structure Overview**
+---
 
-```
-.
-├── 01_PhD_CNRS/            ← Functional genomics & transcription regulation
-├── 02_Postdoc_CONICET/     ← Evolution, structural bioinformatics, PaxDB, ankyrin modularity
-├── 03_Industry_AIRBUS/     ← Software engineering in critical systems
-├── 04_Postdoc_INSERM/      ← Large-scale bioinformatics pipelines (7 major projects)
-└── figures_visuals/        ← Visual summaries for portfolio and presentations
-```
+## 🔍 Overview
+
+This GitHub repository documents the **methods**, **projects**, and **conceptual frameworks** I developed or contributed to across academia and research institutions.  
+It serves as a structured overview of my approach to **data analysis**, **modeling**, and **scientific reproducibility**.
+
+> 🧩 Each folder corresponds to a specific research project and contains Markdown files summarizing the objectives, methods, and results of individual projects.
 
 ---
+
+## 🧭 Research Focus
+
+- **Bioinformatics & Data Analysis**
+  - RNA-seq (bulk & single-cell), deconvolution, and gene regulatory inference  
+  - Network medicine and multi-omics data integration  
+  - Statistical modeling and visualization of biological data  
+
+- **Modeling & Systems Biology**
+  - Agent-based modeling of tumor–immune ecosystems  
+  - Multi-scale simulations of cellular dynamics (NetLogo, OpenMOLE)  
+  - Network perturbation and system-level functional analysis  
+
+- **Molecular & Structural Biology**
+  - Protein evolution and structural modularity  
+  - Regulatory mechanisms in transcription and post-transcriptional control  
+
+- **Scientific Communication & Pedagogy**
+  - Teaching, mentoring, and outreach in bioinformatics and digital creativity  
+  - Integration of artistic coding practices (music & generative systems) for public engagement  
+
+---
+
+## Research Projects
 
 ### **INSERM CRCT - Postdoctoral Research (2020–2023)**
 *Systems oncology, tumor–immune modeling, transcriptomics, and drug response prediction*
@@ -25,26 +47,20 @@ This repository gathers a selection of scientific, technical and software-engine
 #### [1. Tumor Ecosystem Modeling](04_Postdoc_INSERM/01_AgentBasedModel/)
 A complete multi-objective calibration pipeline for a cancer–immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.
 
-
 #### [2. Macrophage Polarization in CLL](04_Postdoc_INSERM/02_BooleanModel)
 Pipeline for computing transcription factor signatures (DoRothEA-like), scaling, normalisation and prediction modules.
-
 
 #### [3. Predicting Response to Immunotherapy (GEMDECAN)](04_Postdoc_INSERM/03_RNASeqDeconvolution/)
 Snakemake workflow in R/Python for TPM conversion, signature scoring, deconvolution (EPIC, MCPCounter, quanTIseq), and predictive modelling.
 
-
 #### [4. LungPredict - Transcription Factor Network Analysis](04_Postdoc_INSERM/04_LungPredict)
 R pipeline for TF activity inference, heatmaps, multi-omics integrative annotation and patient stratification.
-
 
 #### [5. COVID-19 Drug Repurposing via Network Medicine](04_Postdoc_INSERM/05_NetworkMedicine/)
 Python pipeline for multilayer protein–GO networks, bootstrap null models, z-scores and ranking analyses.
 
-
 #### [6. Systemic Effects of SARS-CoV-2](04_Postdoc_INSERM/06_Sarscov2Interactome/)
 Data integration pipeline for viral–host interactions, enrichment (Reactome), network propagation, and ranking.
-
 
 #### [7. Clonal Dynamics and scRNA-seq under Treatment](04_Postdoc_INSERM/07_BarcodesDrugScreening/)
 Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation matrices, and figure generator for publication.
@@ -103,6 +119,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
