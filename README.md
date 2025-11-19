@@ -28,7 +28,7 @@ This section provides **context**, **trajectory**, and **scope** for the computa
 
 ---
 
-## **🧬 2. Bioinfo_projects — Featured Computational Biology Pipelines**
+## **2. Bioinfo_projects - Featured Computational Biology Pipelines**
 
 See folder: [bioinfo_projects](bioinfo_projects).
 
