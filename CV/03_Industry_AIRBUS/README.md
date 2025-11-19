@@ -2,7 +2,7 @@
 # Capgemini pour Airbus Defence & Space
 
 **Période :** 2017-2020
-**Entreprise :** Capgemini, en mission pour Airbus Defence & Space – Toulouse  
+**Entreprise :** Capgemini, en mission pour Airbus Defence & Space à Toulouse  
 **Fonction :** Ingénieure Logiciel / Développeuse JAVA/JEE 
 
 ---
