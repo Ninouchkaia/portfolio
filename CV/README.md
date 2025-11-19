@@ -50,7 +50,7 @@ R pipeline for TF activity inference, heatmaps, multi-omics integrative annotati
 #### [5. COVID-19 Drug Repurposing via Network Medicine](04_Postdoc_INSERM/05_NetworkMedicine/)
 Python pipeline for multilayer protein-GO networks, bootstrap null models, z-scores and ranking analyses.
 
-#### [6. Systemic Effects of SARS-CoV-2](04_Postdoc_INSERM/06_Sarscov2Interactome/)
+#### [6. Systemic Effects of SARS-CoV-2](04_Postdoc_INSERM/06_Sarscov2Interactome)
 Data integration pipeline for viral-host interactions, enrichment (Reactome), network propagation, and ranking.
 
 #### [7. Clonal Dynamics and scRNA-seq under Treatment](04_Postdoc_INSERM/07_BarcodesDrugScreening/)
@@ -107,6 +107,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
