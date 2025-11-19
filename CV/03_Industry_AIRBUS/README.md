@@ -1,6 +1,7 @@
-# Ingénieure Logiciel – Capgemini pour Airbus Defence & Space (2017–2019)
+# Ingénieure Logiciel
+# Capgemini pour Airbus Defence & Space
 
-**Période :** 2017–2019  
+**Période :** 2017-2020
 **Entreprise :** Capgemini, en mission pour Airbus Defence & Space – Toulouse  
 **Fonction :** Ingénieure Logiciel / Développeuse JAVA/JEE 
 
