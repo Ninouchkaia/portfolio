@@ -1,8 +1,8 @@
-# 📌 Ankyrin Modularity Pipeline
+# Ankyrin Modularity Pipeline
 
 **Domain enrichment • Conservation • ELM/SLiM analysis • Interacting partners**
 
-This repository contains a fully refactored, modular and reproducible Python implementation of the analysis pipeline used to study:
+This repository contains a modular and reproducible Python implementation of the analysis pipeline used to study:
 
 > **Functional modules built by association of domains and linear motifs in Ankyrin proteins and their binding partners**
 
@@ -18,7 +18,7 @@ Each analysis stage is activated through **explicit flags in `pipeline.py`**.
 
 ---
 
-# 📁 Project Structure
+# Project Structure
 
 ```
 ankyrin_modularity/
@@ -55,7 +55,7 @@ ankyrin_modularity/
 
 ---
 
-# ⚙️ Running the Pipeline
+# Running the Pipeline
 
 All steps are controlled from the top of `pipeline.py`:
 
@@ -90,7 +90,7 @@ ankyrin_modularity/ankyrin_modularity.log
 
 ---
 
-# 🔬 Pipeline Diagram
+# Pipeline Diagram
 
 ### **Simple ASCII overview**
 
@@ -165,7 +165,7 @@ ankyrin_modularity/ankyrin_modularity.log
 
 ---
 
-# 🧱 Module Summary
+# Module Summary
 
 ### **io.py**
 
