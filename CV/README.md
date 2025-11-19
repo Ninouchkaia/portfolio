@@ -25,8 +25,8 @@ Each folder corresponds to a specific research project and contains Markdown fil
   - Regulatory mechanisms in transcription and post-transcriptional control  
 
 - **Scientific Communication & Pedagogy**
-  - Teaching, mentoring, and outreach in bioinformatics and digital creativity  
-  - Integration of artistic coding practices (music & generative systems) for public engagement  
+  - Teaching, mentoring, and outreach in coding.
+  - Integration of artistic coding practices for public engagement  
 
 ---
 
@@ -107,6 +107,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
