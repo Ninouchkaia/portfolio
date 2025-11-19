@@ -1,23 +1,15 @@
 # **Portfolio - Research, Bioinformatics & Computational Biology**
 
-This repository gathers a selection of scientific, technical and software-engineering projects developed during my PhD, postdocs (CNRS, CONICET, INSERM), and industry experience (Airbus/Capgemini). It showcases **biological modeling**, **multi-omics analysis**, **network science**, **data collection and analysis pipelines** and **reproducible workflows** in Python, R, Snakemake, NetLogo and OpenMOLE.
-
-<div style="margin-top:10px"></div>
-
----
-
----
-
-## 🔍 Overview
+## Overview
 
 This GitHub repository documents the **methods**, **projects**, and **conceptual frameworks** I developed or contributed to across academia and research institutions.  
 It serves as a structured overview of my approach to **data analysis**, **modeling**, and **scientific reproducibility**.
 
-> 🧩 Each folder corresponds to a specific research project and contains Markdown files summarizing the objectives, methods, and results of individual projects.
+> Each folder corresponds to a specific research project and contains Markdown files summarizing the objectives, methods, and results of individual projects.
 
 ---
 
-## 🧭 Research Focus
+## Research Focus
 
 - **Bioinformatics & Data Analysis**
   - RNA-seq (bulk & single-cell), deconvolution, and gene regulatory inference  
@@ -70,13 +62,17 @@ Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation 
 ### **Software Engineering for Airbus Critical Systems (Toulouse, 2017-2020)**
 *Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).*
 
+---
+
 ### **CONICET INQUIMAE - Postdoctoral Research (Buenos Aires, 2013–2015)**
 *Structural bioinformatics, protein evolution, and interaction modularity*
 
 #### [Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)
 Weighted frequencies, proteome cost metrics, correlations, PCA and domain-specific notebooks.
+
 #### [Structure and Dynamics of Ankyrin Repeats](02_Postdoc_CONICET/AnkyrinStructure/)
 Dataset construction, repeat detection, structural analysis, visualization.
+
 #### [Functional Modularity of Ankyrin Proteins and Partners](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
 Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clustering and structural analysis.
 
@@ -90,17 +86,13 @@ Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat inter
 
 ---
 
-
-
-
-### **Visual Summaries**
+## **Visual Summaries**
 [Visuals](figures_visuals/)
-
 Contains PNG visual overviews of the main projects (ABM, Barcodes, Network Medicine, GEMDECAN, LungPredict, Systemic COVID).
 
 ---
 
-### **How to Navigate**
+## **How to Navigate**
 
 Every sub-project contains its own **README**, with:
 
@@ -108,17 +100,15 @@ Every sub-project contains its own **README**, with:
 * pipeline description
 * commands
 * figures and results
-* reproducibility instructions
-
-The top-level repository serves as a **CV companion**, connecting all research and engineering work.
 
 ---
 
-### **Contact**
+## **Contact**
 
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
