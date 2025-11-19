@@ -36,11 +36,11 @@ This directory highlights **five major projects**, presented as an independent m
 
 ### **Included projects**
 
-* **Ankyrin Structure** — structural determinants of repeat protein stability
-* **Ankyrin Modularity** — evolutionary modularity and domain architecture
-* **PaxDB Proteome Analysis** — amino-acid usage and metabolic constraints
-* **CLL–NLC Agent-Based Model** — OpenMOLE-NetLogo–Python multiobjective calibration
-* **Virus Interactome** — network analysis and multilayer reconstruction
+* **Ankyrin Structure** - structural determinants of repeat protein stability
+* **Ankyrin Modularity** - evolutionary modularity and domain architecture
+* **PaxDB Proteome Analysis** - amino-acid usage and metabolic constraints
+* **CLL–NLC Agent-Based Model** - OpenMOLE-NetLogo–Python multiobjective calibration
+* **Virus Interactome** - network analysis and multilayer reconstruction
 
 ---
 
