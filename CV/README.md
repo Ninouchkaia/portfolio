@@ -18,12 +18,9 @@ This repository gathers a selection of scientific, technical and software-engine
 ```
 
 ---
-# **2020-2023 Tumor heterogeneity in immuno-oncology (INSERM)**
-[Postdoc, CRCT, Toulouse](04_Postdoc_INSERM)
+# **2020-2023 Tumor heterogeneity in immuno-oncology (INSERM)**(04_Postdoc_INSERM)
 
-### **1. Agent-Based Modeling of Tumor Ecosystems (INSERM)**
-[1. AgentBasedModel](04_Postdoc_INSERM/01_AgentBasedModel/)
-
+### **1. Agent-Based Modeling of Tumor Ecosystems**(04_Postdoc_INSERM/01_AgentBasedModel/)
 A complete multi-objective calibration pipeline for a cancer–immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.
 
 ### **2. Boolean Modeling of Immunotherapy Responses**
@@ -115,6 +112,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
