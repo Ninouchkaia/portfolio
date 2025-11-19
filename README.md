@@ -39,7 +39,7 @@ This directory highlights **six major projects**, presented as an independent mo
 * [Bulk RNA-seq Deconvolution](CV/04_Postdoc_INSERM/03_RNASeqDeconvolution)
 Snakemake pipeline + R scripts + QC + tumour microenvironment predictions.  
 
-* [Barcode Clonal Dynamics](04_Postdoc_INSERM/07_BarcodesDrugScreening)
+* [Barcode Clonal Dynamics](CV/04_Postdoc_INSERM/07_BarcodesDrugScreening)
 High-throughput barcode counts → QC → DESeq2 → drug network correlation.  
 
 * [COVID-19 Network Medicine Pipeline](CV/04_Postdoc_INSERM/05_NetworkMedicine)
