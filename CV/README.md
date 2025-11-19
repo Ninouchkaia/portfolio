@@ -49,23 +49,29 @@ This repository gathers a selection of scientific, technical and software-engine
 
 ### **2020-2023 Tumor heterogeneity in immuno-oncology (INSERM)**
 
-#### [**Tumor Ecosystem Modeling**](04_Postdoc_INSERM/01_AgentBasedModel/)
+#### [**1. Tumor Ecosystem Modeling**](04_Postdoc_INSERM/01_AgentBasedModel/)
 A complete multi-objective calibration pipeline for a cancer–immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.
+
 
 #### [**2. Macrophage Polarization in CLL**](04_Postdoc_INSERM/02_BooleanModel)
 Pipeline for computing transcription factor signatures (DoRothEA-like), scaling, normalisation and prediction modules.
 
+
 #### [**3. Predicting Response to Immunotherapy (GEMDECAN)**](04_Postdoc_INSERM/03_RNASeqDeconvolution/)
 Snakemake workflow in R/Python for TPM conversion, signature scoring, deconvolution (EPIC, MCPCounter, quanTIseq), and predictive modelling.
+
 
 #### [**4. LungPredict - Transcription Factor Network Analysis**](04_Postdoc_INSERM/04_LungPredict)
 R pipeline for TF activity inference, heatmaps, multi-omics integrative annotation and patient stratification.
 
+
 #### [**5. COVID-19 Drug Repurposing via Network Medicine**](04_Postdoc_INSERM/05_NetworkMedicine/)
 Python pipeline for multilayer protein–GO networks, bootstrap null models, z-scores and ranking analyses.
 
-#### (**6. Systemic Effects of SARS-CoV-2**)(04_Postdoc_INSERM/06_Sarscov2Interactome/)
+
+#### [**6. Systemic Effects of SARS-CoV-2**](04_Postdoc_INSERM/06_Sarscov2Interactome/)
 Data integration pipeline for viral–host interactions, enrichment (Reactome), network propagation, and ranking.
+
 
 #### **[7. Clonal Dynamics and scRNA-seq under Treatment**](04_Postdoc_INSERM/07_BarcodesDrugScreening/)
 Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation matrices, and figure generator for publication.
@@ -129,6 +135,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
