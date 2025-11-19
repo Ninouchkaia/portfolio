@@ -1,4 +1,4 @@
-# **Nina Verstraete — Scientific Portfolio**
+# **Nina Verstraete - Scientific Portfolio**
 
 This repository serves as the entry point to my scientific and computational work in:
 
@@ -8,7 +8,7 @@ This repository serves as the entry point to my scientific and computational wor
 * scientific modelling 
 * reproducible codebases
 
-It is organized into two sections: my **CV** and a selection of ** computational projects** that represent my experience.
+It is organized into two sections: my **CV** and a selection of **computational projects** that represent my experience.
 
 ---
 
