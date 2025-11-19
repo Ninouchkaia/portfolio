@@ -12,7 +12,7 @@ It is organized into two sections: my **CV** and a selection of **computational 
 
 ---
 
-## **1. CV — Scientific Background & Research Experience**
+## **1. CV - Scientific Background & Research Experience**
 
 See folder here: [CV](CV)
 
