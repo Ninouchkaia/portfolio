@@ -16,15 +16,12 @@ It is organized into two sections: my **[CV](CV)** and a selection of **[computa
 
 See folder here: [CV](CV)
 
-This folder contains a curated overview of my scientific career, including:
+This folder contains an overview of my scientific career, including:
 
-* Research experience
-* Postdoctoral and PhD
+* Research experience (postdoctoral and PhD)
 * Selected publications
 * Project descriptions
 * Code repositories
-
-This section provides **context**, **trajectory**, and **scope** for the computational projects showcased below.
 
 ---
 
