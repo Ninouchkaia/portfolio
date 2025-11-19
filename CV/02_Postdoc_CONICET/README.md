@@ -9,7 +9,9 @@ This section gathers the three major bioinformatics projects developed during my
 
 ## 1. Ankyrin Structural Analysis  
 (in construction)
+
 **Folder:** `AnkyrinStructure/`  
+
 Study of ankyrin repeat architecture, stability, folding transitions and sequence–structure patterns.
 
 **Highlights**
@@ -21,6 +23,7 @@ Study of ankyrin repeat architecture, stability, folding transitions and sequenc
 
 ## 2. Ankyrin Functional Modularity & SLiMs  
 **Folder:** [Ankyrin Modularity](ANKYRIN_MODULARITY/)
+
 Large-scale analysis of the **interaction modularity** of ankyrin repeat proteins: domain composition, disordered region motifs, conservation, and functional enrichment.
 
 **Highlights**
@@ -34,6 +37,7 @@ Large-scale analysis of the **interaction modularity** of ankyrin repeat protein
 
 ## 3. Amino Acid Usage under Metabolic Constraints (PaxDB)  
 **Folder:** [Amino Acid Usage](paxdb/)
+
 Proteome-wide quantification of amino acid usage across 17 organisms, weighted by protein abundance.
 
 **Highlights**
@@ -42,7 +46,7 @@ Proteome-wide quantification of amino acid usage across 17 organisms, weighted b
 - Correlation with metabolic synthesis cost  
 - One of the analyses used in **MBE 2014** publication  
 
-**→ Read full project:** [`paxdb/README.md`](paxdb/README.md)
+**Read full project:** [`paxdb/README.md`](paxdb/README.md)
 
 ---
 
