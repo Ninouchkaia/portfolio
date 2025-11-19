@@ -21,8 +21,8 @@ This repository gathers a selection of scientific, technical and software-engine
 ### 🎯 **INSERM CRCT – Postdoctoral Research (2020–2023)**
 *Systems oncology, tumor–immune modeling, transcriptomics, and drug response prediction*
 
-- [Tumor Ecosystem Modeling](postdoc_CRCT_2020-2023/tumor_ecosystem_modeling.md)  
-- [Macrophage Polarization in CLL](postdoc_CRCT_2020-2023/macrophage_polarization.md)  
+- [Tumor Ecosystem Modeling](postdoc_CRCT_2020-2023/tumor_ecosystem_modeling.md): A complete multi-objective calibration pipeline for a cancer–immune ABM, including BehaviorSpace generation, Pareto/knee-point selection, patient-specific fitting and advanced statistical analysis.  
+- [Macrophage Polarization in CLL](postdoc_CRCT_2020-2023/macrophage_polarization.md): Pipeline for computing transcription factor signatures (DoRothEA-like), scaling, normalisation and prediction modules.  
 - [Predicting Response to Immunotherapy (GEMDECAN)](postdoc_CRCT_2020-2023/immunotherapy_prediction.md)  
 - [Tumor Microenvironment Analysis (LungPredict)](postdoc_CRCT_2020-2023/tumor_microenvironment_LungPredict.md)  
 - [COVID-19 Drug Repurposing via Network Medicine](postdoc_CRCT_2020-2023/covid_network_medicine.md)  
@@ -141,6 +141,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
