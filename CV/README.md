@@ -39,7 +39,7 @@ R pipeline for TF activity inference, heatmaps, multi-omics integrative annotati
 
 
 #### [5. COVID-19 Drug Repurposing via Network Medicine](04_Postdoc_INSERM/05_NetworkMedicine/)
-#### Python pipeline for multilayer protein–GO networks, bootstrap null models, z-scores and ranking analyses.
+Python pipeline for multilayer protein–GO networks, bootstrap null models, z-scores and ranking analyses.
 
 
 #### [6. Systemic Effects of SARS-CoV-2](04_Postdoc_INSERM/06_Sarscov2Interactome/)
@@ -47,32 +47,30 @@ Data integration pipeline for viral–host interactions, enrichment (Reactome), 
 
 
 #### [7. Clonal Dynamics and scRNA-seq under Treatment](04_Postdoc_INSERM/07_BarcodesDrugScreening/)
-#### Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation matrices, and figure generator for publication.
+Preprocessing, QC, DESeq2 inputs, fold-change networks, drug–drug correlation matrices, and figure generator for publication.
 
 ---
 
 ### **Software Engineering for Airbus Critical Systems (Toulouse, 2017-2020)**
-#### Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).
-
-*(in construction)*
+*Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).*
 
 ### **CONICET INQUIMAE - Postdoctoral Research (Buenos Aires, 2013–2015)**
 *Structural bioinformatics, protein evolution, and interaction modularity*
 
 #### [Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)
-##### Weighted frequencies, proteome cost metrics, correlations, PCA and domain-specific notebooks.
-#### [**Structure and Dynamics of Ankyrin Repeats**](02_Postdoc_CONICET/AnkyrinStructure/)
-##### Dataset construction, repeat detection, structural analysis, visualization.
-#### [**Functional Modularity of Ankyrin Proteins and Partners**](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
-##### Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clustering and structural analysis.
+Weighted frequencies, proteome cost metrics, correlations, PCA and domain-specific notebooks.
+#### [Structure and Dynamics of Ankyrin Repeats](02_Postdoc_CONICET/AnkyrinStructure/)
+Dataset construction, repeat detection, structural analysis, visualization.
+#### [Functional Modularity of Ankyrin Proteins and Partners](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)
+Conservation, co-occurrence statistics, Pfam/ELM enrichment, protein family clustering and structural analysis.
 
 ---
 
 ### **CNRS IBENS - PhD (Paris, 2008–2012)**
 *Regulation of transcriptional elongation and structure–function analysis*
 
-#### [**P-TEFb Regulation by HEXIM1 and HIV-1 Tat**](01_PhD_CNRS)
-##### Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat interference.
+#### [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)
+Work on P-TEFb, HEXIM1, Cyclin T1 mapping, structural hotspots and HIV Tat interference.
 
 ---
 
@@ -105,6 +103,7 @@ The top-level repository serves as a **CV companion**, connecting all research a
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
