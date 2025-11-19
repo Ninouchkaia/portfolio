@@ -2,17 +2,16 @@
 
 **Période :** 2017–2019  
 **Entreprise :** Capgemini, en mission pour Airbus Defence & Space – Toulouse  
-**Fonction :** Ingénieure Logiciel / Développeuse systèmes critiques  
+**Fonction :** Ingénieure Logiciel / Développeuse JAVA/JEE 
 
 ---
 
-## 🎯 Contexte
-Participation au développement, à la maintenance et à la migration d’un système critique de gestion de configuration (PLM / Windchill) utilisé dans l’industrie aérospatiale.  
-Travail en environnement hautement contraint (sécurité, traçabilité, intégrité des données).
+## Contexte
+Participation au développement, à la maintenance et à la migration d’un système critique de gestion de configuration (PLM / Windchill) utilisé dans l’industrie aérospatiale. Travail en environnement contraint (sécurité, traçabilité, intégrité des données).
 
 ---
 
-## 🧩 Activités principales
+## Activités principales
 - Développement et maintenance logicielle (Java JEE, Windchill, Oracle, Shell, SOAP/XML).  
 - Écriture et automatisation de scripts de migration et d’intégration.  
 - Documentation technique et rédaction de procédures de test.  
@@ -21,14 +20,14 @@ Travail en environnement hautement contraint (sécurité, traçabilité, intégr
 
 ---
 
-## 🛠️ Environnement technique
+## Environnement technique
 **Langages :** Java, SQL, Shell, XML, XSLT  
 **Technologies :** Oracle, Windchill, Tomcat, Eclipse, Jenkins  
 **Méthodologies :** Cycle en V, Scrum, intégration continue  
 
 ---
 
-## 🔗 Compétences transférables à la recherche
+## Compétences transférables à la recherche
 - Structuration et fiabilisation de pipelines complexes (analogie avec Snakemake / workflows).  
 - Documentation rigoureuse et traçabilité (traçage d’analyses bioinformatiques).  
 - Maîtrise des environnements collaboratifs et du versionnage (Git, CI/CD).  
@@ -36,5 +35,5 @@ Travail en environnement hautement contraint (sécurité, traçabilité, intégr
 
 ---
 
-## 💬 Résumé
+## Résumé
 Cette expérience m’a permis de renforcer la rigueur logicielle et la culture de qualité logicielle, utiles dans le développement d’outils de bioinformatique reproductibles et maintenables.
