@@ -31,8 +31,6 @@ Simulate the spatio-temporal evolution of CLL cells and monocyte-derived myeloid
 *An agent-based model of monocyte differentiation into tumour-associated macrophages in chronic lymphocytic leukemia.*
 *iScience*, 2023. [https://doi.org/10.1016/j.isci.2023.106897](https://doi.org/10.1016/j.isci.2023.106897)
 
-### **Project folder**
-
 [Access the folder 01_AgentBasedModel](01_AgentBasedModel)
 
 ---
@@ -55,8 +53,6 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 *Insights on TAM formation from a Boolean model of macrophage polarization based on in vitro studies.* 
 *Cancers*, 2020. [https://doi.org/10.3390/cancers12123664](https://doi.org/10.3390/cancers12123664)
 
-### **Project Folder**
-
 [Access the project folder 02_BooleanModel](02_BooleanModel)
 
 ---
@@ -64,7 +60,7 @@ Marku, M., *Verstraete, N.*, Raynal, F., Madrid-Mencía, M., Domagala, M., Fourn
 
 ## **3. GEM-DeCan: Deconvolution Pipeline and Prediction of Immunotherapy Response**
 
-<p align="center"><img src="../../CV/figures_visuals/gemdecan.png" width="320px"></p>
+<p align="center"><img src="../../CV/figures_visuals/gemdecan.png" width="150px"></p>
 
 ### **Scientific Objective**
 
@@ -73,10 +69,7 @@ Identify microenvironmental features predictive of immunotherapy response.
 ### **Contributions**
 
 * Bulk RNA-seq preprocessing (QC → trimming → alignment → quantification)
-* Deconvolution (DNA methylation + expression)
-* Predictive modeling
-
-### **Project folder**
+* Deconvolution pipeline (DNA methylation + expression)
 
 [Access the folder 03_RNASeqDeconvolution](03_RNASeqDeconvolution)
 
@@ -96,9 +89,6 @@ Analyze bulk RNA-seq from lung tumors to characterize immune composition and reg
 * QC, trimming, alignment, quantification
 * Immune deconvolution
 * TF activity inference and regulatory analysis
-
-
-### **Project folder**
 
 [Access the folder 04_LungPredict](04_LungPredict)
 
@@ -125,8 +115,6 @@ Integrate proteins, drugs, diseases, and symptoms in a multilayer graph to ident
 *Network and Systems Medicine*, 2020.
 [https://doi.org/10.1089/nsm.2020.0011](https://doi.org/10.1089/nsm.2020.0011)
 
-### **Project folder**
-
 [Access the folder 05_NetworkMedicine](05_NetworkMedicine)
 
 ---
@@ -152,9 +140,7 @@ Ghavasieh A., Bontorin S., Artime O., *Verstraete N.*, De Domenico M.
 *Communications Physics*, 2021.
 [https://doi.org/10.1038/s42005-021-00582-8](https://doi.org/10.1038/s42005-021-00582-8)
 
-### **Project folder**
-
-[Access the folder 06 _Sarscov2Interactome](06 _Sarscov2Interactome)
+[Access the folder 06_Sarscov2Interactome](06_Sarscov2Interactome)
 
 ---
 
@@ -172,8 +158,6 @@ Link barcode-based clonal expansion to transcriptomic reprogramming under drug t
 * Differential clonal abundance
 * scRNA-seq pipeline (QC, clustering, UMAP)
 * Integration clonal identity ↔ gene expression
-
-### **Project folder**
 
 [Access the folder 07_BarcodesDrugScreening](07_BarcodesDrugScreening)
 
