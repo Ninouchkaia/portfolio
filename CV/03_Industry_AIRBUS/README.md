@@ -34,6 +34,3 @@ Participation au développement, à la maintenance et à la migration d’un sys
 - Gestion de projet multi-acteurs et communication technique interdisciplinaire.
 
 ---
-
-## Résumé
-Cette expérience m’a permis de renforcer la rigueur logicielle et la culture de qualité logicielle, utiles dans le développement d’outils de bioinformatique reproductibles et maintenables.
