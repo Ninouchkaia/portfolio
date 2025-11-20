@@ -1,4 +1,4 @@
-# Postdoctoral Research - INQUIMAE (CONICET), University of Buenos Aires  
+# Postdoctoral Research - CONICET, University of Buenos Aires  
 
 **Period:** 2013-2015
 
