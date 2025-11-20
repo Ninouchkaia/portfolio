@@ -1,6 +1,6 @@
-# Postdoctoral Research – INSERM CRCT (2020–2023)
+# Postdoctoral Research - INSERM CRCT (2020-2023)
 
-This section summarizes my work at the Cancer Research Center of Toulouse (CRCT - Team NetBio²), focused on modeling tumor–immune interactions, transcriptomics, and integrative bioinformatics.
+This section summarizes my work at the Cancer Research Center of Toulouse (CRCT - Team NetBio²), focused on modeling tumor-immune interactions, transcriptomics, and integrative bioinformatics.
 
 - End-to-end pipelines (Snakemake, Python, R)
 - Bulk RNA-seq deconvolution and immune profiling
