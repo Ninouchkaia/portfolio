@@ -10,14 +10,13 @@ For a more detailed description of the pipeline here, see here : [README_DETAILS
 ---
 
 ## Context
-This project aimed to simulate tumor evolution as a small-scale ecosystem, to understand how tumor cells, immune cells, and their microenvironment interact dynamically over time.  
-The goal was to capture emergent behaviors (coexistence, suppression, escape) resulting from local cellular interactions and environmental constraints.
+This project aimed to simulate tumor evolution as a small-scale ecosystem, to understand how tumor cells, immune cells, and their microenvironment interact dynamically over time. The goal was to capture emergent behaviors (coexistence, suppression, escape) resulting from local cellular interactions and environmental constraints.
 
 ---
 
 ## Objectives
 - Develop an **agent-based model (ABM)** of tumor–immune cell interactions.  
-- Explore how immune surveillance and microenvironmental factors affect tumor growth.  
+- Explore how immune surveillance and microenvironmental factors affect cancer cells growth.  
 - Use large-scale simulation experiments to identify stable and unstable equilibria.
 
 ---
@@ -25,7 +24,7 @@ The goal was to capture emergent behaviors (coexistence, suppression, escape) re
 ## Methods
 - **Modeling environment:** NetLogo  
 - **Simulation platform:** OpenMOLE (for high-throughput experiments)  
-- **Design:** Each agent represents a cell type (tumor, macrophage, T/NK, stroma) with defined behaviors and communication rules.  
+- **Design:** Each agent represents a cell type (tumor, macrophage, NLC) with defined behaviors and communication rules.  
 - **Dynamics:** Spatial diffusion of signaling molecules and cellular transitions based on probabilistic rules.  
 - **Analysis:** Aggregation of simulation outputs using R/Python (time-series clustering, population ratios, stability mapping).
 
@@ -46,6 +45,7 @@ If you use this pipeline or model, please cite the associated scientific publica
 ---
 
 For a more detailed description of the pipeline here, see here :   [README_DETAILS.md](README_DETAILS.md)
+
 
 
 
