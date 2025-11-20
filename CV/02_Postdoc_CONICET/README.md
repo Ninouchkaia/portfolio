@@ -1,9 +1,9 @@
 # Postdoctoral Research - CONICET, University of Buenos Aires  
 
-**Affiliation:** Protein Physiology Laboratory, Departamento de Química Biológica, Facultad de Ciencias Exactas y Naturales and IQUIBICEN-CONICET, Universidad de Buenos Aires, Buenos Aires, Argentina.
-**Period:** 2013-2015
-**Supervision:** Diego Ferreiro & Ignacio Sanchez
-**Domains:** Structural bioinformatics · Evolution · Protein interactions · Proteomics
+**Affiliation:** Protein Physiology Laboratory, Departamento de Química Biológica, Facultad de Ciencias Exactas y Naturales and IQUIBICEN-CONICET, Universidad de Buenos Aires, Buenos Aires, Argentina.  
+**Period:** 2013-2015  
+**Supervision:** Diego Ferreiro & Ignacio Sanchez  
+**Domains:** Structural bioinformatics · Evolution · Protein interactions · Proteomics  
 
 This section gathers the three major bioinformatics projects developed during my postdoctoral fellowship at INQUIMAE-CONICET in the Ferreiro & Sanchez groups. They revolve around **evolutionary constraints**, **protein modularity**, and **proteome-scale analyses**.
 
