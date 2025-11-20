@@ -1,4 +1,4 @@
-# Experimental Work — P-TEFb Regulation Project
+# Experimental Work - P-TEFb Regulation Project
 
 This directory contains all experimental components of the PhD work:
 
@@ -25,3 +25,4 @@ This directory contains all experimental components of the PhD work:
 - Dendra-CycT1 localization
 - Nuclear FLIP mobility assays
 - Single-molecule tracking
+
