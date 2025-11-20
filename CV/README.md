@@ -1,13 +1,5 @@
 # **Portfolio - Research, Bioinformatics & Computational Biology**
 
-## Overview
-
-This GitHub repository documents the **methods**, **projects**, and **conceptual frameworks** I developed or contributed to across research institutions.  It serves as a structured overview of my approach to **data analysis**, **modeling**, and **scientific reproducibility**. 
-
-Each folder corresponds to a specific research project and contains Markdown files summarizing the project structure, objectives, methods and eventual details to run the scripts.
-
----
-
 ## Research Focus
 
 - **Bioinformatics & Data Analysis**
@@ -30,9 +22,9 @@ Each folder corresponds to a specific research project and contains Markdown fil
 
 ---
 
-## Research Projects
+## List of Research Projects
 
-### **INSERM/CRCT - Postdoc (2020-2023)**
+### [**INSERM/CRCT - Postdoc (2020-2023)**](04_Postdoc_INSERM/)
 
 #### [1. Tumor Ecosystem Modeling](04_Postdoc_INSERM/01_AgentBasedModel/)
 
@@ -64,13 +56,13 @@ This project investigates how clonal populations respond to targeted and chemoth
 
 ---
 
-### **Software Engineering for Airbus Systems (Toulouse, 2017-2020)**
+### [**Software Engineering for Airbus Systems (Toulouse, 2017-2020)**](03_Industry_AIRBUS/)
 *Areas of interest: Development, integration and maintenance of PLM/PDM systems (APS, CASPARE, PASS V3 migration, Windchill v6→v11).*
 
 ---
 
-### **CONICET/UBA - Postdoc (2013-2015)**
-*Structural bioinformatics, protein evolution, and interaction modularity*
+### [**CONICET/UBA - Postdoc (2013-2015)**](02_Postdoc_CONICET)
+*Areas of interest: Structural bioinformatics, protein evolution, and interaction modularity*
 
 #### [1. Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)
 
@@ -86,38 +78,39 @@ The goal of this project is to understand how ankyrin domains combine with addit
 
 ---
 
-### **CNRS/IBENS - PhD (2008-2012)**
+### [**CNRS/IBENS - PhD (2008-2012)**](01_PhD_CNRS)
 *Areas of interest: Regulation of transcriptional elongation and structure-function analysis*
 
 #### [1. P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)
 
 This project identifies the Cyclin T1 structural determinants underlying binding to HEXIM1 and HIV-1 Tat. Mutagenesis and biochemical assays map critical hotspots involved in transcriptional elongation regulation. The findings clarify how viral proteins hijack the host machinery.
 
-#### [2. P-TEFb mobility](01_PhD_CNRS)
+#### [2. P-TEFb Mobility in Living Cells](01_PhD_CNRS)
 This study examines how complex formation modulates P-TEFb nuclear mobility using FRAP/FLIP imaging. Truncation mutants and chemical perturbations reveal diffusion-binding equilibria within the nucleus. The work connects molecular assembly to dynamic regulation of transcription.
 
-#### [3. P-TEFb conservation across Metazoa](01_PhD_CNRS)
+#### [3. P-TEFb Conservation Across Metazoa](01_PhD_CNRS)
 
 This project investigates whether CyclinT-HEXIM interactions are conserved across metazoans. Comparative analysis and *C. elegans* validation show that critical interface residues remain functionally preserved. The study highlights ancestral mechanisms controlling transcriptional elongation.
 
+---
 
-### Research Projects Summary
+## Research Projects Summary
 
 | Project                                     | Summary                                                                 | Biological Question                                                    | Contribution                                                                                                 | Core Methods                                   |
 |---------------------------------------------|-------------------------------------------------------------------------|------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|------------------------------------------------|
-| **Tumor Ecosystem Modeling**                | Calibration of a cancer-immune ABM using NSGA-II, knee-point selection, patient-specific fitting and statistical validation. | How do CLL-NLC interactions reproduce patient-specific tumor dynamics? | Full ABM pipeline (NetLogo → OpenMOLE → Python), NSGA-II calibration, patient fitting, validation, advanced stats | ABM, NSGA-II, RMSE scoring, PCA, sensitivity   |
-| **Macrophage Polarization (Boolean Model)** | TF activity scoring (DoRothEA/VIPER), scaling and signature-based phenotype prediction. | Which TFs drive monocyte → macrophage polarization in CLL?             | TF activity scoring (VIPER/DoRothEA), scaling/normalisation                                                       | Regulatory inference, TF activity scoring      |
-| **GEMDECAN Immunotherapy Response**         | Snakemake pipeline for RNA-seq TPM conversion, immune deconvolution and predictive modelling. | Can RNA-seq deconvolution predict responders?                          | Snakemake workflow: TPM, immune deconvolution, modelling                                                          | EPIC, quanTIseq, MCPCounter, signature scoring |
-| **LungPredict (TF Networks)**               | TF activity inference, multi-omic annotation and PCA-based patient stratification. | How do TF programs stratify lung cancer patients?                      | TF activity inference, heatmaps, multi-omic annotation, PCA                                                       | VIPER, heatmap generation, clinical annotation |
-| **COVID-19 Drug Repurposing**               | Multilayer network integration, bootstrap null models, drug z-score ranking. | Which drugs perturb SARS-CoV-2 host networks?                          | Multilayer networks, bootstrap null models, z-score ranking                                                       | Network integration, bootstrap, z-scores       |
-| **SARS-CoV-2 Interactome**                  | Viral-host integration, Reactome enrichment, annotation harmonisation and figure generation. | Which pathways and tissues are most impacted?                          | Viral-host merge, Reactome enrichment, annotation, figures                                                        | Reactome, enrichment, annotation               |
-| **Barcode Drug Screening**                  | QC, DESeq2 inputs, logFC matrices, drug-drug correlation networks and clustering. | How do clonal populations respond to drugs?                            | QC, DESeq2 input generation, logFC matrices, correlation networks                                                 | DESeq2, clustering, correlation networks       |
-| **Amino Acid Usage (PaxDB)**                | Abundance-weighted amino acid frequencies, metabolic cost models and evolutionary trade-offs. | How do metabolic costs shape amino acid usage?                         | PaxDB parsing, weighted AA frequencies, cost modelling                                                            | Proteome parsing, evolutionary constraints     |
-| **Ankyrin Structure**                       | Structural dataset construction, repeat detection, contact maps and variability profiles. | What features shape ankyrin repeat stability?                          | Dataset creation, repeat detection, structural analysis                                                           | PDB parsing, contact maps                      |
-| **ANKYRIN_MODULARITY**                      | Pfam/ELM enrichment, domain co-occurrence statistics, conservation analysis and clustering. | How do ankyrin modules encode function?                                | Conservation, Pfam/ELM enrichment, co-occurrence networks                                                         | API retrieval, motif stats, clustering         |
-| **P-TEFb Regulation**                       | Mutagenesis and structure-function mapping of CyclinT1. | Which residues control HEXIM1/Tat interactions?                        | Mutagenesis, interface mapping, assays                                                                            | Binding assays, structure-function             |
-| **P-TEFb Mobility**                         | FRAP/FLIP diffusion modelling of P-TEFb complexes. | How does complex assembly affect mobility?                             | FRAP/FLIP quantification, diffusion modelling                                                                     | Imaging, biophysics                            |
-| **P-TEFb Evolution**                        | Conservation analysis and experimental validation in *C. elegans*. | Is CyclinT-HEXIM interaction conserved?                                | Conservation analysis + *C. elegans* validation                                                                   | Evolutionary analysis, transgenics             |
+| [Tumor Ecosystem Modeling](04_Postdoc_INSERM/01_AgentBasedModel/)                | Calibration of a cancer-immune ABM using NSGA-II, knee-point selection, patient-specific fitting and statistical validation. | How do CLL-NLC interactions reproduce patient-specific tumor dynamics? | Full ABM pipeline (NetLogo → OpenMOLE → Python), NSGA-II calibration, patient fitting, validation, advanced stats | ABM, NSGA-II, RMSE scoring, PCA, sensitivity   |
+| [Macrophage Polarization in CLL](04_Postdoc_INSERM/02_BooleanModel) | TF activity scoring (DoRothEA/VIPER), scaling and signature-based phenotype prediction. | Which TFs drive monocyte → macrophage polarization in CLL?             | TF activity scoring (VIPER/DoRothEA), scaling/normalisation                                                       | Regulatory inference, TF activity scoring      |
+| [Predicting Response to Immunotherapy (GEMDECAN)](04_Postdoc_INSERM/03_RNASeqDeconvolution/)         | Snakemake pipeline for RNA-seq TPM conversion, immune deconvolution and predictive modelling. | Can RNA-seq deconvolution predict responders?                          | Snakemake workflow: TPM, immune deconvolution, modelling                                                          | EPIC, quanTIseq, MCPCounter, signature scoring |
+| [LungPredict - Transcription Factor Network Analysis](04_Postdoc_INSERM/04_LungPredict)               | TF activity inference, multi-omic annotation and PCA-based patient stratification. | How do TF programs stratify lung cancer patients?                      | TF activity inference, heatmaps, multi-omic annotation, PCA                                                       | VIPER, heatmap generation, clinical annotation |
+| [COVID-19 Drug Repurposing via Network Medicine](04_Postdoc_INSERM/05_NetworkMedicine/)               | Multilayer network integration, bootstrap null models, drug z-score ranking. | Which drugs perturb SARS-CoV-2 host networks?                          | Multilayer networks, bootstrap null models, z-score ranking                                                       | Network integration, bootstrap, z-scores       |
+| [Systemic Effects of SARS-CoV-2](04_Postdoc_INSERM/06_Sarscov2Interactome)                  | Viral-host integration, Reactome enrichment, annotation harmonisation and figure generation. | Which pathways and tissues are most impacted?                          | Viral-host merge, Reactome enrichment, annotation, figures                                                        | Reactome, enrichment, annotation               |
+| [Clonal Dynamics and scRNA-seq under Treatment](04_Postdoc_INSERM/07_BarcodesDrugScreening/)                  | QC, DESeq2 inputs, logFC matrices, drug-drug correlation networks and clustering. | How do clonal populations respond to drugs?                            | QC, DESeq2 input generation, logFC matrices, correlation networks                                                 | DESeq2, clustering, correlation networks       |
+| [Amino Acid Usage under Evolutionary Constraints](02_Postdoc_CONICET/paxdb/)                | Abundance-weighted amino acid frequencies, metabolic cost models and evolutionary trade-offs. | How do metabolic costs shape amino acid usage?                         | PaxDB parsing, weighted AA frequencies, cost modelling                                                            | Proteome parsing, evolutionary constraints     |
+| [Structure and Dynamics of Ankyrin Repeats](02_Postdoc_CONICET/AnkyrinStructure/)                       | Structural dataset construction, repeat detection, contact maps and variability profiles. | What features shape ankyrin repeat stability?                          | Dataset creation, repeat detection, structural analysis                                                           | PDB parsing, contact maps                      |
+| [Functional Modularity of Ankyrin Proteins and Partners](02_Postdoc_CONICET/ANKYRIN_MODULARITY/)                      | Pfam/ELM enrichment, domain co-occurrence statistics, conservation analysis and clustering. | How do ankyrin modules encode function?                                | Conservation, Pfam/ELM enrichment, co-occurrence networks                                                         | API retrieval, motif stats, clustering         |
+| [P-TEFb Regulation by HEXIM1 and HIV-1 Tat](01_PhD_CNRS)                       | Mutagenesis and structure-function mapping of CyclinT1. | Which residues control HEXIM1/Tat interactions?                        | Mutagenesis, interface mapping, assays                                                                            | Binding assays, structure-function             |
+| [P-TEFb Mobility in Living Cells](01_PhD_CNRS)                         | FRAP/FLIP diffusion modelling of P-TEFb complexes. | How does complex assembly affect mobility?                             | FRAP/FLIP quantification, diffusion modelling                                                                     | Imaging, biophysics                            |
+| [P-TEFb Conservation Across Metazoa](01_PhD_CNRS)                        | Conservation analysis and experimental validation in *C. elegans*. | Is CyclinT-HEXIM interaction conserved?                                | Conservation analysis + *C. elegans* validation                                                                   | Evolutionary analysis, transgenics             |
 
 
 ---
@@ -127,6 +120,7 @@ This project investigates whether CyclinT-HEXIM interactions are conserved acros
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
