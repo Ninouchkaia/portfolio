@@ -1,7 +1,7 @@
 # PhD Thesis - Regulation of P-TEFb by Cyclin T1, HEXIM1 and HIV-1 Tat
 
 This repository gathers the experimental work performed during my PhD
-(2008–2012, IBENS – ENS Paris) on the structural and functional regulation
+(2008-2012, IBENS - ENS Paris) on the structural and functional regulation
 of the transcription elongation factor P-TEFb by HEXIM1 and HIV-1 Tat.
 
 ## Structure
@@ -56,5 +56,6 @@ PTEFb_PhD/
     ├── posters/
     └── slides/
 ```
+
 
 
