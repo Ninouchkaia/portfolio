@@ -101,7 +101,7 @@ Every sub-project contains its own **README**, with:
 * figures and results
 
 ---
-
+```
 |	Project	|	Summary	|	Biological Question	|	Contribution	|	Core Methods	|
 |	-------------------------------------------	|		|	----------------------------------------------------------------------	|	-----------------------------------------------------------------------------------------------------------------	|	----------------------------------------------	|
 |	**Tumor Ecosystem Modeling**	|	Calibration of a cancer–immune ABM using NSGA-II, knee-point selection, patient-specific fitting and statistical validation.	|	How do CLL–NLC interactions reproduce patient-specific tumor dynamics?	|	Full ABM pipeline (NetLogo → OpenMOLE → Python), NSGA-II calibration, patient fitting, validation, advanced stats	|	ABM, NSGA-II, RMSE scoring, PCA, sensitivity	|
@@ -117,7 +117,7 @@ Every sub-project contains its own **README**, with:
 |	**P-TEFb Regulation**	|	Mutagenesis and structure–function mapping of CyclinT1.	|	Which residues control HEXIM1/Tat interactions?	|	Mutagenesis, interface mapping, assays	|	Binding assays, structure-function	|
 |	**P-TEFb Mobility**	|	FRAP/FLIP diffusion modelling of P-TEFb complexes.	|	How does complex assembly affect mobility?	|	FRAP/FLIP quantification, diffusion modelling	|	Imaging, biophysics	|
 |	**P-TEFb Evolution**	|	Conservation analysis and experimental validation in *C. elegans*.	|	Is CyclinT–HEXIM interaction conserved?	|	Conservation analysis + *C. elegans* validation	|	Evolutionary analysis, transgenics	|
-
+```
 ---
 
 ## **Contact**
@@ -125,6 +125,7 @@ Every sub-project contains its own **README**, with:
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
