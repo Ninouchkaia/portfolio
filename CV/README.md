@@ -102,11 +102,30 @@ Every sub-project contains its own **README**, with:
 
 ---
 
+|	Project	|	Summary	|	Biological Question	|	Contribution	|	Core Methods	|
+|	-------------------------------------------	|		|	----------------------------------------------------------------------	|	-----------------------------------------------------------------------------------------------------------------	|	----------------------------------------------	|
+|	**Tumor Ecosystem Modeling**	|	Calibration of a cancer–immune ABM using NSGA-II, knee-point selection, patient-specific fitting and statistical validation.	|	How do CLL–NLC interactions reproduce patient-specific tumor dynamics?	|	Full ABM pipeline (NetLogo → OpenMOLE → Python), NSGA-II calibration, patient fitting, validation, advanced stats	|	ABM, NSGA-II, RMSE scoring, PCA, sensitivity	|
+|	**Macrophage Polarization (Boolean Model)**	|	TF activity scoring (DoRothEA/VIPER), scaling and signature-based phenotype prediction.	|	Which TFs drive monocyte → macrophage polarization in CLL?	|	TF activity scoring (VIPER/DoRothEA), scaling/normalisation	|	Regulatory inference, TF activity scoring	|
+|	**GEMDECAN Immunotherapy Response**	|	Snakemake pipeline for RNA-seq TPM conversion, immune deconvolution and predictive modelling.	|	Can RNA-seq deconvolution predict responders?	|	Snakemake workflow: TPM, immune deconvolution, modelling	|	EPIC, quanTIseq, MCPCounter, signature scoring	|
+|	**LungPredict (TF Networks)**	|	TF activity inference, multi-omic annotation and PCA-based patient stratification.	|	How do TF programs stratify lung cancer patients?	|	TF activity inference, heatmaps, multi-omic annotation, PCA	|	VIPER, heatmap generation, clinical annotation	|
+|	**COVID-19 Drug Repurposing**	|	Multilayer network integration, bootstrap null models, drug z-score ranking.	|	Which drugs perturb SARS-CoV-2 host networks?	|	Multilayer networks, bootstrap null models, z-score ranking	|	Network integration, bootstrap, z-scores	|
+|	**SARS-CoV-2 Interactome**	|	Viral–host integration, Reactome enrichment, annotation harmonisation and figure generation.	|	Which pathways and tissues are most impacted?	|	Viral-host merge, Reactome enrichment, annotation, figures	|	Reactome, enrichment, annotation	|
+|	**Barcode Drug Screening**	|	QC, DESeq2 inputs, logFC matrices, drug–drug correlation networks and clustering.	|	How do clonal populations respond to drugs?	|	QC, DESeq2 input generation, logFC matrices, correlation networks	|	DESeq2, clustering, correlation networks	|
+|	**Amino Acid Usage (PaxDB)**	|	Abundance-weighted amino acid frequencies, metabolic cost models and evolutionary trade-offs.	|	How do metabolic costs shape amino acid usage?	|	PaxDB parsing, weighted AA frequencies, cost modelling	|	Proteome parsing, evolutionary constraints	|
+|	**Ankyrin Structure**	|	Structural dataset construction, repeat detection, contact maps and variability profiles.	|	What features shape ankyrin repeat stability?	|	Dataset creation, repeat detection, structural analysis	|	PDB parsing, contact maps	|
+|	**ANKYRIN_MODULARITY**	|	Pfam/ELM enrichment, domain co-occurrence statistics, conservation analysis and clustering.	|	How do ankyrin modules encode function?	|	Conservation, Pfam/ELM enrichment, co-occurrence networks	|	API retrieval, motif stats, clustering	|
+|	**P-TEFb Regulation**	|	Mutagenesis and structure–function mapping of CyclinT1.	|	Which residues control HEXIM1/Tat interactions?	|	Mutagenesis, interface mapping, assays	|	Binding assays, structure-function	|
+|	**P-TEFb Mobility**	|	FRAP/FLIP diffusion modelling of P-TEFb complexes.	|	How does complex assembly affect mobility?	|	FRAP/FLIP quantification, diffusion modelling	|	Imaging, biophysics	|
+|	**P-TEFb Evolution**	|	Conservation analysis and experimental validation in *C. elegans*.	|	Is CyclinT–HEXIM interaction conserved?	|	Conservation analysis + *C. elegans* validation	|	Evolutionary analysis, transgenics	|
+
+---
+
 ## **Contact**
 
 For collaborations or technical discussions, contact me at verstraete.nina[at]gmail.com.
 
 ---
+
 
 
 
