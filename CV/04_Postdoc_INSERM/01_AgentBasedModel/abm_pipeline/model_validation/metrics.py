@@ -23,7 +23,6 @@ def rmse(y_true: Sequence[float], y_pred: Sequence[float]) -> float:
 def nrmse_maxmin(y_true: Sequence[float], y_pred: Sequence[float]) -> float:
     """
     Normalized RMSE = RMSE / (max - min)
-    (c'est ce que tu fais dans RMSE.py).
     """
     y_t = _to_array(y_true)
     denom = float(y_t.max() - y_t.min())
@@ -93,3 +92,4 @@ def compute_viability_conc_nrmse(
     }
 
     return {"viability": via, "concentration": conc, "sum": sums}
+
