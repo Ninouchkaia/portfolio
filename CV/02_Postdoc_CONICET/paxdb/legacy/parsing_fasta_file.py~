@@ -1,0 +1,30 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+#to generate an intermediate fasta file that contains only the string ids that are listed in the datasets.
+
+import timeit
+start = timeit.default_timer()
+import os
+import sys
+import re
+from Bio import SeqIO # to parse the fasta file
+from Bio import SeqUtils # Miscellaneous functions for dealing with sequences.
+from Bio.SeqUtils import  ProtParam
+
+
+species_list = ["10090-M.musculus", "160490-S.pyogenes", "224308-Spectral_counting_B.subtili", "267671-L.interrogans", "3702-A.thaliana", "449447-M.aeruginosa", "4896-S.pombe", "4932-S.cerevisiae", "511145-E.coli", "593117-Spectral_counting_T.gammatolerans", "6239-C.elegans", "7227-D.melanogaster", "83332-M.tuberculosis", "9031-Spectral_counting_G.gallus", "9606-H.sapiens", "9913-B.taurus", "99287-Spectral_counting_S.typhimurium"]
+
+list_of_identifiant_prot = []
+for species in species_list :
+	file_open = open("/home/nina/scripts/paxdb/abundance_datasets/datasets/%s_dataset.txt" % species, "rU") #opens the abundance dataset
+	list_of_id_in_dataset = file_open.readlines()
+	for line in list_of_id_in_dataset :
+		line = line.split("\t")
+		string_id = line[1]
+		list_of_identifiant_prot.append(string_id)
+print len(list_of_identifiant_prot)
+		
+		
+stop = timeit.default_timer()
+print stop - start 

@@ -1,0 +1,71 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import timeit # pour mesurer le temps que met le script a courir
+start = timeit.default_timer()
+import sys
+import re
+from commands import getoutput # permet d'obtenir l'output d'une commande bash.
+
+
+#creation des listes
+
+mapped_list = open("/home/nina/scripts/paxdb/%s" % sys.argv[1])
+#for example : 'mouse_mapping.txt'
+mapped_list = mapped_list.readlines()
+
+unmapped_list = open("/home/nina/scripts/paxdb/%s" % sys.argv[2])
+#for example : 'mouse_not_uniprot.txt'
+unmapped_list = unmapped_list.readlines()
+
+#creation du dictionnaire mapping
+mapped_dict = {}
+for line in mapped_list :
+	  line = line.split("\t")
+	  mapped_dict[line[1]] = line[0]
+	  
+print "LENGTH MAPPED_DICT IS %s" % len(mapped_dict)
+#recherche de chaque id non mappe dans le dictionnaire mapping
+
+
+#creation du dictionnaire mappe de tous les unmapped
+mapped_unmapped_result = {}
+remained_unmapped = []
+
+print "liste de unmapped longue de %s identifiants" % (len(unmapped_list)-3)
+
+file_write = open("%s_results.txt" % sys.argv[1],'a+')
+
+for i in range(3, len(unmapped_list)) :
+	string_identifier = unmapped_list[i]
+	string_identifier = string_identifier.replace('\n', '')
+	if string_identifier in mapped_dict :
+		mapped_unmapped_result[string_identifier] = mapped_dict[string_identifier]
+		#print "%s\t%s" % (string_identifier, mapped_dict[string_identifier])
+		file_write.write("%s\t%s\n" % (string_identifier, mapped_unmapped_result[string_identifier]))
+	else :
+		#print string_identifier
+		remained_unmapped.append(string_identifier) 
+		
+print "LENGTH mapped_unmapped_result IS %s" % len(mapped_unmapped_result)
+
+print "LENGTH remained_unmapped IS %s" % len(remained_unmapped)
+ 
+	  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print stop - start 

@@ -1,0 +1,49 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import timeit
+start = timeit.default_timer()
+import os
+import sys
+import re
+from commands import getoutput # permet d'obtenir l'output d'une commande bash.
+
+
+species_list = ["10090-M.musculus", "160490-S.pyogenes", "224308-Spectral_counting_B.subtili", "267671-L.interrogans", "3702-A.thaliana", "449447-M.aeruginosa", "4896-S.pombe", "4932-S.cerevisiae", "511145-E.coli", "593117-Spectral_counting_T.gammatolerans", "6239-C.elegans", "7227-D.melanogaster", "83332-M.tuberculosis", "9031-Spectral_counting_G.gallus", "9606-H.sapiens", "9913-B.taurus", "99287-Spectral_counting_S.typhimurium"]
+
+for species in species_list:
+	print species
+	abundance_data = open("/home/nina/scripts/paxdb/abundance_datasets/datasets/%s_dataset.txt" % species)
+	abundance_data = abundance_data.readlines()
+	list_of_string_id_in_abundance_data = []
+	for line in abundance_data :
+		line = line.split("\t")
+		string_id_from_abundance_data = line[1]
+		list_of_string_id_in_abundance_data.append(string_id_from_abundance_data)
+	#print "list_of_string_id_in_abundance_data = %s" % len(list_of_string_id_in_abundance_data)
+	#list_of_string_id_in_abundance_data = list(set(list_of_string_id_in_abundance_data))
+	#print "list_of_string_id_in_abundance_data unique = %s" % len(list_of_string_id_in_abundance_data)
+	
+	
+	table = open("/home/nina/scripts/paxdb/abundance_datasets/tables/%s_table.txt" % species)
+	table = table.readlines()	
+	list_of_string_id_in_table = []
+	for line in table :
+		line = line.split("\t")
+		string_id_from_table = line[1]
+		list_of_string_id_in_table.append(string_id_from_table)
+	#print "list_of_string_id_in_table = %s" % len(list_of_string_id_in_table)
+	list_of_string_id_in_table = list(set(list_of_string_id_in_table))
+	#print "list_of_string_id_in_table unique = %s" % len(list_of_string_id_in_table)
+	
+	coverage = 0
+	for item in list_of_string_id_in_table :
+		if item in list_of_string_id_in_abundance_data :
+			coverage = coverage + 1
+	print "coverage in %s = %s/%s" % (species, coverage, len(list_of_string_id_in_abundance_data))
+	
+	
+
+
+stop = timeit.default_timer()
+print stop - start 

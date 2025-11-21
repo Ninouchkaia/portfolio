@@ -1,0 +1,52 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import timeit
+start = timeit.default_timer()
+import os
+import sys
+import re
+from commands import getoutput # permet d'obtenir l'output d'une commande bash.
+
+#function to replace strings in a file
+import fileinput
+
+def replaceAll(file,searchExp,replaceExp):
+    for line in fileinput.input(file, inplace=1):
+        if searchExp in line:
+            line = line.replace(searchExp,replaceExp)
+        sys.stdout.write(line)
+#replaceAll("test.txt","nina","kiki") #will replace all "nina" in "kiki" in the file "test.txt"
+
+list_of_organisms = [
+"10090-M.musculus",
+"224308-Spectral_counting_B.subtili",
+"3702-A.thaliana",
+"4896-S.pombe",
+"4932-S.cerevisiae",
+"6239-C.elegans",
+"7227-D.melanogaster",
+"83332-M.tuberculosis",
+"9031-Spectral_counting_G.gallus",
+"9606-H.sapiens",
+"9913-B.taurus",
+"99287-Spectral_counting_S.typhimurium"
+]
+
+for organism in list_of_organisms:
+	print organism
+	mapping_list = open("/home/nina/scripts/paxdb/abundance_datasets/fasta_files/missing_id/%s.map" % organism)
+	mapping_list = mapping_list.readlines()
+	for i in range(3,len(mapping_list)-1) :
+		mapping_list[i] = mapping_list[i].split("\t")
+		old_uniprot = mapping_list[i][0]
+		new_uniprot = mapping_list[i][1]
+		new_uniprot = new_uniprot.replace('\n', '') # remove '\n' only
+		replaceAll("/home/nina/scripts/paxdb/abundance_datasets/fasta_files/%s.fasta" % organism,"%s" % new_uniprot ,"%s" % old_uniprot)
+
+
+
+
+
+stop = timeit.default_timer()
+print stop - start 

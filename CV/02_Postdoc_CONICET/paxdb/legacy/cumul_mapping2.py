@@ -1,0 +1,60 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+#update from version1
+#First version had an implementation problem. it generated mapping tables containing duplicates. provoking duplication problems further down the use of the script amino_acid_countX.py.
+#this was due to the way the script checked the previous occurence of a couple string_id_of_mapping_table, uniprot_id_of_mapping_table in the file to be added to. : line by line. 
+#and using dictionary variables that were updated line after line, updating matched uniprot id even in case where string id corresponded to multiple uniprot id. 
+#if the uniprot_id_of_mapping_table was different from the lastly saved dictionnary value, it was still added to the "add_to_file" even though it was already there, but not mentionned last, so not saved in the dictionary 
+#in this version we map each dictionnary key, not to a unique value, but to a list of values, this way saving all uniprot ids matching a string id.
+
+#script that cumulates mapping table from 1st try and 2nd try.
+# first versions were generated with the id mapping tool from uniprot website
+# second versions were generated from a mapping given by pax-db website
+
+import timeit
+start = timeit.default_timer()
+import os
+import sys
+import re
+from commands import getoutput # permet d'obtenir l'output d'une commande bash.
+
+species_list = ["10090-M.musculus", "160490-S.pyogenes", "224308-Spectral_counting_B.subtili", "267671-L.interrogans", "3702-A.thaliana", "449447-M.aeruginosa", "4896-S.pombe", "4932-S.cerevisiae", "511145-E.coli", "593117-Spectral_counting_T.gammatolerans", "6239-C.elegans", "7227-D.melanogaster", "83332-M.tuberculosis", "9031-Spectral_counting_G.gallus", "9606-H.sapiens", "9913-B.taurus", "99287-Spectral_counting_S.typhimurium"]
+#species_list = ["3702-A.thaliana"]
+
+for species in species_list:
+	print species
+	add_to_file_dict = {}
+	add_to_file = open("/home/nina/scripts/paxdb/abundance_datasets/uniprot_id/%s_dataset.txt_uniprot_id" % species, 'a+') # mapping coming from ID mapping tool of uniprot website. (caution : this tool is evolving, since uniprot maps regularly new identifiers)
+	add_to_file_list = add_to_file.readlines()
+	
+	for line in add_to_file_list :
+		line = line.split("\t")
+		uniprot_id_of_add_to_file = line[1] 
+		uniprot_id_of_add_to_file = uniprot_id_of_add_to_file.replace('\n', '') # remove '\n' only
+		if line[0] in add_to_file_dict : # if string id is a key of the dictionary
+			add_to_file_dict[line[0]].append(uniprot_id_of_add_to_file) # we add the corresponding uniprot id
+		else :
+			add_to_file_dict[line[0]] = [uniprot_id_of_add_to_file] # if not, we match the uniprot id
+
+	mapping_table = open("/home/nina/scripts/paxdb/abundance_datasets/try_1/mapping_tables/%s_uniprot.txt" % species) # mapping coming from the mapping file given by pax-db
+	mapping_table = mapping_table.readlines()
+	
+	for line in mapping_table :
+		line = line.split("\t")
+		string_id_of_mapping_table = line[0]
+		uniprot_id_of_mapping_table = line[1]
+		uniprot_id_of_mapping_table = uniprot_id_of_mapping_table.replace('\n', '') # remove '\n' only
+		if string_id_of_mapping_table in add_to_file_dict : #if string id is found in the dictionnary built upon uniprot mapping tool
+			if uniprot_id_of_mapping_table not in add_to_file_dict[string_id_of_mapping_table] : #and if the corresponding uniprot id IS NOT among listed uniprot ids in the dictionary
+				#print add_to_file_dict[string_id_of_mapping_table]
+				#print uniprot_id_of_mapping_table
+				add_to_file.write("%s\t%s\n" % (string_id_of_mapping_table, uniprot_id_of_mapping_table))	#we add the mapping line
+		else : #if the string id is not found in the dictionary built upon uniprot mapping tool
+			add_to_file.write("%s\t%s\n" % (string_id_of_mapping_table, uniprot_id_of_mapping_table)) # add the mapping line by default
+			
+	add_to_file.close()
+
+
+stop = timeit.default_timer()
+print stop - start 

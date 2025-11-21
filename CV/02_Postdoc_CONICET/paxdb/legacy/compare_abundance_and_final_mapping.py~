@@ -1,0 +1,58 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import timeit
+start = timeit.default_timer()
+import os
+import sys
+import re
+from commands import getoutput # permet d'obtenir l'output d'une commande bash.
+
+
+species_list = ["10090-M.musculus", "160490-S.pyogenes", "224308-Spectral_counting_B.subtili", "267671-L.interrogans", "3702-A.thaliana", "449447-M.aeruginosa", "4896-S.pombe", "4932-S.cerevisiae", "511145-E.coli", "593117-Spectral_counting_T.gammatolerans", "6239-C.elegans", "7227-D.melanogaster", "83332-M.tuberculosis", "9031-Spectral_counting_G.gallus", "9606-H.sapiens", "9913-B.taurus", "99287-Spectral_counting_S.typhimurium"]
+
+for species in species_list:
+	print species
+	abundance_data = open("/home/nina/scripts/paxdb/abundance_datasets/datasets/%s_dataset.txt" % species)
+	abundance_data = abundance_data.readlines()
+	list_of_string_id_in_abundance_data = []
+	for line in abundance_data :
+		line = line.split("\t")
+		string_id_from_abundance_data = line[1].replace('\n', '') # remove '\n' only
+		list_of_string_id_in_abundance_data.append(string_id_from_abundance_data)
+	#print list_of_string_id_in_abundance_data
+		
+	final_mapping = open("/home/nina/scripts/paxdb/abundance_datasets/uniprot_id/%s_dataset.txt_uniprot_id" % species)
+	final_mapping = final_mapping.readlines()
+	list_of_string_id_in_final_mapping = []
+	for line in final_mapping :
+		line = line.split("\t")
+		string_id_of_final_mapping = line[0].replace('\n', '') # remove '\n' only
+		list_of_string_id_in_final_mapping.append(string_id_of_final_mapping)
+	list_of_string_id_in_final_mapping = list(set(list_of_string_id_in_final_mapping))
+	#print list_of_string_id_in_final_mapping
+	
+	#intersection = [val for val in list_of_string_id_in_abundance_data if val in list_of_string_id_in_final_mapping]
+	#print intersection
+	
+	file_write = open("/home/nina/scripts/paxdb/abundance_datasets/uniprot_id_not/unmapped/%s_unmapped.txt" % species,'a+')
+	
+	not_intersetion = [val for val in list_of_string_id_in_abundance_data if val not in list_of_string_id_in_final_mapping]
+	for string_id in not_intersetion :
+		file_write.write("%s\n" % string_id)
+	file_write.close()
+
+
+
+
+
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print stop - start 

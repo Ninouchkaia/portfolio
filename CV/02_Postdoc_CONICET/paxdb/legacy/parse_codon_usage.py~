@@ -1,0 +1,104 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import timeit
+start = timeit.default_timer()
+import os
+import sys
+import re
+
+#species_list = ["A.thaliana", "B.subtilis", 
+#"B.taurus", 
+#"C.elegans", 
+#"D.melanogaster", 
+#"E.coli", 
+#"G.gallus", 
+#"H.sapiens", 
+#"L.interrogans", 
+#"M.aeruginosa", 
+#"M.musculus", 
+#"M.tuberculosis", 
+#"S.cerevisiae", 
+#"S.pombe", 
+#"S.pyogenes", 
+#"S.typhimurium", 
+#"T.kodakarensis(for_gammatolerans)"]
+
+species_list = ["A.thaliana"]
+
+
+for species in species_list :
+	print species
+
+	file_open = open("%s.txt" % species, 'rU')
+	file_write = open("codon_usage/%s_codon_usage.txt" % species, 'a+')
+	table = file_open.readlines()
+	table[0] = table[0].replace("(", "")
+	table[0] = table[0].replace(")", "")
+	file_write.write("%s" % table[0])
+	file_write.write(table[-1])
+	file_write.write("\n")
+	file_write.write("\n")
+
+	for line in table[2:-2] :
+		line = line.replace("    ", " ")
+		line = line.replace("   ", " ")
+		line = line.replace("  ", " ")
+		line = line.replace("\n", "")
+		line = line.replace("( ", "(")
+		line = line.replace("(", "")
+		line = line.replace(")", "")
+		line = line.split(" ")
+		if len(line)>1 :
+			file_write.write("%s\t%s\t%s\t%s\t%s\n" % (line[0], line[1], line[2], line[3], line[4]))
+
+	for line in table[2:-2] :
+		line = line.replace("    ", " ")
+		line = line.replace("   ", " ")
+		line = line.replace("  ", " ")
+		line = line.replace("\n", "")
+		line = line.replace("( ", "(")
+		line = line.replace("(", "")
+		line = line.replace(")", "")
+		line = line.split(" ")		
+		if len(line)>1 :
+			file_write.write("%s\t%s\t%s\t%s\t%s\n" % (line[5], line[6], line[7], line[8], line[9]))
+		
+	for line in table[2:-2] :
+		line = line.replace("    ", " ")
+		line = line.replace("   ", " ")
+		line = line.replace("  ", " ")
+		line = line.replace("\n", "")
+		line = line.replace("( ", "(")
+		line = line.replace("(", "")
+		line = line.replace(")", "")
+		line = line.split(" ")		
+		if len(line)>1 :		
+			file_write.write("%s\t%s\t%s\t%s\t%s\n" % (line[10], line[11], line[12], line[13], line[14]))
+
+	for line in table[2:-2] :
+			line = line.replace("    ", " ")
+			line = line.replace("   ", " ")
+			line = line.replace("  ", " ")
+			line = line.replace("\n", "")
+			line = line.replace("( ", "(")
+			line = line.replace("(", "")
+			line = line.replace(")", "")
+			line = line.split(" ")		
+			if len(line)>1 :		
+				file_write.write("%s\t%s\t%s\t%s\t%s\n" % (line[15], line[16], line[17], line[18], line[19]))
+		
+		
+
+
+		
+
+
+
+
+
+
+
+
+stop = timeit.default_timer()
+print(stop - start)
