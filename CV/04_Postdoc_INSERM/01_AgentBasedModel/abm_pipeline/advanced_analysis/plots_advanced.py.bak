@@ -59,7 +59,7 @@ def make_violinplots_all_parameters(
     df = load_pareto_dataframe(pareto_file)
 
     if exclude_cols is None:
-        # À adapter selon la structure du fichier Pareto
+        # À adapter selon ton fichier Pareto exact
         exclude_cols = [
             "delta_fitness_via",
             "delta_fitness_conc",

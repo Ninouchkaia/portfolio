@@ -98,7 +98,7 @@ def extract_domain_sequences(
         logger.warning("Nom inattendu pour fichier PFAM: %s", pfam_domain_file)
         uniprot = parts[-1]
     else:
-        uniprot = parts[-4]  # conforme aux scripts d’origine
+        uniprot = parts[-4]  # conforme à tes scripts
 
     if output_fasta is None:
         output_fasta = DOMAIN_FASTA_DIR / f"{uniprot}_domains.fasta"
