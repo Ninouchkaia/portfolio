@@ -37,7 +37,7 @@ def build_gene_lists_from_interactors(
     range_mode: str = "direct_and_second",
 ) -> Path:
     """
-    Construit un fichier genes_list_*.txt au format attendu par tes scripts R.
+    Construit un fichier genes_list_*.txt au format attendu par les scripts R d'analyse en aval.
     range_mode peut être :
       - "direct"                  → direct_interactors.txt
       - "only_second"             → only_second_range_interactors.txt

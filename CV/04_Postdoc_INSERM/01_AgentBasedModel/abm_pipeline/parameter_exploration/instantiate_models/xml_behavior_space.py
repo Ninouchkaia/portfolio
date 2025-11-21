@@ -33,10 +33,10 @@ def make_sensitivity_experiment_xml(
     """
     Génère un fichier XML de type BehaviorSpace pour l'analyse de sensibilité.
 
-    Équivalent conceptuel à tes scripts:
+    Équivalent conceptuel aux scripts d'origine:
       - make_behavior_space_experiment_file_class1.py
       - make_behavior_space_experiment_file_class2.py
-
+      
     Paramètres
     ----------
     best_sets_tsv : str
@@ -49,7 +49,7 @@ def make_sensitivity_experiment_xml(
         Proportion initiale apoptotique (valeur moyenne utilisée pour la classe).
     ranges_dict : dict
         Dictionnaire {param_name: [first, step, last]} pour la perturbation.
-        C’est ici que tu recopies les valeurs de tes scripts d’origine.
+        C’est ici que sont recopiées les valeurs des scripts d’origine.
     repetitions : int
         Nombre de répétitions BehaviorSpace.
     time_limit : int

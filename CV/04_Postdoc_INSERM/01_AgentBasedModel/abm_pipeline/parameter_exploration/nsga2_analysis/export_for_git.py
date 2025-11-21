@@ -11,7 +11,7 @@ from abm_pipeline.parameter_exploration.utils import (
 
 def export_patient_data_for_git(output_root: str = "patient_data_for_git") -> None:
     """
-    Reproduit le comportement de ton script make_files_for_git.py :
+    Reproduit le comportement du script legacy make_files_for_git.py :
 
     - crée patient_data_for_git/patient_n
     - copie pareto_ABM_2D_{ID}.txt en pareto_front_patient_n.txt

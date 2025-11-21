@@ -95,7 +95,7 @@ def compute_elm_domain_cooccurrences(
     output_file: Path,
 ) -> Path:
     """
-    Approche inspirée de ton draft (figure 2) :
+    Approche inspirée du draft initial (figure 2) :
     - ELM dans un partenaire
     - domaine dans son interacteur
     - comptage des couples (ELM, domain)

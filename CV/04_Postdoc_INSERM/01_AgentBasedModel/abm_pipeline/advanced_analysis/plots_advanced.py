@@ -24,7 +24,6 @@ def make_violinplot(
 ):
     """
     Produit le violin plot d’un paramètre.
-    Style identique à tes scripts d’origine.
     """
     if save_dir is None:
         save_path = ensure_dir(ADVANCED_RESULTS_DIR / "violin")
@@ -36,7 +35,7 @@ def make_violinplot(
     sns.violinplot(
         data=df,
         x=param,
-        palette="Set2",  # le style que tu utilisais
+        palette="Set2",  
         ax=ax,
     )
 

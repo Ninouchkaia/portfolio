@@ -21,7 +21,7 @@ def _load_patient_exp_data(patient: str, base_dir: str = ".") -> pd.DataFrame:
     """
     path = Path(base_dir) / patient / f"{patient}.csv"
     df = pd.read_csv(path, index_col=0)
-    # dans ton RMSE.py, tu multiplies Day par 24 → heures
+    # dans le script RMSE.py, Day est multiplié par 24 → heures
     if "Day" in df.columns:
         df["Day"] = df["Day"].apply(lambda x: x * 24)
     return df
@@ -33,7 +33,7 @@ def _load_behaviorspace_csv(simu_file_path: str) -> Tuple[pd.DataFrame, pd.DataF
     - df_viability_simu : viability par step × run
     - df_remaining_simu : concentration par step × run
 
-    On colle à ta logique :
+    On colle à la logique du script historique :
       - step = colonne 21
       - viability = colonne 23
       - remainingCellRatio = colonne 24
@@ -96,7 +96,7 @@ def plot_sim_vs_exp_with_scores(
     df_viability_simu, df_remaining_simu = _load_behaviorspace_csv(str(simu_file))
 
     # On garde uniquement les time points présents dans les données exp :
-    # dans plot_sim_vs_exp_with_scores, tu utilises la colonne 'Day' directement.
+    # dans plot_sim_vs_exp_with_scores, la colonne 'Day' est directement utilisée.
     time_points = list(patient_data["Day"])
     filtered_viability_simu = df_viability_simu[
         df_viability_simu.index.isin(time_points)

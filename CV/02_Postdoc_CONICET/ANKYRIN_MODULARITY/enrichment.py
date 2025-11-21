@@ -18,7 +18,7 @@ def compute_domain_enrichment_from_counts(
     output_file: Path,
 ) -> Path:
     """
-    Version généralisée de ton bloc qui écrit Pfam_domains_in_BD_2038.txt :contentReference[oaicite:8]{index=8}
+    Version généralisée du bloc qui écrit Pfam_domains_in_BD_2038.txt :contentReference[oaicite:8]{index=8}
 
     domain_counts_file : table "domain_name <tab> # in subfamily"
     pfam_counts_file   : table "domain_name <tab> # in Uniprot"

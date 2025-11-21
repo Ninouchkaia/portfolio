@@ -12,7 +12,7 @@ RAW_DIR = DATA_DIR / "raw"
 INTERMEDIATE_DIR = DATA_DIR / "intermediate"
 RESULTS_DIR = DATA_DIR / "results"
 
-# Sous-dossiers PFAM (conformes à ton projet original)
+# Sous-dossiers PFAM 
 PFAM_QUERY_DIR = INTERMEDIATE_DIR / "pfam_queries"
 PFAM_HOMOLOG_DIR = INTERMEDIATE_DIR / "pfam_homologs"
 

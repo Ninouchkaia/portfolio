@@ -92,7 +92,7 @@ def _write_interactors_file(
     header_label: str,
 ) -> None:
     """
-    Format inspiré de tes anciens fichiers :
+    Format inspiré des scripts legacy :
      - première ligne = virus_name
      - lignes suivantes = "protein_id<TAB>gene_symbol"
     """

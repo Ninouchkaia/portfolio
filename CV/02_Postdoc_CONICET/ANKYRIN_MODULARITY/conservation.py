@@ -14,7 +14,7 @@ def _load_domain_occurrences(path: Path) -> List[Tuple[str, int, int]]:
     """
     Lit un fichier PFAM simplifié:
     uniprot_id \t start \t end \t domain_id
-    (ce format correspond à tes pfam_domains_in_*_query.txt/homolog.txt).
+    (ce format correspond aux pfam_domains_in_*_query.txt/homolog.txt utilisés en legacy).
     """
     occurrences: List[Tuple[str, int, int]] = []
     with path.open("r") as fh:
@@ -46,7 +46,7 @@ def compute_domain_conservation_for_fasta(
 
     On supppose des chemins du type:
     {basename}_MaxHomologs_MAX{N}_queries_pfam_output/pfam_domains_in_{UNP}_MaxHomologs_{N}_query.txt
-    et mêmes patterns pour homologs (comme dans ton script original). :contentReference[oaicite:5]{index=5}
+    et mêmes patterns pour homologs. :contentReference[oaicite:5]{index=5}
     """
     basename = fasta_path.stem  # ex: binding_partners_2038
     out_state = INTERMEDIATE_DIR / f"conservation_state_{basename}_{num_homologs}.txt"

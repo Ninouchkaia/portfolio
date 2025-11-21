@@ -5,7 +5,7 @@ from pathlib import Path
 # Racine du projet (à adapter si nécessaire)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
-# Liste patients + % monocytes (reprend ce que tu as dans tes scripts)
+# Liste patients + % monocytes 
 PATIENTS_WITH_MONO = [
     "CRE1704-1.1%",
     "LAU1405-2.5%",

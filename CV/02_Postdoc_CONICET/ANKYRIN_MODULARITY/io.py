@@ -15,7 +15,7 @@ def ensure_dir(path: Path) -> None:
 
 def read_uniprot_ids_from_fasta(fasta_path: Path) -> List[str]:
     """
-    Reproduit ton pattern record.id[3:9] pour extraire l'UNP ID
+    Reproduit le pattern record.id[3:9] pour extraire l'UNP ID
     depuis un multifasta UniProt-style.
     """
     ids: List[str] = []

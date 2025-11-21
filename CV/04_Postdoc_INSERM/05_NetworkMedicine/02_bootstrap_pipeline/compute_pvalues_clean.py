@@ -109,7 +109,7 @@ def load_zscore_table(path):
 
 def _pvalue_from_z_chebyshev(sd, n, observed, mean):
     """
-    Variante Chebyshev utilisée dans tes scripts :
+    Variante Chebyshev, cohérente avec les anciens scripts :
         p = (sd^2) / (n * |observed - mean|)
     avec traitement spécial deg_covid == mean -> p = 0.5
     (mais ce cas est géré à l'extérieur).
