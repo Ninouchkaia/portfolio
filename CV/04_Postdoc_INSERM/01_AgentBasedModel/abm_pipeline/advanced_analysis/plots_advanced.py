@@ -24,7 +24,7 @@ def make_violinplot(
 ):
     """
     Produit le violin plot d’un paramètre.
-    Style identique à tes scripts d’origine.
+    Style identique aux scripts d’origine.
     """
     if save_dir is None:
         save_path = ensure_dir(ADVANCED_RESULTS_DIR / "violin")
@@ -36,7 +36,7 @@ def make_violinplot(
     sns.violinplot(
         data=df,
         x=param,
-        palette="Set2",  # le style que tu utilisais
+        palette="Set2",  
         ax=ax,
     )
 
@@ -121,3 +121,4 @@ def run_pca_analysis(
     fig2.savefig(save_path / "pca_scree.png", dpi=300, bbox_inches="tight")
 
     logger.info(f"PCA results saved to {save_path}")
+
