@@ -9,8 +9,6 @@ from typing import Dict, Tuple
 def load_sensitivity_csv(csv_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     """
     Lecture d’un fichier BehaviorSpace de sensibilité.
-    Reprend exactement la logique de tes scripts d’origine.
-
     Retourne :
       - df_viability : DataFrame index=step, columns=run_number
       - df_concentration : pareil
@@ -38,3 +36,4 @@ def load_sensitivity_csv(csv_path: str) -> Tuple[pd.DataFrame, pd.DataFrame]:
     df_remaining = pd.DataFrame.from_dict(remaining_dict)
 
     return df_viability, df_remaining
+
