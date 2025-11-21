@@ -120,3 +120,4 @@ def run_pca_analysis(
     fig2.savefig(save_path / "pca_scree.png", dpi=300, bbox_inches="tight")
 
     logger.info(f"PCA results saved to {save_path}")
+
