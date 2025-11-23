@@ -1,4 +1,4 @@
-# Macrophage Polarization in CLL — TF Activity Signature Pipeline
+# Macrophage Polarization in CLL - TF Activity Signature Pipeline
 
 
 **Affiliation:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
