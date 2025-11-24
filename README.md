@@ -14,7 +14,7 @@ It is organized into two sections:
 ---
 
 ## [1. CV - Research Experience](CV)
-This folder contains a more complete overview of my scientific career, including:
+This folder contains an overview of my scientific career, including:
 * Research experience (postdoctoral and PhD)
 * Selected publications
 * Project descriptions
