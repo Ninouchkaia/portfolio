@@ -4,6 +4,7 @@
 **Period:** 2020–2021  
 **Publication:** [Network and Systems Medicine, 2020](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)
 
+<img width=1000 height=527 alt="multilayer" src="https://github.com/user-attachments/assets/c96871ac-4d5e-4279-9ec2-9da064345dc7" />
 
 ## Context
 At the onset of the COVID-19 pandemic, identifying potential therapeutic candidates required integrative strategies beyond single-target screening. This project used **network medicine** approaches to explore interactions between SARS-CoV-2 proteins, host cellular pathways, and drug targets, with the goal of repositioning existing compounds.  
