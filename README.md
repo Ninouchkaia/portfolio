@@ -7,7 +7,9 @@ This repository serves as the entry point to my scientific and computational wor
 * pipeline design and refactoring
 * scientific modelling 
 
-It is organized into two sections: (1) a **[CV](CV)** section for an extensive overview of my scientific career and (2) a selection of **[computational projects](bioinfo_projects)** that represent my experience.
+It is organized into two sections: 
+* a **[CV](CV)** section giving an overview of my scientific career and
+* a selection of **[computational projects](bioinfo_projects)** that represent my experience.
 
 ---
 
