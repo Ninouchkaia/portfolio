@@ -88,7 +88,7 @@ print("Original logFC shape (rows × cols):", logfc_df.shape)
 logfc_df = logfc_df.apply(pd.to_numeric, errors="coerce")
 logfc_df = logfc_df.fillna(0.0)
 
-# Sort columns case-insensitively, like in your correlation script
+# Sort columns case-insensitively
 logfc_df = logfc_df.reindex(sorted(logfc_df.columns, key=lambda x: x.lower()), axis=1)
 
 print("LogFC matrix after cleaning:")
@@ -128,7 +128,7 @@ else:
 
 # ## 4. Fig.3 – Heatmap of barcode signatures
 # 
-# We reproduce the idea of your Fig.3:
+# We reproduce the idea of Fig.3:
 # - rows: barcodes,
 # - columns: conditions,
 # - values: column-wise normalized log2FC (z-score per condition),
@@ -224,7 +224,7 @@ plt.show()
 # - nodes = conditions,
 # - edge between two nodes if their correlation ≥ `CORR_THRESHOLD` (default 0.8),
 # - node color = drug class (if annotation available),
-# - layout = Fruchterman–Reingold (spring layout), like in your original description.
+# - layout = Fruchterman–Reingold (spring layout).
 # 
 
 # In[45]:
