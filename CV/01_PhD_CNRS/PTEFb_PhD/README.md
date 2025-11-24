@@ -5,23 +5,12 @@ This repository gathers the experimental work performed during my PhD
 of the transcription elongation factor P-TEFb by HEXIM1 and HIV-1 Tat.
 
 ## Structure
-- manuscript/ - Thesis PDF, figures and supplementary material
 - experiments/ - Experimental work (yeast genetics, mammalian assays, imaging)
 - results/ - Data and processed results for characterized mutants
-- methods/ - Consolidated experimental protocols
 - figures/ - Schematic representations and pathway diagrams
-- presentations/ - Posters and slides
 
 ```
 PTEFb_PhD/
-│
-├── README.md                   
-│
-├── manuscript/                 
-│   ├── thesis.pdf
-│   ├── figures/
-│   ├── supplementary/
-│   └── notes/
 │
 ├── experiments/                
 │   ├── yeast_genetics/
@@ -39,22 +28,11 @@ PTEFb_PhD/
 │   ├── localization/
 │   └── kinase_activity/
 │
-├── methods/                    
-│   ├── yeast/
-│   ├── cloning/
-│   ├── mammalian/
-│   ├── imaging/
-│   └── biochemical/
-│
-├── figures/                    
-│   ├── pipeline.svg
-│   ├── cyclinT1_structure.svg
-│   ├── hexim1_interface.svg
-│   └── tat_model.svg
-│
-└── presentations/
-    ├── posters/
-    └── slides/
+└── figures/                    
+    ├── pipeline.svg
+    ├── cyclinT1_structure.svg
+    ├── hexim1_interface.svg
+    └── tat_model.svg
 ```
 
 
