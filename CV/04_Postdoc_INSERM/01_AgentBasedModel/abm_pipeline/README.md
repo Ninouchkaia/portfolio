@@ -230,7 +230,7 @@ Mann–Whitney U tests on parameter distributions.
 
 Given two Pareto TSV files (e.g. class1 vs class2):
 ```
-python -m abm_pipeline.cli stats_params \
+python -m abm_pipeline.cli stats-params \
     data/pareto/pareto_class1.tsv \
     data/pareto/pareto_class2.tsv
 ```
