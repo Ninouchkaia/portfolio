@@ -7,11 +7,11 @@ This repository serves as the entry point to my scientific and computational wor
 * pipeline design and refactoring
 * scientific modelling 
 
-It is organized into two sections: my **[CV](CV)** and a selection of **[computational projects](bioinfo_projects)** that represent my experience.
+It is organized into two sections: (1) a **[CV](CV)** section for an extensive overview of my scientific career and (2) a selection of **[computational projects](bioinfo_projects)** that represent my experience.
 
 ---
 
-## **1. CV - Scientific Background & Research Experience**
+## **1. CV - Research Experience**
 
 See folder here: [CV](CV)
 
@@ -24,7 +24,7 @@ This folder contains a more complete overview of my scientific career, including
 
 ---
 
-## **2. Bioinfo_projects - Featured Computational Biology Pipelines**
+## **2. Selection of Computational Research Projects**
 
 See folder: [bioinfo_projects](bioinfo_projects).
 
