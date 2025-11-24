@@ -141,7 +141,7 @@ if __name__ == "__main__":
     # Example provided path
     base = "A:/Downloads/Projects/workFromHome/Projects/Covid/random_networks/Mock_networks_21Apr"
 
-    # Example known-bad networks (from your scripts)
+    # Example known-bad networks
     exclude = [494, 525, 532, 569, 592, 629, 658, 662, 674, 676, 
                701, 705, 712, 736, 757, 788, 796, 825, 827, 838, 
                873, 876, 908, 910, 916, 917, 918, 938, 958, 965, 
@@ -156,3 +156,4 @@ if __name__ == "__main__":
 
     ids, nd, ed = load_mock_network_ids(base, exclude_ids=exclude, verbose=True)
     print(ids[:10])  # first 10 usable ids
+
