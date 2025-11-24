@@ -2,6 +2,7 @@
 
 from pathlib import Path
 
+<<<<<<< HEAD
 # ---------------------------------------------------------------------------
 # Root directory
 # ---------------------------------------------------------------------------
@@ -46,6 +47,14 @@ EXPERIMENTAL_COLUMNS = {
 # ---------------------------------------------------------------------------
 # Patient information
 # ---------------------------------------------------------------------------
+=======
+# Racine et dossiers de résultats du projet (à adapter si nécessaire)
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RESULTS_DIR = PROJECT_ROOT / "results" 
+ADVANCED_RESULTS_DIR = PROJECT_ROOT / "results" / "advanced_analysis" 
+
+
+>>>>>>> c963b823d80a3447ec3a38cae78f24a22e3fe477
 
 PATIENTS_WITH_MONO = [
     "CRE1704-1.1%",
@@ -62,6 +71,7 @@ PATIENTS_WITH_MONO = [
 
 PATIENT_IDS = [p.split("-")[0] for p in PATIENTS_WITH_MONO]
 
+<<<<<<< HEAD
 # ---------------------------------------------------------------------------
 # Utilities
 # ---------------------------------------------------------------------------
@@ -145,3 +155,7 @@ EXP_LIST: List[str] = (
     + EXP_STOCHASTICITY
     + EXP_SENSITIVITY
 )
+=======
+
+
+>>>>>>> c963b823d80a3447ec3a38cae78f24a22e3fe477

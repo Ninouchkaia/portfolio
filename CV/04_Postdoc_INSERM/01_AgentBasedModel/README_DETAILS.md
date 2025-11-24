@@ -261,7 +261,7 @@ Each command corresponds to one stage of the full workflow:
 Creates the XML definitions used by OpenMOLE to run large-scale parameter exploration.
 
 ```bash
-abm generate-behaviorspace \
+python -m abm_pipeline.cli generate-behaviorspace \
     --output openmole/
 ```
 
@@ -285,7 +285,7 @@ openmole/behaviorspace_patient_X.xml
 Produces ready-to-run shell commands for each patient (general model or patient-specific):
 
 ```bash
-abm make-commands --patient 1
+python -m abm_pipeline.cli make-commands --patient 1
 ```
 
 Outputs go to:
@@ -321,7 +321,7 @@ results/behaviorspace/patient_specific_models/patient_X/NSGAII_exploration_outpu
 Once OpenMOLE finishes:
 
 ```bash
-abm extract-pareto \
+python -m abm_pipeline.cli extract-pareto \
     --input results/behaviorspace/general_model/
 ```
 
@@ -341,7 +341,7 @@ Same command applies per patient.
 Identifies the parameter set maximizing curvature on the Pareto surface:
 
 ```bash
-abm kneepoint \
+python -m abm_pipeline.cli kneepoint \
     --pareto results/behaviorspace/general_model/pareto_front.txt
 ```
 
@@ -359,7 +359,7 @@ results/validation/kneepoint_diagnostics.pdf
 To evaluate simulated vs. experimental trajectories:
 
 ```bash
-abm validate \
+python -m abm_pipeline.cli validate \
     --patient 4 \
     --params data/pareto/kneepoint_patient4.json
 ```
@@ -380,7 +380,7 @@ results/validation/patient_4/
 Local sensitivity around a chosen parameter set:
 
 ```bash
-abm sensitivity \
+python -m abm_pipeline.cli sensitivity \
     --params data/pareto/kneepoint_general.json
 ```
 
@@ -399,7 +399,7 @@ results/sensitivity/
 This is automatically handled via:
 
 ```bash
-abm advanced-analysis
+python -m abm_pipeline.cli advanced-analysis
 ```
 
 (Or import individual modules for PCA, violin plots, statistical tests.)
@@ -519,7 +519,7 @@ Validation scripts (in `abm_pipeline/model_validation/`):
 #### **Validation command**
 
 ```
-abm validate --patient 4 --params data/pareto/best_model_patient4.json
+python -m abm_pipeline.cli validate --patient 4 --params data/pareto/best_model_patient4.json
 ```
 
 Outputs:
@@ -587,11 +587,11 @@ To reproduce the entire workflow:
 3. Python ≥ 3.10 with abm_pipeline
 4. Place experimental data in data/experimental/
 5. Run:
-   abm generate-behaviorspace
-   abm make-commands
-   abm extract-pareto
-   abm kneepoint
-   abm validate
+   python -m abm_pipeline.cli generate-behaviorspace
+   python -m abm_pipeline.cli make-commands
+   python -m abm_pipeline.cli extract-pareto
+   python -m abm_pipeline.cli kneepoint
+   python -m abm_pipeline.cli validate
 ```
 
 ---
@@ -622,6 +622,7 @@ Verstraete N., et al. *Modeling of Tumor Ecosystem Dynamics Reveals Coexistence 
 
 
 ---
+
 
 
 
