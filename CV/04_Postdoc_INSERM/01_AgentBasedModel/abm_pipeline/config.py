@@ -2,8 +2,12 @@
 
 from pathlib import Path
 
-# Racine du projet (à adapter si nécessaire)
+# Racine et dossiers de résultats du projet (à adapter si nécessaire)
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
+RESULTS_DIR = PROJECT_ROOT / "results" 
+ADVANCED_RESULTS_DIR = PROJECT_ROOT / "results" / "advanced_analysis" 
+
+
 
 # Liste patients + % monocytes 
 PATIENTS_WITH_MONO = [
@@ -20,3 +24,6 @@ PATIENTS_WITH_MONO = [
 ]
 
 PATIENT_IDS = [p.split("-")[0] for p in PATIENTS_WITH_MONO]
+
+
+
