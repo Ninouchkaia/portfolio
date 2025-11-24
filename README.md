@@ -6,7 +6,6 @@ This repository serves as the entry point to my scientific and computational wor
 * large-scale data processing and analysis
 * pipeline design and refactoring
 * scientific modelling 
-* reproducible codebases
 
 It is organized into two sections: my **[CV](CV)** and a selection of **[computational projects](bioinfo_projects)** that represent my experience.
 
@@ -16,7 +15,7 @@ It is organized into two sections: my **[CV](CV)** and a selection of **[computa
 
 See folder here: [CV](CV)
 
-This folder contains an overview of my scientific career, including:
+This folder contains a more complete overview of my scientific career, including:
 
 * Research experience (postdoctoral and PhD)
 * Selected publications
@@ -29,26 +28,24 @@ This folder contains an overview of my scientific career, including:
 
 See folder: [bioinfo_projects](bioinfo_projects).
 
-This directory highlights **six major projects**, directly accessible in an independent module.
+This directory highlights a few selected projects, directly accessible in an independent module.
 
-### **Included projects**
-
-* [1. Bulk RNA-seq Deconvolution](CV/04_Postdoc_INSERM/03_RNASeqDeconvolution)
-Snakemake pipeline + R scripts + QC + tumour microenvironment predictions.  
-
-* [2. Barcode Clonal Dynamics](CV/04_Postdoc_INSERM/07_BarcodesDrugScreening)
-High-throughput barcode counts → QC → DESeq2 → drug network correlation.  
-
-* [3. COVID-19 Network Medicine Pipeline](CV/04_Postdoc_INSERM/05_NetworkMedicine)
+* [1. COVID-19 Network Medicine](CV/04_Postdoc_INSERM/05_NetworkMedicine)
 Multilayer graphs, mock networks, Z-scores, ranking of proteins, GO terms, drugs.  
 
-* [4. Agent-Based Tumour Model Analysis Suite](CV/04_Postdoc_INSERM/01_AgentBasedModel)
+* [2. Agent-Based Tumour Model](CV/04_Postdoc_INSERM/01_AgentBasedModel)
 Python package orchestrating NetLogo/OpenMOLE simulations, validation, sensitivity.  
 
-* [5. Amino-Acid Usage Evolution with PaxDB](CV/02_Postdoc_CONICET/paxdb)
-Python toolkit for FASTA parsing, abundance loading, AA metrics and correlations.  
+* [3. Amino-Acid Usage Evolution](CV/02_Postdoc_CONICET/paxdb)
+Python toolkit for FASTA parsing, abundance loading, AA metrics and correlations.
 
-* [6. Ankyrin Modularity (PFAM/ELM)](CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY)
+* [4. RNA-seq Deconvolution](CV/04_Postdoc_INSERM/03_RNASeqDeconvolution)
+Snakemake pipeline + R scripts + QC + tumour microenvironment predictions.  
+
+* [5. Barcode Clonal Dynamics](CV/04_Postdoc_INSERM/07_BarcodesDrugScreening)
+High-throughput barcode counts → QC → DESeq2 → drug network correlation.  
+
+* [6. Linear Motifs and Protein Binding Domains Modularity (PFAM/ELM)](CV/02_Postdoc_CONICET/ANKYRIN_MODULARITY)
 Compositional modularity analysis with enrichment and conservation pipelines.  
 
 ---
