@@ -1,6 +1,6 @@
 # **Nina Verstraete - Scientific Portfolio**
 
-(under construction)
+*(under construction)*
 
 This repository serves as the entry point to my scientific and computational work in:
 
