@@ -120,23 +120,7 @@ python -m abm_pipeline.cli sensitivity-plot-all \
     --save-dir results/sensitivity
 ```
 
----
-
-# 3. Folder structure
-
-```
-data/
-  experimental/        # experimental measurements
-  pareto/              # extracted pareto fronts
-results/
-  validation/
-  advanced_analysis/
-  sensitivity/
-openmole/
-netlogo_model/
-abm_pipeline/
-```
-
 Dossiers créés automatiquement par `ensure_dirs_exist()` dans `config.py`.
 
 ```
+
