@@ -1,5 +1,7 @@
 # **Nina Verstraete - Scientific Portfolio**
 
+(under construction)
+
 This repository serves as the entry point to my scientific and computational work in:
 
 * computational biology & structural bioinformatics
