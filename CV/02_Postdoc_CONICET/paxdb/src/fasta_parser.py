@@ -23,43 +23,34 @@ def parse_fasta(fasta_path: Path) -> Iterator[Tuple[str, str]]:
     Yields
     ------
     (seq_id, sequence) : (str, str)
-        Sequence identifier and sequence string (no whitespace).
+        Sequence identifier and amino acid sequence (no whitespace).
     """
-    with fasta_path.open("r", encoding="utf-8") as handle:
-        seq_id = None
-        chunks = []
+    seq_id = None
+    seq_chunks = []
 
-        for line in handle:
-            line = line.strip()
+    with fasta_path.open("r") as f:
+        for line in f:
+            line = line.rstrip("\n")
             if not line:
                 continue
             if line.startswith(">"):
-                # Finish previous sequence
+                # Emit previous sequence if any
                 if seq_id is not None:
-                    yield seq_id, "".join(chunks)
-                # Start new sequence
-                header = line[1:]
+                    yield seq_id, "".join(seq_chunks)
+                # New sequence
+                header = line[1:].strip()
                 seq_id = header.split()[0]
-                chunks = []
+                seq_chunks = []
             else:
-                chunks.append(line)
+                seq_chunks.append(line.strip())
 
-        # Last sequence
-        if seq_id is not None:
-            yield seq_id, "".join(chunks)
+    # Emit last record
+    if seq_id is not None:
+        yield seq_id, "".join(seq_chunks)
 
 
 def load_fasta_as_dict(fasta_path: Path) -> Dict[str, str]:
     """
-    Load a FASTA file into a simple dict {seq_id: sequence}.
-
-    Parameters
-    ----------
-    fasta_path : Path
-
-    Returns
-    -------
-    dict
-        Mapping from sequence ID to protein sequence.
+    Convenience wrapper to load a FASTA into a dict: seq_id -> sequence.
     """
-    return {seq_id: seq for seq_id, seq in parse_fasta(fasta_path)}
+    return dict(parse_fasta(fasta_path))

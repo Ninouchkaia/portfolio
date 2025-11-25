@@ -25,51 +25,27 @@ def setup_logging(log_dir: Path, verbose: bool = True) -> None:
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
 
-    # Clear existing handlers (useful if re-running in the same process)
-    if logger.handlers:
-        for h in list(logger.handlers):
-            logger.removeHandler(h)
-
-    # File handler (always DEBUG)
-    fh = logging.FileHandler(str(log_file), mode="w", encoding="utf-8")
-    fh.setLevel(logging.DEBUG)
-    fh_formatter = logging.Formatter(
-        fmt="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
-        datefmt="%Y-%m-%d %H:%M:%S",
-    )
-    fh.setFormatter(fh_formatter)
-    logger.addHandler(fh)
-
     # Console handler
     ch = logging.StreamHandler()
     ch.setLevel(logging.INFO if verbose else logging.WARNING)
-    ch_formatter = logging.Formatter("%(levelname)s - %(message)s")
+    ch_formatter = logging.Formatter("[%(levelname)s] %(message)s")
     ch.setFormatter(ch_formatter)
+
+    # File handler
+    fh = logging.FileHandler(log_file, mode="w")
+    fh.setLevel(logging.DEBUG)
+    fh_formatter = logging.Formatter(
+        "%(asctime)s [%(levelname)s] %(name)s - %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    fh.setFormatter(fh_formatter)
+
+    logger.handlers = []
     logger.addHandler(ch)
+    logger.addHandler(fh)
 
-    logging.getLogger(__name__).info("Logging initialized. Log file: %s", log_file)
 
-
-def resolve_path(base: Path, relative: str) -> Path:
-    """
-    Resolve a path relative to some base directory.
-
-    This is helpful when the species metadata gives paths relative
-    to its own location.
-
-    Parameters
-    ----------
-    base : Path
-        Base directory (e.g. the directory containing species.tsv).
-    relative : str
-        Relative path string from that base.
-
-    Returns
-    -------
-    Path
-        Absolute path.
-    """
-    p = Path(relative)
-    if not p.is_absolute():
-        p = base / p
-    return p.resolve()
+def resolve_path(p):
+    from pathlib import Path
+    p = Path(p)
+    return p.expanduser().resolve()

@@ -1,0 +1,10 @@
+2025-11-25 04:38:57 [INFO] __main__ - Starting PaxDB amino acid usage analysis.
+2025-11-25 04:38:57 [INFO] __main__ - Species metadata: paxdb\data\metadata\species_yeast_only.tsv
+2025-11-25 04:38:57 [INFO] __main__ - AA costs: paxdb\data\metadata\amino_acid_costs.tsv
+2025-11-25 04:38:57 [INFO] __main__ - Output dir: paxdb\results\yeast_only
+2025-11-25 04:38:57 [INFO] paxdb.src.abundance_loader - Loading species metadata from paxdb\data\metadata\species_yeast_only.tsv
+2025-11-25 04:38:57 [INFO] __main__ - Processing species 4932-S.cerevisiae
+2025-11-25 04:38:58 [INFO] paxdb.src.abundance_loader - Loading abundance table from E:\Downloads\Projects\2025_PORTFOLIO\portfolio\CV\02_Postdoc_CONICET\paxdb\data\abundances\4932-S.cerevisiae_paxdb.tsv
+2025-11-25 04:38:58 [INFO] paxdb.src.abundance_loader - Loaded 6183 entries from E:\Downloads\Projects\2025_PORTFOLIO\portfolio\CV\02_Postdoc_CONICET\paxdb\data\abundances\4932-S.cerevisiae_paxdb.tsv
+2025-11-25 04:38:58 [INFO] paxdb.src.relationships - Species 4932-S.cerevisiae: Pearson r(usage, cost) = -0.836 (p=1.64e-01) over 4 amino acids
+2025-11-25 04:38:58 [INFO] __main__ - PaxDB amino acid usage pipeline finished.

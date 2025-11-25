@@ -9,7 +9,7 @@ from typing import Dict, Iterable, Tuple
 import numpy as np
 import pandas as pd
 
-from .protein import Protein
+from paxdb.src.protein import Protein
 
 logger = logging.getLogger(__name__)
 
@@ -18,50 +18,61 @@ STANDARD_AA = list("ACDEFGHIKLMNPQRSTVWY")
 
 def compute_proteome_aa_usage(
     proteins: Iterable[Protein],
-    weighted: bool = True,
-    allowed_aas: Iterable[str] = STANDARD_AA,
-) -> Dict[str, float]:
+    amino_acids: Iterable[str] = STANDARD_AA,
+) -> pd.DataFrame:
     """
-    Compute proteome-level amino acid relative abundances.
+    Compute amino-acid usage across a proteome.
 
     Parameters
     ----------
-    proteins : iterable of Protein
-        Proteins with abundance and sequence information.
-    weighted : bool
-        If True, weight counts by abundance; otherwise each protein
-        contributes equally (unweighted composition).
-    allowed_aas : iterable of str
-        Consider only this set of amino acids (typically 20 standard).
+    proteins : Iterable[Protein]
+        Collection of Protein objects with abundance.
+    amino_acids : Iterable[str]
+        List of amino acids to consider.
 
     Returns
     -------
-    dict
-        Mapping amino-acid -> relative frequency in proteome.
-        Frequencies sum to 1.0 over allowed_aas (if any non-zero counts).
+    DataFrame
+        Index: amino acids; columns: ['count', 'weighted_count', 'freq', 'weighted_freq'].
     """
-    allowed = set(allowed_aas)
-    total_counts = {aa: 0.0 for aa in allowed}
+    aa_list = list(amino_acids)
+    counts = dict.fromkeys(aa_list, 0.0)
+    weighted_counts = dict.fromkeys(aa_list, 0.0)
 
-    for p in proteins:
-        counts = p.weighted_amino_acid_counts() if weighted else p.amino_acid_counts()
-        for aa, c in counts.items():
-            if aa in allowed:
-                total_counts[aa] += float(c)
+    total_residues = 0.0
+    total_weighted_residues = 0.0
 
-    total = float(sum(total_counts.values())) or 1.0
-    freqs = {aa: c / total for aa, c in total_counts.items()}
-    logger.debug(
-        "Computed %sweighted AA usage: %s",
-        "" if weighted else "un",
-        freqs,
-    )
-    return freqs
+    for protein in proteins:
+        seq = protein.sequence
+        abundance = protein.abundance
+
+        for aa in seq:
+            if aa not in counts:
+                continue
+            counts[aa] += 1.0
+            weighted_counts[aa] += abundance
+            total_residues += 1.0
+            total_weighted_residues += abundance
+
+    data = []
+    for aa in aa_list:
+        c = counts[aa]
+        wc = weighted_counts[aa]
+        freq = c / total_residues if total_residues > 0 else 0.0
+        wfreq = wc / total_weighted_residues if total_weighted_residues > 0 else 0.0
+        data.append((aa, c, wc, freq, wfreq))
+
+    df = pd.DataFrame(
+        data,
+        columns=["aa", "count", "weighted_count", "freq", "weighted_freq"],
+    ).set_index("aa")
+
+    return df
 
 
 def load_amino_acid_costs(path: Path) -> Dict[str, float]:
     """
-    Load amino acid synthesis costs (e.g. ATP/time units).
+    Load amino-acid biosynthetic costs from a TSV file.
 
     Parameters
     ----------
@@ -78,30 +89,32 @@ def load_amino_acid_costs(path: Path) -> Dict[str, float]:
         raise ValueError(
             f"Cost file {path} must contain columns 'aa' and 'cost_atp'."
         )
-    df["cost_atp"] = pd.to_numeric(df["cost_atp"], errors="coerce")
-    df = df.dropna(subset=["cost_atp"])
-    costs = dict(zip(df["aa"].str.upper(), df["cost_atp"].astype(float)))
-    logger.info("Loaded amino acid costs for %d residues from %s", len(costs), path)
+
+    costs = dict(zip(df["aa"], df["cost_atp"]))
     return costs
 
 
-def aa_vector_from_freqs(
-    freqs: Dict[str, float],
-    ordered_aas: Iterable[str] = STANDARD_AA,
-) -> np.ndarray:
-    """
-    Convert AA frequency dict into a numeric vector in fixed order.
-    """
-    aa_list = list(ordered_aas)
-    return np.array([float(freqs.get(aa, 0.0)) for aa in aa_list], dtype=float)
-
-
 def aa_vector_from_costs(
-    costs: Dict[str, float],
-    ordered_aas: Iterable[str] = STANDARD_AA,
+    aa_costs: Dict[str, float],
+    amino_acids: Iterable[str] = STANDARD_AA,
 ) -> np.ndarray:
     """
-    Convert AA cost dict into a numeric vector in fixed order.
+    Build a cost vector aligned with the STANDARD_AA list.
     """
-    aa_list = list(ordered_aas)
-    return np.array([float(costs.get(aa, np.nan)) for aa in aa_list], dtype=float)
+    aa_list = list(amino_acids)
+    return np.array([aa_costs.get(aa, np.nan) for aa in aa_list], dtype=float)
+
+
+def aa_vector_from_freqs(
+    aa_usage: pd.DataFrame,
+    column: str = "freq",
+    amino_acids: Iterable[str] = STANDARD_AA,
+) -> np.ndarray:
+    """
+    Build a usage-frequency vector aligned with the STANDARD_AA list.
+    """
+    aa_list = list(amino_acids)
+    return np.array(
+        [aa_usage.loc[aa, column] if aa in aa_usage.index else np.nan for aa in aa_list],
+        dtype=float,
+    )

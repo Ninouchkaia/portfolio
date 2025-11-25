@@ -1,0 +1,2 @@
+species_id	fasta_path	abundance_path	mapping_path
+4932-S.cerevisiae	paxdb/data/fasta/4932-S.cerevisiae.fasta	paxdb/data/abundances/4932-S.cerevisiae_paxdb.tsv	paxdb/data/metapaxdb/data/4932-S.cerevisiae_string_to_uniprot.tsv
