@@ -1,7 +1,7 @@
 # **Drug Repurposing for COVID-19 through Network Medicine**
 
 **Affiliations:** INSERM U1037 – Centre de Recherches en Cancérologie de Toulouse (CRCT)  
-**Collaboration** Manlio De Domenico   
+**Supervision:** Manlio De Domenico & Vera Pancaldi   
 **Period:** 2020–2021  
 **Publication:** [Network and Systems Medicine, 2020](https://www.liebertpub.com/doi/10.1089/nsm.2020.0011)  
 
