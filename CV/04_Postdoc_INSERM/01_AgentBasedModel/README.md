@@ -7,7 +7,6 @@
  
 For a more detailed description of the pipeline here, see here : [README_DETAILS.md](README_DETAILS.md)
 
----
 
 ## Context
 This project aimed to simulate tumor evolution as a small-scale ecosystem, to understand how tumor cells, immune cells, and their microenvironment interact dynamically over time. The goal was to capture emergent behaviors (coexistence, suppression, escape) resulting from local cellular interactions and environmental constraints.
@@ -18,6 +17,8 @@ This project aimed to simulate tumor evolution as a small-scale ecosystem, to un
 - Develop an **agent-based model (ABM)** of tumor–immune cell interactions.  
 - Explore how immune surveillance and microenvironmental factors affect cancer cells growth.  
 - Use large-scale simulation experiments to identify stable and unstable equilibria.
+
+<img width="5196" height="2398" alt="Figure2-01" src="https://github.com/user-attachments/assets/00735948-a1c1-4ca6-a44c-6680757c91a4" />
 
 ---
 
@@ -45,6 +46,7 @@ If you use this pipeline or model, please cite the associated scientific publica
 ---
 
 For a more detailed description of the pipeline here, see here :   [README_DETAILS.md](README_DETAILS.md)
+
 
 
 
