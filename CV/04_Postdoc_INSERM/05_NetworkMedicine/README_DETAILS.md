@@ -25,7 +25,7 @@ Detection of nodes_XXXX.csv / edges_XXXX.csv files and selection of valid mock n
 
 **Scripts:**
 
-* [`5. covid_network_medicine/01_multilayer_pipeline/io_networks_clean.py`](5. covid_network_medicine/01_multilayer_pipeline/io_networks_clean.py)
+* [`io_networks_clean.py`](01_multilayer_pipeline/io_networks_clean.py)
 
 ```bash
 python 01_multilayer_pipeline/io_networks_clean.py \
@@ -40,7 +40,7 @@ Computation of observed degrees between a source entity type and a target entity
 
 **Scripts:**
 
-* [`01_multilayer_pipeline/compute_observed_degrees_clean.py`](01_multilayer_pipeline/compute_observed_degrees_clean.py)
+* [`compute_observed_degrees_clean.py`](01_multilayer_pipeline/compute_observed_degrees_clean.py)
 
 ```bash
 python 01_multilayer_pipeline/compute_observed_degrees_clean.py \
@@ -60,7 +60,7 @@ Aggregation of degrees across all mock networks to obtain structural distributio
 
 **Scripts:**
 
-* [`02_bootstrap_pipeline/compute_mock_distributions_clean.py`](02_bootstrap_pipeline/compute_mock_distributions_clean.py)
+* [`compute_mock_distributions_clean.py`](02_bootstrap_pipeline/compute_mock_distributions_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/compute_mock_distributions_clean.py \
@@ -80,7 +80,7 @@ Z = (observed − mean) / sd.
 
 **Scripts:**
 
-* [`02_bootstrap_pipeline/compute_zscores_clean.py`](02_bootstrap_pipeline/compute_zscores_clean.py)
+* [`compute_zscores_clean.py`](02_bootstrap_pipeline/compute_zscores_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/compute_zscores_clean.py \
@@ -98,7 +98,7 @@ Normality tests (Shapiro, D’Agostino) → selection between erf or Chebyshev.
 
 **Scripts:**
 
-* [`02_bootstrap_pipeline/compute_pvalues_clean.py`](02_bootstrap_pipeline/compute_pvalues_clean.py)
+* [`compute_pvalues_clean.py`](02_bootstrap_pipeline/compute_pvalues_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/compute_pvalues_clean.py \
@@ -116,7 +116,7 @@ Ranking of entities based on p-values or Z-scores and generation of associated f
 
 **Scripts:**
 
-* [`02_bootstrap_pipeline/ranking_and_plots_clean.py`](02_bootstrap_pipeline/ranking_and_plots_clean.py)
+* [`ranking_and_plots_clean.py`](02_bootstrap_pipeline/ranking_and_plots_clean.py)
 
 ```bash
 python 02_bootstrap_pipeline/ranking_and_plots_clean.py \
